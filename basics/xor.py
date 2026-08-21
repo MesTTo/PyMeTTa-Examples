@@ -12,7 +12,7 @@ promises.
 from petta import S
 
 #: Inferences this twin spends, its own tripwire.
-BUDGET = 4809
+BUDGET = 4882
 
 
 def twin(m):

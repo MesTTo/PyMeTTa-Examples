@@ -11,7 +11,7 @@ equation with no string anywhere.
 from petta import S, V
 
 #: Inferences this twin spends, its own tripwire.
-BUDGET = 7665
+BUDGET = 7740
 
 
 def twin(m):

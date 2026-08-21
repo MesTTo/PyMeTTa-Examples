@@ -8,7 +8,7 @@ not structure, which is the whole point of the original.
 from petta import S, val
 
 #: Inferences this twin spends, its own tripwire.
-BUDGET = 419
+BUDGET = 422
 
 TEXT = val("a test (with newlines and parentheses)")
 

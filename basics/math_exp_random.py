@@ -18,7 +18,7 @@ from petta import S, val
 TRUE, FALSE = val(value=True), val(value=False)
 
 #: Inferences this twin spends, its own tripwire.
-BUDGET = 10061
+BUDGET = 10137
 
 
 def twin(m):

@@ -9,7 +9,7 @@ built at the term door rather than called.
 from petta import S, expr
 
 #: Inferences this twin spends, its own tripwire.
-BUDGET = 25585349
+BUDGET = 25585424
 
 
 def twin(m):

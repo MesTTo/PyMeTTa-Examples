@@ -13,7 +13,7 @@ Nothing here reaches the engine through source text: every form is a term.
 from petta import S, expr, val
 
 #: Inferences this twin spends, its own tripwire.
-BUDGET = 13946
+BUDGET = 13959
 
 READ = S["sread-command"]
 

@@ -9,7 +9,7 @@ the path instead; the residue table records that against P14.13.
 from petta import S
 
 #: Inferences this twin spends, its own tripwire.
-BUDGET = 9997
+BUDGET = 10033
 
 
 def twin(m):

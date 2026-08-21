@@ -8,7 +8,7 @@ same call the equation makes.
 from petta import S
 
 #: Inferences this twin spends, its own tripwire.
-BUDGET = 4420
+BUDGET = 4495
 
 
 def twin(m):

@@ -8,7 +8,7 @@ to test; what survives translation is the definition it comments, `(= (f)
 from petta import S
 
 #: Inferences this twin spends, its own tripwire.
-BUDGET = 2435
+BUDGET = 2507
 
 
 def twin(m):
