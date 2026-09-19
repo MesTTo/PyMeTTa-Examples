@@ -1,0 +1,3 @@
+[submodule "examples"]
+	path = examples
+	url = /home/user/Dev/PyPeTTa1/repos/metta-examples.git
