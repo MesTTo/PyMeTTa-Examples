@@ -1,0 +1,4 @@
+# Python bytecode, written wherever these twins are run from. The repository
+# root's .gitignore covered them until this corpus became its own component.
+*.py[cod]
+__pycache__/
