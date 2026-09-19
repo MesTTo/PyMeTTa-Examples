@@ -28,6 +28,7 @@ same engine checker and is pinned by test_conformance.py.
 from pathlib import Path
 
 from metta import G, S, V, lib
+from metta._roots import workspace
 
 #: The three engine libraries the example opens, spelled with their real
 #: underscores: `S.lib_file` would name `lib-file`, which the tree does not ship.
@@ -40,7 +41,7 @@ LIBRARIES = (lib["lib_import"], lib.file, lib.conformance)
 #: working directory was not the repository root -- the pytest lane runs from
 #: extensions/python -- so `if not CSTORE_SO.exists(): return` fired and the
 #: file certified nothing while reporting green [measured 2026-09-01].
-_REPO = Path(__file__).resolve().parents[6]
+_REPO = workspace()
 CSTORE_SO = _REPO / Path("examples/ch19-spaces-backed-by-anything/19-02-a-space-in-c/cstore.so")
 CSTORE_PL = _REPO / Path("examples/ch19-spaces-backed-by-anything/19-02-a-space-in-c/cstore.pl")
 

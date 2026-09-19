@@ -22,8 +22,9 @@ from pathlib import Path
 
 from metta import G, S, V, arrow, fn, lib, typed
 from metta._errors.errors import MettaError
+from metta._roots import workspace
 
-_REPO = Path(__file__).resolve().parents[6]
+_REPO = workspace()
 FUNCTIONS = _REPO / Path(
     "examples/ch20-extending-the-engine/20-03-prolog-underneath/_fixtures/rung_functions.pl"
 )

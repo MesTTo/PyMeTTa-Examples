@@ -24,8 +24,9 @@ from pathlib import Path
 
 from metta import G, S, V, fn, lib
 from metta._errors.errors import MettaError
+from metta._roots import workspace
 
-_REPO = Path(__file__).resolve().parents[6]
+_REPO = workspace()
 _FIXTURES = Path(
     "examples/ch20-extending-the-engine/20-03-prolog-underneath/_fixtures"
 )

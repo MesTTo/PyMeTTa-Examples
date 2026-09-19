@@ -19,13 +19,14 @@ Open Obligations:
 from pathlib import Path
 
 from metta import G, S, V
+from metta._roots import workspace
 
 #: A module path resolves against the file that includes it, and the file
 #: that includes these is a Python one four directories away from the
 #: fixtures, so the paths are ABSOLUTE here where the original writes them
 #: relative. The residue table records the relative form against P14.13.
 _FIXTURES = (
-    Path(__file__).resolve().parents[6]
+    workspace()
     / Path("examples/ch20-extending-the-engine/20-04-modules-and-the-catalog/_fixtures/included")
 )
 ROWS = S[str(_FIXTURES / "rows")]

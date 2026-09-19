@@ -15,9 +15,10 @@ Open Obligations:
 from pathlib import Path
 
 from metta import G, S, lib
+from metta._roots import workspace
 
 #: The provider the conformance kit is asked about, as a host path.
-_REPO = Path(__file__).resolve().parents[6]
+_REPO = workspace()
 PROVIDER = _REPO / Path(
     "examples/ch08-data/08-03-the-shipped-libraries/_fixtures/demo_provider.pl"
 )
