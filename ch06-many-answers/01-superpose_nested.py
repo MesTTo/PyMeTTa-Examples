@@ -389,4 +389,4 @@ def twin(m):
 #: [measured 2026-09-18: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=55d451b670949c2dc9d2ab7bc678f33f21094bd2].
 BUDGET = 3754
-DIVERGENCE = DIVERGENCE = "6646589902963f27182586005921d814f0832612cf7b485e3ca880c5903a8c8b"
+DIVERGENCE = "6646589902963f27182586005921d814f0832612cf7b485e3ca880c5903a8c8b"

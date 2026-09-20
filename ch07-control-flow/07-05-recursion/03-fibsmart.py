@@ -371,7 +371,7 @@ def twin(m):
 #: [measured 2026-09-18: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=55d451b670949c2dc9d2ab7bc678f33f21094bd2].
 BUDGET = 10239
-OVERRUN = OVERRUN = 636
+OVERRUN = 636
 
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
