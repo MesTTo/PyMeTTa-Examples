@@ -488,10 +488,20 @@ def twin(m):
 #: that run [measured 2026-09-21: ten full-lane observations; command=python
 #: extensions/python/tools/twin_coverage.py --observe --rounds 10;
 #: commit=WORKTREE].
+#: RE-OBSERVED 2026-09-21 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 155912..155912 to 155912..155912 over
+#: 20 observations: ten observations did not cover the tail of an example whose
+#: count varies: 01-mutex_and_transaction read 23659 against the 23661..23666
+#: those ten recorded, and twenty put its 23657..23669 around that reading. The
+#: protocol records observed extrema exactly and refuses an invented allowance,
+#: so the only lawful way to cover a tail is to observe it [measured
+#: 2026-09-21: twenty full-lane observations; command=python
+#: extensions/python/tools/twin_coverage.py --observe --rounds 10;
+#: commit=WORKTREE].
 BUDGET = {
     "minimum": 155912,
     "maximum": 155912,
-    "observations": 10,
+    "observations": 20,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 
