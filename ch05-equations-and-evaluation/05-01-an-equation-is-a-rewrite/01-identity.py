@@ -95,7 +95,7 @@ def twin(m):
 #: [measured 2026-08-25 through tools/twin_coverage.py --measure
 #: examples/ch05-equations-and-evaluation/05-01-an-equation-is-a-rewrite/01-identity.metta on the conformance-2 tree].
 #: RE-PINNED 2026-08-25, 2824 to 2774, at the C reader port: the twin's own
-#: source reads go through engine/reader.c now, 50 inferences of shipped-mode
+#: source reads go through engine/c/reader.c now, 50 inferences of shipped-mode
 #: parsing off this workload (the example itself moves 3246 to 2590). The
 #: budget is a two-sided band, so the drop repins rather than passes
 #: [measured 2026-08-25 through tools/twin_coverage.py --measure with
