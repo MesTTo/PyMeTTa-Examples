@@ -20,10 +20,22 @@ from metta._errors.errors import MettaError
 ADDRESS = G("127.0.0.1:6379")
 
 
-def attached(space, address):
-    """Whether a Redis attach succeeded, without letting the refusal escape."""
+def attached(home, space, address):
+    """Whether a Redis attach succeeded, without letting the refusal escape.
+
+    The function is looked up in the space `lib.redis` was imported into and
+    APPLIED to the space being attached, exactly as the example writes
+    `(import! &self ...)` and then `(redis-attach &shared ...)`. Reading it off
+    `space.metta.self` asked the space being attached instead: `space.metta` is
+    the engine as seen FROM that space, so its `.self` is that space and not
+    the home, and the lookup raised AttributeError past the MettaError this
+    catches. That failed the twin outright on a box where a missing Redis
+    server should only make it answer False [measured 2026-09-21: the backing
+    row registers redis-attach as lib_redis:'redis-attach'/3, and in one
+    process the lookup succeeds on the home and raises on a fresh space].
+    """
     try:
-        list(space.metta.self.fn["redis-attach"](space, address))
+        list(home.fn["redis-attach"](space, address))
     except MettaError:
         return False
     return True
@@ -47,7 +59,7 @@ def available(m):
             home += lib.redis
         except MettaError:
             return False
-        return attached(engine.space(S.probe), ADDRESS)
+        return attached(home, engine.space(S.probe), ADDRESS)
     finally:
         engine.close()
 
@@ -60,7 +72,7 @@ def twin(m):
         return  # no provider: the platform has no library(redis)
 
     shared = m.metta.space(S.shared)
-    if not attached(shared, ADDRESS):
+    if not attached(m, shared, ADDRESS):
         # The example prints its skip here. A twin has no door for prose.
         return
 
@@ -96,7 +108,7 @@ def twin(m):
     # which is the difference from clearing a space: the next attach under
     # the same name finds them.
     detach(shared).one()
-    assert attached(shared, ADDRESS)
+    assert attached(m, shared, ADDRESS)
     assert sorted((row.c for row in shared[S.city(V.c, S.france)]), key=str) == [
         S.lyon,
         S.paris,
@@ -104,7 +116,7 @@ def twin(m):
 
     # And the name is owned while it is attached, so a second attach without
     # the detach is refused rather than raced.
-    assert not attached(shared, ADDRESS)
+    assert not attached(m, shared, ADDRESS)
 
     # Leaving the store as it was found, because a shared space outlives the
     # process that wrote it.
@@ -180,7 +192,7 @@ def twin(m):
 #: file_search_cache_time=9223372036854775807 set before child boot [measured
 #: 2026-09-18: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=6944d06ce96fdbcd1faefb640f15dbfa0cf286dd].
-BUDGET = BUDGET = 12763
+BUDGET = 12763
 #: The count VARIES by a few tens, because every read and write crosses a
 #: socket and the subscription thread's own work lands in the same counter.
 #: Three single-round measurements on this branch gave 113484, 113469 and
