@@ -426,7 +426,14 @@ def twin(m):
 #: metta_py_work/2) [measured 2026-09-19: min-of-3 serial fresh processes;
 #: command=python extensions/python/tools/twin_coverage.py --repin;
 #: commit=32335687084e4d8ad43cf8800f2dedce707fa137].
-BUDGET = 2255874
+#: RE-PINNED 2026-09-21, 2255874 to 2258320 (+2446), the sixty libraries
+#: derived in MeTTa landed with merge 97763e7fa eight hours after the previous
+#: pin 55d451b67, so every example importing one now pays a MeTTa derivation
+#: where it paid a Prolog body instead, which the 2026-09-14 ruling accepts
+#: explicitly as the price of a library that survives the engine swap [measured
+#: 2026-09-21: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+BUDGET = 2258320
 
 #: OVERRUN 2026-09-07, 52200: it asserts the four premises the answer came from
 #: beside the truth value, which the example only prints. Measured 2246993

@@ -228,4 +228,11 @@ def twin(m):
 #: coefficient rows and Combinatorics retires its native probability provider
 #: [measured 2026-09-14: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=e1be99ea1c08f70444c1c35cada441e089777906].
-BUDGET = 8992545
+#: RE-PINNED 2026-09-21, 8992545 to 8921031 (-71514), the sixty libraries
+#: derived in MeTTa landed with merge 97763e7fa eight hours after the previous
+#: pin 55d451b67, so every example importing one now pays a MeTTa derivation
+#: where it paid a Prolog body instead, which the 2026-09-14 ruling accepts
+#: explicitly as the price of a library that survives the engine swap [measured
+#: 2026-09-21: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+BUDGET = 8921031

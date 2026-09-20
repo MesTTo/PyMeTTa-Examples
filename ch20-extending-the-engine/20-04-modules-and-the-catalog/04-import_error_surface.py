@@ -206,4 +206,11 @@ def twin(m):
 #: per set; serial minimum of three fresh processes through the lane's run_twin
 #: [measured 2026-09-18: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=55d451b670949c2dc9d2ab7bc678f33f21094bd2].
-BUDGET = 31091
+#: RE-PINNED 2026-09-21, 31091 to 31451 (+360), the sixty libraries derived in
+#: MeTTa landed with merge 97763e7fa eight hours after the previous pin
+#: 55d451b67, so every example importing one now pays a MeTTa derivation where
+#: it paid a Prolog body instead, which the 2026-09-14 ruling accepts
+#: explicitly as the price of a library that survives the engine swap [measured
+#: 2026-09-21: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+BUDGET = 31451

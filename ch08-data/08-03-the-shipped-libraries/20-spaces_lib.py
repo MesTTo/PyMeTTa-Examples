@@ -101,4 +101,11 @@ def twin(m):
 #: --rounds 3 examples/ch08-data/08-03-the-shipped-libraries/20-spaces_lib.metta;
 #: fixture=lib_spaces at its functional commit, artifacts purged before the run;
 #: commit=a8b4bab6eb0bf1b42eb441e9145144cf91befa7d].
-BUDGET = 43720
+#: RE-PINNED 2026-09-21, 43720 to 44083 (+363), the sixty libraries derived in
+#: MeTTa landed with merge 97763e7fa eight hours after the previous pin
+#: 55d451b67, so every example importing one now pays a MeTTa derivation where
+#: it paid a Prolog body instead, which the 2026-09-14 ruling accepts
+#: explicitly as the price of a library that survives the engine swap [measured
+#: 2026-09-21: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+BUDGET = 44083

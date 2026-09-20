@@ -312,7 +312,14 @@ def twin(m):
 #: coefficient rows and Combinatorics retires its native probability provider
 #: [measured 2026-09-14: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=e1be99ea1c08f70444c1c35cada441e089777906].
-BUDGET = 1189061
+#: RE-PINNED 2026-09-21, 1189061 to 1189601 (+540), the sixty libraries derived
+#: in MeTTa landed with merge 97763e7fa eight hours after the previous pin
+#: 55d451b67, so every example importing one now pays a MeTTa derivation where
+#: it paid a Prolog body instead, which the 2026-09-14 ruling accepts
+#: explicitly as the price of a library that survives the engine swap [measured
+#: 2026-09-21: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+BUDGET = 1189601
 
 #: DIVERGED 2026-09-12, the example holds 1 atom the twin does not (1 =) and
 #: the twin holds 1 atom the example does not (1 =): the loop's tick helper is
@@ -339,4 +346,13 @@ BUDGET = 1189061
 #: [measured 2026-09-14: the two stored-atom surpluses, one fresh process per
 #: side; command=python extensions/python/tools/twin_coverage.py --repin;
 #: commit=e1be99ea1c08f70444c1c35cada441e089777906].
-DIVERGENCE = "f83935b8ba7f257b7ae5f2adf13fca236bcbbbf7035606cfdc5786ba386a0267"
+#: DIVERGED 2026-09-21, the example holds 5 atoms the twin does not (1 :, 4 =)
+#: and the twin holds 7 atoms the example does not (1 :, 4 =, 2 @python-
+#: callable): the sixty libraries derived in MeTTa landed with merge 97763e7fa
+#: eight hours after the previous pin 55d451b67, so every example importing one
+#: now pays a MeTTa derivation where it paid a Prolog body instead, which the
+#: 2026-09-14 ruling accepts explicitly as the price of a library that survives
+#: the engine swap [measured 2026-09-21: the two stored-atom surpluses, one
+#: fresh process per side; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+DIVERGENCE = "c7b14f8f47ab37b73864d216e444ba5e6354e2f12eafe15f00c190c1962daf2f"

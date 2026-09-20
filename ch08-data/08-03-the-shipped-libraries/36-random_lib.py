@@ -146,4 +146,11 @@ def twin(m):
 #: and native consumer is renewed [measured 2026-09-14: min-of-3 serial fresh
 #: processes; command=python extensions/python/tools/twin_coverage.py --repin;
 #: commit=c7bacead4feb29b9761d026b52b952e91b26b10b].
-BUDGET = 1150796
+#: RE-PINNED 2026-09-21, 1150796 to 1231749 (+80953), the sixty libraries
+#: derived in MeTTa landed with merge 97763e7fa eight hours after the previous
+#: pin 55d451b67, so every example importing one now pays a MeTTa derivation
+#: where it paid a Prolog body instead, which the 2026-09-14 ruling accepts
+#: explicitly as the price of a library that survives the engine swap [measured
+#: 2026-09-21: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+BUDGET = 1231749

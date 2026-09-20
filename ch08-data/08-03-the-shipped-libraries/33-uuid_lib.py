@@ -127,4 +127,11 @@ def twin(m):
 #: malformed codec classification preserves all unrelated exceptions [measured
 #: 2026-09-14: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=8fe20f1bdcde1af8b3e1753c545924f978246dba].
-BUDGET = 1291086
+#: RE-PINNED 2026-09-21, 1291086 to 1398748 (+107662), the sixty libraries
+#: derived in MeTTa landed with merge 97763e7fa eight hours after the previous
+#: pin 55d451b67, so every example importing one now pays a MeTTa derivation
+#: where it paid a Prolog body instead, which the 2026-09-14 ruling accepts
+#: explicitly as the price of a library that survives the engine swap [measured
+#: 2026-09-21: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+BUDGET = 1398748

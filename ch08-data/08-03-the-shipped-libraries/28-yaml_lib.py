@@ -168,7 +168,14 @@ def twin(m):
 #: consumers are measured after the provider change [measured 2026-09-14: min-
 #: of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=118b805aedbee6de22be4f6131d97c3d6b9156de].
-BUDGET = 201983
+#: RE-PINNED 2026-09-21, 201983 to 510171 (+308188), the sixty libraries
+#: derived in MeTTa landed with merge 97763e7fa eight hours after the previous
+#: pin 55d451b67, so every example importing one now pays a MeTTa derivation
+#: where it paid a Prolog body instead, which the 2026-09-14 ruling accepts
+#: explicitly as the price of a library that survives the engine swap [measured
+#: 2026-09-21: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+BUDGET = 510171
 
 #: DIVERGED 2026-09-12, the example holds 1 atom the twin does not (1 =) and
 #: the twin holds 1 atom the example does not (1 =): the scope function is four
@@ -177,4 +184,13 @@ BUDGET = 201983
 #: answer are the same [measured 2026-09-12: the two stored-atom surpluses, one
 #: fresh process per side; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=672e5be181839a8301ba70bc6ead69678f3735bd].
-DIVERGENCE = "8d664a1d907fafd4ac83a17261b96171d51aa90af16e18a69b69d77337a2fb6a"
+#: DIVERGED 2026-09-21, the example holds 1 atom the twin does not (1 =) and
+#: the twin holds 1 atom the example does not (1 =): the sixty libraries
+#: derived in MeTTa landed with merge 97763e7fa eight hours after the previous
+#: pin 55d451b67, so every example importing one now pays a MeTTa derivation
+#: where it paid a Prolog body instead, which the 2026-09-14 ruling accepts
+#: explicitly as the price of a library that survives the engine swap [measured
+#: 2026-09-21: the two stored-atom surpluses, one fresh process per side;
+#: command=python extensions/python/tools/twin_coverage.py --repin;
+#: commit=WORKTREE].
+DIVERGENCE = "8b4d30c744227b013138e72eb94d49d7763894e339225c370fe00460a902df9f"
