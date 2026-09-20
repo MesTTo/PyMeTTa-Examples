@@ -131,11 +131,20 @@ def twin(m):
 #: and under the gate's concurrent lanes, wt-battery-2 ai-full-
 #: gate-10da82e4a.log, ai-full-gate-19fdb0b86.log, ai-lanes-exports-back.log;
 #: commit=1ccbb142315d16a719807cd2c9754e4a2fcefdf1].
+#: RE-OBSERVED 2026-09-21 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 5157302..5178578 to 3808780..3808780
+#: over 10 observations: the corpus grew from 294 examples to 323 with the
+#: merge that derived sixty libraries in MeTTa (97763e7fa), and an empirical
+#: envelope is a claim about ONE scheduler's protocol, so the earlier
+#: observations could not license this one; these ten are this tree's own and
+#: are not pooled with that run [measured 2026-09-21: ten full-lane
+#: observations; command=python extensions/python/tools/twin_coverage.py
+#: --observe --rounds 10; commit=WORKTREE].
 BUDGET = {
-    "minimum": 5157302,
-    "maximum": 5178578,
-    "observations": 11,
-    "protocol": "full-lane/294/workers=32/file-search-cache-time=9223372036854775807/before-boot"
+    "minimum": 3808780,
+    "maximum": 3808780,
+    "observations": 10,
+    "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 #: OVERRUN 2026-09-19, 5078082 to 5085304 (+7222): the twin costs 5178578
 #: against the example's 83025 and a ceiling of 5171356 with the earlier

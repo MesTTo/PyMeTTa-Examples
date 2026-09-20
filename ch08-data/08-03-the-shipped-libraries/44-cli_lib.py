@@ -163,4 +163,12 @@ def twin(m):
 #: explicitly as the price of a library that survives the engine swap [measured
 #: 2026-09-21: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
-BUDGET = 477457
+#: RE-PINNED 2026-09-21, 477457 to 479123 (+1666), this library gained an
+#: error:has_type/2 clause for its own cli_value type and its vendored parser
+#: now tests a declared default with is_of_type/2 instead of negating
+#: must_be/2, which closed eight development-build failures; the extra clause
+#: is consulted once per declared option, and the pin it moves past was
+#: measured before that change [measured 2026-09-21: min-of-3 serial fresh
+#: processes; command=python extensions/python/tools/twin_coverage.py --repin;
+#: commit=WORKTREE].
+BUDGET = 479123

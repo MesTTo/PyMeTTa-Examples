@@ -484,11 +484,20 @@ def twin(m):
 #: schedule-bound work under the same 294-wide protocol [measured 2026-09-19:
 #: python extensions/python/tools/twin_coverage.py --observe --rounds 10, ai-
 #: observe-remedy.log; commit=32335687084e4d8ad43cf8800f2dedce707fa137].
+#: RE-OBSERVED 2026-09-21 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 309915..336432 to 707107..738987 over
+#: 10 observations: the corpus grew from 294 examples to 323 with the merge
+#: that derived sixty libraries in MeTTa (97763e7fa), and an empirical envelope
+#: is a claim about ONE scheduler's protocol, so the earlier observations could
+#: not license this one; these ten are this tree's own and are not pooled with
+#: that run [measured 2026-09-21: ten full-lane observations; command=python
+#: extensions/python/tools/twin_coverage.py --observe --rounds 10;
+#: commit=WORKTREE].
 BUDGET = {
-    "minimum": 309915,
-    "maximum": 336432,
+    "minimum": 707107,
+    "maximum": 738987,
     "observations": 10,
-    "protocol": "full-lane/294/workers=32/file-search-cache-time=9223372036854775807/before-boot"
+    "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 
 #: OVERRUN 2026-09-07, 251100: it spins 300,000 inferences where the example

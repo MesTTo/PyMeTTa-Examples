@@ -117,11 +117,20 @@ def twin(m):
 #: and under the gate's concurrent lanes, wt-battery-2 ai-full-
 #: gate-10da82e4a.log, ai-full-gate-19fdb0b86.log, ai-lanes-exports-back.log;
 #: commit=1ccbb142315d16a719807cd2c9754e4a2fcefdf1].
+#: RE-OBSERVED 2026-09-21 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 8598216..8620104 to 6682577..6682577
+#: over 10 observations: the corpus grew from 294 examples to 323 with the
+#: merge that derived sixty libraries in MeTTa (97763e7fa), and an empirical
+#: envelope is a claim about ONE scheduler's protocol, so the earlier
+#: observations could not license this one; these ten are this tree's own and
+#: are not pooled with that run [measured 2026-09-21: ten full-lane
+#: observations; command=python extensions/python/tools/twin_coverage.py
+#: --observe --rounds 10; commit=WORKTREE].
 BUDGET = {
-    "minimum": 8598216,
-    "maximum": 8620104,
-    "observations": 11,
-    "protocol": "full-lane/294/workers=32/file-search-cache-time=9223372036854775807/before-boot"
+    "minimum": 6682577,
+    "maximum": 6682577,
+    "observations": 10,
+    "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 OVERRUN = 8407909
 
