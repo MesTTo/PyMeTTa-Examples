@@ -213,17 +213,6 @@ def twin(m):
 #: file_search_cache_time=9223372036854775807 set before child boot [measured
 #: 2026-09-18: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=6944d06ce96fdbcd1faefb640f15dbfa0cf286dd].
-#: OVERRUN 2026-09-18, 0 to 151 (+151): the twin costs 6064 against the
-#: example's 5376 and a ceiling of 5914 with the earlier declaration; a minimal
-#: twin of this example costs 5767, inside the 5914 the band alone allows, so
-#: the distance is this twin's own program. The landings the point re-pin names
-#: moved this twin and its example apart: the compiled call law and the one
-#: codec at the grounded call charge the twin's Python-side crossings, which
-#: the example never pays, and the runnable cache's dependency index written by
-#: the producer took most of that back on the branch tip f06186a96 [measured
-#: 2026-09-18: one fresh process per side through the lane's run_example and
-#: run_twin, the floor from a minimal twin built by the probe; command=python
-#: extensions/python/benchmarks/probes/twin_floor.py; commit=6944d06ce96fdbcd1faefb640f15dbfa0cf286dd].
 #: RE-PINNED 2026-09-18, 6064 to 5976 (-88), the trunk merged (f97c4b0a3,
 #: petta's 61 commits since c75181adc) with the definition batch's load pushed
 #: as the running load (2da1155e3): every example moved with the engine, 279 of
@@ -236,4 +225,3 @@ def twin(m):
 #: [measured 2026-09-18: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=55d451b670949c2dc9d2ab7bc678f33f21094bd2].
 BUDGET = 5976
-OVERRUN = 151

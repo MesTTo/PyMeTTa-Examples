@@ -419,14 +419,6 @@ BUDGET = 169853
 #: under the twin. Measured 50837 against a ceiling of 50836 [measured
 #: 2026-09-09: python extensions/python/tools/twin_coverage.py, one full-lane
 #: run on this tree; commit=5f8a823d23fbed5c7395912a89ba32760e2df4b1].
-#: OVERRUN 2026-09-10, 4071 to 4236: The existing program is priced after the
-#: reference census, ordered catalog reads and source-scoped translation
-#: work. It costs 51485 against the unchanged band and authoring ceiling of
-#: 47249.1. The literal structured control costs 45948; it measures that
-#: encoding only. [measured 2026-09-10: one fresh process per side;
-#: command=python extensions/python/benchmarks/probes/twin_floor.py
-#: examples/ch18-performance/18-02-memoisation-and-tabling/09-tabling_fib.metta;
-#: commit=90ba93eb8f6e98ebfefc55416859bf13de6a8427].
 #: RE-PRICED 2026-09-11, 4236 to 4237 (+1): the band stopped granting the
 #: first-definition premium (DEFINITION_WARMUP 1482 to 303, DEFINITION_COST
 #: 1364 to 1362, re-derived 2026-09-11 from the authoring probe's one-line
@@ -437,7 +429,6 @@ BUDGET = 169853
 #: plus 1 times 1362 plus the declared 4236) [measured 2026-09-11: sh check.sh
 #: twins on the merged tree after the twin re-pin; command=python
 #: extensions/python/tools/twin_coverage.py; commit=57f84148ba2684015f052d533f3197eca07b1f7b].
-OVERRUN = 4237
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 :): a Python annotation IS a (:

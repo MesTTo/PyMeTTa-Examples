@@ -336,14 +336,6 @@ def twin(m):
 #: file_search_cache_time=9223372036854775807 set before child boot [measured
 #: 2026-09-11: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=57f84148ba2684015f052d533f3197eca07b1f7b].
-#: OVERRUN 2026-09-11, 636: the band stopped granting the first-definition
-#: premium (DEFINITION_WARMUP 1482 to 303, DEFINITION_COST 1364 to 1362, re-
-#: derived 2026-09-11 from the authoring probe's one-line fixture, which no
-#: longer pays it after the binding's boot import), and this twin still pays 636 of it: the first use of the lowering paths its 2 definitions take, which
-#: the fixture's `return x + 1` does not exercise. Measured 10172 against a
-#: ceiling of 9537 (5918 times 1.1 plus 303 once plus 2 times 1362) [measured
-#: 2026-09-11: sh check.sh twins on the merged tree after the twin re-pin;
-#: command=python extensions/python/tools/twin_coverage.py; commit=57f84148ba2684015f052d533f3197eca07b1f7b].
 #: RE-PINNED 2026-09-18, 11369 to 10606 (-763), the branch's landings since the
 #: 09-10 pins, re-taken on the tip f06186a96: the compiled call law (e59104ace:
 #: an Atom argument enters as written, a Python object crosses as a value, a
@@ -378,7 +370,6 @@ def twin(m):
 #: 2026-09-21: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
 BUDGET = 10280
-OVERRUN = 636
 
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and

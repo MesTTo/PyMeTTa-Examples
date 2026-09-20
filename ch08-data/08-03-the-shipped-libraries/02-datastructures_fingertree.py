@@ -450,16 +450,3 @@ BUDGET = 326394
 #: command=python extensions/python/benchmarks/probes/twin_floor.py
 #: examples/ch08-data/08-03-the-shipped-libraries/02-datastructures_fingertree.metta;
 #: commit=90ba93eb8f6e98ebfefc55416859bf13de6a8427].
-#: OVERRUN 2026-09-18, 4101 to 4889 (+788): the twin costs 235077 against the
-#: example's 209262 and a ceiling of 234289 with the earlier declaration; a
-#: minimal twin of this example costs 212994, inside the 230188 the band alone
-#: allows, so the distance is this twin's own program. The landings the point
-#: re-pin names moved this twin and its example apart: the compiled call law
-#: and the one codec at the grounded call charge the twin's Python-side
-#: crossings, which the example never pays, and the runnable cache's dependency
-#: index written by the producer took most of that back on the branch tip
-#: f06186a96 [measured 2026-09-18: one fresh process per side through the
-#: lane's run_example and run_twin, the floor from a minimal twin built by the
-#: probe; command=python extensions/python/benchmarks/probes/twin_floor.py;
-#: commit=6944d06ce96fdbcd1faefb640f15dbfa0cf286dd].
-OVERRUN = 4889

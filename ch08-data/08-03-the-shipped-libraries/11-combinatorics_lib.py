@@ -381,12 +381,3 @@ BUDGET = 738402
 #: [measured 2026-09-09: one fresh process per side; command=python
 #: extensions/python/benchmarks/probes/twin_floor.py;
 #: commit=f26de01fbf3e0e3c64bb691c66a59fa959fee7f3].
-#: OVERRUN 2026-09-10, 3637 to 3945: The existing program is priced after the
-#: reference census, ordered catalog reads and source-scoped translation
-#: work. It costs 87974 against the unchanged band and authoring ceiling of
-#: 84029.0. The literal structured control costs 76429; it measures that
-#: encoding only. [measured 2026-09-10: one fresh process per side;
-#: command=python extensions/python/benchmarks/probes/twin_floor.py
-#: examples/ch08-data/08-03-the-shipped-libraries/11-combinatorics_lib.metta;
-#: commit=90ba93eb8f6e98ebfefc55416859bf13de6a8427].
-OVERRUN = 3945
