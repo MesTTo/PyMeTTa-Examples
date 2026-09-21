@@ -1,38 +1,86 @@
-<!--
-Purpose: state the answer and resource laws shared by the Python twin corpus.
-Guarantees: the fib depth divergence remains concrete, operational, and separate from answer equality.
-[tested: test_twin_docs_state_python_stack_engine_lco_and_answer_equality,
-test_twin_depth_divergence_is_operational_not_an_answer_difference; commit=ee43d4a0585593b4f40d0c3c0557db8214688829]
-Guarantees: the pricing block sits at the end of every twin and a re-pin appends there.
-[tested: test_twin_docs_state_where_the_pricing_block_lives,
-test_the_layout_check_passes_the_shipped_twins,
-test_a_repin_appends_below_the_code_and_rewrites_the_number;
-commit=845d851b7241ccea3b6a13f532172945bf6d8d9e]
--->
+# PyMeTTa by example
 
-# Where a twin's pricing lives
+Every file here is a **twin**: one MeTTa example from
+[the MeTTa corpus](https://github.com/MesTTo/MeTTa-Examples), written again in
+Python against PyMeTTa's surface. A twin proves every claim its original
+makes, and it does so with **no MeTTa source text** — no strings to parse, no
+s-expressions. So the pair answers a question prose cannot: given a thing
+MeTTa says one way, what does Python say?
 
-A twin reads: module docstring, imports, then the example. `BUDGET`, `RUNG` and
-the `#:` re-pin chain that documents them sit at the END of the file, and a
-re-pin APPENDS one more paragraph there. The chain never shrinks and every
-merge adds to it, so at the top it buried what the file is for:
-`basics/identity.py` opened with 297 comment lines before its first statement.
+```python
+"""examples/ch03-atoms-and-expressions/01-comments.metta in Python:
+a definition with comments in it."""
 
-Re-pin through the door rather than by hand, which is what put the chain on top
-in the first place:
 
-```sh
-python extensions/python/tools/twin_coverage.py --repin \
-    --reason "the mechanism that moved the count" examples/ch05-equations-and-evaluation/05-01-an-equation-is-a-rewrite/01-identity.metta
+def twin(m):
+    """Define a function of no arguments, then check what it answers."""
+    @m.define
+    def f():
+        return 42
+
+    assert f() == [42]
 ```
 
-It measures min-of-three in fresh processes, writes the paragraph under the
-existing chain, rewrites the number, and refuses a twin whose declarations are
-still above its code, an empirical envelope, or a move with no stated
-mechanism. The evidence tag it writes carries `commit=WORKTREE`, so
-`RELEASE=1 python tests/checks/check_evidence_tags.py` refuses a tree that ships one
-before the provenance pin.
+That is the whole shape. A twin is an ordinary Python program: it takes a
+space, uses the library, and asserts. There is no framework to learn.
 
-# Twin depth and fuel
+## Running them
 
-Every Python twin states the same answer claim as its paired `examples/` program, but the two routes need not spend the same execution resource. In `basics/fib.py`, `fib.py(n)` recurses on Python's stack and is bounded by `sys.getrecursionlimit()`, while the compiled equation runs with the engine's last-call optimization (LCO) and spends `max-stack-depth` reduction fuel instead of Python frames. With the test-set recursion limit of 80, both routes answer 55 at `n=10`; at `n=100`, `.py` raises `RecursionError` while the engine answers 354224848179261915075. Whenever both routes finish, they must answer the same value, so this is an operational depth divergence and never an answer divergence.
+```sh
+python extensions/python/tools/twin_coverage.py     # every twin, against every original
+```
+
+The lane runs each example and its twin and compares what they answer, so a
+twin cannot drift from the program it mirrors without the lane going red.
+
+## Reading order
+
+Directory names are the reading order, so a listing is the index:
+
+```text
+ch07-control-flow/07-02-case/03-caseconstrain.py
+^chapter          ^section   ^order within the section
+```
+
+Chapter and section numbers match the MeTTa corpus exactly, so
+`ch07-control-flow/07-02-case/03-caseconstrain.py` is the twin of
+`examples/ch07-control-flow/07-02-case/03-caseconstrain.metta`. Read them side
+by side.
+
+**If you are an LLM, read [llms.txt](../../../../llms.txt)** for the whole
+surface with exact return shapes, rather than inferring it from here.
+
+## What is covered
+
+323 twins across eighteen chapters. Chapters 1, 2, 13 and 21 of the MeTTa
+corpus have no twins yet: they are installation, a first program, the shell,
+and the TypeScript seat, and none of those are about the Python surface.
+
+| chapter | twins | what you learn to write in Python |
+|---|---|---|
+| `ch03-atoms-and-expressions` | 6 | Atoms as Python values: symbols, strings that stay values rather than structure, how an atom prints, and what reading a form gives you. |
+| `ch04-spaces-and-matching` | 19 | A space as the thing a program lives in, across two sections: what a write makes visible to a later match, and how a pattern's shape — not its names — selects. |
+| `ch05-equations-and-evaluation` | 26 | Equations as rewrites, in four sections: defining and redefining, source order, partial definitions, the number library, and arithmetic that runs backwards. |
+| `ch06-many-answers` | 10 | Nondeterminism as ordinary Python iteration: superposition, branches that answer nothing, and collapsing many answers into one. |
+| `ch07-control-flow` | 42 | Control as values, in five sections: `if` and booleans, `case`, `let` and sequencing, bounded and committed searches, and recursion. |
+| `ch08-data` | 70 | The largest chapter, in three sections: atoms, lists and folds; sequence variables; and the shipped libraries exercised from Python. |
+| `ch09-types` | 21 | What a type is, where it lives, what a signature does, and how the output type decides a call. |
+| `ch10-errors-and-refusals` | 2 | Errors as data rather than exceptions, and raising one deliberately. |
+| `ch11-python-as-a-notation` | 7 | The seam itself: the five names for it, booleans crossing, importing a `.py`, and NumPy arriving through it. |
+| `ch12-testing` | 4 | The assertion family, equality against reduction, and the answer bags a failing comparison hands back. |
+| `ch14-seeing-your-program` | 2 | Bounds, time and pragmas, and reading the clock and the command line. |
+| `ch15-writing-transactions-and-worlds` | 6 | A counter five threads share, state cells as values, hooks at the write door, and admission pools. |
+| `ch16-events-and-standing-queries` | 1 | The event layer's own declarations. |
+| `ch17-concurrency-and-the-loop` | 12 | Threads through `lib_thread`, the two blocking binds, and branches running on real threads. |
+| `ch18-performance` | 20 | Two sections: larger workloads — a million atoms, million-step kernels — and memoisation and tabling. |
+| `ch19-spaces-backed-by-anything` | 10 | Four sections: spaces of your own (inherited, restricted, parametric), a space in C, a builtin in C, and a space on MORK. |
+| `ch20-extending-the-engine` | 38 | Six sections: translator rules, MeTTa written in MeTTa, the Prolog underneath, modules and the catalog, files and processes, and tokens and the reader. |
+| `ch22-a-reasoner-you-can-serve` | 27 | Three sections: logic programs, weighted answers, and search — up to a dependently-typed backward chainer. |
+
+## Where a twin cannot follow
+
+Some things MeTTa says have no Python spelling yet. A twin never fakes one:
+what it cannot say becomes an entry in [`residue.json`](residue.json), naming
+the missing spelling and the work it waits on. The backlog derives itself from
+the corpus rather than being maintained by hand, so this directory is also the
+honest measure of how much of MeTTa Python can currently express.
