@@ -174,7 +174,7 @@ def twin(m):
 #: where it paid a Prolog body instead, which the 2026-09-14 ruling accepts
 #: explicitly as the price of a library that survives the engine swap [measured
 #: 2026-09-21: min-of-3 serial fresh processes; command=python
-#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+#: extensions/python/tools/twin_coverage.py --repin; commit=6e09cb25d5495c2db3283166e6ce4e07eefecfb2].
 BUDGET = 510171
 
 #: DIVERGED 2026-09-12, the example holds 1 atom the twin does not (1 =) and
@@ -192,5 +192,5 @@ BUDGET = 510171
 #: explicitly as the price of a library that survives the engine swap [measured
 #: 2026-09-21: the two stored-atom surpluses, one fresh process per side;
 #: command=python extensions/python/tools/twin_coverage.py --repin;
-#: commit=WORKTREE].
+#: commit=6e09cb25d5495c2db3283166e6ce4e07eefecfb2].
 DIVERGENCE = "8b4d30c744227b013138e72eb94d49d7763894e339225c370fe00460a902df9f"

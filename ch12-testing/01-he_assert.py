@@ -386,7 +386,7 @@ RUNG = "the assert family is this file's subject, so each claim names one of its
 #: it paid a Prolog body instead, which the 2026-09-14 ruling accepts
 #: explicitly as the price of a library that survives the engine swap [measured
 #: 2026-09-21: min-of-3 serial fresh processes; command=python
-#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+#: extensions/python/tools/twin_coverage.py --repin; commit=6e09cb25d5495c2db3283166e6ce4e07eefecfb2].
 BUDGET = 42462
 
 #: RE-PINNED 2026-09-08, 17475 to 17843 (+368), The engine and library

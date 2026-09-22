@@ -296,5 +296,5 @@ RUNG = "the imported add-reduct equation and its stored body are the subject"
 #: it paid a Prolog body instead, which the 2026-09-14 ruling accepts
 #: explicitly as the price of a library that survives the engine swap [measured
 #: 2026-09-21: min-of-3 serial fresh processes; command=python
-#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+#: extensions/python/tools/twin_coverage.py --repin; commit=6e09cb25d5495c2db3283166e6ce4e07eefecfb2].
 BUDGET = 32214

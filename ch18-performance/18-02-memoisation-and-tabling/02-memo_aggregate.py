@@ -390,7 +390,7 @@ def twin(m):
 #: it paid a Prolog body instead, which the 2026-09-14 ruling accepts
 #: explicitly as the price of a library that survives the engine swap [measured
 #: 2026-09-21: min-of-3 serial fresh processes; command=python
-#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+#: extensions/python/tools/twin_coverage.py --repin; commit=6e09cb25d5495c2db3283166e6ce4e07eefecfb2].
 BUDGET = 27176
 #: OVERRUN 2026-09-09, 0 to 1089 (+1089): a library's Prolog half compiles
 #: beside itself on its first import and loads from the artifact after

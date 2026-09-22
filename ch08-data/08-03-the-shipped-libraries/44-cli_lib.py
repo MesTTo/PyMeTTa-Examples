@@ -162,7 +162,7 @@ def twin(m):
 #: it paid a Prolog body instead, which the 2026-09-14 ruling accepts
 #: explicitly as the price of a library that survives the engine swap [measured
 #: 2026-09-21: min-of-3 serial fresh processes; command=python
-#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+#: extensions/python/tools/twin_coverage.py --repin; commit=6e09cb25d5495c2db3283166e6ce4e07eefecfb2].
 #: RE-PINNED 2026-09-21, 477457 to 479123 (+1666), this library gained an
 #: error:has_type/2 clause for its own cli_value type and its vendored parser
 #: now tests a declared default with is_of_type/2 instead of negating
@@ -170,5 +170,5 @@ def twin(m):
 #: is consulted once per declared option, and the pin it moves past was
 #: measured before that change [measured 2026-09-21: min-of-3 serial fresh
 #: processes; command=python extensions/python/tools/twin_coverage.py --repin;
-#: commit=WORKTREE].
+#: commit=8d2e8bb94da53a1a35c79d440cc09ef56f46153e].
 BUDGET = 479123

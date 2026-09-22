@@ -492,7 +492,7 @@ def twin(m):
 #: not license this one; these ten are this tree's own and are not pooled with
 #: that run [measured 2026-09-21: ten full-lane observations; command=python
 #: extensions/python/tools/twin_coverage.py --observe --rounds 10;
-#: commit=WORKTREE].
+#: commit=8d2e8bb94da53a1a35c79d440cc09ef56f46153e].
 #: RE-OBSERVED 2026-09-21 under 'full-lane/323/workers=32/file-search-cache-
 #: time=9223372036854775807/before-boot', 707107..738987 to 706513..1232095
 #: over 20 observations: ten observations did not cover the tail of an example
@@ -502,7 +502,7 @@ def twin(m):
 #: invented allowance, so the only lawful way to cover a tail is to observe it
 #: [measured 2026-09-21: twenty full-lane observations; command=python
 #: extensions/python/tools/twin_coverage.py --observe --rounds 10;
-#: commit=WORKTREE].
+#: commit=43e964002671a680825823b7ab4c1020de20f651].
 BUDGET = {
     "minimum": 706513,
     "maximum": 1232095,
