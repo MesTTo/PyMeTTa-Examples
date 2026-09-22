@@ -143,6 +143,25 @@ is `[X, Y](f: Callable[[X], Y], x: X) -> Y`. The last claim goes the other
 way, asking the engine for a type and binding the answer: `V.result` is a
 variable, `m.solve` unifies, and `.result` reads that binding off by name.
 
+## Depth is operational, answers are not
+
+A twin states the same answer claim as its MeTTa original, but the two routes
+need not spend the same execution resource. `fib.py(n)` recurses on Python's
+stack and is bounded by `sys.getrecursionlimit()`, while the compiled equation
+runs under the engine's last-call optimization (LCO) and spends reduction fuel
+rather than Python frames.
+
+The two therefore part company on DEPTH and never on the answer. Under a
+recursion limit of 80 both routes agree for every `n` up to 20; at `n=100`,
+`fib.py` raises `RecursionError` while the engine answers
+354224848179261915075. Whenever both routes finish, they must answer the same
+value, so a depth divergence is an operational fact about the route and never
+a disagreement about what the program means.
+
+That is executed rather than asserted here: `test_docs_law.py`'s
+`test_twin_depth_divergence_is_operational_not_an_answer_difference` builds
+the probe, drops the limit and requires both halves.
+
 ## Running them
 
 ```sh
