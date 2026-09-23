@@ -268,9 +268,22 @@ def twin(m):
 #: and are not pooled with the earlier ones [measured 2026-09-24: 20 full-lane
 #: observations; command=python extensions/python/tools/twin_coverage.py
 #: --observe --rounds 20; commit=0a81c782fd6ba00984c36e58e228f73bca810dee].
+#: RE-OBSERVED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 535057..536000 to 543250..543251 over
+#: 20 observations: the tree moved under this envelope: 0847c3d4c decides the
+#: http capability, seven libraries, on its first read (+2,160), 984eabe23
+#: keeps the verdict in a flag under a mutex (+40), lib 2126ab6 loads
+#: native_install.pl (+629), and lib a792976 loads lib_http's platform
+#: libraries through the census and refuses per call (+2,182), the four
+#: measured by reverting each and together moving the twin by 8,194; an
+#: empirical envelope is a claim about one scheduler's protocol on one tree, so
+#: these observations are this tree's own and are not pooled with the earlier
+#: ones [measured 2026-09-24: 20 full-lane observations, two runs of ten on one
+#: battery tree; command=python extensions/python/tools/twin_coverage.py
+#: --observe --rounds 10; commit=d832d20e8edfdad28ad52815757ba9e685ad2de3].
 BUDGET = {
-    "minimum": 535057,
-    "maximum": 536000,
+    "minimum": 543250,
+    "maximum": 543251,
     "observations": 20,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
