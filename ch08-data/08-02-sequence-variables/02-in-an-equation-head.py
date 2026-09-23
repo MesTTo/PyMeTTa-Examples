@@ -238,4 +238,13 @@ def twin(m):
 #: explicitly as the price of a library that survives the engine swap [measured
 #: 2026-09-21: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=6e09cb25d5495c2db3283166e6ce4e07eefecfb2].
-BUDGET = 20216
+#: RE-PINNED 2026-09-24, 20216 to 20204 (-12), placed on the full-configuration
+#: first-parent ladder from the pin commit 6e09cb25d: 814b99468 retains a self-
+#: call's function_view dependency, so a recursive body is rebuilt as a caller
+#: of its own function whenever an arriving equation changes that view (fib's
+#: rebuilds 1 to 2 and newtons_method's energy 2 to 4, each reached from
+#: spaces:add_function_atom/7 through lib_memo's automatic reconcile), the fix
+#: that took lib_statistics and lib_random to green [measured 2026-09-24: min-
+#: of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+BUDGET = 20204

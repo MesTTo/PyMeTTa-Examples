@@ -381,7 +381,30 @@ def twin(m):
 #: explicitly as the price of a library that survives the engine swap [measured
 #: 2026-09-21: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=6e09cb25d5495c2db3283166e6ce4e07eefecfb2].
-BUDGET = 8390
+#: RE-PINNED 2026-09-24, 8390 to 8406 (+16), placed on the full-configuration
+#: first-parent ladder from the pin commit 6e09cb25d: the 120 commits
+#: 43e964002..c09dc4868, where the per-commit probe sweep puts each step at one
+#: commit: 5b4e7e53d reads a translator rule's declared type where the rule
+#: lives; aea2e5e03 and 6922f54c9 carry the csv and lib_file refusal
+#: vocabulary; d27805154 carries lib 19a231b, whose regenerated faces declare
+#: six libraries' inputs %Undefined%, so their calls stop paying a declared-
+#: type check (vector_lib -7278, statistics_lib -6453); 33219ffa0 resolves a
+#: bare library name to its pkg.metta; 0cd329450 adds the platform refusal
+#: kind, one metta_refusal_declaration/4 row that metta_catalog_preset/1 turns
+#: into one more (refusal ...) catalog row and one more refusal-kind vocabulary
+#: member, measured at +10 to +15 on most twins; and d8231f103 refuses a
+#: library spec that walks out of the library root; a7955cd07 carried lib
+#: 629c86c, the library split, which moved every library's surface out of its
+#: pkg.metta manifest into lib.metta beside it, so an import reads the manifest
+#: and then imports the library's own source as a second file; 54784fded reads
+#: the builtin type surface from every .metta in lib_builtin_types' directory,
+#: which restored the 195 builtin cost rows the split's manifest-only read had
+#: dropped; where a twin's move exceeds these steps, the remainder is drift
+#: that stayed inside its band (four inferences, or its own declared allowance)
+#: on every other interval [measured 2026-09-24: min-of-3 serial fresh
+#: processes; command=python extensions/python/tools/twin_coverage.py --repin;
+#: commit=WORKTREE].
+BUDGET = 8406
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 :): a Python annotation IS a (:

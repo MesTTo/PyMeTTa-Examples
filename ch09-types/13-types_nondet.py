@@ -416,7 +416,44 @@ def twin(m):
 #: explicitly as the price of a library that survives the engine swap [measured
 #: 2026-09-21: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=6e09cb25d5495c2db3283166e6ce4e07eefecfb2].
-BUDGET = 16017
+#: RE-PINNED 2026-09-24, 16017 to 16000 (-17), placed on the full-configuration
+#: first-parent ladder from the pin commit 6e09cb25d: the 120 commits
+#: 43e964002..c09dc4868, where the per-commit probe sweep puts each step at one
+#: commit: 5b4e7e53d reads a translator rule's declared type where the rule
+#: lives; aea2e5e03 and 6922f54c9 carry the csv and lib_file refusal
+#: vocabulary; d27805154 carries lib 19a231b, whose regenerated faces declare
+#: six libraries' inputs %Undefined%, so their calls stop paying a declared-
+#: type check (vector_lib -7278, statistics_lib -6453); 33219ffa0 resolves a
+#: bare library name to its pkg.metta; 0cd329450 adds the platform refusal
+#: kind, one metta_refusal_declaration/4 row that metta_catalog_preset/1 turns
+#: into one more (refusal ...) catalog row and one more refusal-kind vocabulary
+#: member, measured at +10 to +15 on most twins; and d8231f103 refuses a
+#: library spec that walks out of the library root; 814b99468 retains a self-
+#: call's function_view dependency, so a recursive body is rebuilt as a caller
+#: of its own function whenever an arriving equation changes that view (fib's
+#: rebuilds 1 to 2 and newtons_method's energy 2 to 4, each reached from
+#: spaces:add_function_atom/7 through lib_memo's automatic reconcile), the fix
+#: that took lib_statistics and lib_random to green; 6167a0fb2 makes import
+#: currency transitive: each nested load records an import_nested_source/3 edge
+#: to every import still in flight above it, and a cached import answers
+#: current only when every nested receipt does; the 20 commits
+#: 6167a0fb2..864c4bac0, where the sweep puts the probes' only step at
+#: e1acacad2, which clears a space's import bookkeeping from the module that
+#: owns it; the commits 63fc952ac..8d45268e3, which the ladder did not split;
+#: their runtime changes are 31c0afd8a (the host refusal's message), 7472c4907,
+#: which marks a module's reference face dirty instead of walking its forward
+#: closure, so support_stabilize/3 walks the face's dependents only when the
+#: recomputed value moved and an event that changes nothing recompiles no
+#: caller, 7054c11f7, which carries lib 62ca61c's bisecting bit length in
+#: _support/statistics.metta, and the Python-seat pointers; da91bc244 confines
+#: an exact removal's selection to its own atom: native_retract_one/2 now
+#: records the selected clause's head, a clause/3 lookup per exact removal, and
+#: checks each removal made while the selector is live against it, a few
+#: inferences per removal (+8 on most twins, +24 to +192 on the library twins
+#: that withdraw package rows) [measured 2026-09-24: min-of-3 serial fresh
+#: processes; command=python extensions/python/tools/twin_coverage.py --repin;
+#: commit=WORKTREE].
+BUDGET = 16000
 
 #: DIVERGED 2026-09-07, the example holds 1 atom the twin does not (1 =) and
 #: the twin holds 2 the example does not (1 =, 1 @doc): the twin is an ordinary

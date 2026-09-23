@@ -199,7 +199,26 @@ def twin(m):
 #: explicitly as the price of a library that survives the engine swap [measured
 #: 2026-09-21: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=6e09cb25d5495c2db3283166e6ce4e07eefecfb2].
-BUDGET = 15123
+#: RE-PINNED 2026-09-24, 15123 to 20937 (+5814), placed on the full-
+#: configuration first-parent ladder from the pin commit 6e09cb25d: a7955cd07
+#: carried lib 629c86c, the library split, which moved every library's surface
+#: out of its pkg.metta manifest into lib.metta beside it, so an import reads
+#: the manifest and then imports the library's own source as a second file;
+#: 54784fded reads the builtin type surface from every .metta in
+#: lib_builtin_types' directory, which restored the 195 builtin cost rows the
+#: split's manifest-only read had dropped; 63b910f4f added a clause to
+#: metta_reference_internal/2 that asks the specializer's ho_specialization/3
+#: registry, so every reference grade a load computes pays that lookup, which
+#: is how defined-name, documented and undocumented stopped reporting
+#: specializer residues; d6e09995c retires a load's package rows from every
+#: space but its library home after package_load/3, withdrawing each through
+#: metta_remove_atom_reference/1, which uncompiles the row's equation, so every
+#: import into an importing space pays that withdrawal; where a twin's move
+#: exceeds these steps, the remainder is drift that stayed inside its band
+#: (four inferences, or its own declared allowance) on every other interval
+#: [measured 2026-09-24: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+BUDGET = 20937
 #: The count VARIES by a few tens, because every read and write crosses a
 #: socket and the subscription thread's own work lands in the same counter.
 #: Three single-round measurements on this branch gave 113484, 113469 and

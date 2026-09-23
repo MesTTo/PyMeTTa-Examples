@@ -270,4 +270,36 @@ def twin(m):
 #: explicitly as the price of a library that survives the engine swap [measured
 #: 2026-09-21: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=6e09cb25d5495c2db3283166e6ce4e07eefecfb2].
-BUDGET = 29590
+#: RE-PINNED 2026-09-24, 29590 to 33458 (+3868), placed on the full-
+#: configuration first-parent ladder from the pin commit 6e09cb25d: a7955cd07
+#: carried lib 629c86c, the library split, which moved every library's surface
+#: out of its pkg.metta manifest into lib.metta beside it, so an import reads
+#: the manifest and then imports the library's own source as a second file;
+#: 54784fded reads the builtin type surface from every .metta in
+#: lib_builtin_types' directory, which restored the 195 builtin cost rows the
+#: split's manifest-only read had dropped; 63b910f4f added a clause to
+#: metta_reference_internal/2 that asks the specializer's ho_specialization/3
+#: registry, so every reference grade a load computes pays that lookup, which
+#: is how defined-name, documented and undocumented stopped reporting
+#: specializer residues; 814b99468 retains a self-call's function_view
+#: dependency, so a recursive body is rebuilt as a caller of its own function
+#: whenever an arriving equation changes that view (fib's rebuilds 1 to 2 and
+#: newtons_method's energy 2 to 4, each reached from spaces:add_function_atom/7
+#: through lib_memo's automatic reconcile), the fix that took lib_statistics
+#: and lib_random to green; d6e09995c retires a load's package rows from every
+#: space but its library home after package_load/3, withdrawing each through
+#: metta_remove_atom_reference/1, which uncompiles the row's equation, so every
+#: import into an importing space pays that withdrawal; 6167a0fb2 makes import
+#: currency transitive: each nested load records an import_nested_source/3 edge
+#: to every import still in flight above it, and a cached import answers
+#: current only when every nested receipt does; da91bc244 confines an exact
+#: removal's selection to its own atom: native_retract_one/2 now records the
+#: selected clause's head, a clause/3 lookup per exact removal, and checks each
+#: removal made while the selector is live against it, a few inferences per
+#: removal (+8 on most twins, +24 to +192 on the library twins that withdraw
+#: package rows); where a twin's move exceeds these steps, the remainder is
+#: drift that stayed inside its band (four inferences, or its own declared
+#: allowance) on every other interval [measured 2026-09-24: min-of-3 serial
+#: fresh processes; command=python extensions/python/tools/twin_coverage.py
+#: --repin; commit=WORKTREE].
+BUDGET = 33458

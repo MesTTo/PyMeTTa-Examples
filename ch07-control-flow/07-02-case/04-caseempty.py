@@ -358,4 +358,24 @@ def twin(m):
 #: explicitly as the price of a library that survives the engine swap [measured
 #: 2026-09-21: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=6e09cb25d5495c2db3283166e6ce4e07eefecfb2].
-BUDGET = 5137
+#: RE-PINNED 2026-09-24, 5137 to 5144 (+7), placed on the full-configuration
+#: first-parent ladder from the pin commit 6e09cb25d: the 120 commits
+#: 43e964002..c09dc4868, where the per-commit probe sweep puts each step at one
+#: commit: 5b4e7e53d reads a translator rule's declared type where the rule
+#: lives; aea2e5e03 and 6922f54c9 carry the csv and lib_file refusal
+#: vocabulary; d27805154 carries lib 19a231b, whose regenerated faces declare
+#: six libraries' inputs %Undefined%, so their calls stop paying a declared-
+#: type check (vector_lib -7278, statistics_lib -6453); 33219ffa0 resolves a
+#: bare library name to its pkg.metta; 0cd329450 adds the platform refusal
+#: kind, one metta_refusal_declaration/4 row that metta_catalog_preset/1 turns
+#: into one more (refusal ...) catalog row and one more refusal-kind vocabulary
+#: member, measured at +10 to +15 on most twins; and d8231f103 refuses a
+#: library spec that walks out of the library root; 814b99468 retains a self-
+#: call's function_view dependency, so a recursive body is rebuilt as a caller
+#: of its own function whenever an arriving equation changes that view (fib's
+#: rebuilds 1 to 2 and newtons_method's energy 2 to 4, each reached from
+#: spaces:add_function_atom/7 through lib_memo's automatic reconcile), the fix
+#: that took lib_statistics and lib_random to green [measured 2026-09-24: min-
+#: of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+BUDGET = 5144

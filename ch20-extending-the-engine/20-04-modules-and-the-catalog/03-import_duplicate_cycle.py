@@ -252,4 +252,19 @@ def twin(m):
 #: explicitly as the price of a library that survives the engine swap [measured
 #: 2026-09-21: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=6e09cb25d5495c2db3283166e6ce4e07eefecfb2].
-BUDGET = 8839
+#: RE-PINNED 2026-09-24, 8839 to 8891 (+52), placed on the full-configuration
+#: first-parent ladder from the pin commit 6e09cb25d: a7955cd07 carried lib
+#: 629c86c, the library split, which moved every library's surface out of its
+#: pkg.metta manifest into lib.metta beside it, so an import reads the manifest
+#: and then imports the library's own source as a second file; 54784fded reads
+#: the builtin type surface from every .metta in lib_builtin_types' directory,
+#: which restored the 195 builtin cost rows the split's manifest-only read had
+#: dropped; 6167a0fb2 makes import currency transitive: each nested load
+#: records an import_nested_source/3 edge to every import still in flight above
+#: it, and a cached import answers current only when every nested receipt does;
+#: where a twin's move exceeds these steps, the remainder is drift that stayed
+#: inside its band (four inferences, or its own declared allowance) on every
+#: other interval [measured 2026-09-24: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin;
+#: commit=WORKTREE].
+BUDGET = 8891

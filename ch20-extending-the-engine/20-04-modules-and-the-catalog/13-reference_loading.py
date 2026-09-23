@@ -185,3 +185,16 @@ BUDGET = {
     "observations": 20,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
+
+#: DIVERGED 2026-09-24, the example holds 2 atoms the twin does not (2 from)
+#: and the twin holds 2 atoms the example does not (2 from): the twin names its
+#: fixtures by their root-relative path, ./examples/ch20-extending-the-
+#: engine/20-04-modules-and-the-catalog/_fixtures/references/<name>, where the
+#: example names the same files relative to itself as
+#: ./_fixtures/references/<name>; a from row is stored as written, so the two
+#: spaces hold the same rows under two spellings of one file (twins commit
+#: aa891a0d, after d8231f103 refused the library-root walk-out and 754d6c010
+#: read ./ and ../ as paths) [measured 2026-09-24: the two stored-atom
+#: surpluses, one fresh process per side; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+DIVERGENCE = "dc6887a5e38833a7ee4e011e007a884f3d4bfb3469d6903f88acae6eb23bf975"
