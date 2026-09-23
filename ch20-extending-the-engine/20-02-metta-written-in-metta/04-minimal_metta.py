@@ -136,6 +136,26 @@ def twin(m):
         m.eval(S.collapse(S.if_partial(FALSE, S.yes))) == [Expression(())]
     )  # rung: collapse prunes Empty into one empty Expression; list() would materialise zero Python answers
 
+    # The four workers the public forms delegate to. A worker is called the way
+    # its caller calls it: inside `function`, with `eval` and a `chain` to catch
+    # what `return` hands back. mm-read is the middle of the tape's triple;
+    # exhausting mm-switch-internal's cases answers NotReducible rather than an
+    # error; mm-subst is total over a variable; mm-tm-body returns the tape at
+    # HALT without reading the rule.
+    assert m.fn.mm_read(((1,), 7, (2,))) == [7]
+
+    def switch(value):
+        return m.fn.function(
+            S.chain(S.eval(S.mm_switch_internal(value, ((1, S.one), ()))), V.r, S["return"](V.r))
+        )
+
+    assert switch(1) == [S.one]
+    assert switch(9) == [S.NotReducible]
+    assert m.fn.mm_subst(5, V.x, (V.x, V.x)) == [Expression((5, 5))]
+    assert m.fn.function(S.eval(S.mm_tm_body(S.unused, S.HALT, ((1,), 7, (2,))))) == [
+        Expression(((1,), 7, (2,)))
+    ]
+
 
 #: A PLACEHOLDER, not a measurement. The twins wave re-authored this file and
 #: the integrator prices every budget in one pass on the merged tree. This one
