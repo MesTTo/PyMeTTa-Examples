@@ -221,9 +221,22 @@ def twin(m):
 #: the 939 is not isolated [measured 2026-09-24: 20 full-lane observations;
 #: command=python extensions/python/tools/twin_coverage.py --observe --rounds
 #: 20; commit=WORKTREE].
+#: POOLED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 766462..767401 over 20 to
+#: 766461..767401 over 21: the final whole-lane run read 766461, one inference
+#: below the twenty rounds' minimum, on HEAD 49e2b250d with the engine diff
+#: empty; the two commits after the observed 6a7ac233d change CHANGELOG.md, a
+#: comment in tools/check.sh, the MORK seat's CHANGELOG.md and bench.sh and the
+#: Node seat pointer, none on a path this twin runs, and the seat is the same
+#: 7d995f762; a whole-lane run under this protocol on this runtime is an
+#: observation, so the envelope is the union of the extrema and the sum of the
+#: counts. Which scheduling-dependent path saves the one inference is not
+#: isolated [measured 2026-09-24: 1 whole-lane run, sh
+#: extensions/python/check.sh twins in battery 5; command=python
+#: extensions/python/tools/twin_coverage.py; commit=WORKTREE].
 BUDGET = {
-    "minimum": 766462,
+    "minimum": 766461,
     "maximum": 767401,
-    "observations": 20,
+    "observations": 21,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
