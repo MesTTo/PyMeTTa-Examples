@@ -463,7 +463,7 @@ def twin(m):
 #: bridge's check alone leaves the move, so it is the rewritten file's boot
 #: content, below which no single predicate was isolated [measured 2026-09-24:
 #: min-of-3 serial fresh processes; command=python
-#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+#: extensions/python/tools/twin_coverage.py --repin; commit=0a81c782fd6ba00984c36e58e228f73bca810dee].
 BUDGET = 16005
 
 #: DIVERGED 2026-09-07, the example holds 1 atom the twin does not (1 =) and

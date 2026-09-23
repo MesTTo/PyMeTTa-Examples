@@ -551,7 +551,7 @@ def twin(m):
 #: scheduler's protocol on one tree, so these observations are this tree's own
 #: and are not pooled with the earlier ones [measured 2026-09-24: 20 full-lane
 #: observations; command=python extensions/python/tools/twin_coverage.py
-#: --observe --rounds 20; commit=WORKTREE].
+#: --observe --rounds 20; commit=0a81c782fd6ba00984c36e58e228f73bca810dee].
 BUDGET = {
     "minimum": 470981,
     "maximum": 565062,
@@ -644,7 +644,7 @@ BUDGET = {
 #: process per side through the lane's run_example and run_twin for the floor,
 #: whose minimal twin the probe builds; command=python
 #: extensions/python/tools/twin_coverage.py --observe --rounds 20 and python
-#: extensions/python/benchmarks/probes/twin_floor.py; commit=WORKTREE].
+#: extensions/python/benchmarks/probes/twin_floor.py; commit=0a81c782fd6ba00984c36e58e228f73bca810dee].
 OVERRUN = 344806
 
 #: DIVERGED 2026-09-07, the example holds 1 atom the twin does not (1 =) and

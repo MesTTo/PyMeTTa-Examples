@@ -494,7 +494,7 @@ def twin(m):
 #: observation, so the envelope is the union of the extrema and the sum of the
 #: counts [measured 2026-09-24: 20 full-lane observations; command=python
 #: extensions/python/tools/twin_coverage.py --observe --rounds 20;
-#: commit=WORKTREE].
+#: commit=0a81c782fd6ba00984c36e58e228f73bca810dee].
 BUDGET = {
     "minimum": 23638,
     "maximum": 23652,

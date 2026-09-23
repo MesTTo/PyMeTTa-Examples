@@ -212,5 +212,5 @@ def twin(m):
 #: and at its parent [measured 2026-09-24: 47 of the 47 compile children the
 #: lane's warm-up started ran the stock swipl and were refused by the host
 #: check, writing no artifact, and one full lane per side; command=python
-#: extensions/python/tools/twin_coverage.py; commit=WORKTREE].
+#: extensions/python/tools/twin_coverage.py; commit=0a81c782fd6ba00984c36e58e228f73bca810dee].
 BUDGET = 91302

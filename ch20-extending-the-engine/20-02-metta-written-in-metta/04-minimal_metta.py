@@ -577,7 +577,7 @@ def twin(m):
 #: and loads nothing (487 inferences against the direct load_files/2's 289 over
 #: lib/minimal_metta_lib/minimal_metta_lib.pl, measured 2026-09-24) [measured
 #: 2026-09-24: min-of-3 serial fresh processes; command=python
-#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+#: extensions/python/tools/twin_coverage.py --repin; commit=0a81c782fd6ba00984c36e58e228f73bca810dee].
 BUDGET = 198490
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and

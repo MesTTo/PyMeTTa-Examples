@@ -190,7 +190,7 @@ def twin(m):
 #: scheduler's protocol on one tree, so these observations are this tree's own
 #: and are not pooled with the earlier ones [measured 2026-09-24: 20 full-lane
 #: observations; command=python extensions/python/tools/twin_coverage.py
-#: --observe --rounds 20; commit=WORKTREE].
+#: --observe --rounds 20; commit=0a81c782fd6ba00984c36e58e228f73bca810dee].
 BUDGET = {
     "minimum": 2788121,
     "maximum": 2788333,

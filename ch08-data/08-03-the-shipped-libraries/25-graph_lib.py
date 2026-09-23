@@ -295,5 +295,5 @@ def twin(m):
 #: every process that loaded a library with a native half, the +10.3k that
 #: f2822e2ae's paragraph charges to the boot host check [measured 2026-09-24:
 #: min-of-3 serial fresh processes; command=python
-#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+#: extensions/python/tools/twin_coverage.py --repin; commit=0a81c782fd6ba00984c36e58e228f73bca810dee].
 BUDGET = 8935992

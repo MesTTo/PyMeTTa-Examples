@@ -456,7 +456,7 @@ def twin(m):
 #: every process that loaded a library with a native half, the +10.3k that
 #: f2822e2ae's paragraph charges to the boot host check [measured 2026-09-24:
 #: min-of-3 serial fresh processes; command=python
-#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+#: extensions/python/tools/twin_coverage.py --repin; commit=0a81c782fd6ba00984c36e58e228f73bca810dee].
 BUDGET = 78647
 #: OVERRUN 2026-09-09, 0 to 4070 (+4070): a library's Prolog half compiles
 #: beside itself on its first import and loads from the artifact after
@@ -505,7 +505,7 @@ BUDGET = 78647
 #: built by the probe; command=python
 #: extensions/python/benchmarks/probes/twin_floor.py
 #: examples/ch18-performance/18-02-memoisation-and-tabling/09-tabling_fib.metta;
-#: commit=WORKTREE].
+#: commit=0a81c782fd6ba00984c36e58e228f73bca810dee].
 OVERRUN = 5990
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
