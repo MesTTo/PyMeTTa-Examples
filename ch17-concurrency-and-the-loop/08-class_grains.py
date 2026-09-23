@@ -268,10 +268,31 @@ def twin(m):
 #: of the counts [measured 2026-09-24: 8 whole-lane runs, sh
 #: extensions/python/check.sh twins in battery 5; command=python
 #: extensions/python/tools/twin_coverage.py; commit=WORKTREE].
+#: RE-OBSERVED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 6460447..6460447 to 6160740..6161208
+#: over 20 observations: the tree moved under this envelope: 0a81c782f loads a
+#: library's Prolog half through the boot's claim, so lib_thread's half reads
+#: the .qlf the claim's hermetic child wrote, started from the running home's
+#: own swipl, where it had compiled from source in every process, about 292k
+#: inferences on each of the six class twins; before that commit the six
+#: already read about 8k under their 28-observation envelopes on the parent
+#: tree, with the Channel and Debugger reaping (44e52aae1) and the host-patch
+#: split (5c32234cf) each reverted, and class_grains read 6,455,023, 6,460,447,
+#: 6,455,063 and 6,453,264 in four purged or gate lanes between 00:57 and 05:41
+#: on 2026-09-24, so that drift follows the battery rather than a commit; the
+#: about 10.3k per Prolog-half load that a 2026-09-24 paragraph above charges
+#: to f2822e2ae's boot host check was never the check's own cost: from
+#: f2822e2ae on the check refused every compile child the stock swipl ran, so
+#: no child wrote an artifact and every governed half a half loads compiled
+#: from source in every process; an empirical envelope is a claim about one
+#: scheduler's protocol on one tree, so these observations are this tree's own
+#: and are not pooled with the earlier ones [measured 2026-09-24: 20 full-lane
+#: observations; command=python extensions/python/tools/twin_coverage.py
+#: --observe --rounds 20; commit=WORKTREE].
 BUDGET = {
-    "minimum": 6460447,
-    "maximum": 6460447,
-    "observations": 28,
+    "minimum": 6160740,
+    "maximum": 6161208,
+    "observations": 20,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 #: The minimum measurements give a declaration and crossing gap of 11729673.

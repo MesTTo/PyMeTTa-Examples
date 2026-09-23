@@ -535,10 +535,27 @@ def twin(m):
 #: of the counts [measured 2026-09-24: 8 whole-lane runs, sh
 #: extensions/python/check.sh twins in battery 5; command=python
 #: extensions/python/tools/twin_coverage.py; commit=WORKTREE].
+#: RE-OBSERVED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 751174..793514 to 470981..565062 over
+#: 20 observations: the tree moved under this envelope: 0a81c782f loads a
+#: library's Prolog half through the boot's claim, so the half and every
+#: governed half it loads read the .qlf the claim's hermetic child wrote where
+#: they had compiled from source in every process, and it starts that child
+#: from the running home's own swipl, which the host check accepts, where the
+#: stock swipl the lane's PATH finds had been refused since f2822e2ae; the
+#: about 10.3k per Prolog-half load that a 2026-09-24 paragraph above charges
+#: to f2822e2ae's boot host check was never the check's own cost: from
+#: f2822e2ae on the check refused every compile child the stock swipl ran, so
+#: no child wrote an artifact and every governed half a half loads compiled
+#: from source in every process; an empirical envelope is a claim about one
+#: scheduler's protocol on one tree, so these observations are this tree's own
+#: and are not pooled with the earlier ones [measured 2026-09-24: 20 full-lane
+#: observations; command=python extensions/python/tools/twin_coverage.py
+#: --observe --rounds 20; commit=WORKTREE].
 BUDGET = {
-    "minimum": 751174,
-    "maximum": 793514,
-    "observations": 28,
+    "minimum": 470981,
+    "maximum": 565062,
+    "observations": 20,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 
@@ -609,7 +626,26 @@ BUDGET = {
 #: 2026-09-18: one fresh process per side through the lane's run_example and
 #: run_twin, the floor from a minimal twin built by the probe; command=python
 #: extensions/python/benchmarks/probes/twin_floor.py; commit=0e767924501d8b25d1994f128d96c503d867e408].
-OVERRUN = 242102
+#: OVERRUN 2026-09-24, 242102 to 344806 (+102704): 0a81c782f loads lib_thread's
+#: Prolog half from the .qlf the boot's claim writes, so the half's compile
+#: left both sides of this twin's band (-294452 on the example, -289787 on the
+#: twin, one lane each at the commit and at its parent) and the tenth of it
+#: that padded the ceiling left with it, while the spin that proves a race
+#: really races stays whole. Twenty full-lane rounds under 'full-
+#: lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot'
+#: read the example at 193985..194308 and the twin at 470981..565062, the top
+#: one round 60048 above the next; the declaration follows the envelope's top
+#: as the 2026-09-08 entry decided, priced against the cheapest example as the
+#: 2026-09-10 entry priced it: 565062 less 193985 times 1.1 less the 6873 its
+#: four compiled definitions cost to author is 344805.5. A minimal twin of this
+#: example costs 202180, inside the 220370 the band alone allows beside an
+#: example of 194088, so the distance is this twin's own program [measured
+#: 2026-09-24: each of the twenty rounds' example and twin cost, and one fresh
+#: process per side through the lane's run_example and run_twin for the floor,
+#: whose minimal twin the probe builds; command=python
+#: extensions/python/tools/twin_coverage.py --observe --rounds 20 and python
+#: extensions/python/benchmarks/probes/twin_floor.py; commit=WORKTREE].
+OVERRUN = 344806
 
 #: DIVERGED 2026-09-07, the example holds 1 atom the twin does not (1 =) and
 #: the twin holds 5 the example does not (3 :, 2 =): the twin is an ordinary

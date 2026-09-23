@@ -516,10 +516,27 @@ def twin(m):
 #: of the counts [measured 2026-09-24: 8 whole-lane runs, sh
 #: extensions/python/check.sh twins in battery 5; command=python
 #: extensions/python/tools/twin_coverage.py; commit=WORKTREE].
+#: RE-OBSERVED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 566929..566936 to 272258..272380 over
+#: 20 observations: the tree moved under this envelope: 0a81c782f loads a
+#: library's Prolog half through the boot's claim, so the half and every
+#: governed half it loads read the .qlf the claim's hermetic child wrote where
+#: they had compiled from source in every process, and it starts that child
+#: from the running home's own swipl, which the host check accepts, where the
+#: stock swipl the lane's PATH finds had been refused since f2822e2ae; the
+#: about 10.3k per Prolog-half load that a 2026-09-24 paragraph above charges
+#: to f2822e2ae's boot host check was never the check's own cost: from
+#: f2822e2ae on the check refused every compile child the stock swipl ran, so
+#: no child wrote an artifact and every governed half a half loads compiled
+#: from source in every process; an empirical envelope is a claim about one
+#: scheduler's protocol on one tree, so these observations are this tree's own
+#: and are not pooled with the earlier ones [measured 2026-09-24: 20 full-lane
+#: observations; command=python extensions/python/tools/twin_coverage.py
+#: --observe --rounds 20; commit=WORKTREE].
 BUDGET = {
-    "minimum": 566929,
-    "maximum": 566936,
-    "observations": 28,
+    "minimum": 272258,
+    "maximum": 272380,
+    "observations": 20,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 

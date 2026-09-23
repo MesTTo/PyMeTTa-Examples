@@ -193,10 +193,28 @@ def twin(m):
 #: of the counts [measured 2026-09-24: 8 whole-lane runs, sh
 #: extensions/python/check.sh twins in battery 5; command=python
 #: extensions/python/tools/twin_coverage.py; commit=WORKTREE].
+#: RE-OBSERVED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 276773..276773 to 276893..276913 over
+#: 20 observations: re-observed on the tree 0a81c782f made, which does not move
+#: this twin: in one battery its twin reads 276,624 with all four of that
+#: commit's engine files, with qlf_boot.pl alone at the parent, with the three
+#: loaders alone at the parent and with all four at the parent, and its window
+#: loads no file; its readings follow the battery's state (276,645 in the
+#: parent's lane and 276,893 in the fix's, each in its own battery), which is
+#: why it carries an envelope; the about 10.3k per Prolog-half load that a
+#: 2026-09-24 paragraph above charges to f2822e2ae's boot host check was never
+#: the check's own cost: from f2822e2ae on the check refused every compile
+#: child the stock swipl ran, so no child wrote an artifact and every governed
+#: half a half loads compiled from source in every process, which 0a81c782f
+#: ends by starting the child from the running home's own swipl; these
+#: observations are this tree's own and are not pooled with the earlier ones
+#: [measured 2026-09-24: 20 full-lane observations; command=python
+#: extensions/python/tools/twin_coverage.py --observe --rounds 20;
+#: commit=WORKTREE].
 BUDGET = {
-    "minimum": 276773,
-    "maximum": 276773,
-    "observations": 28,
+    "minimum": 276893,
+    "maximum": 276913,
+    "observations": 20,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 

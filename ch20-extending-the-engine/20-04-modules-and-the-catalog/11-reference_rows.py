@@ -201,4 +201,16 @@ def twin(m):
 #: that withdraw package rows) [measured 2026-09-24: min-of-3 serial fresh
 #: processes; command=python extensions/python/tools/twin_coverage.py --repin;
 #: commit=WORKTREE].
+#: CORRECTED 2026-09-24: the RE-PINNED 2026-09-24 paragraph above charges about
+#: 10.3k inferences per load of a library's Prolog half to f2822e2ae's boot
+#: host check (metta_require_patched_host); the check was never that cost: from
+#: f2822e2ae on it refused every compile child the stock swipl ran, the swipl
+#: the lane's PATH finds, so no child wrote an artifact and every governed half
+#: a half loads, lib/_support/native_build.pl among them, compiled from source
+#: in every process; 0a81c782f starts the child from the running home's own
+#: swipl, and this twin reads its budget, 91302, in the lanes at that commit
+#: and at its parent [measured 2026-09-24: 47 of the 47 compile children the
+#: lane's warm-up started ran the stock swipl and were refused by the host
+#: check, writing no artifact, and one full lane per side; command=python
+#: extensions/python/tools/twin_coverage.py; commit=WORKTREE].
 BUDGET = 91302

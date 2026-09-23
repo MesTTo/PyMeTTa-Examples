@@ -478,9 +478,26 @@ def twin(m):
 #: of the counts [measured 2026-09-24: 7 whole-lane runs, sh
 #: extensions/python/check.sh twins in battery 5; command=python
 #: extensions/python/tools/twin_coverage.py; commit=WORKTREE].
+#: POOLED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 23638..23650 over 28 to 23638..23652
+#: over 48: the twenty full-lane rounds in battery 97 on the tree 0a81c782f
+#: made read 23638..23652; that commit changes how a library's Prolog half
+#: loads, and this twin's window imports no library, so the tree did not move
+#: under it (its twin read 23638 in the lanes at 0a81c782f and at its parent),
+#: and the two above its maximum are the schedule-bound spread the 2026-09-18
+#: journal places outside the join accounting; the about 10.3k per Prolog-half
+#: load that a 2026-09-24 paragraph above charges to f2822e2ae's boot host
+#: check was never the check's own cost: from f2822e2ae on the check refused
+#: every compile child the stock swipl ran, so no child wrote an artifact and
+#: every governed half a half loads compiled from source in every process; a
+#: whole-lane run under this protocol on this twin's unchanged runtime is an
+#: observation, so the envelope is the union of the extrema and the sum of the
+#: counts [measured 2026-09-24: 20 full-lane observations; command=python
+#: extensions/python/tools/twin_coverage.py --observe --rounds 20;
+#: commit=WORKTREE].
 BUDGET = {
     "minimum": 23638,
-    "maximum": 23650,
-    "observations": 28,
+    "maximum": 23652,
+    "observations": 48,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
