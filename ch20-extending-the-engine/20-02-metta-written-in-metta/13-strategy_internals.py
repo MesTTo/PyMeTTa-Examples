@@ -400,4 +400,13 @@ def twin(m):
 #: declared allowance) on every other interval [measured 2026-09-24: min-of-3
 #: serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
-BUDGET = 413483
+#: RE-PINNED 2026-09-24, 413483 to 413677 (+194), 0a81c782f loads a backing
+#: row's half through metta_load_source/2, which asks the boot's claim before
+#: SWI's own already-loaded check skips the load; this twin's import performs
+#: minimal_metta_lib's backing row, directly or as lib_strategy's requirement,
+#: and the boot has already loaded that half, so the import now pays the ask
+#: and loads nothing (487 inferences against the direct load_files/2's 289 over
+#: lib/minimal_metta_lib/minimal_metta_lib.pl, measured 2026-09-24) [measured
+#: 2026-09-24: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+BUDGET = 413677

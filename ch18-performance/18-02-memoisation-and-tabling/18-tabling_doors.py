@@ -372,7 +372,19 @@ def twin(m):
 #: declared allowance) on every other interval [measured 2026-09-24: min-of-3
 #: serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
-BUDGET = 196107
+#: RE-PINNED 2026-09-24, 196107 to 91546 (-104561), 0a81c782f loads a library's
+#: Prolog half through the boot's claim (metta_load_source/2 in
+#: package_load_native/2), so the half, and every governed half or support file
+#: it loads in turn, reads the .qlf the claim's hermetic child wrote where it
+#: had compiled from source in every process; the same commit starts that child
+#: from the running home's own swipl, where it had been the stock swipl the
+#: lane's PATH finds, which the host check has refused since f2822e2ae, so no
+#: child had written an artifact and lib/_support/native_build.pl compiled in
+#: every process that loaded a library with a native half, the +10.3k that
+#: f2822e2ae's paragraph charges to the boot host check [measured 2026-09-24:
+#: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+BUDGET = 91546
 
 #: DIVERGED 2026-09-08, the example holds 1 atom the twin does not (1 =) and
 #: the twin holds 1 atom the example does not (1 =): re-settled on the tree

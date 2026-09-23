@@ -445,7 +445,19 @@ def twin(m):
 #: declared allowance) on every other interval [measured 2026-09-24: min-of-3
 #: serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
-BUDGET = 183208
+#: RE-PINNED 2026-09-24, 183208 to 78647 (-104561), 0a81c782f loads a library's
+#: Prolog half through the boot's claim (metta_load_source/2 in
+#: package_load_native/2), so the half, and every governed half or support file
+#: it loads in turn, reads the .qlf the claim's hermetic child wrote where it
+#: had compiled from source in every process; the same commit starts that child
+#: from the running home's own swipl, where it had been the stock swipl the
+#: lane's PATH finds, which the host check has refused since f2822e2ae, so no
+#: child had written an artifact and lib/_support/native_build.pl compiled in
+#: every process that loaded a library with a native half, the +10.3k that
+#: f2822e2ae's paragraph charges to the boot host check [measured 2026-09-24:
+#: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+BUDGET = 78647
 #: OVERRUN 2026-09-09, 0 to 4070 (+4070): a library's Prolog half compiles
 #: beside itself on its first import and loads from the artifact after
 #: (metta_load_source/2, seam:compiled_source/1): the example imports one, so
@@ -478,6 +490,23 @@ BUDGET = 183208
 #: plus 1 times 1362 plus the declared 4236) [measured 2026-09-11: sh check.sh
 #: twins on the merged tree after the twin re-pin; command=python
 #: extensions/python/tools/twin_coverage.py; commit=57f84148ba2684015f052d533f3197eca07b1f7b].
+#: OVERRUN 2026-09-24, 0 to 5990: 0a81c782f loads the example's lib_tabling
+#: half from the .qlf the boot's claim writes, as 5b8e63aa first did on
+#: 2026-09-09 and the backing row's direct load_files/2 undid on 2026-09-20, so
+#: the half's compile left both sides in equal measure (-104561 on the twin,
+#: -104377 on the example) and the tenth of it that padded this twin's ceiling
+#: left with it, showing the twin's own excess whole again, as the 2026-09-09
+#: paragraph above records; f6a91e4e dropped the declaration on 2026-09-21
+#: while that padding was back. Measured 78647 against a ceiling of 72657.2
+#: (64282 times 1.1 plus 1947 to author its one compiled definition); a minimal
+#: twin of this example costs 72266, inside that ceiling, so the distance is
+#: this twin's own program [measured 2026-09-24: one fresh process per side
+#: through the lane's run_example and run_twin, the floor from a minimal twin
+#: built by the probe; command=python
+#: extensions/python/benchmarks/probes/twin_floor.py
+#: examples/ch18-performance/18-02-memoisation-and-tabling/09-tabling_fib.metta;
+#: commit=WORKTREE].
+OVERRUN = 5990
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 :): a Python annotation IS a (:

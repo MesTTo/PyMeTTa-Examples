@@ -569,7 +569,16 @@ def twin(m):
 #: empty), carried forward to 49e2b250d, whose commits touch no runtime path
 #: [measured 2026-09-24: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
-BUDGET = 198296
+#: RE-PINNED 2026-09-24, 198296 to 198490 (+194), 0a81c782f loads a backing
+#: row's half through metta_load_source/2, which asks the boot's claim before
+#: SWI's own already-loaded check skips the load; this twin's import performs
+#: minimal_metta_lib's backing row, directly or as lib_strategy's requirement,
+#: and the boot has already loaded that half, so the import now pays the ask
+#: and loads nothing (487 inferences against the direct load_files/2's 289 over
+#: lib/minimal_metta_lib/minimal_metta_lib.pl, measured 2026-09-24) [measured
+#: 2026-09-24: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+BUDGET = 198490
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 :): a Python annotation IS a (:
