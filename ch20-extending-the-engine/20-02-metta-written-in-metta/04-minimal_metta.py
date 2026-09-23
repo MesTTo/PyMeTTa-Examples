@@ -560,7 +560,16 @@ def twin(m):
 #: declared allowance) on every other interval [measured 2026-09-24: min-of-3
 #: serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
-BUDGET = 188548
+#: RE-PINNED 2026-09-24, 188548 to 198296 (+9748), the five claims examples
+#: commit 8873433 gave the example (mm-read, mm-switch-internal twice, mm-subst
+#: and mm-tm-body, the four workers the minimal-MeTTa forms delegate to) are
+#: asserted by the twin since twins commit b9200117, three of them inside
+#: function with eval, the two switch calls also through chain and return; the
+#: tree is the one the corpus re-pin measured (HEAD 6a7ac233d, engine diff
+#: empty), carried forward to 49e2b250d, whose commits touch no runtime path
+#: [measured 2026-09-24: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+BUDGET = 198296
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 :): a Python annotation IS a (:
