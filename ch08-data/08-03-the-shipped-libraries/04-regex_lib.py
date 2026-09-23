@@ -375,4 +375,11 @@ def twin(m):
 #: f2822e2ae's paragraph charges to the boot host check [measured 2026-09-24:
 #: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=0a81c782fd6ba00984c36e58e228f73bca810dee].
-BUDGET = 129947
+#: RE-PINNED 2026-09-24, 129947 to 130851 (+904), 2126ab6 installs every
+#: library's native half through lib/_support/native_install.pl, which tests
+#: for a statically linked host and loads library(shlib) only where there is
+#: none, where each half used to load shlib itself, so a process importing a
+#: library with a native half now loads that module once [measured 2026-09-24:
+#: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=d832d20e8edfdad28ad52815757ba9e685ad2de3].
+BUDGET = 130851

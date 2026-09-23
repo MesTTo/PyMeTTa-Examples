@@ -360,4 +360,12 @@ def twin(m):
 #: f2822e2ae's paragraph charges to the boot host check [measured 2026-09-24:
 #: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=0a81c782fd6ba00984c36e58e228f73bca810dee].
-BUDGET = 4672532
+#: RE-PINNED 2026-09-24, 4672532 to 4673869 (+1337), both: 2126ab6 installs the
+#: library's native half through lib/_support/native_install.pl, loaded once
+#: per process, and 0847c3d4c with 984eabe23 decides on its first read each
+#: platform capability the twin reads, in a flag under a mutex; a792976 loads
+#: process, socket and HTTP's libraries through the census and refuses per
+#: call, which moves process_lib by 44 and socket_lib by -603 [measured
+#: 2026-09-24: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=d832d20e8edfdad28ad52815757ba9e685ad2de3].
+BUDGET = 4673869

@@ -484,7 +484,16 @@ def twin(m):
 #: declared allowance) on every other interval [measured 2026-09-24: min-of-3
 #: serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
-BUDGET = 2265496
+#: RE-PINNED 2026-09-24, 2265496 to 2265532 (+36), 0847c3d4c decides a platform
+#: capability the first time anything reads it, by whether every library its
+#: census row names resolves, where only a failed load used to record anything,
+#: and 984eabe23 keeps each verdict in a flag decided under a mutex so two
+#: threads' first reads agree; the count moves by what the twin's reads now
+#: decide, about 660 inferences for a one-library capability and 1,964 for
+#: markup's three, and by a few where it reads the census without deciding
+#: [measured 2026-09-24: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=d832d20e8edfdad28ad52815757ba9e685ad2de3].
+BUDGET = 2265532
 
 #: OVERRUN 2026-09-07, 52200: it asserts the four premises the answer came from
 #: beside the truth value, which the example only prints. Measured 2246993
