@@ -453,7 +453,18 @@ def twin(m):
 #: that withdraw package rows) [measured 2026-09-24: min-of-3 serial fresh
 #: processes; command=python extensions/python/tools/twin_coverage.py --repin;
 #: commit=WORKTREE].
-BUDGET = 16000
+#: RE-PINNED 2026-09-24, 16000 to 16005 (+5), 5c32234cf, the host-patch split,
+#: rewrote engine/host_check.pl, which every boot loads from source: c4054cea8
+#: made metta_require_patched_host/0 a findall over the engine's requirement
+#: handed to the new metta_require_host_patches/2, and the Python bridge now
+#: runs that check a second time over janus's patches; with the rewritten file,
+#: the requirement list and the bridge's check all reverted this twin reads its
+#: previous pin exactly, while reverting the requirement list alone or the
+#: bridge's check alone leaves the move, so it is the rewritten file's boot
+#: content, below which no single predicate was isolated [measured 2026-09-24:
+#: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+BUDGET = 16005
 
 #: DIVERGED 2026-09-07, the example holds 1 atom the twin does not (1 =) and
 #: the twin holds 2 the example does not (1 =, 1 @doc): the twin is an ordinary

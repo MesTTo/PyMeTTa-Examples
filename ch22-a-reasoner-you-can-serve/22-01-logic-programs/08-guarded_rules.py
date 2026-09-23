@@ -113,7 +113,18 @@ def twin(m):
 #: declared allowance) on every other interval [measured 2026-09-24: min-of-3
 #: serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
-BUDGET = 23687
+#: RE-PINNED 2026-09-24, 23687 to 23571 (-116), 5c32234cf, the host-patch
+#: split, rewrote engine/host_check.pl, which every boot loads from source:
+#: c4054cea8 made metta_require_patched_host/0 a findall over the engine's
+#: requirement handed to the new metta_require_host_patches/2, and the Python
+#: bridge now runs that check a second time over janus's patches; with the
+#: rewritten file, the requirement list and the bridge's check all reverted
+#: this twin reads its previous pin exactly, while reverting the requirement
+#: list alone or the bridge's check alone leaves the move, so it is the
+#: rewritten file's boot content, below which no single predicate was isolated
+#: [measured 2026-09-24: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+BUDGET = 23571
 
 #: OVERRUN 2026-09-18, 538: the twin costs 23621 against the example's 18397
 #: and a ceiling of 23083 (the band plus 2846 to author one compiled
