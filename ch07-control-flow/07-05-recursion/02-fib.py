@@ -367,3 +367,16 @@ BUDGET = 39095
 #: command=python extensions/python/tools/twin_coverage.py --repin;
 #: commit=9010a79b01c9b2a66b96a3952fa378fb3e939dc3].
 DIVERGENCE = "230acfc89f628d20a71888230be17b02c8e79d3d49807890dd7a1a8027f3b30c"
+
+#: OVERRUN 2026-09-24, 0 to 2780: 814b99468 retains a self-call's function_view
+#: dependency, so this twin's recursive definition, which the Python door adds
+#: one equation at a time through spaces:add_function_atom/7, is rebuilt at
+#: each arrival through lib_memo's automatic reconcile (fib's rebuilds 1 to 2),
+#: where the example's file load publishes its equations as one batch; that
+#: difference, not the twin's own program, is what now puts it past its
+#: example's band. Measured 39095 against the example's 31244, a band and
+#: authoring ceiling of 36315.4 (1947 to author 1 compiled definition); the
+#: floor probe's control costs 32518 [measured 2026-09-24: one fresh process
+#: per side; command=python extensions/python/benchmarks/probes/twin_floor.py
+#: examples/ch07-control-flow/07-05-recursion/02-fib.metta; commit=WORKTREE].
+OVERRUN = 2780

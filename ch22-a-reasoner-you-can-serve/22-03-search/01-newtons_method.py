@@ -466,7 +466,18 @@ BUDGET = 63809
 #: command=python extensions/python/benchmarks/probes/twin_floor.py
 #: examples/ch22-a-reasoner-you-can-serve/22-03-search/01-newtons_method.metta;
 #: commit=90ba93eb8f6e98ebfefc55416859bf13de6a8427].
-OVERRUN = 7862
+#: OVERRUN 2026-09-24, 7862 to 12824: 814b99468 retains a self-call's
+#: function_view dependency, so this twin's recursive definitions, which the
+#: Python door adds one equation at a time through spaces:add_function_atom/7,
+#: are rebuilt at each arrival through lib_memo's automatic reconcile (energy's
+#: rebuilds 2 to 4), where the example's file load publishes its equations as
+#: one batch; that difference grew this twin's own excess over its band.
+#: Measured 63809 against the example's 44580, a band and authoring ceiling of
+#: 50985.0 (1947 to author 1 compiled definition); the floor probe's control
+#: costs 55899 [measured 2026-09-24: one fresh process per side; command=python
+#: extensions/python/benchmarks/probes/twin_floor.py examples/ch22-a-reasoner-
+#: you-can-serve/22-03-search/01-newtons_method.metta; commit=WORKTREE].
+OVERRUN = 12824
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 2 the example does not (1 :, 1 @doc): a Python annotation IS
