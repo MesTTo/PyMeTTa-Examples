@@ -136,12 +136,11 @@ def twin(m):
     assert refused(S.markup_select(doc, S.nosuch(S.item)))
     assert refused(S.markup_select(doc, (S.text(), S.descendant(S.item))))
     assert refused(S.markup_select(doc, S.index(1)))
-    # A value that is not an element is refused by every reader. A Number is
-    # refused by the DECLARATION rather than by the head, so it answers the
-    # engine's own BadArgType; if-error reads both the same way.
-    assert list(m.eval(S.markup_text(7))) == [
-        S.Error(S.markup_text(7), S.BadArgType(1, S.Expression, S.Number)),
-    ]
+    # A value that is not an element is refused by every reader. The face
+    # declares the element %Undefined%, so a Number reaches the Prolog body and
+    # its type_error is the refusal, which the example's if-error over catch
+    # reads the same way it would read a declared BadArgType.
+    assert refused(S.markup_text(7))
     assert refused(S.markup_write(S.nosuch()))
 
 

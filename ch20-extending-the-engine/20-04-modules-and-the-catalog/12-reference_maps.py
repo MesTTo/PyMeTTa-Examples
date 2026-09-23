@@ -6,7 +6,7 @@ from_ writes the row; the engine evaluates its map once per source head.
 
 from metta import S, V
 
-PAYLOAD = S["../examples/ch20-extending-the-engine/20-04-modules-and-the-catalog/_fixtures/references/maps"]
+PAYLOAD = S["./examples/ch20-extending-the-engine/20-04-modules-and-the-catalog/_fixtures/references/maps"]
 
 
 def twin(m):

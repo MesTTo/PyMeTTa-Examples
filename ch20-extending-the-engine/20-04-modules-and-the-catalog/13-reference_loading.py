@@ -7,9 +7,9 @@ a background call waits for the defining home.
 
 from metta import MettaError, S
 
-MAPS = S["../examples/ch20-extending-the-engine/20-04-modules-and-the-catalog/_fixtures/references/maps"]
-BACKGROUND = S["../examples/ch20-extending-the-engine/20-04-modules-and-the-catalog/_fixtures/references/background"]
-EFFECTFUL = S["../examples/ch20-extending-the-engine/20-04-modules-and-the-catalog/_fixtures/references/effectful"]
+MAPS = S["./examples/ch20-extending-the-engine/20-04-modules-and-the-catalog/_fixtures/references/maps"]
+BACKGROUND = S["./examples/ch20-extending-the-engine/20-04-modules-and-the-catalog/_fixtures/references/background"]
+EFFECTFUL = S["./examples/ch20-extending-the-engine/20-04-modules-and-the-catalog/_fixtures/references/effectful"]
 
 
 def twin(m):

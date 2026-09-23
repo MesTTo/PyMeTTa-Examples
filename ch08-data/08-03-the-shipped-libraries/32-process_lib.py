@@ -94,20 +94,14 @@ def twin(m):
     assert list(m.fn.process_signals().one()) == [S.term, S.kill, S.int, S.hup]
     assert refused(S["process-signal!"](1, S.nosuch))
 
-    # The refusals for what is not a program, not a vector and not a process.
-    # A String where the vector belongs is refused by the DECLARATION, so it answers
-    # the engine's own BadArgType; if-error reads that and a raise the same way.
-    assert list(m.eval(S["process-run!"](G("echo"), G("not a collection")))) == [
-        S.Error(S["process-run!"](G("echo"), G("not a collection")),
-                S.BadArgType(2, S.Expression, S.String)),
-    ]
+    # The refusals for what is not a program, not a vector and not a process. The
+    # face declares these inputs %Undefined%, so each wrong value reaches the
+    # Prolog body and its type_error is the refusal, which the example's if-error
+    # over catch reads the same way it would read a declared BadArgType.
+    assert refused(S["process-run!"](G("echo"), G("not a collection")))
     assert refused(S["process-run!"](G("echo"), (S.nested(),)))
-    assert list(m.eval(S["process-run!"](7, ()))) == [
-        S.Error(S["process-run!"](7, ()), S.BadArgType(1, S.String, S.Number)),
-    ]
-    assert list(m.eval(S["process-wait!"](G("not a process")))) == [
-        S.Error(S["process-wait!"](G("not a process")), S.BadArgType(1, S.Number, S.String)),
-    ]
+    assert refused(S["process-run!"](7, ()))
+    assert refused(S["process-wait!"](G("not a process")))
 
 
 #: MEASURED on this branch rather than inherited: this twin is new, so there is
