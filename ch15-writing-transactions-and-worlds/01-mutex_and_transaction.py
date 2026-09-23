@@ -448,9 +448,23 @@ def twin(m):
 #: are not pooled with the earlier ones [measured 2026-09-24: 20 full-lane
 #: observations; command=python extensions/python/tools/twin_coverage.py
 #: --observe --rounds 20; commit=WORKTREE].
+#: POOLED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 23638..23647 over 20 to 23638..23650
+#: over 21: the whole-lane run on HEAD 26de4ddcf with the twins at a8487162,
+#: its engine diff empty and its battery's governed QLF set purged so that
+#: every artifact was compiled where it sits, read 23650, 3 above the twenty
+#: rounds' maximum; the commits after the observed 6a7ac233d touch no path this
+#: twin runs; a whole-lane run under this protocol on this runtime is an
+#: observation, so the envelope is the union of the extrema and the sum of the
+#: counts. docs/journal/2026-09-18-schedule-independent-counters.md places the
+#: spread the envelope twins keep in schedule-bound work the join accounting
+#: does not reach; which path adds these three inferences is not isolated
+#: [measured 2026-09-24: 1 whole-lane run, sh extensions/python/check.sh twins
+#: in battery 5 after metta_qlf_boot:purge_all_qlf; command=python
+#: extensions/python/tools/twin_coverage.py; commit=WORKTREE].
 BUDGET = {
     "minimum": 23638,
-    "maximum": 23647,
-    "observations": 20,
+    "maximum": 23650,
+    "observations": 21,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
