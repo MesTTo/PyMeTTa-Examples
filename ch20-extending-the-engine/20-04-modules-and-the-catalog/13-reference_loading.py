@@ -207,10 +207,26 @@ def twin(m):
 #: twin [measured 2026-09-24: 1 whole-lane run, sh extensions/python/check.sh
 #: twins in battery 5 after metta_qlf_boot:purge_all_qlf; command=python
 #: extensions/python/tools/twin_coverage.py; commit=WORKTREE].
+#: POOLED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 375124..378281 over 21 to
+#: 375124..379456 over 28: the 7 whole-lane runs of this runtime the envelope
+#: did not yet hold read the pin run's first lane 378138; the pin run's second
+#: lane 376402; the pin run's third lane 376613; the first final lane 375295;
+#: the purged lane on 49e2b250d 375295; the purged lane after a8487162 375295;
+#: the purged lane after 878b8bd9 379456. They are the pin run's own lanes on
+#: the 6a7ac233d snapshot and the final lanes on 49e2b250d and 26de4ddcf, whose
+#: commits touch no path this twin runs, and each reads every deterministic
+#: twin exactly as a battery whose governed QLF set was compiled in place does,
+#: so none carries a moved artifact's cost; the lane whose battery carried a
+#: lib_import.qlf compiled in wt-merge is left out. A whole-lane run under this
+#: protocol on this runtime is an observation, so the envelope is the union of
+#: the extrema and the sum of the counts [measured 2026-09-24: 7 whole-lane
+#: runs, sh extensions/python/check.sh twins in battery 5; command=python
+#: extensions/python/tools/twin_coverage.py; commit=WORKTREE].
 BUDGET = {
     "minimum": 375124,
-    "maximum": 378281,
-    "observations": 21,
+    "maximum": 379456,
+    "observations": 28,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 
