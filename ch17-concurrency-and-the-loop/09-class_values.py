@@ -138,9 +138,24 @@ def twin(m):
 #: [measured 2026-09-21: twenty full-lane observations; command=python
 #: extensions/python/tools/twin_coverage.py --observe --rounds 10;
 #: commit=43e964002671a680825823b7ab4c1020de20f651].
+#: RE-OBSERVED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 3384967..3384967 to 3092102..3092102
+#: over 20 observations: the tree under these envelopes moved after their last
+#: observation at 43e964002: the package-model changes a7955cd07 (lib 629c86c's
+#: library split), 54784fded, 63b910f4f, d6e09995c and 6167a0fb2, 814b99468's
+#: self-call dependencies, f2822e2ae's boot host check
+#: (metta_require_patched_host, called once in qlf_load_engine, which adds
+#: about 10.3k inferences to every later load of a library's Prolog half,
+#: mechanism below the predicate not isolated) and 7472c4907's reference faces
+#: marked rather than walked, each placed on the full-configuration first-
+#: parent ladder; an empirical envelope is a claim about one scheduler's
+#: protocol on one tree, so these twenty observations are this tree's own and
+#: are not pooled with the earlier ones [measured 2026-09-24: 20 full-lane
+#: observations; command=python extensions/python/tools/twin_coverage.py
+#: --observe --rounds 20; commit=WORKTREE].
 BUDGET = {
-    "minimum": 3384967,
-    "maximum": 3384967,
+    "minimum": 3092102,
+    "maximum": 3092102,
     "observations": 20,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }

@@ -211,4 +211,19 @@ def twin(m):
 #: declared allowance) on every other interval [measured 2026-09-24: min-of-3
 #: serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
-BUDGET = 766462
+#: CONVERTED to an empirical envelope 2026-09-24 under 'full-
+#: lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot':
+#: the re-pinned point 766462 held in 17 of 20 full-lane observations on the
+#: tree it was pinned on, which read 766462 in 17, 767401 in 3, so under the
+#: lane's 32-worker schedule the count takes more than one value and a point
+#: budget with a 4-inference band would fail some lane runs; the envelope
+#: records those 20 observations exactly. Which scheduling-dependent path adds
+#: the 939 is not isolated [measured 2026-09-24: 20 full-lane observations;
+#: command=python extensions/python/tools/twin_coverage.py --observe --rounds
+#: 20; commit=WORKTREE].
+BUDGET = {
+    "minimum": 766462,
+    "maximum": 767401,
+    "observations": 20,
+    "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
+}

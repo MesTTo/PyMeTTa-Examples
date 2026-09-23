@@ -385,10 +385,33 @@ def twin(m):
 #: 2026-09-21: twenty full-lane observations; command=python
 #: extensions/python/tools/twin_coverage.py --observe --rounds 10;
 #: commit=43e964002671a680825823b7ab4c1020de20f651].
+#: RE-OBSERVED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 467127..467597 to 473086..473840 over
+#: 20 observations: the tree under these envelopes moved after their last
+#: observation at 43e964002: the package-model changes a7955cd07 (lib 629c86c's
+#: library split), 54784fded, 63b910f4f, d6e09995c and 6167a0fb2, 814b99468's
+#: self-call dependencies, f2822e2ae's boot host check
+#: (metta_require_patched_host, called once in qlf_load_engine, which adds
+#: about 10.3k inferences to every later load of a library's Prolog half,
+#: mechanism below the predicate not isolated) and 7472c4907's reference faces
+#: marked rather than walked, each placed on the full-configuration first-
+#: parent ladder; an empirical envelope is a claim about one scheduler's
+#: protocol on one tree, so these twenty observations are this tree's own and
+#: are not pooled with the earlier ones [measured 2026-09-24: 20 full-lane
+#: observations; command=python extensions/python/tools/twin_coverage.py
+#: --observe --rounds 20; commit=WORKTREE].
+#: POOLED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 473086..473840 over 20 to
+#: 473082..473840 over 22: the 2 whole-lane runs of the same snapshot read
+#: 473082, 473086, and a whole-lane run under this protocol on this tree is an
+#: observation, so the envelope is the union of the extrema and the sum of the
+#: counts [measured 2026-09-24: 2 whole-lane runs of the snapshot the 20 rounds
+#: observed; command=python extensions/python/tools/twin_coverage.py;
+#: commit=WORKTREE].
 BUDGET = {
-    "minimum": 467127,
-    "maximum": 467597,
-    "observations": 20,
+    "minimum": 473082,
+    "maximum": 473840,
+    "observations": 22,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 #: The count VARIES, because this twin starts threads and timers and the
