@@ -387,4 +387,11 @@ def twin(m):
 #: on every other interval [measured 2026-09-24: min-of-3 serial fresh
 #: processes; command=python extensions/python/tools/twin_coverage.py --repin;
 #: commit=WORKTREE].
-BUDGET = 5320
+#: RE-PINNED 2026-09-24, 5320 to 5331 (+11), +11 at the translator fix:
+#: drop_superseded_arity/3 asks each module fun_in/2 names, and the engine's
+#: own, whether one defines the arity an eta-expanded equation's head names,
+#: where it asked one module, and the example's two such equations, (mp) over +
+#: and (plus1times2) over .., each pay it, which the example reads +11 as well
+#: [measured 2026-09-24: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+BUDGET = 5331
