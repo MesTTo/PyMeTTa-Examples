@@ -356,9 +356,29 @@ def twin(m):
 #: [measured 2026-09-24: 20 full-lane observations; command=python
 #: extensions/python/tools/twin_coverage.py --observe --rounds 20;
 #: commit=e4b7448d1f1bd98733f1b04c3906aaa42f35ef1a].
+#: RE-OBSERVED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 5444405..5444405 to 5446441..5446441
+#: over 20 observations: the tree moved under this envelope by the verdict
+#: rename, and by an atom-table layout effect rather than any work the rename
+#: adds: its metta_hook_invalid_verdict/5 in engine/metta/space_hooks.pl, which
+#: no class twin reaches, names metta_hook_handler_arity, one atom more
+#: interned at load, and something the class twins run visits terms in atom-
+#: handle order, so its call count follows the table; HEAD with a never-taken
+#: branch in that clause naming a fresh atom moves 08-class_grains +2,036,
+#: 10-class_entities +810, 11-class_dispatch +2,694, 12-class_prototypes +3,930
+#: and 13-class_decorators -4,174, exactly as the rename does, while the same
+#: branch built from atoms the engine already holds moves none [measured
+#: 2026-09-24: min-of-3 serial fresh processes, each branch in its own battery;
+#: command=python extensions/python/tools/twin_coverage.py --measure --rounds
+#: 3; fixture=the branch added to metta_hook_invalid_verdict/5 on the committed
+#: tree; commit=961379005df28d1ac8d2f4d794035b98965b4a26]; these observations
+#: are the tree's own and are not pooled with the earlier ones [measured
+#: 2026-09-24: 20 full-lane observations; command=python
+#: extensions/python/tools/twin_coverage.py --observe --rounds 20;
+#: commit=5bae989dfe8735448d575856e72f735bb2043e24].
 BUDGET = {
-    "minimum": 5444405,
-    "maximum": 5444405,
+    "minimum": 5446441,
+    "maximum": 5446441,
     "observations": 20,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
