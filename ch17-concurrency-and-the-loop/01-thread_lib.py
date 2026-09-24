@@ -552,10 +552,35 @@ def twin(m):
 #: and are not pooled with the earlier ones [measured 2026-09-24: 20 full-lane
 #: observations; command=python extensions/python/tools/twin_coverage.py
 #: --observe --rounds 20; commit=0a81c782fd6ba00984c36e58e228f73bca810dee].
+#: RE-OBSERVED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 470981..565062 to 481283..574883 over
+#: 21 observations: the tree moved under this envelope after its observation at
+#: 0a81c782f: read serially, the minimum of five fresh processes a side, on
+#: each first-parent rung from 0a81c782f to the fixed tree 4ff69551e in one
+#: battery, its twin holds 471,455 to 473,918 from 0a81c782f through b7e3d3bcb,
+#: 483,906 to 485,146 from ae1cc8936 through 5d78325cf, and 480,303 to 481,902
+#: from d4a365c16 on: gate-perf's ae1cc8936, which walks the visible predicate
+#: table once for a batch of 13 to 40 registered names, about 11,500 for each
+#: library import that registers such a batch, moves it +11,941 on its rung,
+#: and d4a365c16, which holds the support graph's visited set and the reference
+#: refresh's space sets in tries instead of library(nb_set), -3,136 on its
+#: rung; two single rungs read above their neighbours, and they are the minimum
+#: of five landing high rather than a cost: 480,977 at 0847c3d4c, where the
+#: minimum of fifteen in one other battery reads 472,295 at d92d9b239, 471,576
+#: at 0847c3d4c, 471,575 at 1acabfb26 and 472,171 at 76b710d02, and 487,441 at
+#: 33e84d8d7, whose next rung reads 480,303 with that commit still in the tree;
+#: a rung whose commit changes nothing it runs moves a minimum of five by up to
+#: 2,258, and the band's minimum moved +10,302 and its maximum +9,821; an
+#: empirical envelope is a claim about one scheduler's protocol on one tree, so
+#: these observations are this tree's own and are not pooled with the earlier
+#: ones [measured 2026-09-24: 21 full-lane observations on the fixed tree, the
+#: twenty rounds of --observe and one run of the lane itself; command=python
+#: extensions/python/tools/twin_coverage.py --observe --rounds 20;
+#: commit=4ff69551e0e226442cf7257b96af858adda957a4].
 BUDGET = {
-    "minimum": 470981,
-    "maximum": 565062,
-    "observations": 20,
+    "minimum": 481283,
+    "maximum": 574883,
+    "observations": 21,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 

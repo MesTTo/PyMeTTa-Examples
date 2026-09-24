@@ -533,10 +533,31 @@ def twin(m):
 #: and are not pooled with the earlier ones [measured 2026-09-24: 20 full-lane
 #: observations; command=python extensions/python/tools/twin_coverage.py
 #: --observe --rounds 20; commit=0a81c782fd6ba00984c36e58e228f73bca810dee].
+#: RE-OBSERVED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 272258..272380 to 283695..283705 over
+#: 21 observations: the tree moved under this envelope after its observation at
+#: 0a81c782f: read serially, one fresh process a side, on each first-parent
+#: rung from 0a81c782f to the fixed tree 4ff69551e in one battery, its twin
+#: went from 272,258 to 283,698; gate-perf's ae1cc8936 walks the visible
+#: predicate table once for a batch of 13 to 40 registered names, two
+#: inferences a visible predicate, about 11,500 for each library import that
+#: registers such a batch (+11,587); provider-carry's 850d2a660 reads a native
+#: space's lengths in ascending order (+18); gate-perf's d781eab8f copies a
+#: withdrawn equation once (-184); the packages job's registration service,
+#: 90be572a9 in the engine with 4003462fe in the seat, net (+22); the other 3
+#: rungs that moved it net -3, the largest single step 8, inside the 10 this
+#: reading scatters by on one tree (its full-lane observations on the fixed
+#: tree spread 10), and the band's midpoint moved +11,381; an empirical
+#: envelope is a claim about one scheduler's protocol on one tree, so these
+#: observations are this tree's own and are not pooled with the earlier ones
+#: [measured 2026-09-24: 21 full-lane observations on the fixed tree, the
+#: twenty rounds of --observe and one run of the lane itself; command=python
+#: extensions/python/tools/twin_coverage.py --observe --rounds 20;
+#: commit=4ff69551e0e226442cf7257b96af858adda957a4].
 BUDGET = {
-    "minimum": 272258,
-    "maximum": 272380,
-    "observations": 20,
+    "minimum": 283695,
+    "maximum": 283705,
+    "observations": 21,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 

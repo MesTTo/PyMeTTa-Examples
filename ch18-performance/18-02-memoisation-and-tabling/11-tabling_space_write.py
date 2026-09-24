@@ -560,10 +560,27 @@ def twin(m):
 #: ones [measured 2026-09-24: 20 full-lane observations, two runs of ten on one
 #: battery tree; command=python extensions/python/tools/twin_coverage.py
 #: --observe --rounds 10; commit=d832d20e8edfdad28ad52815757ba9e685ad2de3].
+#: RE-OBSERVED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 57661..57661 to 58150..58150 over 21
+#: observations: the tree moved under this envelope after its observation at
+#: d832d20e8: read serially, one fresh process a side, on each first-parent
+#: rung from d832d20e8 to the fixed tree 4ff69551e in one battery, its twin
+#: went from 57,711 to 58,150 (at d832d20e8 the serial protocol read 50 over
+#: the full lane's 57,661..57,661, and on the fixed tree the two agree, so that
+#: difference is part of the band's move and falls on no rung); 4890e870d gives
+#: the governed QLF set one producer (-55); provider-carry's 850d2a660 reads a
+#: native space's lengths in ascending order (+587); gate-perf's d781eab8f
+#: copies a withdrawn equation once (-92); one other rung moved it -1; an
+#: empirical envelope is a claim about one scheduler's protocol on one tree, so
+#: these observations are this tree's own and are not pooled with the earlier
+#: ones [measured 2026-09-24: 21 full-lane observations on the fixed tree, the
+#: twenty rounds of --observe and one run of the lane itself; command=python
+#: extensions/python/tools/twin_coverage.py --observe --rounds 20;
+#: commit=4ff69551e0e226442cf7257b96af858adda957a4].
 BUDGET = {
-    "minimum": 57661,
-    "maximum": 57661,
-    "observations": 20,
+    "minimum": 58150,
+    "maximum": 58150,
+    "observations": 21,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 

@@ -281,9 +281,35 @@ def twin(m):
 #: ones [measured 2026-09-24: 20 full-lane observations, two runs of ten on one
 #: battery tree; command=python extensions/python/tools/twin_coverage.py
 #: --observe --rounds 10; commit=d832d20e8edfdad28ad52815757ba9e685ad2de3].
+#: RE-OBSERVED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 543250..543251 to 565841..566780 over
+#: 21 observations: the tree moved under this envelope after its observation at
+#: d832d20e8: read serially, one fresh process a side, on each first-parent
+#: rung from d832d20e8 to the fixed tree 4ff69551e in one battery, its twin
+#: went from 543,253 to 565,841 (at d832d20e8 the serial protocol read 2 over
+#: the full lane's 543,250..543,251, and on the fixed tree the two agree, so
+#: that difference is part of the band's move and falls on no rung); gate-
+#: perf's ae1cc8936 walks the visible predicate table once for a batch of 13 to
+#: 40 registered names, two inferences a visible predicate, about 11,500 for
+#: each library import that registers such a batch (+23,115); the packages
+#: job's b5eb39acd names get-property's and setup!'s subject by a from source's
+#: rule (+11); d4a365c16 holds the support graph's visited set and the
+#: reference refresh's space sets in tries instead of library(nb_set) (-146;
+#: three same-tree A/Bs of the tries change read -146, -144 and -142); gate-
+#: perf's d781eab8f copies a withdrawn equation once (-437); the packages job's
+#: registration service, 90be572a9 in the engine with 4003462fe in the seat,
+#: net (+44); 4 rungs (56d827312, 2803a3ecf, 850d2a660, 1748f6a06) moved it
+#: between the two counts it reads on one tree, 565,841 and 566,780 on the
+#: fixed tree, 939 apart; the other 4 rungs that moved it net +1, the largest
+#: single step 2; an empirical envelope is a claim about one scheduler's
+#: protocol on one tree, so these observations are this tree's own and are not
+#: pooled with the earlier ones [measured 2026-09-24: 21 full-lane observations
+#: on the fixed tree, the twenty rounds of --observe and one run of the lane
+#: itself; command=python extensions/python/tools/twin_coverage.py --observe
+#: --rounds 20; commit=4ff69551e0e226442cf7257b96af858adda957a4].
 BUDGET = {
-    "minimum": 543250,
-    "maximum": 543251,
-    "observations": 20,
+    "minimum": 565841,
+    "maximum": 566780,
+    "observations": 21,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }

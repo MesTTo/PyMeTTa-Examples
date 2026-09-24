@@ -545,9 +545,24 @@ def twin(m):
 #: 2026-09-24: 8 whole-lane runs, sh extensions/python/check.sh twins in
 #: battery 5; command=python extensions/python/tools/twin_coverage.py;
 #: commit=WORKTREE].
+#: RE-OBSERVED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 34796..34840 to 34926..34926 over 21
+#: observations: the tree moved under this envelope after the whole-lane runs
+#: its band pools, on 6a7ac233d, 49e2b250d and 26de4ddcf, before 0a81c782f,
+#: where it reads the band's top: read serially, one fresh process a side, on
+#: each first-parent rung from 0a81c782f to the fixed tree 4ff69551e in one
+#: battery, its twin went from 34,840 to 34,926; gate-perf's d781eab8f copies a
+#: withdrawn equation once (-23); the packages job's registration service,
+#: 90be572a9 in the engine with 4003462fe in the seat, net (+113); one other
+#: rung moved it -4; an empirical envelope is a claim about one scheduler's
+#: protocol on one tree, so these observations are this tree's own and are not
+#: pooled with the earlier ones [measured 2026-09-24: 21 full-lane observations
+#: on the fixed tree, the twenty rounds of --observe and one run of the lane
+#: itself; command=python extensions/python/tools/twin_coverage.py --observe
+#: --rounds 20; commit=4ff69551e0e226442cf7257b96af858adda957a4].
 BUDGET = {
-    "minimum": 34796,
-    "maximum": 34840,
-    "observations": 28,
+    "minimum": 34926,
+    "maximum": 34926,
+    "observations": 21,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }

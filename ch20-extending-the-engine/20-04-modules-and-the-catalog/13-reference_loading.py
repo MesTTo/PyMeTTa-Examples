@@ -240,10 +240,29 @@ def twin(m):
 #: and are not pooled with the earlier ones [measured 2026-09-24: 20 full-lane
 #: observations; command=python extensions/python/tools/twin_coverage.py
 #: --observe --rounds 20; commit=0a81c782fd6ba00984c36e58e228f73bca810dee].
+#: RE-OBSERVED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 81040..87216 to 69864..73777 over 21
+#: observations: the tree moved under this envelope after its observation at
+#: 0a81c782f: read serially, one fresh process a side, on each first-parent
+#: rung from 0a81c782f to the fixed tree 4ff69551e in one battery, its twin
+#: went from 81,040 to 73,988; gate-perf's b7e3d3bcb keeps each reference
+#: head's last bind in its own row, so a from row rebinds only the heads it
+#: brings (-7,194); d4a365c16 holds the support graph's visited set and the
+#: reference refresh's space sets in tries instead of library(nb_set) (-6,627;
+#: three same-tree A/Bs of the tries change read -8,007, -2,040 and -3,177);
+#: the other 41 rungs that moved it net +6,769, the largest single step 3,588,
+#: inside the 3,913 this reading scatters by on one tree (its full-lane
+#: observations on the fixed tree spread 3,913), and the band's midpoint moved
+#: -12,308; an empirical envelope is a claim about one scheduler's protocol on
+#: one tree, so these observations are this tree's own and are not pooled with
+#: the earlier ones [measured 2026-09-24: 21 full-lane observations on the
+#: fixed tree, the twenty rounds of --observe and one run of the lane itself;
+#: command=python extensions/python/tools/twin_coverage.py --observe --rounds
+#: 20; commit=4ff69551e0e226442cf7257b96af858adda957a4].
 BUDGET = {
-    "minimum": 81040,
-    "maximum": 87216,
-    "observations": 20,
+    "minimum": 69864,
+    "maximum": 73777,
+    "observations": 21,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 

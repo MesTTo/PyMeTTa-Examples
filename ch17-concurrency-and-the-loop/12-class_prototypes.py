@@ -189,10 +189,46 @@ def twin(m):
 #: and are not pooled with the earlier ones [measured 2026-09-24: 20 full-lane
 #: observations; command=python extensions/python/tools/twin_coverage.py
 #: --observe --rounds 20; commit=0a81c782fd6ba00984c36e58e228f73bca810dee].
+#: RE-OBSERVED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 5887778..5888230 to 5355226..5355226
+#: over 21 observations: the tree moved under this envelope after its
+#: observation at 0a81c782f: read serially, one fresh process a side, on each
+#: first-parent rung from 0a81c782f to the fixed tree 4ff69551e in one battery,
+#: its twin went from 5,885,888 to 5,355,226 (at 0a81c782f the serial protocol
+#: read 1,890 under the full lane's 5,887,778..5,888,230, and on the fixed tree
+#: the two agree, so that difference is part of the band's move and falls on no
+#: rung); the WebAssembly job's 0847c3d4c decides a platform capability on its
+#: first read (+5,759); its 984eabe23 keeps the verdict in a flag decided under
+#: a mutex (-1,494); provider-carry's aaeea643a carries a provider's stored
+#: term back as the engine gave it (+1,569); 4890e870d gives the governed QLF
+#: set one producer (+780); gate-perf's b7e3d3bcb keeps each reference head's
+#: last bind in its own row, so a from row rebinds only the heads it brings
+#: (-117,444); gate-perf's ae1cc8936 walks the visible predicate table once for
+#: a batch of 13 to 40 registered names, two inferences a visible predicate,
+#: about 11,500 for each library import that registers such a batch (+11,025);
+#: provider-carry's 850d2a660 reads a native space's lengths in ascending order
+#: (-15); provider-carry's 1748f6a06 asks early-exit questions by key or in
+#: ascending arity (+30); the packages job's b5eb39acd names get-property's and
+#: setup!'s subject by a from source's rule (-1,644); d4a365c16 holds the
+#: support graph's visited set and the reference refresh's space sets in tries
+#: instead of library(nb_set) (-427,002); gate-perf's d781eab8f copies a
+#: withdrawn equation once (+652); the packages job's registration service,
+#: 90be572a9 in the engine with 4003462fe in the seat, net (-2,878); until
+#: d4a365c16 this count followed library(nb_set)'s probing, which starts from a
+#: slot the variant hash of each space's name decides, so a step before it
+#: carries a change in the names the run's spaces hold as well as the work its
+#: commit adds, and d4a365c16's own step is that probing's cost in this
+#: battery's path, less the few inferences a trie's setup costs a walk; an
+#: empirical envelope is a claim about one scheduler's protocol on one tree, so
+#: these observations are this tree's own and are not pooled with the earlier
+#: ones [measured 2026-09-24: 21 full-lane observations on the fixed tree, the
+#: twenty rounds of --observe and one run of the lane itself; command=python
+#: extensions/python/tools/twin_coverage.py --observe --rounds 20;
+#: commit=4ff69551e0e226442cf7257b96af858adda957a4].
 BUDGET = {
-    "minimum": 5887778,
-    "maximum": 5888230,
-    "observations": 20,
+    "minimum": 5355226,
+    "maximum": 5355226,
+    "observations": 21,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 OVERRUN = 8407909
