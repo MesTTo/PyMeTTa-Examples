@@ -527,5 +527,5 @@ BUDGET = 32290
 #: (Drop), so the atoms each side holds that the other does not are spelled
 #: that way [measured 2026-09-24: the two stored-atom surpluses, one fresh
 #: process per side; command=python extensions/python/tools/twin_coverage.py
-#: --repin; commit=WORKTREE].
+#: --repin; commit=5bae989dfe8735448d575856e72f735bb2043e24].
 DIVERGENCE = "aa06468a9fe3d2a46ec66783871e5c9032eaad9d1db667fe2e2cb95b4c5bc51b"

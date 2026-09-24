@@ -502,7 +502,7 @@ def twin(m):
 #: it reports the stuck state, and the twin makes one such request, (uncovered
 #: 9), which the example reads +11 as well [measured 2026-09-24: min-of-3
 #: serial fresh processes; command=python
-#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+#: extensions/python/tools/twin_coverage.py --repin; commit=5bae989dfe8735448d575856e72f735bb2043e24].
 BUDGET = 8070
 
 #: DIVERGED 2026-09-07, the example holds 4 atoms the twin does not (4 =) and
@@ -520,5 +520,5 @@ BUDGET = 8070
 #: (Drop), so the atoms each side holds that the other does not are spelled
 #: that way [measured 2026-09-24: the two stored-atom surpluses, one fresh
 #: process per side; command=python extensions/python/tools/twin_coverage.py
-#: --repin; commit=WORKTREE].
+#: --repin; commit=5bae989dfe8735448d575856e72f735bb2043e24].
 DIVERGENCE = "5b9b68d709b0f6148cb1f81f59b9cefad2540cd002c09fb4006132aa08a4ce73"
