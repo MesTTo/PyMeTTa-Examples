@@ -68,6 +68,10 @@ def twin(m):
     assert limit((QUIET, LOUD), 2) == [(LOUD,)]
     assert limit((QUIET, LOUD), 1) == [()]
 
+    # At a size of 0 no length passes that test, and the arbiter's body,
+    # which tests nothing else, never answers; here () is its own limit.
+    assert limit((), 0) == [()]
+
     # And what it keeps is the HIGHEST priority, because it drops by the
     # negated rank: bounding the queue is forgetting the least confident.
     middle = S.Sentence(S.c(S.stv(1.0, 0.5)), (3,))
@@ -85,6 +89,10 @@ def twin(m):
 
     # And an empty task queue stops it whatever the budget is.
     assert f["NARS.Derive"]((), (BELIEF,), 100) == [((), (BELIEF,))]
+
+    # Queues bounded at 0 keep nothing: the first selection derives, both
+    # queues are cut to (), and the loop stops at the next step.
+    assert f["NARS.Derive"]((PREMISE,), (BELIEF,), 100, 0, 0) == [((), ())]
 
 
 #: MEASURED on this branch rather than inherited: this twin is new, so there is
@@ -318,4 +326,12 @@ def twin(m):
 #: deterministic allowance of 4, not profiled [measured 2026-09-24: min-of-3
 #: serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=622e425d40c126681c04c7f7f81d92618ab83d0d].
-BUDGET = 266117
+#: RE-PINNED 2026-09-24, 266117 to 270553 (+4436), LimitSize tests (== $L ())
+#: beside the length, so an empty queue is its own limit where upstream's body
+#: recursed on () for ever at a size of 0 or below: each LimitSize step of the
+#: claims already here pays the added test and the or, which or/3 takes both
+#: evaluated, and the twin states the example's two new claims, (LimitSize ()
+#: 0) answering () and a derivation with both queue sizes 0 answering (() ())
+#: [measured 2026-09-24: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+BUDGET = 270553

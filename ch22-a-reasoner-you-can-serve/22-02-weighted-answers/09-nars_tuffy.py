@@ -498,4 +498,13 @@ def twin(m):
 #: deterministic allowance of 4, not profiled [measured 2026-09-24: min-of-3
 #: serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=622e425d40c126681c04c7f7f81d92618ab83d0d].
-BUDGET = 4721885
+#: RE-PINNED 2026-09-24, 4721885 to 4733411 (+11526), lib_nars's and lib_pln's
+#: LimitSize test (== $L ()) beside the length, so an empty queue is its own
+#: limit where upstream's body recursed on () for ever at a size of 0 or below;
+#: or/3 takes both tests evaluated, so each LimitSize step of this program's
+#: derivation pays the added test and the or, while the longer library source
+#: costs nothing at import (16-nars_truth_functions and 18-pln_formulas, which
+#: import the libraries and never derive, read the same with the change)
+#: [measured 2026-09-24: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+BUDGET = 4733411

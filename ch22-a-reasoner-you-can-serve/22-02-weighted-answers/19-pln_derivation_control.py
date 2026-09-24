@@ -59,6 +59,10 @@ def twin(m):
     assert limit((QUIET, LOUD), 2) == [(LOUD,)]
     assert limit((QUIET, LOUD), 1) == [()]
 
+    # At a size of 0 no count passes that test, and the arbiter's body,
+    # which tests nothing else, never answers; here () is its own limit.
+    assert limit((), 0) == [()]
+
     # The loop: one implication and one fact give modus ponens, with the two
     # confidences multiplied and both evidence IDs carried.
     derive = f["PLN.Derive"]
@@ -70,6 +74,10 @@ def twin(m):
 
     # And an empty task queue stops it whatever the budget is.
     assert derive((), (FACT,), 100) == [((), (FACT,))]
+
+    # Queues bounded at 0 keep nothing: the first selection derives, both
+    # queues are cut to (), and the loop stops at the next step.
+    assert derive((RULE,), (FACT,), 100, 0, 0) == [((), ())]
 
     # `PLN.Query` is that loop with the answers filtered to one term and
     # ranked by confidence.
@@ -432,4 +440,12 @@ def twin(m):
 #: deterministic allowance of 4, not profiled [measured 2026-09-24: min-of-3
 #: serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=622e425d40c126681c04c7f7f81d92618ab83d0d].
-BUDGET = 351305
+#: RE-PINNED 2026-09-24, 351305 to 355542 (+4237), LimitSize tests (== $L ())
+#: beside the length, so an empty queue is its own limit where upstream's body
+#: recursed on () for ever at a size of 0 or below: each LimitSize step of the
+#: claims already here pays the added test and the or, which or/3 takes both
+#: evaluated, and the twin states the example's two new claims, (LimitSize ()
+#: 0) answering () and a derivation with both queue sizes 0 answering (() ())
+#: [measured 2026-09-24: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+BUDGET = 355542
