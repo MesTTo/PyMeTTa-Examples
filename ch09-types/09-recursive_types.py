@@ -242,4 +242,18 @@ def twin(m):
 #: per set; serial minimum of three fresh processes through the lane's run_twin
 #: [measured 2026-09-18: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=55d451b670949c2dc9d2ab7bc678f33f21094bd2].
-BUDGET = 5436
+#: RE-PINNED 2026-09-25, 5436 to 5359 (-77), the host evaluation door replaces
+#: the Python binding's own evaluation, and its moves are these, each measured
+#: on the superproject's dd36742f5 against the registration change beneath it:
+#: every answer reads its well-founded residue through call_delays/2, three
+#: inferences an answer; a flat call of a compiled function is translated the
+#: first time it is asked, a translation-cache miss the binding's direct call
+#: skipped; the gate that direct call ran on every ask, a type-declaration
+#: match through the space's storage, the foreign-space hook and the MORK
+#: ownership question, is gone; and in a seat process filereader's
+#: existing_predicate_arities/2 walks thirteen more predicates, the door, its
+#: questions and the host services the binding now calls less the binding
+#: predicates the door retired, two inferences each a registration of more than
+#: twelve names [measured 2026-09-25T06:48:39+10:00: min-of-3 serial fresh
+#: processes; command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 5359

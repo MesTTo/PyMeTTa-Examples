@@ -358,52 +358,19 @@ def twin(m):
 #: 240, each reproduced exactly by one inert predicate added to the engine on
 #: the base [measured 2026-09-25T06:25:01+10:00: min-of-3 serial fresh
 #: processes; command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 17525
-
-#: OVERRUN 2026-09-07, 600: it asks `find` a fourth time for the claim the
-#: example does not state, that one row comes back per solution bound. Measured
-#: 9661 against a ceiling of 9078; a minimal twin of this example costs 8300,
-#: inside the ceiling's 9078, so the distance is this twin's own program
-#: [measured 2026-09-07: one fresh process per side; command=python
-#: extensions/python/benchmarks/probes/twin_floor.py; commit=9010a79b01c9b2a66b96a3952fa378fb3e939dc3].
-#: OVERRUN 2026-09-08, 600 to 802 (+202): the module boundary merged with
-#: trunk (refactor/engine-and-libraries-as-modules at b64291369): the twin's
-#: host crossings each resolve through one more chain link, prelude ->
-#: metta_engine -> user, while the example runs inside the engine; every
-#: crossing this twin makes pays it and the example pays none. Measured 9934
-#: against a ceiling of 9732; a minimal twin costs 8355 against the band's
-#: 9132, within that ceiling, so the rest is this twin's own program [measured
-#: 2026-09-08: one fresh process per side; command=python
-#: extensions/python/benchmarks/probes/twin_floor.py; commit=f1038acdcaf5230b6431c112f38a719d3dc9ef19].
-#: OVERRUN 2026-09-09, 802 to 824 (+22): the door table landed
-#: (feat/space-as-a-projection-of-door-rows merged at 6471faa37, its
-#: reconciliation fixes at 58bf75947): every Space door is a generated alias
-#: over its body, the catalog publishes the door contracts at boot as typed
-#: atoms, and the seam's listeners publish on every registration, so boot
-#: content and clause layout moved; every crossing this twin makes pays it and
-#: the example pays none. Measured 9954 against a ceiling of 9932; a minimal
-#: twin costs 8353 against the band's 9130, within that ceiling, so the rest
-#: is this twin's own program [measured 2026-09-09: one fresh process per
-#: side; command=python extensions/python/benchmarks/probes/twin_floor.py;
-#: commit=aeb46b14152274db84f6415c8a3dd8c98a9c9eb1].
-#: OVERRUN 2026-09-09, 824 to 999 (+175): the compiled vocabulary seed, the
-#: membership index, base-module type lookups and the singleton decoder landed
-#: (perf/cross-engine-waivers merged): a Python decode with one named variable
-#: builds no index and one with more builds it at the second distinct name,
-#: which moves a twin's engine-side cost while its example, which decodes
-#: nothing, holds; boot content and clause layout moved the rest; against the
-#: trunk's own run at da0e5755d the twin moved +43 and the example -13, and
-#: the twin sat 117 over its ceiling there already. Measured 10288 against a
-#: ceiling of 10114; a minimal twin costs 8627 against the band's 9290, within
-#: that ceiling, so the rest is this twin's own program [measured 2026-09-09:
-#: one fresh process per side; command=python
-#: extensions/python/benchmarks/probes/twin_floor.py; commit=b4341ae382c48ef225f4a52e566af6a9a71757c4].
-#: OVERRUN 2026-09-10, 999 to 1166: The existing program is priced after the
-#: reference census, ordered catalog reads and source-scoped translation
-#: work. It costs 10439 against the unchanged band and authoring ceiling of
-#: 9273.0. The literal structured control costs 8696; it measures that
-#: encoding only. [measured 2026-09-10: one fresh process per side;
-#: command=python extensions/python/benchmarks/probes/twin_floor.py
-#: examples/ch04-spaces-and-matching/04-01-a-space-is-where-a-program-lives/04-spaces_find.metta;
-#: commit=90ba93eb8f6e98ebfefc55416859bf13de6a8427].
-OVERRUN = 1166
+#: RE-PINNED 2026-09-25, 17525 to 17217 (-308), the host evaluation door
+#: replaces the Python binding's own evaluation, and its moves are these, each
+#: measured on the superproject's dd36742f5 against the registration change
+#: beneath it: every answer reads its well-founded residue through
+#: call_delays/2, three inferences an answer; a flat call of a compiled
+#: function is translated the first time it is asked, a translation-cache miss
+#: the binding's direct call skipped; the gate that direct call ran on every
+#: ask, a type-declaration match through the space's storage, the foreign-space
+#: hook and the MORK ownership question, is gone; and in a seat process
+#: filereader's existing_predicate_arities/2 walks thirteen more predicates,
+#: the door, its questions and the host services the binding now calls less the
+#: binding predicates the door retired, two inferences each a registration of
+#: more than twelve names [measured 2026-09-25T06:40:00+10:00: min-of-3 serial
+#: fresh processes; command=python extensions/python/tools/twin_coverage.py
+#: --repin].
+BUDGET = 17217

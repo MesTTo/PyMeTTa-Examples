@@ -417,7 +417,21 @@ def twin(m):
 #: 240, each reproduced exactly by one inert predicate added to the engine on
 #: the base [measured 2026-09-25T06:26:24+10:00: min-of-3 serial fresh
 #: processes; command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 8391
+#: RE-PINNED 2026-09-25, 8391 to 8329 (-62), the host evaluation door replaces
+#: the Python binding's own evaluation, and its moves are these, each measured
+#: on the superproject's dd36742f5 against the registration change beneath it:
+#: every answer reads its well-founded residue through call_delays/2, three
+#: inferences an answer; a flat call of a compiled function is translated the
+#: first time it is asked, a translation-cache miss the binding's direct call
+#: skipped; the gate that direct call ran on every ask, a type-declaration
+#: match through the space's storage, the foreign-space hook and the MORK
+#: ownership question, is gone; and in a seat process filereader's
+#: existing_predicate_arities/2 walks thirteen more predicates, the door, its
+#: questions and the host services the binding now calls less the binding
+#: predicates the door retired, two inferences each a registration of more than
+#: twelve names [measured 2026-09-25T06:42:29+10:00: min-of-3 serial fresh
+#: processes; command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 8329
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 :): a Python annotation IS a (:

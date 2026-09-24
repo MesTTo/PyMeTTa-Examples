@@ -301,7 +301,22 @@ def twin(m):
 #: the fixed tree 4ff69551e reads what 4003462fe does [measured 2026-09-24:
 #: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=4ff69551e0e226442cf7257b96af858adda957a4].
-BUDGET = 25880
+#: RE-PINNED 2026-09-25, 25880 to 25788 (-92), the host evaluation door
+#: replaces the Python binding's own evaluation, and its moves are these, each
+#: measured on the superproject's dd36742f5 against the registration change
+#: beneath it: every answer reads its well-founded residue through
+#: call_delays/2, three inferences an answer; a flat call of a compiled
+#: function is translated the first time it is asked, a translation-cache miss
+#: the binding's direct call skipped; the gate that direct call ran on every
+#: ask, a type-declaration match through the space's storage, the foreign-space
+#: hook and the MORK ownership question, is gone; and in a seat process
+#: filereader's existing_predicate_arities/2 walks thirteen more predicates,
+#: the door, its questions and the host services the binding now calls less the
+#: binding predicates the door retired, two inferences each a registration of
+#: more than twelve names [measured 2026-09-25T06:41:32+10:00: min-of-3 serial
+#: fresh processes; command=python extensions/python/tools/twin_coverage.py
+#: --repin].
+BUDGET = 25788
 
 #: OVERRUN 2026-09-07, 2400: the mutually recursive pair takes the `@m.rules`
 #: door, which stages two equations where the example writes two. Measured

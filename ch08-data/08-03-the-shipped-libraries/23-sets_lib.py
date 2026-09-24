@@ -288,7 +288,22 @@ def twin(m):
 #: (i-arity-walk-all-predicates) [measured 2026-09-25T02:51:40+10:00: min-of-3
 #: serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 393110
+#: RE-PINNED 2026-09-25, 393110 to 388872 (-4238), the host evaluation door
+#: replaces the Python binding's own evaluation, and its moves are these, each
+#: measured on the superproject's dd36742f5 against the registration change
+#: beneath it: every answer reads its well-founded residue through
+#: call_delays/2, three inferences an answer; a flat call of a compiled
+#: function is translated the first time it is asked, a translation-cache miss
+#: the binding's direct call skipped; the gate that direct call ran on every
+#: ask, a type-declaration match through the space's storage, the foreign-space
+#: hook and the MORK ownership question, is gone; and in a seat process
+#: filereader's existing_predicate_arities/2 walks thirteen more predicates,
+#: the door, its questions and the host services the binding now calls less the
+#: binding predicates the door retired, two inferences each a registration of
+#: more than twelve names [measured 2026-09-25T06:47:14+10:00: min-of-3 serial
+#: fresh processes; command=python extensions/python/tools/twin_coverage.py
+#: --repin].
+BUDGET = 388872
 
 #: OVERRUN 2026-09-12, 1399: the example nests its law claims in one evaluation
 #: each, where Python reads them as separate calls whose intermediate sets cross

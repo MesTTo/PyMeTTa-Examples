@@ -398,7 +398,21 @@ def twin(m):
 #: 240, each reproduced exactly by one inert predicate added to the engine on
 #: the base [measured 2026-09-25T06:26:34+10:00: min-of-3 serial fresh
 #: processes; command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 3012
+#: RE-PINNED 2026-09-25, 3012 to 3359 (+347), the host evaluation door replaces
+#: the Python binding's own evaluation, and its moves are these, each measured
+#: on the superproject's dd36742f5 against the registration change beneath it:
+#: every answer reads its well-founded residue through call_delays/2, three
+#: inferences an answer; a flat call of a compiled function is translated the
+#: first time it is asked, a translation-cache miss the binding's direct call
+#: skipped; the gate that direct call ran on every ask, a type-declaration
+#: match through the space's storage, the foreign-space hook and the MORK
+#: ownership question, is gone; and in a seat process filereader's
+#: existing_predicate_arities/2 walks thirteen more predicates, the door, its
+#: questions and the host services the binding now calls less the binding
+#: predicates the door retired, two inferences each a registration of more than
+#: twelve names [measured 2026-09-25T06:42:57+10:00: min-of-3 serial fresh
+#: processes; command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 3359
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 =): the twin is an ordinary Python
@@ -410,3 +424,16 @@ BUDGET = 3012
 #: the two stored-atom surpluses, one fresh process per side; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=9010a79b01c9b2a66b96a3952fa378fb3e939dc3].
 DIVERGENCE = "5ae6d2b9cf7b119a43b104165c892acbbd121c9e1c6ea2b1e35561a577ea2cfc"
+
+#: OVERRUN 2026-09-25, 0 to 233 (+233): the twin costs 3359 against the
+#: example's 1072 and a ceiling of 3126 with the earlier declaration; a minimal
+#: twin of this example costs 288, inside the 1179 the band alone allows, so
+#: the distance is this twin's own program. The host evaluation door translates
+#: a call the first time it is asked, as the engine translates the example's
+#: own ! form, where the binding's direct call ran the function's predicate
+#: untranslated: this twin's first pull of keep(True, 42) costs 558 inferences
+#: against 208, and every later ask the same as before [measured
+#: 2026-09-25T07:04:25+10:00: one fresh process per side through the lane's
+#: run_example and run_twin, the floor from a minimal twin built by the probe;
+#: command=python extensions/python/benchmarks/probes/twin_floor.py].
+OVERRUN = 233

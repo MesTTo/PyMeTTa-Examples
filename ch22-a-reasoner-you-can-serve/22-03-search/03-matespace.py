@@ -486,7 +486,22 @@ RUNG = (
 #: 240, each reproduced exactly by one inert predicate added to the engine on
 #: the base [measured 2026-09-25T06:37:34+10:00: min-of-3 serial fresh
 #: processes; command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 24123019
+#: RE-PINNED 2026-09-25, 24123019 to 27315035 (+3192016), the host evaluation
+#: door replaces the Python binding's own evaluation, and its moves are these,
+#: each measured on the superproject's dd36742f5 against the registration
+#: change beneath it: every answer reads its well-founded residue through
+#: call_delays/2, three inferences an answer; a flat call of a compiled
+#: function is translated the first time it is asked, a translation-cache miss
+#: the binding's direct call skipped; the gate that direct call ran on every
+#: ask, a type-declaration match through the space's storage, the foreign-space
+#: hook and the MORK ownership question, is gone; and in a seat process
+#: filereader's existing_predicate_arities/2 walks thirteen more predicates,
+#: the door, its questions and the host services the binding now calls less the
+#: binding predicates the door retired, two inferences each a registration of
+#: more than twelve names [measured 2026-09-25T07:01:43+10:00: min-of-3 serial
+#: fresh processes; command=python extensions/python/tools/twin_coverage.py
+#: --repin].
+BUDGET = 27315035
 
 #: OVERRUN 2026-09-07, 1434400: it names `expand` and `expandK` as definitions
 #: and asserts the atom count, where the example writes them as equations.
@@ -495,7 +510,18 @@ BUDGET = 24123019
 #: this twin's own program [measured 2026-09-07: one fresh process per side;
 #: command=python extensions/python/benchmarks/probes/twin_floor.py;
 #: commit=9010a79b01c9b2a66b96a3952fa378fb3e939dc3].
-OVERRUN = 1434400
+#: OVERRUN 2026-09-25, 1434400 to 4621936 (+3187536): the twin costs 27315035
+#: against the example's 20626828 and a ceiling of 24127499 with the earlier
+#: declaration; a minimal twin of this example costs 19864944, inside the
+#: 22689511 the band alone allows, so the distance is this twin's own program.
+#: The host evaluation door reads each answer's well-founded residue through
+#: call_delays/2, three inferences an answer where the binding's direct call
+#: read none, and this twin pulls all 1,063,919 of its answers across to count
+#: them [measured 2026-09-25T07:06:22+10:00: one fresh process per side through
+#: the lane's run_example and run_twin, the floor from a minimal twin built by
+#: the probe; command=python
+#: extensions/python/benchmarks/probes/twin_floor.py].
+OVERRUN = 4621936
 
 #: DIVERGED 2026-09-07, the example holds 4 atoms the twin does not (4 =) and
 #: the twin holds 5 the example does not (1 :, 4 =): the twin is an ordinary
