@@ -2,7 +2,12 @@
 
 Twenty-four move equations say where the blank may go from each of the nine
 positions, and a breadth-first loop walks the reachable states, refusing a
-duplicate, until the queue empties. The claim is the count it reaches, 181441.
+duplicate, until the queue empties. The claim is the count it reaches, 181440,
+the 9!/2 boards reachable from the start, each dequeued once because the start
+enters the duplicate store before the loop, as every other board does when the
+loop first reaches it. Upstream PeTTa's copy seeds the store through
+`add-unique-item-or-empty`, which nothing defines, so its start is dequeued a
+second time and it answers 181441; the example says why it differs.
 
 The moves are one shape repeated, so a pair of loops writes them: the blank's
 position and the direction are the loop variables, and the row is the eight
@@ -11,14 +16,15 @@ twenty-four out; here the shape is stated once and `@m.rules` lands the
 twenty-four equations the loops supply, which is the door for a head that
 destructures a nine-cell board.
 
-The search is a `@m.rules` bundle and two compiled functions. `bfs_loop` must
-stay the example's TWO coexisting clauses, and that is measured rather than
-assumed: folding them into one `if`/`else` compiles, answers correctly for a
-few thousand states, and then raises StackOverflow at 16,665 of the 181,441,
-because the recursive call moves out of the let* chain's tail position into
-`if`'s third argument (friction, P14.4). The example inlines a `let*` under the
-`collapse`, and the twin NAMES that intermediate as `fresh-neighbour` instead,
-which is a compiled function whose statements ARE that let*.
+The search is a `@m.rules` bundle and two compiled functions. `bfs_loop` is
+the example's TWO coexisting clauses. Folding them into one `if`/`else` raised
+StackOverflow at 16,665 states when this twin was written (friction, P14.4),
+and the folded search has completed since the tail-context work retired that
+row on 2026-09-05 [source: docs/journal/2026-09-05-case-duals-and-tail-contexts.md;
+residue.json's retired P14.4 row for this example]. The example inlines a
+`let*` under the `collapse`, and the twin NAMES that intermediate as
+`fresh-neighbour` instead, which is a compiled function whose statements ARE
+that let*.
 
 Three names carry a genuine underscore, `bfs_loop`, `bfs_all` and `$_1`. The
 factory attribute door maps every underscore to a hyphen, so the variables take
@@ -126,15 +132,15 @@ def twin(m):
     def bfs_all(start):
         """Seed the duplicate store and the queue, then run the loop."""
         # (= (bfs_all $Start)
-        #    (let* (($Pt (add-unique-item-or-empty $Start))
+        #    (let* (($Pt (add-unique-or-fail &dup $Start))
         #           ($Q1 (enqueue $Start (empty-queue))))
         #         (bfs_loop $Q1 0)))
-        _receipt = S.add_unique_item_or_empty(start)
+        _receipt = S.add_unique_or_fail(duplicates, start)
         queue = S.enqueue(start, S.empty_queue())
         return S["bfs_loop"](queue, 0)
 
-    # !(test (let $x (bfs_all (___ 1 2 3 4 5 6 7 8)) $x) 181441)
-    assert bfs_all((BLANK, 1, 2, 3, 4, 5, 6, 7, 8)) == [181441]
+    # !(test (let $x (bfs_all (___ 1 2 3 4 5 6 7 8)) $x) 181440)
+    assert bfs_all((BLANK, 1, 2, 3, 4, 5, 6, 7, 8)) == [181440]
 
 
 #: Inferences this twin spends, its own tripwire. A PLACEHOLDER: the wave's
@@ -637,7 +643,14 @@ def twin(m):
 #: battery 117's one path, every component at its pin; command=sh
 #: tools/check.sh twins (twin_coverage.py inside tools/bounded.sh);
 #: commit=e4b7448d1f1bd98733f1b04c3906aaa42f35ef1a].
-BUDGET = 31979745
+#: RE-PINNED 2026-09-24, 31979745 to 31979930 (+185), bfs_all seeds the
+#: duplicate store with add-unique-or-fail, as the example now does where it
+#: called the undefined add-unique-item-or-empty, so the start board is
+#: dequeued once and the search answers 181,440: one add-unique-or-fail call
+#: more, and one dequeue with its two neighbour checks fewer [measured
+#: 2026-09-24: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+BUDGET = 31979930
 
 #: DIVERGED 2026-09-07, the example holds 2 atoms the twin does not (2 =) and
 #: the twin holds 5 the example does not (3 =, 2 @doc): the twin is an ordinary
@@ -649,4 +662,12 @@ BUDGET = 31979745
 #: [measured 2026-09-07: the two stored-atom surpluses, one fresh process per
 #: side; command=python extensions/python/tools/twin_coverage.py --repin;
 #: commit=9010a79b01c9b2a66b96a3952fa378fb3e939dc3].
-DIVERGENCE = "39fa26e413233f6c5280bcee18432c5fd2333685781b372eeb7c2b8c8e93ab36"
+#: DIVERGED 2026-09-24, the example holds 2 atoms the twin does not (2 =) and
+#: the twin holds 5 atoms the example does not (3 =, 2 @doc): both bfs_all
+#: equations now seed the duplicate store before the search, the example's
+#: through (add-unique-or-fail &dup $Start) and the twin's through its own
+#: space, so each side's stored bfs_all atom changed and the census is the one
+#: before [measured 2026-09-24: the two stored-atom surpluses, one fresh
+#: process per side; command=python extensions/python/tools/twin_coverage.py
+#: --repin; commit=WORKTREE].
+DIVERGENCE = "cbd575ab625831a7a68a80886d4df6be6aa903a295dad6907164eb1861bcd56b"
