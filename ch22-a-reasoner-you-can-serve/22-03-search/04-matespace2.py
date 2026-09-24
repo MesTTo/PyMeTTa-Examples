@@ -1,15 +1,34 @@
-"""Purpose: examples/ch22-a-reasoner-you-can-serve/22-03-search/04-matespace2.metta in Python: the same growth, collapsed first.
+"""Purpose: examples/ch22-a-reasoner-you-can-serve/22-03-search/04-matespace2.metta in Python: the same growth, expanded and mated every round.
 
-matespace.py's sibling. `expand` and `mate` here read the space through
-`(superpose (collapse (match ...)))` rather than matching lazily, so each round
-works from a snapshot of what was there when it started, and `rewriteK` runs
-both of them per round instead of expanding 390 times and mating once. Eighty
-rounds answer just under 1.3 million atoms.
+matespace.py's sibling. `rewriteK` runs `expand` and then `mate` once a round,
+instead of expanding 390 times and mating once, and both read the space
+through `(superpose (collapse (match ...)))`. That is not a snapshot of the
+round. superpose takes a written argument as its list of branches
+[source: engine/translator/special_forms.pl, translate_special_dl(superpose, ...);
+upstream PeTTa 43705f5, src/translator.pl:134; commit=WORKTREE], so this one has
+two. The first is the symbol `collapse`, which the rules treat as a term like
+any other, so the space gains `(num (M collapse))`, `(num (W collapse))` and
+`(num (C collapse))`. The second is the match, which starts only after the
+first branch's whole continuation has finished and walks the atoms present
+when it starts. Every answer of `expand` and of `mate` runs the rest of the
+rounds before the next answer is asked for, so the final match runs once in
+every branch that reaches it and the count is their answers summed: eighty
+rounds send 798 branches there, over a space that ends holding 2,869 `num`
+atoms, for 1,297,533 answers. Reading each round from a snapshot would answer
+4 at one round, where this answers 50 [measured 2026-09-24: the engine answers
+50, 627, 1546, 2873, 4608, 6751, 12261 and 19403 at 1, 2, 3, 4, 5, 6, 8 and 10
+rounds, rewriteK answers 798 times at 80 rounds and leaves 2,869 num atoms,
+and with each match collapsed before superpose walks it the program answers 4
+and 30 at 1 and 2 rounds; command=sh tools/run.sh over this example's
+definitions with the final call changed; commit=WORKTREE]. The C corpus models
+this order and gets the same counts, and 1297533 at 80 [source: CMeTTa-Examples
+4fe7740, language-feature-examples/ch22-a-reasoner-you-can-serve/22-03-search/matespace.h].
 
 The count is Python's, `len(answers)` being what `(length (collapse X))`
 dissolves into, and it is expensive at this size for the reason matespace.py
-measures beside this file: every atom crosses the seam to be counted and thrown
-away. The cost is named there and is the library's to close (residue, P14.7).
+measures beside this file: every answer crosses the seam to be counted and
+thrown away. The cost is named there and is the library's to close (residue,
+P14.7).
 
 The three definitions whose bodies name `case` or `once` remain terms
 (residue, P14.4). `rewriteK` and the driver compile: sequencing is assignment,
