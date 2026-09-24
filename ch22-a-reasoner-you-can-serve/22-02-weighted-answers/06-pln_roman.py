@@ -493,7 +493,25 @@ def twin(m):
 #: markup's three, and by a few where it reads the census without deciding
 #: [measured 2026-09-24: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=d832d20e8edfdad28ad52815757ba9e685ad2de3].
-BUDGET = 2265532
+#: RE-PINNED 2026-09-24, 2265532 to 2259678 (-5854), +36 at aaeea643a, whose
+#: seat 5b0b92274 adds twelve predicates to module user that filereader's
+#: registration walk above forty names reads at three inferences each; +9 at
+#: b7e3d3bcb, whose three new metta_engine predicates that walk reads at three
+#: inferences each; -5,905 at ae1cc8936, where a registration batch of thirteen
+#: names or more walks the visible predicate table at two inferences a
+#: predicate that asking per name spent inside one C call, and a batch above
+#: forty tests each predicate with a dict at one inference fewer than the AVL;
+#: +6 at b5eb39acd, whose three new engine exports the registration walk above
+#: twelve names reads at two inferences each [measured 2026-09-24: min-of-3
+#: serial fresh processes at HEAD in battery 118 holding the committed tree
+#: alone (BATTERY_KEEP='', 11:56); each step read with its parent and child in
+#: turn in battery 115 (10:42 to 11:18), 117 (11:01 to 12:10) or 120 (12:04 to
+#: 12:13) from committed trees or this job's patched copies of them, none from
+#: a working tree; 850d2a660's and 0f6d29ba6's split from provider-carry's own
+#: pairs, aaeea643a's on the ladder before 10:05; command=python
+#: extensions/python/tools/twin_coverage.py --measure --rounds 3;
+#: commit=c7d7244fbe6d32d024ca8c61b336008e98b156ef].
+BUDGET = 2259678
 
 #: OVERRUN 2026-09-07, 52200: it asserts the four premises the answer came from
 #: beside the truth value, which the example only prints. Measured 2246993

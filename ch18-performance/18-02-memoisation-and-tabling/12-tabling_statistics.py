@@ -507,7 +507,19 @@ def twin(m):
 #: f2822e2ae's paragraph charges to the boot host check [measured 2026-09-24:
 #: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=0a81c782fd6ba00984c36e58e228f73bca810dee].
-BUDGET = 54760
+#: RE-PINNED 2026-09-24, 54760 to 55260 (+500), +501 at 850d2a660, which reads
+#: a native space's lengths in ascending arity rather than functor-hash order;
+#: -1 at 0f6d29ba6, the seat's early-exit questions asked by key or in
+#: ascending arity [measured 2026-09-24: min-of-3 serial fresh processes at
+#: HEAD in battery 118 holding the committed tree alone (BATTERY_KEEP='',
+#: 11:56); each step read with its parent and child in turn in battery 115
+#: (10:42 to 11:18), 117 (11:01 to 12:10) or 120 (12:04 to 12:13) from
+#: committed trees or this job's patched copies of them, none from a working
+#: tree; 850d2a660's and 0f6d29ba6's split from provider-carry's own pairs,
+#: aaeea643a's on the ladder before 10:05; command=python
+#: extensions/python/tools/twin_coverage.py --measure --rounds 3;
+#: commit=c7d7244fbe6d32d024ca8c61b336008e98b156ef].
+BUDGET = 55260
 
 #: DIVERGED 2026-09-07, the example holds 1 atom the twin does not (1 =) and
 #: the twin holds 1 atom the example does not (1 =): the twin is an ordinary Python

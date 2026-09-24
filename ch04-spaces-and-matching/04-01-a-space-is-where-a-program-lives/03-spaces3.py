@@ -178,4 +178,14 @@ def twin(m):  # noqa: ARG001  -- the twin works in its own named space; the defa
 #: on every crossing at 05fae56ad comes off, and the MeTTa halves keep their
 #: counts [measured 2026-09-17: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=d60277df18afee021990c754b6e593fbb32d69a2].
-BUDGET = 447
+#: RE-PINNED 2026-09-24, 447 to 483 (+36), +36 at 850d2a660, which reads a
+#: native space's lengths in ascending arity rather than functor-hash order
+#: [measured 2026-09-24: min-of-3 serial fresh processes at HEAD in battery 118
+#: holding the committed tree alone (BATTERY_KEEP='', 11:56); each step read
+#: with its parent and child in turn in battery 115 (10:42 to 11:18), 117
+#: (11:01 to 12:10) or 120 (12:04 to 12:13) from committed trees or this job's
+#: patched copies of them, none from a working tree; 850d2a660's and
+#: 0f6d29ba6's split from provider-carry's own pairs, aaeea643a's on the ladder
+#: before 10:05; command=python extensions/python/tools/twin_coverage.py
+#: --measure --rounds 3; commit=c7d7244fbe6d32d024ca8c61b336008e98b156ef].
+BUDGET = 483

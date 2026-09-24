@@ -541,7 +541,20 @@ def twin(m):
 #: library with a native half now loads that module once [measured 2026-09-24:
 #: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=d832d20e8edfdad28ad52815757ba9e685ad2de3].
-BUDGET = 234134
+#: RE-PINNED 2026-09-24, 234134 to 245727 (+11593), +11,591 at ae1cc8936, where
+#: a registration batch of thirteen names or more walks the visible predicate
+#: table at two inferences a predicate that asking per name spent inside one C
+#: call, and a batch above forty tests each predicate with a dict at one
+#: inference fewer than the AVL [measured 2026-09-24: min-of-3 serial fresh
+#: processes at HEAD in battery 118 holding the committed tree alone
+#: (BATTERY_KEEP='', 11:56); each step read with its parent and child in turn
+#: in battery 115 (10:42 to 11:18), 117 (11:01 to 12:10) or 120 (12:04 to
+#: 12:13) from committed trees or this job's patched copies of them, none from
+#: a working tree; 850d2a660's and 0f6d29ba6's split from provider-carry's own
+#: pairs, aaeea643a's on the ladder before 10:05; command=python
+#: extensions/python/tools/twin_coverage.py --measure --rounds 3;
+#: commit=c7d7244fbe6d32d024ca8c61b336008e98b156ef].
+BUDGET = 245727
 
 #: DIVERGED 2026-09-07, the example holds 1 atom the twin does not (1 =) and
 #: the twin holds 1 atom the example does not (1 =): the twin is an ordinary Python

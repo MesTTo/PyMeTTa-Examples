@@ -130,4 +130,16 @@ def twin(m):
 #: markup's three, and by a few where it reads the census without deciding
 #: [measured 2026-09-24: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=d832d20e8edfdad28ad52815757ba9e685ad2de3].
-BUDGET = 27137
+#: RE-PINNED 2026-09-24, 27137 to 27272 (+135), +313 at 850d2a660, which reads
+#: a native space's lengths in ascending arity rather than functor-hash order;
+#: -178 at 0f6d29ba6, the seat's early-exit questions asked by key or in
+#: ascending arity [measured 2026-09-24: min-of-3 serial fresh processes at
+#: HEAD in battery 118 holding the committed tree alone (BATTERY_KEEP='',
+#: 11:56); each step read with its parent and child in turn in battery 115
+#: (10:42 to 11:18), 117 (11:01 to 12:10) or 120 (12:04 to 12:13) from
+#: committed trees or this job's patched copies of them, none from a working
+#: tree; 850d2a660's and 0f6d29ba6's split from provider-carry's own pairs,
+#: aaeea643a's on the ladder before 10:05; command=python
+#: extensions/python/tools/twin_coverage.py --measure --rounds 3;
+#: commit=c7d7244fbe6d32d024ca8c61b336008e98b156ef].
+BUDGET = 27272
