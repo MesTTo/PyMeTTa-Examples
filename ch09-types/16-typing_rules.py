@@ -47,8 +47,8 @@ def twin(m):
     assert typing_rule_demo(payload) == [S.seen(payload)]
 
     # !(add-typing-rule! deny-unknown-demo ordinary %Undefined% DemoPayload
-    #                    (refuse unknown-demo-is-not-a-payload))
-    m.fn.add_typing_rule(rule, S.ordinary, UNDEFINED, S.DemoPayload, S.refuse(words))
+    #                    (Refuse unknown-demo-is-not-a-payload))
+    m.fn.add_typing_rule(rule, S.ordinary, UNDEFINED, S.DemoPayload, S.Refuse(words))
 
     # !(test (typing-rule-demo unknown-demo)
     #        (Error (typing-rule-demo unknown-demo)

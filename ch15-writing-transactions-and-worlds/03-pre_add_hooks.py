@@ -2,9 +2,9 @@
 
 A pre-add hook claims the write door of one space for one function of one
 argument, the incoming atom. Every write consults it first, and the handler
-answers one of four verdicts: `accept()` lets the atom in as offered,
-`accept(atom)` lets a TRANSFORMED atom in instead, `refuse(words)` throws
-carrying the handler's own words, and `drop()` skips the write silently while
+answers one of four verdicts: `Accept()` lets the atom in as offered,
+`Accept(atom)` lets a TRANSFORMED atom in instead, `Refuse(words)` throws
+carrying the handler's own words, and `Drop()` skips the write silently while
 the caller sees success.
 
 So the writes here are ordinary `space += atom`, and what the example proves is
@@ -36,7 +36,7 @@ Open Obligations:
 """
 
 import metta
-from metta import S, V, accept, drop, refuse
+from metta import Accept, Drop, Refuse, S, V
 from metta._errors.errors import EngineError
 
 #: The three sentences this file's refusals print. Each is the Python door's
@@ -61,22 +61,22 @@ def twin(m):
     """Claim a space's write door, then write four atoms it judges."""
     pool = metta.space(S.pool)
 
-    # (= (guard (secret $x)) (refuse "no secrets in this pool"))
-    # (= (guard (raw $x))    (accept (cooked $x)))
-    # (= (guard (dup $x))    (drop))
-    # (= (guard (plain $x))  (accept))
+    # (= (guard (secret $x)) (Refuse "no secrets in this pool"))
+    # (= (guard (raw $x))    (Accept (cooked $x)))
+    # (= (guard (dup $x))    (Drop))
+    # (= (guard (plain $x))  (Accept))
     @pool.pre_add
     @m.define
     def guard(atom):
         match atom:
             case (S.secret, _):
-                return refuse("no secrets in this pool")
+                return Refuse("no secrets in this pool")
             case (S.raw, x):
-                return accept(S.cooked(x))
+                return Accept(S.cooked(x))
             case (S.dup, _):
-                return drop()
+                return Drop()
             case (S.plain, _):
-                return accept()
+                return Accept()
 
     # An accepted atom lands as offered.
     pool += (S.plain, 1)
@@ -114,7 +114,7 @@ def twin(m):
     # is refused with both named, never raced at call time.
     @m.define
     def other_guard(_atom):
-        return accept()
+        return Accept()
 
     conflict = None
     try:
@@ -495,7 +495,15 @@ def twin(m):
 #: that took lib_statistics and lib_random to green [measured 2026-09-24: min-
 #: of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
-BUDGET = 8059
+#: RE-PINNED 2026-09-24, 8059 to 8070 (+11), +11 at the verdict rename: a
+#: request the handler leaves unanswered reaches metta_hook_invalid_verdict/5
+#: in engine/metta/space_hooks.pl as its own residual call, which asks the
+#: claiming module whether it also defines the handler at another arity before
+#: it reports the stuck state, and the twin makes one such request, (uncovered
+#: 9), which the example reads +11 as well [measured 2026-09-24: min-of-3
+#: serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+BUDGET = 8070
 
 #: DIVERGED 2026-09-07, the example holds 4 atoms the twin does not (4 =) and
 #: the twin holds 1 atom the example does not (1 =): the twin is an ordinary Python
@@ -506,4 +514,11 @@ BUDGET = 8059
 #: docstrings that come with it are stored beside them [measured 2026-09-07:
 #: the two stored-atom surpluses, one fresh process per side; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=9010a79b01c9b2a66b96a3952fa378fb3e939dc3].
-DIVERGENCE = "a2b8a46deb218410b5fce59a952c33180f900c6bdb0b1a8ff596a77b5aa02e05"
+#: DIVERGED 2026-09-24, the example holds 4 atoms the twin does not (4 =) and
+#: the twin holds 1 atom the example does not (1 =): the verdicts both sides
+#: store are the capitalized constructors now, (Accept), (Refuse ...) and
+#: (Drop), so the atoms each side holds that the other does not are spelled
+#: that way [measured 2026-09-24: the two stored-atom surpluses, one fresh
+#: process per side; command=python extensions/python/tools/twin_coverage.py
+#: --repin; commit=WORKTREE].
+DIVERGENCE = "5b9b68d709b0f6148cb1f81f59b9cefad2540cd002c09fb4006132aa08a4ce73"

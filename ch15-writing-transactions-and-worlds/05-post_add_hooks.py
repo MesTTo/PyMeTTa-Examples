@@ -21,7 +21,7 @@ Open Obligations:
   Future Enhancements: None.
 """
 
-from metta import S, V, accept, drop, refuse
+from metta import Accept, Drop, Refuse, S, V
 from metta._errors.errors import EngineError
 
 #: The two sentences this file's refusals print, in the Python door's own
@@ -43,41 +43,41 @@ def twin(m):
     """Accept, transform, drop, refuse, get stuck, and undeclare."""
     pool = m.metta.space(S.pool)
 
-    # (= (audit (raw $x))    (accept (cooked $x)))
-    # (= (audit (secret $x)) (refuse "no secrets survive the audit"))
-    # (= (audit (dup $x))    (drop))
-    # (= (audit (plain $x))  (accept))
+    # (= (audit (raw $x))    (Accept (cooked $x)))
+    # (= (audit (secret $x)) (Refuse "no secrets survive the audit"))
+    # (= (audit (dup $x))    (Drop))
+    # (= (audit (plain $x))  (Accept))
     @m.define
     def audit(atom):
         match atom:
             case (S.raw, x):
-                return accept(S.cooked(x))
+                return Accept(S.cooked(x))
             case (S.secret, _):
-                return refuse("no secrets survive the audit")
+                return Refuse("no secrets survive the audit")
             case (S.dup, _):
-                return drop()
+                return Drop()
             case (S.plain, _):
-                return accept()
+                return Accept()
 
     m.fn.declare_post_add(pool, S.audit).one()  # rung: post-add has no claim door
 
-    # (accept) leaves the landed atom where it is.
+    # (Accept) leaves the landed atom where it is.
     pool += (S.plain, 1)
     assert [row.x for row in pool[S.plain(V.x)]] == [1]
 
-    # (accept <atom>) REPLACES it: what landed is removed and the handler's
+    # (Accept <atom>) REPLACES it: what landed is removed and the handler's
     # is written through the same door, granted so the hook does not fire on
     # its own output.
     pool += (S.raw, 7)
     assert [row.x for row in pool[S.cooked(V.x)]] == [7]
     assert not pool[S.raw(V.x)]
 
-    # (drop) removes what landed, so the caller still sees the success of a
+    # (Drop) removes what landed, so the caller still sees the success of a
     # write that leaves nothing behind.
     pool += (S.dup, 3)
     assert not pool[S.dup(V.x)]
 
-    # (refuse <words>) throws with the handler's own sentence, and the write
+    # (Refuse <words>) throws with the handler's own sentence, and the write
     # is undone first: an audited-and-rejected atom is not left behind.
     refusal = None
     try:
@@ -101,8 +101,8 @@ def twin(m):
     # One claimant per name here as well, checked when the claim is made.
     @m.define
     def other_audit(_atom):
-        # (= (other-audit $a) (accept))
-        return accept()
+        # (= (other-audit $a) (Accept))
+        return Accept()
 
     conflict = None
     try:
@@ -118,14 +118,14 @@ def twin(m):
     @pool.pre_add
     @m.define
     def gate(atom):
-        # (= (gate (raw $x)) (accept)), and two more
+        # (= (gate (raw $x)) (Accept)), and two more
         match atom:
             case (S.raw, _):
-                return accept()
+                return Accept()
             case (S.banned, _):
-                return drop()
+                return Drop()
             case (S.plain, _):
-                return accept()
+                return Accept()
 
     pool += (S.raw, 8)
     assert [row.x for row in pool[S.cooked(V.x)]] == [7, 8]
@@ -407,7 +407,15 @@ def twin(m):
 #: that took lib_statistics and lib_random to green [measured 2026-09-24: min-
 #: of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
-BUDGET = 12435
+#: RE-PINNED 2026-09-24, 12435 to 12446 (+11), +11 at the verdict rename: a
+#: request the handler leaves unanswered reaches metta_hook_invalid_verdict/5
+#: in engine/metta/space_hooks.pl as its own residual call, which asks the
+#: claiming module whether it also defines the handler at another arity before
+#: it reports the stuck state, and the twin makes one such request, (uncovered
+#: 9), which the example reads +11 as well [measured 2026-09-24: min-of-3
+#: serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+BUDGET = 12446
 
 #: DIVERGED 2026-09-08, the example holds 7 atoms the twin does not (7 =) and
 #: the twin holds 2 atoms the example does not (2 =): re-settled on the tree
@@ -419,4 +427,11 @@ BUDGET = 12435
 #: 2026-09-08: the two stored-atom surpluses, one fresh process per side;
 #: command=python extensions/python/tools/twin_coverage.py --repin;
 #: commit=08f6f4df19a283bb84ba5f679c83944b42685b2e].
-DIVERGENCE = "1a22f1d1d6ff3172a8c7bde1260abe1d6a7b97ea2d6f1c97e095de963c767345"
+#: DIVERGED 2026-09-24, the example holds 7 atoms the twin does not (7 =) and
+#: the twin holds 2 atoms the example does not (2 =): the verdicts both sides
+#: store are the capitalized constructors now, (Accept), (Refuse ...) and
+#: (Drop), so the atoms each side holds that the other does not are spelled
+#: that way [measured 2026-09-24: the two stored-atom surpluses, one fresh
+#: process per side; command=python extensions/python/tools/twin_coverage.py
+#: --repin; commit=WORKTREE].
+DIVERGENCE = "f70ced7f4b96bce7bd5e54824214dd578d795f7a5d88c4141d42091fc9f25b6d"

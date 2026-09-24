@@ -11,7 +11,7 @@ The whole judge is ordinary Python now. Every part of the original's chain has
 a spelling inside a compiled body: `if`/`else` for the branches, `fn.eq` for
 the empty test, `types[0]` and `types[1:]` for `car-atom` and `cdr-atom`,
 `fn.lt` for the bound, `match(space, pattern, template)` for the two catalog
-reads, and `accept`/`refuse` for the verdicts. The four definitions are written
+reads, and `Accept`/`Refuse` for the verdicts. The four definitions are written
 bottom-upwards, because a compiled body calls a sibling by the Python name it
 is already bound to and a name has to exist before it is called.
 
@@ -31,7 +31,7 @@ one thing this example may not do: the claim under test is its own.
 
 Assumes:
   - the custom judge, pool setup, and seven claims mirror the source example
-    [source: examples/ch15-writing-transactions-and-worlds/04-admission_pools.metta lines 9-72; commit=8a8b75a1f4052c00c70c29e25e95e4d5a1812cd5]
+    [source: examples/ch15-writing-transactions-and-worlds/04-admission_pools.metta lines 16-78; commit=5562ced6ef3a21154f391e3467c2cfcdca6dfb12]
 Guarantees:
   - the custom and builtin judges agree before, at, and after the declared
     capacity boundary [measured 2026-08-24: the twin runs to completion under
@@ -45,7 +45,7 @@ Open Obligations:
 """
 
 import metta
-from metta import Atom, S, V, accept, fn, match, refuse, typed
+from metta import Accept, Atom, Refuse, S, V, fn, match, typed
 
 
 def twin(m):
@@ -58,10 +58,10 @@ def twin(m):
     @m.define
     def metta_admission_within(pool_, limits):
         if fn.eq(limits, ()):
-            return accept()
+            return Accept()
         if fn.lt(fn.space_atom_count(pool_), limits[0]):
-            return accept()
-        return refuse(S.pool_at_capacity(limits[0]))
+            return Accept()
+        return Refuse(S.pool_at_capacity(limits[0]))
 
     @m.define
     def metta_admission_bounded(pool_):
@@ -79,7 +79,7 @@ def twin(m):
             return metta_admission_bounded(pool_)
         if fn.has_declared_type(atom, types[0]):
             return metta_admission_typed(pool_, atom, types[1:])
-        return refuse(S.does_not_carry(types[0]))
+        return Refuse(S.does_not_carry(types[0]))
 
     @m.define
     def metta_admission_verdict(pool_, atom: Atom):
@@ -135,7 +135,7 @@ def twin(m):
 
     reflection -= S.capacity(pool, 2)
     assert builtin(pool, S.ticket(S.a)).one() == metta_admission_verdict(pool, S.ticket(S.a)).one()
-    assert builtin(pool, S.ticket(S.a)) == [S.accept()]
+    assert builtin(pool, S.ticket(S.a)) == [S.Accept()]
 
 
 #: Inferences this twin spends, its own tripwire. PLACEHOLDER: the wave's
@@ -521,4 +521,11 @@ BUDGET = 32290
 #: docstrings that come with it are stored beside them [measured 2026-09-07:
 #: the two stored-atom surpluses, one fresh process per side; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=9010a79b01c9b2a66b96a3952fa378fb3e939dc3].
-DIVERGENCE = "95e731f24e680e14f72a5273b7088715f0372be522764bc5215e7f07dd7c0322"
+#: DIVERGED 2026-09-24, the example holds 2 atoms the twin does not (2 =) and
+#: the twin holds 2 atoms the example does not (2 =): the verdicts both sides
+#: store are the capitalized constructors now, (Accept), (Refuse ...) and
+#: (Drop), so the atoms each side holds that the other does not are spelled
+#: that way [measured 2026-09-24: the two stored-atom surpluses, one fresh
+#: process per side; command=python extensions/python/tools/twin_coverage.py
+#: --repin; commit=WORKTREE].
+DIVERGENCE = "aa06468a9fe3d2a46ec66783871e5c9032eaad9d1db667fe2e2cb95b4c5bc51b"

@@ -2,7 +2,7 @@
 
 A rule head says WHICH shape it rewrites. A guard inside the rule says whether
 the match it got is one the rewrite can honour, which is a different question
-and needs a different answer: `(refuse Reason)`. A refusal is a decline rather
+and needs a different answer: `(Refuse Reason)`. A refusal is a decline rather
 than an error, so the call carries on down the dispatch chain and the next
 equation gets its turn, and the words the rule gave are published where a
 program can read them.
@@ -34,9 +34,9 @@ def twin(m):
     @m.rules
     def dosing(n):
         # (= (strength (dose $n) (unit mg))
-        #    (if (> $n 1000) (refuse "...") (noeval (mg $n))))
+        #    (if (> $n 1000) (Refuse "...") (noeval (mg $n))))
         yield equation(S.strength(S.dose(n), S.unit(S.mg))).to(
-            if_(S.gt(n, 1000), S.refuse(TOO_STRONG), S.noeval(S.mg(n))))
+            if_(S.gt(n, 1000), S.Refuse(TOO_STRONG), S.noeval(S.mg(n))))
         # A refusal is a decline, so a rule with another equation tries that one.
         yield equation(S.strength(S.dose(n), S.unit(S.mg))).to(
             S.noeval(S.grams(n / 1000)))       # (= ... (noeval (grams (/ $n 1000))))
