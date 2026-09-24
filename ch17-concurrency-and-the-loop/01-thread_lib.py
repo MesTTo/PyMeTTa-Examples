@@ -609,10 +609,25 @@ def twin(m):
 #: 2026-09-24: 20 full-lane observations; command=python
 #: extensions/python/tools/twin_coverage.py --observe --rounds 20;
 #: commit=e4b7448d1f1bd98733f1b04c3906aaa42f35ef1a].
+#: POOLED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 480890..574648 over 20 to
+#: 480230..574648 over 24: the four whole-lane runs of this runtime the rounds
+#: did not hold, the twins lane alone, read 485,550 in battery 117's pass over
+#: the base and both changes, 492,321 and 489,011 in two runs with the delta
+#: publication's twins in battery 119, and 480,230 on the committed tree
+#: e4b7448d1 in battery 117, 660 under the rounds' floor; this twin's count
+#: follows the spin that proves a race really races, and a whole-lane run under
+#: this protocol on this runtime is an observation, so the envelope is the
+#: union of the extrema and the sum of the counts [measured 2026-09-24: sh
+#: tools/check.sh twins alone, on 8d651070d with the delta publication and the
+#: change before it in batteries 117 and 119 and on the committed tree
+#: e4b7448d1 in battery 117; command=python
+#: extensions/python/tools/twin_coverage.py;
+#: commit=e4b7448d1f1bd98733f1b04c3906aaa42f35ef1a].
 BUDGET = {
-    "minimum": 480890,
+    "minimum": 480230,
     "maximum": 574648,
-    "observations": 20,
+    "observations": 24,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 

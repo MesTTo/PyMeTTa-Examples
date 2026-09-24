@@ -326,10 +326,26 @@ def twin(m):
 #: [measured 2026-09-24: 20 full-lane observations; command=python
 #: extensions/python/tools/twin_coverage.py --observe --rounds 20;
 #: commit=e4b7448d1f1bd98733f1b04c3906aaa42f35ef1a].
+#: POOLED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 9031352..9031352 over 20 to
+#: 9031352..9031358 over 24: the four whole-lane runs of this runtime the
+#: rounds did not hold, the twins lane alone, read 9,031,352 in battery 117's
+#: pass over the base and both changes and in two runs with the delta
+#: publication's twins in battery 119, and 9,031,358 on the committed tree
+#: e4b7448d1 in battery 117; the twin's serial minimum of three reads 9,031,352
+#: on the committed tree 44f21cf1a and on the tree the rounds observed alike,
+#: in one battery path, so the six belong to that whole-lane run and not to a
+#: runtime the envelope misses, and a whole-lane run under this protocol on
+#: this runtime is an observation, so the envelope is the union of the extrema
+#: and the sum of the counts [measured 2026-09-24: sh tools/check.sh twins
+#: alone, on 8d651070d with the delta publication and the change before it in
+#: batteries 117 and 119 and on the committed tree e4b7448d1 in battery 117;
+#: command=python extensions/python/tools/twin_coverage.py;
+#: commit=e4b7448d1f1bd98733f1b04c3906aaa42f35ef1a].
 BUDGET = {
     "minimum": 9031352,
-    "maximum": 9031352,
-    "observations": 20,
+    "maximum": 9031358,
+    "observations": 24,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 OVERRUN = 13729952
