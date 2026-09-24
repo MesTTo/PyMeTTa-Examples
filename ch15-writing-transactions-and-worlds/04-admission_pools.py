@@ -41,7 +41,7 @@ Guarantees:
   - they agree for a pool with two capacity rows as well, where the first row
     the count reaches decides [tested:
     examples/ch15-writing-transactions-and-worlds/04-admission_pools.metta and
-    its Python twin; commit=WORKTREE]
+    its Python twin; commit=47855fa71210d4e96b27c972d312eb2fba4ae896]
 Open Obligations:
   To Do: None
   Hacks: None
@@ -534,7 +534,7 @@ def twin(m):
 #: the builtin's verdict with the chain's, tests the chain's own and removes
 #: them, which the example reads at +4818 [measured 2026-09-24: min-of-3 serial
 #: fresh processes; command=python extensions/python/tools/twin_coverage.py
-#: --repin; commit=WORKTREE].
+#: --repin; commit=47855fa71210d4e96b27c972d312eb2fba4ae896].
 BUDGET = 36047
 
 #: DIVERGED 2026-09-07, the example holds 2 atoms the twin does not (2 =) and
@@ -557,5 +557,5 @@ BUDGET = 36047
 #: the twin holds 2 atoms the example does not (2 =): the within equation
 #: recurses over its limits on both sides now [measured 2026-09-24: the two
 #: stored-atom surpluses, one fresh process per side; command=python
-#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+#: extensions/python/tools/twin_coverage.py --repin; commit=47855fa71210d4e96b27c972d312eb2fba4ae896].
 DIVERGENCE = "28ca25d82c846f856a935e03785b81414edcb240fd1e20b72e0db59d4811b5d8"
