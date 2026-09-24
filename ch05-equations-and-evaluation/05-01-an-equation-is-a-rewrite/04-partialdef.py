@@ -393,5 +393,5 @@ def twin(m):
 #: where it asked one module, and the example's two such equations, (mp) over +
 #: and (plus1times2) over .., each pay it, which the example reads +11 as well
 #: [measured 2026-09-24: min-of-3 serial fresh processes; command=python
-#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+#: extensions/python/tools/twin_coverage.py --repin; commit=561a63ccabff3a0cfc5245925b1dbdad43f64a34].
 BUDGET = 5331
