@@ -269,7 +269,17 @@ def twin(m):
 #: base with this change, one after the other in battery 117's one path, every
 #: component at its pin; command=sh tools/check.sh twins (twin_coverage.py
 #: inside tools/bounded.sh); commit=WORKTREE].
-BUDGET = 2379065
+#: RE-PINNED 2026-09-24, 2379065 to 2379487 (+422), +422 at the change this re-
+#: pin lands with, which publishes a from row by itself when rows are all a
+#: space owes: its 36 predicates visible to filereader's registration walk cost
+#: a batch above twelve names 72 inferences, each restricted space's core about
+#: 28 a predicate, and every whole publication and face event its ledger's
+#: bookkeeping [measured 2026-09-24: the twins lane alone on 8d651070d with the
+#: change before this one and with this change too, one after the other in
+#: battery 117's one path, every component at its pin; command=sh
+#: tools/check.sh twins (twin_coverage.py inside tools/bounded.sh);
+#: commit=WORKTREE].
+BUDGET = 2379487
 
 #: RETIRED: the former 1826-inference overrun. The 78-claim MeTTa recipe now
 #: costs 40092306 and its twin 40107888, within the ordinary band.

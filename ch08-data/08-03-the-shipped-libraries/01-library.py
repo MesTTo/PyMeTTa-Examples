@@ -304,7 +304,17 @@ def twin(m):
 #: 0f6d29ba6's split from provider-carry's own pairs, aaeea643a's on the ladder
 #: before 10:05; command=python extensions/python/tools/twin_coverage.py
 #: --measure --rounds 3; commit=c7d7244fbe6d32d024ca8c61b336008e98b156ef].
-BUDGET = 34351
+#: RE-PINNED 2026-09-24, 34351 to 34422 (+71), +72 at the change this re-pin
+#: lands with, which publishes a from row by itself when rows are all a space
+#: owes: its 36 predicates visible to filereader's registration walk cost a
+#: batch above twelve names 72 inferences, each restricted space's core about
+#: 28 a predicate, and every whole publication and face event its ledger's
+#: bookkeeping [measured 2026-09-24: the twins lane alone on 8d651070d with the
+#: change before this one and with this change too, one after the other in
+#: battery 117's one path, every component at its pin; command=sh
+#: tools/check.sh twins (twin_coverage.py inside tools/bounded.sh);
+#: commit=WORKTREE].
+BUDGET = 34422
 
 #: DIVERGED 2026-09-07, the example holds 2 atoms the twin does not (2 =) and
 #: the twin holds 2 the example does not (2 =): the twin is an ordinary Python

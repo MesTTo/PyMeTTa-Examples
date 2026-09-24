@@ -582,9 +582,22 @@ def twin(m):
 #: [measured 2026-09-24: 20 full-lane observations; command=python
 #: extensions/python/tools/twin_coverage.py --observe --rounds 20;
 #: commit=WORKTREE].
+#: RE-OBSERVED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 283700..283822 to 283995..284017 over
+#: 20 observations: the tree moved under this envelope by the change this
+#: observation lands with, whose 36 predicates visible to filereader's
+#: registration walk cost each registration batch above twelve names 72
+#: inferences, which this program's lib_thread import registers, and which
+#: writes a space's ledger fact at every face event, about three inferences an
+#: event; this program makes no reference drain decision, and its count also
+#: follows its threads' schedule, which is what spreads its twenty rounds;
+#: these observations are the tree's own and are not pooled with the earlier
+#: ones [measured 2026-09-24: 20 full-lane observations; command=python
+#: extensions/python/tools/twin_coverage.py --observe --rounds 20;
+#: commit=WORKTREE].
 BUDGET = {
-    "minimum": 283700,
-    "maximum": 283822,
+    "minimum": 283995,
+    "maximum": 284017,
     "observations": 20,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }

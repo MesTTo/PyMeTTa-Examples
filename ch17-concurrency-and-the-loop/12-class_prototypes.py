@@ -239,9 +239,26 @@ def twin(m):
 #: the earlier ones [measured 2026-09-24: 20 full-lane observations;
 #: command=python extensions/python/tools/twin_coverage.py --observe --rounds
 #: 20; commit=WORKTREE].
+#: RE-OBSERVED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 5177610..5177610 to 5189852..5189852
+#: over 20 observations: the tree moved under this envelope by the change this
+#: observation lands with, which publishes a space's from rows by themselves
+#: when rows are all it owes, where each new row republished every row before
+#: it: of the drain decisions while each example loads, class_decorators goes
+#: by rows in 12 of 21, reference_maps in 14 of 23, class_dispatch in 5 of 38,
+#: class_grains in 4 of 181, class_prototypes in 2 of 30, reference_loading in
+#: 2 of 19, and class_values and class_entities in none of 3 and 14; every
+#: publication now runs the ledger's decision, a stored plan and a settle,
+#: about 25 to 30 inferences, every face event writes its space's ledger fact,
+#: about three, and each registration batch above twelve names pays 72
+#: inferences for the 36 predicates filereader's walk now sees; these
+#: observations are the tree's own and are not pooled with the earlier ones
+#: [measured 2026-09-24: 20 full-lane observations; command=python
+#: extensions/python/tools/twin_coverage.py --observe --rounds 20;
+#: commit=WORKTREE].
 BUDGET = {
-    "minimum": 5177610,
-    "maximum": 5177610,
+    "minimum": 5189852,
+    "maximum": 5189852,
     "observations": 20,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }

@@ -461,10 +461,36 @@ def twin(m):
 #: run of the lane itself; command=python
 #: extensions/python/tools/twin_coverage.py --observe --rounds 20;
 #: commit=4ff69551e0e226442cf7257b96af858adda957a4].
+#: RE-OBSERVED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 208137..210171 to 208956..210350 over
+#: 20 observations: the tree moved under this envelope by the change this
+#: observation lands with, whose 36 predicates visible to filereader's
+#: registration walk cost each registration batch above twelve names 72
+#: inferences, which this program's lib_thread import registers, and which
+#: writes a space's ledger fact at every face event, about three inferences an
+#: event; this program makes no reference drain decision, and its count also
+#: follows its threads' schedule, which is what spreads its twenty rounds;
+#: these observations are the tree's own and are not pooled with the earlier
+#: ones [measured 2026-09-24: 20 full-lane observations; command=python
+#: extensions/python/tools/twin_coverage.py --observe --rounds 20;
+#: commit=WORKTREE].
+#: POOLED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 208956..210350 over 20 to
+#: 208956..210352 over 23: the three whole-lane runs of this runtime the rounds
+#: did not hold, the twins lane alone on 8d651070d with this change and the one
+#: before it, read 209,356 in battery 117's pass over the base and both
+#: changes, then 209,614 and 210,352 in two runs with this change's twins in
+#: battery 119; this twin's count follows its threads' schedule, and a whole-
+#: lane run under this protocol on this runtime is an observation, so the
+#: envelope is the union of the extrema and the sum of the counts [measured
+#: 2026-09-24: sh tools/check.sh twins alone, once in battery 117 and twice in
+#: battery 119, on 8d651070d with this change and the one before it, every
+#: other component at its pin; command=python
+#: extensions/python/tools/twin_coverage.py; commit=WORKTREE].
 BUDGET = {
-    "minimum": 208137,
-    "maximum": 210171,
-    "observations": 21,
+    "minimum": 208956,
+    "maximum": 210352,
+    "observations": 23,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 #: The count VARIES, because this twin starts threads, pools and timers and

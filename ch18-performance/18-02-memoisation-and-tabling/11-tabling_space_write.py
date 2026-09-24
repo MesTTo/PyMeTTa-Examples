@@ -577,10 +577,25 @@ def twin(m):
 #: twenty rounds of --observe and one run of the lane itself; command=python
 #: extensions/python/tools/twin_coverage.py --observe --rounds 20;
 #: commit=4ff69551e0e226442cf7257b96af858adda957a4].
+#: RE-OBSERVED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 58150..58150 to 58167..58167 over 20
+#: observations: the tree moved under this envelope by the change this
+#: observation lands with, whose 36 predicates visible to filereader's
+#: registration walk cost each registration batch above twelve names 72
+#: inferences, and which writes a space's ledger fact at every face event,
+#: about three inferences an event, the five a tabling program here raises
+#: costing 17; this program makes no reference drain decision, and the example
+#: moves with the twin, reflect_lib +377, http_lib +452 and the tabling
+#: programs +17 on both sides against the tree with only the change before it
+#: in one battery path, while 01-measure's count, whose values lie 33 apart,
+#: moves 72; these observations are the tree's own and are not pooled with the
+#: earlier ones [measured 2026-09-24: 20 full-lane observations; command=python
+#: extensions/python/tools/twin_coverage.py --observe --rounds 20;
+#: commit=WORKTREE].
 BUDGET = {
-    "minimum": 58150,
-    "maximum": 58150,
-    "observations": 21,
+    "minimum": 58167,
+    "maximum": 58167,
+    "observations": 20,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 
