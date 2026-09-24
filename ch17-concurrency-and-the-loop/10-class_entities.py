@@ -292,7 +292,7 @@ def twin(m):
 #: commit=5bae989dfe8735448d575856e72f735bb2043e24].
 #: RE-OBSERVED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
 #: time=9223372036854775807/before-boot', 2839396..2839396 to 2837434..2837434
-#: over 20 observations: the host switch of /home/user/Dev/swipl-patched from
+#: over 20 observations: the host switch of swipl-patched from
 #: .2 to .5, the native host of build 9's 36 patches, moved this twin out of
 #: its envelope, measured .2 against .5 through two environment shims of one
 #: shape on one tree; two channels are suspected and neither is measured on

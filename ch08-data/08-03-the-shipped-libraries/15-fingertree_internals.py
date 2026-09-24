@@ -392,7 +392,7 @@ def twin(m):
 #: tools/check.sh twins (twin_coverage.py inside tools/bounded.sh);
 #: commit=e4b7448d1f1bd98733f1b04c3906aaa42f35ef1a].
 #: RE-PINNED 2026-09-24, 334465 to 334377 (-88), the host switch of
-#: /home/user/Dev/swipl-patched from .2 to .5, the native host of build 9's 36
+#: swipl-patched from .2 to .5, the native host of build 9's 36
 #: patches, measured .2 against .5 through two environment shims of one shape
 #: on one tree. Its channel here is library/prolog_wrap.qlf: .2's, written
 #: 2026-09-17 a minute after swi-wrapper-roundtrip-merges-closures changed

@@ -85,7 +85,7 @@ def twin(m):
 #: 2026-09-21: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=6e09cb25d5495c2db3283166e6ce4e07eefecfb2].
 #: RE-PINNED 2026-09-24, 19550 to 19537 (-13), the host switch of
-#: /home/user/Dev/swipl-patched from .2 to .5, the native host of build 9's 36
+#: swipl-patched from .2 to .5, the native host of build 9's 36
 #: patches, measured .2 against .5 through two environment shims of one shape
 #: on one tree. Its channel here is library/prolog_wrap.qlf: .2's, written
 #: 2026-09-17 a minute after swi-wrapper-roundtrip-merges-closures changed
