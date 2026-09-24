@@ -239,10 +239,24 @@ def twin(m):
 #: twenty rounds of --observe and one run of the lane itself; command=python
 #: extensions/python/tools/twin_coverage.py --observe --rounds 20;
 #: commit=4ff69551e0e226442cf7257b96af858adda957a4].
+#: RE-OBSERVED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 2977239..2977239 to 2836578..2836578
+#: over 20 observations: the tree moved under this envelope by the change this
+#: observation lands with, which publishes a whole reference face's heads from
+#: one pass over its sorted entries where each head searched the whole face for
+#: its roots, a findall over every entry per head: a whole publication over a
+#: face of many heads stops paying heads times entries steps, one over a face
+#: of one to three entries pays the grouping's fixed cost of about eight calls,
+#: and the change's pairs_keys/2 import is one more predicate filereader's
+#: registration walk reads, 2 inferences for each registration batch above
+#: twelve names; these observations are the tree's own and are not pooled with
+#: the earlier ones [measured 2026-09-24: 20 full-lane observations;
+#: command=python extensions/python/tools/twin_coverage.py --observe --rounds
+#: 20; commit=WORKTREE].
 BUDGET = {
-    "minimum": 2977239,
-    "maximum": 2977239,
-    "observations": 21,
+    "minimum": 2836578,
+    "maximum": 2836578,
+    "observations": 20,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 #: OVERRUN 2026-09-19, 5078082 to 5085304 (+7222): the twin costs 5178578

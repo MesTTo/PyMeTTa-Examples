@@ -404,4 +404,14 @@ def twin(m):
 #: perf's pin at c7d7244fb, and the fixed tree 4ff69551e reads what 4003462fe
 #: does [measured 2026-09-24: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=4ff69551e0e226442cf7257b96af858adda957a4].
-BUDGET = 4689561
+#: RE-PINNED 2026-09-24, 4689561 to 4689567 (+6), +6 at the change this re-pin
+#: lands with, which groups a whole reference face's heads in one pass over its
+#: sorted entries where each head searched the whole face, and whose three
+#: imports into the engine module are one more predicate filereader's
+#: registration walk reads above twelve names, pairs_keys/2, and three a
+#: restricted space's core steps over as it enumerates that module's predicates
+#: [measured 2026-09-24: the twins lane alone on the base 8d651070d and on the
+#: base with this change, one after the other in battery 117's one path, every
+#: component at its pin; command=sh tools/check.sh twins (twin_coverage.py
+#: inside tools/bounded.sh); commit=WORKTREE].
+BUDGET = 4689567

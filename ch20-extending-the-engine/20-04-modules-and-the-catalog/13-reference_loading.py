@@ -259,10 +259,36 @@ def twin(m):
 #: fixed tree, the twenty rounds of --observe and one run of the lane itself;
 #: command=python extensions/python/tools/twin_coverage.py --observe --rounds
 #: 20; commit=4ff69551e0e226442cf7257b96af858adda957a4].
+#: RE-OBSERVED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 69864..73777 to 70310..73915 over 20
+#: observations: the tree moved under this envelope by the change this
+#: observation lands with, which publishes a whole reference face's heads from
+#: one pass over its sorted entries where each head searched the whole face for
+#: its roots, a findall over every entry per head: a whole publication over a
+#: face of many heads stops paying heads times entries steps, one over a face
+#: of one to three entries pays the grouping's fixed cost of about eight calls,
+#: and the change's pairs_keys/2 import is one more predicate filereader's
+#: registration walk reads, 2 inferences for each registration batch above
+#: twelve names; these observations are the tree's own and are not pooled with
+#: the earlier ones [measured 2026-09-24: 20 full-lane observations;
+#: command=python extensions/python/tools/twin_coverage.py --observe --rounds
+#: 20; commit=WORKTREE].
+#: POOLED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 70310..73915 over 20 to 69630..73915
+#: over 23: the three whole-lane runs of this runtime the rounds did not hold,
+#: the twins lane alone on 8d651070d with the change this envelope lands with,
+#: read 70,416 in battery 117's pass over the base, this change and the change
+#: after it, then 69,630 and 71,086 in two runs with this change's twins; this
+#: twin's count scatters from run to run, 70,310 to 73,915 over the twenty
+#: rounds, and a whole-lane run under this protocol on this runtime is an
+#: observation, so the envelope is the union of the extrema and the sum of the
+#: counts [measured 2026-09-24: sh tools/check.sh twins alone, three times in
+#: battery 117 on 8d651070d with this change, every other component at its pin;
+#: command=python extensions/python/tools/twin_coverage.py; commit=WORKTREE].
 BUDGET = {
-    "minimum": 69864,
-    "maximum": 73777,
-    "observations": 21,
+    "minimum": 69630,
+    "maximum": 73915,
+    "observations": 23,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 

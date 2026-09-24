@@ -307,9 +307,22 @@ def twin(m):
 #: on the fixed tree, the twenty rounds of --observe and one run of the lane
 #: itself; command=python extensions/python/tools/twin_coverage.py --observe
 #: --rounds 20; commit=4ff69551e0e226442cf7257b96af858adda957a4].
+#: RE-OBSERVED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 565841..566780 to 565845..566784 over
+#: 20 observations: the tree moved under this envelope by the change this
+#: observation lands with, whose pairs_keys/2 import is one more predicate
+#: filereader's registration walk reads, 2 inferences for each registration
+#: batch above twelve names that this program's library imports register; the
+#: example moves with the twin, reflect_lib and http_lib reading +6 and +4 on
+#: both sides against the base 8d651070d in one battery path, and 01-measure's
+#: count, whose values lie 33 apart, sits 2 above each value its band held;
+#: these observations are the tree's own and are not pooled with the earlier
+#: ones [measured 2026-09-24: 20 full-lane observations; command=python
+#: extensions/python/tools/twin_coverage.py --observe --rounds 20;
+#: commit=WORKTREE].
 BUDGET = {
-    "minimum": 565841,
-    "maximum": 566780,
-    "observations": 21,
+    "minimum": 565845,
+    "maximum": 566784,
+    "observations": 20,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }

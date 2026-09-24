@@ -577,10 +577,26 @@ def twin(m):
 #: twenty rounds of --observe and one run of the lane itself; command=python
 #: extensions/python/tools/twin_coverage.py --observe --rounds 20;
 #: commit=4ff69551e0e226442cf7257b96af858adda957a4].
+#: RE-OBSERVED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 481283..574883 to 481290..1004870
+#: over 20 observations: the tree moved under this envelope by the change this
+#: observation lands with, whose pairs_keys/2 import is one more predicate
+#: filereader's registration walk reads, 2 inferences for each registration
+#: batch above twelve names, which this program's lib_thread import registers;
+#: its example makes no reference drain decision, so nothing else in the change
+#: runs here; the floor, 481,290, sits 7 above the fixed tree's 481,283, and
+#: the top follows the spin that proves a race really races, cut wherever the
+#: winning branch happens to be: rounds 1 and 14 read 1,004,870 and 668,097
+#: where the other eighteen read 481,290..547,416, and the twins lane alone on
+#: the base 8d651070d read 669,360 in battery 117 the same evening; these
+#: observations are the tree's own and are not pooled with the earlier ones
+#: [measured 2026-09-24: 20 full-lane observations; command=python
+#: extensions/python/tools/twin_coverage.py --observe --rounds 20;
+#: commit=WORKTREE].
 BUDGET = {
-    "minimum": 481283,
-    "maximum": 574883,
-    "observations": 21,
+    "minimum": 481290,
+    "maximum": 1004870,
+    "observations": 20,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 
@@ -670,7 +686,20 @@ BUDGET = {
 #: whose minimal twin the probe builds; command=python
 #: extensions/python/tools/twin_coverage.py --observe --rounds 20 and python
 #: extensions/python/benchmarks/probes/twin_floor.py; commit=0a81c782fd6ba00984c36e58e228f73bca810dee].
-OVERRUN = 344806
+#: OVERRUN 2026-09-24, 344806 to 771773 (+426967): the envelope above now tops
+#: out at 1004870, and the declaration follows the envelope's top as the
+#: 2026-09-08 entry decided, priced against the cheapest example as the
+#: 2026-09-10 entry priced it: 1004870 less 205659 times 1.1 less the 6873 its
+#: four compiled definitions cost to author is 771772.1. 205659 is the cheapest
+#: of the example's readings on this tree, the twins lane's one reading and
+#: five serial runs through the lane's run_example, whose cheapest read 205777.
+#: BUDGET is the envelope, and a run outside it is red whatever this says
+#: [measured 2026-09-24: twenty full-lane rounds for the top, and for the
+#: example the twins lane alone and five serial runs; command=python
+#: extensions/python/tools/twin_coverage.py --observe --rounds 20, sh
+#: tools/check.sh twins and python extensions/python/tools/twin_coverage.py
+#: --measure --rounds 5; commit=WORKTREE].
+OVERRUN = 771773
 
 #: DIVERGED 2026-09-07, the example holds 1 atom the twin does not (1 =) and
 #: the twin holds 5 the example does not (3 :, 2 =): the twin is an ordinary
