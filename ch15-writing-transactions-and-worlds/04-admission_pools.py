@@ -10,7 +10,7 @@ asserting the two agree verdict for verdict.
 The whole judge is ordinary Python now. Every part of the original's chain has
 a spelling inside a compiled body: `if`/`else` for the branches, `fn.eq` for
 the empty test, `types[0]` and `types[1:]` for `car-atom` and `cdr-atom`,
-`fn.lt` for the bound, `match(space, pattern, template)` for the two catalog
+`fn.ge` for the bound, `match(space, pattern, template)` for the two catalog
 reads, and `Accept`/`Refuse` for the verdicts. The four definitions are written
 bottom-upwards, because a compiled body calls a sibling by the Python name it
 is already bound to and a name has to exist before it is called.
@@ -30,14 +30,18 @@ method also CLAIMS the pool's write door for the shipped builtin, which is the
 one thing this example may not do: the claim under test is its own.
 
 Assumes:
-  - the custom judge, pool setup, and seven claims mirror the source example
-    [source: examples/ch15-writing-transactions-and-worlds/04-admission_pools.metta lines 16-78; commit=5562ced6ef3a21154f391e3467c2cfcdca6dfb12]
+  - the custom judge, pool setup, and nine claims mirror the source example
+    [source: examples/ch15-writing-transactions-and-worlds/04-admission_pools.metta lines 16-95; commit=82b360339ee338f378461212b30b45455dc989bf]
 Guarantees:
   - the custom and builtin judges agree before, at, and after the declared
     capacity boundary [measured 2026-08-24: the twin runs to completion under
     the lane, which is what proves every assert it states;
     command=python extensions/python/tools/twin_coverage.py
     examples/ch15-writing-transactions-and-worlds/04-admission_pools.metta; commit=8a8b75a1f4052c00c70c29e25e95e4d5a1812cd5]
+  - they agree for a pool with two capacity rows as well, where the first row
+    the count reaches decides [tested:
+    examples/ch15-writing-transactions-and-worlds/04-admission_pools.metta and
+    its Python twin; commit=WORKTREE]
 Open Obligations:
   To Do: None
   Hacks: None
@@ -54,14 +58,17 @@ def twin(m):
     pool = metta.space(S.metta_pool)
 
     # space-atom-count is the store's own clause bookkeeping, a property read
-    # per add rather than an enumeration of everything the pool holds.
+    # per add rather than an enumeration of everything the pool holds. Every
+    # capacity row binds, walked the way metta_admission_typed walks its types:
+    # the first limit the count has reached refuses, in the order the rows
+    # were added, and a pool that reaches none of them is admitted.
     @m.define
     def metta_admission_within(pool_, limits):
         if fn.eq(limits, ()):
             return Accept()
-        if fn.lt(fn.space_atom_count(pool_), limits[0]):
-            return Accept()
-        return Refuse(S.pool_at_capacity(limits[0]))
+        if fn.ge(fn.space_atom_count(pool_), limits[0]):
+            return Refuse(S.pool_at_capacity(limits[0]))
+        return metta_admission_within(pool_, limits[1:])
 
     @m.define
     def metta_admission_bounded(pool_):
@@ -136,6 +143,17 @@ def twin(m):
     reflection -= S.capacity(pool, 2)
     assert builtin(pool, S.ticket(S.a)).one() == metta_admission_verdict(pool, S.ticket(S.a)).one()
     assert builtin(pool, S.ticket(S.a)) == [S.Accept()]
+
+    # Two capacity rows, the second tighter than the first. The pool holds two
+    # tickets, under the first bound and at the second, so the second decides:
+    # the builtin reads every row and names the first one the count reaches,
+    # and a chain that tested only its first limit admitted what it refused.
+    reflection += S.capacity(pool, 5)
+    reflection += S.capacity(pool, 2)
+    assert builtin(pool, S.ticket(S.a)).one() == metta_admission_verdict(pool, S.ticket(S.a)).one()
+    assert metta_admission_verdict(pool, S.ticket(S.a)) == [S.Refuse(S.pool_at_capacity(2))]
+    reflection -= S.capacity(pool, 5)
+    reflection -= S.capacity(pool, 2)
 
 
 #: Inferences this twin spends, its own tripwire. PLACEHOLDER: the wave's
@@ -510,7 +528,14 @@ def twin(m):
 #: declared allowance) on every other interval [measured 2026-09-24: min-of-3
 #: serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
-BUDGET = 32290
+#: RE-PINNED 2026-09-24, 32290 to 36047 (+3757), +3757 at the admission-pools
+#: fix: the chain's metta-admission-within walks every capacity row where it
+#: tested the first, and a section with two capacity rows adds both, compares
+#: the builtin's verdict with the chain's, tests the chain's own and removes
+#: them, which the example reads at +4818 [measured 2026-09-24: min-of-3 serial
+#: fresh processes; command=python extensions/python/tools/twin_coverage.py
+#: --repin; commit=WORKTREE].
+BUDGET = 36047
 
 #: DIVERGED 2026-09-07, the example holds 2 atoms the twin does not (2 =) and
 #: the twin holds 2 the example does not (2 =): the twin is an ordinary Python
@@ -528,4 +553,9 @@ BUDGET = 32290
 #: that way [measured 2026-09-24: the two stored-atom surpluses, one fresh
 #: process per side; command=python extensions/python/tools/twin_coverage.py
 #: --repin; commit=5bae989dfe8735448d575856e72f735bb2043e24].
-DIVERGENCE = "aa06468a9fe3d2a46ec66783871e5c9032eaad9d1db667fe2e2cb95b4c5bc51b"
+#: DIVERGED 2026-09-24, the example holds 2 atoms the twin does not (2 =) and
+#: the twin holds 2 atoms the example does not (2 =): the within equation
+#: recurses over its limits on both sides now [measured 2026-09-24: the two
+#: stored-atom surpluses, one fresh process per side; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+DIVERGENCE = "28ca25d82c846f856a935e03785b81414edcb240fd1e20b72e0db59d4811b5d8"
