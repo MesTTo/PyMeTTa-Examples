@@ -506,5 +506,5 @@ def twin(m):
 #: costs nothing at import (16-nars_truth_functions and 18-pln_formulas, which
 #: import the libraries and never derive, read the same with the change)
 #: [measured 2026-09-24: min-of-3 serial fresh processes; command=python
-#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+#: extensions/python/tools/twin_coverage.py --repin; commit=7f373da2b1e1ffbe2a34aa6f01c892dfbd437594].
 BUDGET = 4733411

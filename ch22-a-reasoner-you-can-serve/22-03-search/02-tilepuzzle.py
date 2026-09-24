@@ -649,7 +649,7 @@ def twin(m):
 #: dequeued once and the search answers 181,440: one add-unique-or-fail call
 #: more, and one dequeue with its two neighbour checks fewer [measured
 #: 2026-09-24: min-of-3 serial fresh processes; command=python
-#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+#: extensions/python/tools/twin_coverage.py --repin; commit=3488b97533f948baeb380863c79629a968f08989].
 BUDGET = 31979930
 
 #: DIVERGED 2026-09-07, the example holds 2 atoms the twin does not (2 =) and
@@ -669,5 +669,5 @@ BUDGET = 31979930
 #: space, so each side's stored bfs_all atom changed and the census is the one
 #: before [measured 2026-09-24: the two stored-atom surpluses, one fresh
 #: process per side; command=python extensions/python/tools/twin_coverage.py
-#: --repin; commit=WORKTREE].
+#: --repin; commit=3488b97533f948baeb380863c79629a968f08989].
 DIVERGENCE = "cbd575ab625831a7a68a80886d4df6be6aa903a295dad6907164eb1861bcd56b"

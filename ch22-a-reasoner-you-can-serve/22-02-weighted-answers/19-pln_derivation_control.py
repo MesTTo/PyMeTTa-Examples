@@ -447,5 +447,5 @@ def twin(m):
 #: evaluated, and the twin states the example's two new claims, (LimitSize ()
 #: 0) answering () and a derivation with both queue sizes 0 answering (() ())
 #: [measured 2026-09-24: min-of-3 serial fresh processes; command=python
-#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+#: extensions/python/tools/twin_coverage.py --repin; commit=7f373da2b1e1ffbe2a34aa6f01c892dfbd437594].
 BUDGET = 355542

@@ -5,7 +5,7 @@ instead of expanding 390 times and mating once, and both read the space
 through `(superpose (collapse (match ...)))`. That is not a snapshot of the
 round. superpose takes a written argument as its list of branches
 [source: engine/translator/special_forms.pl, translate_special_dl(superpose, ...);
-upstream PeTTa 43705f5, src/translator.pl:134; commit=WORKTREE], so this one has
+upstream PeTTa 43705f5, src/translator.pl:134; commit=b3515ae55b9e0206868aef26c1fd29432eeee580], so this one has
 two. The first is the symbol `collapse`, which the rules treat as a term like
 any other, so the space gains `(num (M collapse))`, `(num (W collapse))` and
 `(num (C collapse))`. The second is the match, which starts only after the
@@ -20,7 +20,7 @@ atoms, for 1,297,533 answers. Reading each round from a snapshot would answer
 rounds, rewriteK answers 798 times at 80 rounds and leaves 2,869 num atoms,
 and with each match collapsed before superpose walks it the program answers 4
 and 30 at 1 and 2 rounds; command=sh tools/run.sh over this example's
-definitions with the final call changed; commit=WORKTREE]. The C corpus models
+definitions with the final call changed; commit=b3515ae55b9e0206868aef26c1fd29432eeee580]. The C corpus models
 this order and gets the same counts, and 1297533 at 80 [source: CMeTTa-Examples
 4fe7740, language-feature-examples/ch22-a-reasoner-you-can-serve/22-03-search/matespace.h].
 
