@@ -384,6 +384,26 @@ def twin(m):
 #: 2026-09-21: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=6e09cb25d5495c2db3283166e6ce4e07eefecfb2].
 BUDGET = 4678
+#: OVERRUN 2026-09-18, 0 to 124 (+124): the twin costs 4709 against the
+#: example's 1581 and a ceiling of 4585 with the earlier declaration; a minimal
+#: twin of this example costs 1143, inside the 1739 the band alone allows, so
+#: the distance is this twin's own program. The landings the point re-pin names
+#: moved this twin and its example apart: the compiled call law and the one
+#: codec at the grounded call charge the twin's Python-side crossings, which
+#: the example never pays, and the runnable cache's dependency index written by
+#: the producer took most of that back on the branch tip f06186a96 [measured
+#: 2026-09-18: one fresh process per side through the lane's run_example and
+#: run_twin, the floor from a minimal twin built by the probe; command=python
+#: extensions/python/benchmarks/probes/twin_floor.py; commit=6944d06ce96fdbcd1faefb640f15dbfa0cf286dd].
+#: DEDUPLICATED 2026-09-24: the petta merge 327abf1b kept two OVERRUN
+#: statements in this file, 1120 under BUDGET (the chain above it prices it on
+#: 2026-09-11) and the other branch's 124 below DIVERGENCE, documented by the
+#: OVERRUN 2026-09-18 paragraph now above this one; the lane reads the first a
+#: twin assigns and Python binds the last, so 124 stopped being in force at the
+#: merge and its statement is removed [source:
+#: extensions/python/tools/twin_coverage.py _declared_count, which returns the
+#: first module-level assignment of a declaration's name;
+#: commit=4ff69551e0e226442cf7257b96af858adda957a4].
 OVERRUN = 1120
 
 
@@ -397,16 +417,3 @@ OVERRUN = 1120
 #: the two stored-atom surpluses, one fresh process per side; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=9010a79b01c9b2a66b96a3952fa378fb3e939dc3].
 DIVERGENCE = "db70feb36aced1522def3193499d1bd5b74de7df57a85daa7fe94ea96ee98ba1"
-
-#: OVERRUN 2026-09-18, 0 to 124 (+124): the twin costs 4709 against the
-#: example's 1581 and a ceiling of 4585 with the earlier declaration; a minimal
-#: twin of this example costs 1143, inside the 1739 the band alone allows, so
-#: the distance is this twin's own program. The landings the point re-pin names
-#: moved this twin and its example apart: the compiled call law and the one
-#: codec at the grounded call charge the twin's Python-side crossings, which
-#: the example never pays, and the runnable cache's dependency index written by
-#: the producer took most of that back on the branch tip f06186a96 [measured
-#: 2026-09-18: one fresh process per side through the lane's run_example and
-#: run_twin, the floor from a minimal twin built by the probe; command=python
-#: extensions/python/benchmarks/probes/twin_floor.py; commit=6944d06ce96fdbcd1faefb640f15dbfa0cf286dd].
-OVERRUN = 124
