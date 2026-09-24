@@ -624,10 +624,19 @@ def twin(m):
 #: e4b7448d1 in battery 117; command=python
 #: extensions/python/tools/twin_coverage.py;
 #: commit=e4b7448d1f1bd98733f1b04c3906aaa42f35ef1a].
+#: POOLED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 480230..574648 over 24 to
+#: 480230..852820 over 25: the twins lane's one run in the real environment on
+#: .5 after the host switch, on the landing's own tree (2934885e0 with the
+#: landing assembled), read 852820; on the same tree the lane read 497281 on .2
+#: and 481734 on .5 through the environment shim, so the reading is this twin's
+#: thread scheduling rather than a move the switch is shown to make, and it is
+#: pooled because the switch's landing re-pins every row its real-environment
+#: run reads outside.
 BUDGET = {
     "minimum": 480230,
-    "maximum": 574648,
-    "observations": 24,
+    "maximum": 852820,
+    "observations": 25,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 
@@ -743,7 +752,19 @@ BUDGET = {
 #: extensions/python/tools/twin_coverage.py --observe --rounds 20, sh
 #: tools/check.sh twins and python extensions/python/tools/twin_coverage.py
 #: --measure --rounds 5; commit=e4b7448d1f1bd98733f1b04c3906aaa42f35ef1a].
-OVERRUN = 341478
+#: OVERRUN 2026-09-24, 341478 to 619701 (+278223): the envelope above now tops
+#: out at 852820, pooled from the twins lane's one run in the real environment
+#: on .5 after the host switch, and the declaration follows the envelope's top
+#: as the 2026-09-08 entry decided, priced against the cheapest example reading
+#: on this tree as the 2026-09-10 entry priced it: 852820 less 205679 times 1.1
+#: less the 6873 its 4 compiled definitions cost to author is 619700.1. The
+#: example's readings on this tree are 205681 and 205679 on .2 and .5 in the
+#: A/B and 205795 in the real-environment run. BUDGET is the envelope, and a
+#: run outside it is red whatever this says [measured 2026-09-24: the twins
+#: lane once in the real environment on .5 for the top, and for the example
+#: that run and the .2 and .5 runs of the switch's A/B on 3f3d8107a; command=sh
+#: tools/check.sh twins engine-bench; commit=WORKTREE].
+OVERRUN = 619701
 
 #: DIVERGED 2026-09-07, the example holds 1 atom the twin does not (1 =) and
 #: the twin holds 5 the example does not (3 :, 2 =): the twin is an ordinary

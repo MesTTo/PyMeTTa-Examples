@@ -376,9 +376,26 @@ def twin(m):
 #: 2026-09-24: 20 full-lane observations; command=python
 #: extensions/python/tools/twin_coverage.py --observe --rounds 20;
 #: commit=5bae989dfe8735448d575856e72f735bb2043e24].
+#: RE-OBSERVED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 5446441..5446441 to 5440730..5440730
+#: over 20 observations: the host switch of /home/user/Dev/swipl-patched from
+#: .2 to .5, the native host of build 9's 36 patches, moved this twin out of
+#: its envelope, measured .2 against .5 through two environment shims of one
+#: shape on one tree; two channels are suspected and neither is measured on
+#: this twin: the functor table's layout, which .5's added builtin atom
+#: shared_table (swi-shared-table-waits-for-owner-beneath, src/ATOMS) shifts
+#: and whose hash order engine/spaces/tokens.pl's metta_native_pair/4 reads
+#: storage arities in, the order the class envelopes follow (a never-taken
+#: branch building a new functor from existing atoms moves them, one naming a
+#: fresh atom moves nothing); and the host's library QLFs, of which janus.qlf,
+#: prolog_wrap.qlf and ugraphs.qlf are compiled differently on .2 and .5,
+#: janus.qlf by 574 bytes from a byte-identical janus.pl [measured 2026-09-24:
+#: 20 full-lane observations; command=python
+#: extensions/python/tools/twin_coverage.py --observe --rounds 20;
+#: commit=WORKTREE].
 BUDGET = {
-    "minimum": 5446441,
-    "maximum": 5446441,
+    "minimum": 5440730,
+    "maximum": 5440730,
     "observations": 20,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }

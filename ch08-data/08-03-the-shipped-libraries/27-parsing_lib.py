@@ -424,4 +424,18 @@ def twin(m):
 #: battery 117's one path, every component at its pin; command=sh
 #: tools/check.sh twins (twin_coverage.py inside tools/bounded.sh);
 #: commit=e4b7448d1f1bd98733f1b04c3906aaa42f35ef1a].
-BUDGET = 4689896
+#: RE-PINNED 2026-09-24, 4689896 to 4689816 (-80), the host switch of
+#: /home/user/Dev/swipl-patched from .2 to .5, the native host of build 9's 36
+#: patches, measured .2 against .5 through two environment shims of one shape
+#: on one tree. Its channel here is library/prolog_wrap.qlf: .2's, written
+#: 2026-09-17 a minute after swi-wrapper-roundtrip-merges-closures changed
+#: prolog_wrap.pl, compiles I < Arity in body_closure_args/6 as a call to
+#: system:(<)/2, and .5's, recompiled by the build's QLF step, evaluates it
+#: inline, so each argument that predicate walks costs one inference fewer.
+#: That channel is measured on engine-bench's translate and evaluate cases,
+#: whose port profiles on the two hosts differ in system:(<)/2 alone; on this
+#: twin it is read from the move's shape, a multiple of 8 to within the lane's
+#: deterministic allowance of 4, not profiled [measured 2026-09-24: min-of-3
+#: serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+BUDGET = 4689816

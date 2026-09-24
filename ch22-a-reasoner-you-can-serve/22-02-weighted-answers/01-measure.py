@@ -572,10 +572,17 @@ def twin(m):
 #: earlier ones [measured 2026-09-24: 20 full-lane observations; command=python
 #: extensions/python/tools/twin_coverage.py --observe --rounds 20;
 #: commit=e4b7448d1f1bd98733f1b04c3906aaa42f35ef1a].
+#: POOLED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 149931..149997 over 20 to
+#: 149907..149997 over 21: the twins lane's one run in the real environment on
+#: .5 after the host switch, on the landing's own tree (2934885e0 with the
+#: landing assembled), read 149907, the value .5 read through the environment
+#: shim on c875c3330 where .2 read 149997; the host switch is its source and
+#: its channel is not measured.
 BUDGET = {
-    "minimum": 149931,
+    "minimum": 149907,
     "maximum": 149997,
-    "observations": 20,
+    "observations": 21,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 

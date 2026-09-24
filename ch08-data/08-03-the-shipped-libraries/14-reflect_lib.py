@@ -564,9 +564,18 @@ def twin(m):
 #: earlier ones [measured 2026-09-24: 20 full-lane observations; command=python
 #: extensions/python/tools/twin_coverage.py --observe --rounds 20;
 #: commit=e4b7448d1f1bd98733f1b04c3906aaa42f35ef1a].
+#: RE-OBSERVED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 1367510..1367510 to 1367446..1367446
+#: over 20 observations: the host switch of /home/user/Dev/swipl-patched from
+#: .2 to .5, the native host of build 9's 36 patches, moved this twin out of
+#: its envelope, measured .2 against .5 through two environment shims of one
+#: shape on one tree; its channel is not measured [measured 2026-09-24: 20
+#: full-lane observations; command=python
+#: extensions/python/tools/twin_coverage.py --observe --rounds 20;
+#: commit=WORKTREE].
 BUDGET = {
-    "minimum": 1367510,
-    "maximum": 1367510,
+    "minimum": 1367446,
+    "maximum": 1367446,
     "observations": 20,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }

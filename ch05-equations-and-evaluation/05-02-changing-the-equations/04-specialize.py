@@ -605,7 +605,21 @@ def twin(m):
 #: the fixed tree 4ff69551e reads what 4003462fe does [measured 2026-09-24:
 #: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=4ff69551e0e226442cf7257b96af858adda957a4].
-BUDGET = 79979
+#: RE-PINNED 2026-09-24, 79979 to 79939 (-40), the host switch of
+#: /home/user/Dev/swipl-patched from .2 to .5, the native host of build 9's 36
+#: patches, measured .2 against .5 through two environment shims of one shape
+#: on one tree. Its channel here is library/prolog_wrap.qlf: .2's, written
+#: 2026-09-17 a minute after swi-wrapper-roundtrip-merges-closures changed
+#: prolog_wrap.pl, compiles I < Arity in body_closure_args/6 as a call to
+#: system:(<)/2, and .5's, recompiled by the build's QLF step, evaluates it
+#: inline, so each argument that predicate walks costs one inference fewer.
+#: That channel is measured on engine-bench's translate and evaluate cases,
+#: whose port profiles on the two hosts differ in system:(<)/2 alone; on this
+#: twin it is read from the move's shape, a multiple of 8 to within the lane's
+#: deterministic allowance of 4, not profiled [measured 2026-09-24: min-of-3
+#: serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+BUDGET = 79939
 
 #: DIVERGED 2026-09-07, the example holds 8 atoms the twin does not (8 =) and
 #: the twin holds 8 the example does not (1 :, 7 =): the twin is an ordinary
