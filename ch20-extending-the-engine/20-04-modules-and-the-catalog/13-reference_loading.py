@@ -302,10 +302,20 @@ def twin(m):
 #: [measured 2026-09-24: 20 full-lane observations; command=python
 #: extensions/python/tools/twin_coverage.py --observe --rounds 20;
 #: commit=e4b7448d1f1bd98733f1b04c3906aaa42f35ef1a].
+#: POOLED 2026-09-25 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 67362..72424 over 20 to 67362..73201
+#: over 40: the spread of its background load, which the pragma refusal does
+#: not move: HEAD alone read this twin at 67599 in one tree [measured
+#: 2026-09-24T23:25:30+10:00: the twins lane on HEAD; command=sh tools/check.sh
+#: twins] and at 72340 in another [measured 2026-09-25T00:02:44+10:00: the
+#: twins lane on HEAD; command=sh tools/check.sh twins], and twenty full-lane
+#: passes with the refusal applied read 67493..73201 [measured
+#: 2026-09-25T00:50:00+10:00: twenty full-lane observations; command=python
+#: extensions/python/tools/twin_coverage.py --observe --rounds 20].
 BUDGET = {
     "minimum": 67362,
-    "maximum": 72424,
-    "observations": 20,
+    "maximum": 73201,
+    "observations": 40,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 

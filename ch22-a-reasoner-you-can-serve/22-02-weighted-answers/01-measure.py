@@ -579,10 +579,21 @@ def twin(m):
 #: landing assembled), read 149907, the value .5 read through the environment
 #: shim on c875c3330 where .2 read 149997; the host switch is its source and
 #: its channel is not measured.
+#: POOLED 2026-09-25 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 149907..149997 over 21 to
+#: 149876..149997 over 41: scheduling spread, which the pragma refusal does not
+#: move: HEAD read this twin at 149940 in two trees, and the refusal at 149909
+#: in the first [measured 2026-09-24T23:25:30+10:00: the twins lane on HEAD,
+#: then with the refusal applied; command=sh tools/check.sh twins] and at
+#: 149975 in the second [measured 2026-09-25T00:02:44+10:00: the same two arms;
+#: command=sh tools/check.sh twins]; twenty full-lane passes with the refusal
+#: applied read 149876..149975 [measured 2026-09-25T00:50:00+10:00: twenty
+#: full-lane observations; command=python
+#: extensions/python/tools/twin_coverage.py --observe --rounds 20].
 BUDGET = {
-    "minimum": 149907,
+    "minimum": 149876,
     "maximum": 149997,
-    "observations": 21,
+    "observations": 41,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 

@@ -487,10 +487,25 @@ def twin(m):
 #: battery 119, on 8d651070d with this change and the one before it, every
 #: other component at its pin; command=python
 #: extensions/python/tools/twin_coverage.py; commit=e4b7448d1f1bd98733f1b04c3906aaa42f35ef1a].
+#: POOLED 2026-09-25 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 208956..210352 over 23 to
+#: 208347..210851 over 44: scheduling spread, which the pragma refusal does not
+#: move: the twins lane read this twin at 209369 on HEAD and 208965 with the
+#: refusal applied in one tree [measured 2026-09-24T23:25:30+10:00: the twins
+#: lane on HEAD, then with the refusal applied; command=sh tools/check.sh
+#: twins] and at 209301 and 209720 in another [measured
+#: 2026-09-25T00:02:44+10:00: the same two arms; command=sh tools/check.sh
+#: twins], 404 down and 419 up; twenty full-lane passes with the refusal
+#: applied read 208602..210851 [measured 2026-09-25T00:50:00+10:00: twenty
+#: full-lane observations; command=python
+#: extensions/python/tools/twin_coverage.py --observe --rounds 20], and the
+#: twins lane alone on the committed tree then read 208347 [measured
+#: 2026-09-25T01:33:16+10:00: the twins lane alone; command=sh tools/check.sh
+#: twins].
 BUDGET = {
-    "minimum": 208956,
-    "maximum": 210352,
-    "observations": 23,
+    "minimum": 208347,
+    "maximum": 210851,
+    "observations": 44,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 #: The count VARIES, because this twin starts threads, pools and timers and
