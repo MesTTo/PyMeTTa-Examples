@@ -530,10 +530,24 @@ def twin(m):
 #: observations on the fixed tree, the twenty rounds of --observe and one run
 #: of the lane itself; command=python extensions/python/tools/twin_coverage.py
 #: --observe --rounds 20; commit=4ff69551e0e226442cf7257b96af858adda957a4].
+#: POOLED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 149857..149923 over 21 to
+#: 149824..149923 over 22: the twins lane alone on 8d651070d, whose commits
+#: since the fixed tree 4ff69551e change nothing this twin's window runs (no
+#: file under engine/ or lib/, and two comment lines in the seat's
+#: metta/_binding/wire.pl), read 149824, 33 under the band's minimum, one more
+#: step of the 33 this count moves by between rounds, where the twenty-one
+#: observations read 149857, 149890 and 149923; a whole-lane run under this
+#: protocol on this twin's unchanged runtime is an observation, so the envelope
+#: is the union of the extrema and the sum of the counts [measured 2026-09-24:
+#: sh tools/check.sh twins alone in a battery holding 8d651070d's committed
+#: tree, every component at its pin; command=python
+#: extensions/python/tools/twin_coverage.py;
+#: commit=8d651070dedaa190e25cc388c029172a63e967be].
 BUDGET = {
-    "minimum": 149857,
+    "minimum": 149824,
     "maximum": 149923,
-    "observations": 21,
+    "observations": 22,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 
