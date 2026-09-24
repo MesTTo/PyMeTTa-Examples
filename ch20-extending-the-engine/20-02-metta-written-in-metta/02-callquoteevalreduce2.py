@@ -434,8 +434,30 @@ def twin(m):
 #: declared allowance) on every other interval [measured 2026-09-24: min-of-3
 #: serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
-BUDGET = 48905
-OVERRUN = 1372
+#: RE-PINNED 2026-09-24, 48905 to 48714 (-191), d4a365c16 holds the support
+#: graph's visited set and the reference refresh's space sets in SWI tries
+#: instead of library(nb_set): a membership check is one foreign call where
+#: nb_set probed in Prolog, four inferences a step past a taken slot, from a
+#: slot a library space's path-bearing name decided, and a walk over a node or
+#: two pays a few inferences more for the trie's setup (-191); each step read
+#: serially on its own committed tree, from gate-perf's pin at c7d7244fb, and
+#: the fixed tree 4ff69551e reads what 4003462fe does [measured 2026-09-24:
+#: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=4ff69551e0e226442cf7257b96af858adda957a4].
+BUDGET = 48714
+#: OVERRUN 2026-09-24, 1372 to 1572 (+200) (the declared 1372 sat 17.4 above
+#: the 1354.6 the pin tree read): the band is the example's cost plus 10% plus
+#: authoring, so a commit moves the twin's excess over it by the twin's step
+#: less 1.1 times the example's; d4a365c16's tries moves the example -371 and
+#: the twin -191, the excess +217.1. Measured 48714 against the example's
+#: 33623, a band and authoring ceiling of 47142.3 (10157 to author 6 compiled
+#: definitions); the floor probe's control costs 33348 [measured 2026-09-24:
+#: twin_coverage.py --measure, one fresh process per side, on each tree, and
+#: the floor probe on the fixed tree; command=python
+#: extensions/python/benchmarks/probes/twin_floor.py examples/ch20-extending-
+#: the-engine/20-02-metta-written-in-metta/02-callquoteevalreduce2.metta;
+#: commit=4ff69551e0e226442cf7257b96af858adda957a4].
+OVERRUN = 1572
 
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and

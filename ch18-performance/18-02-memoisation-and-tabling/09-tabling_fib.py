@@ -469,7 +469,20 @@ def twin(m):
 #: aaeea643a's on the ladder before 10:05; command=python
 #: extensions/python/tools/twin_coverage.py --measure --rounds 3;
 #: commit=c7d7244fbe6d32d024ca8c61b336008e98b156ef].
-BUDGET = 79197
+#: RE-PINNED 2026-09-24, 79197 to 78714 (-483), d4a365c16 holds the support
+#: graph's visited set and the reference refresh's space sets in SWI tries
+#: instead of library(nb_set): a membership check is one foreign call where
+#: nb_set probed in Prolog, four inferences a step past a taken slot, from a
+#: slot a library space's path-bearing name decided, and a walk over a node or
+#: two pays a few inferences more for the trie's setup (-391); gate-perf's
+#: d781eab8f carries an exact removal's selected head from the code that
+#: selected it, so a withdrawal copies its equation once: 23 inferences fewer
+#: for each equation removal the twin adopts and 4 for each it selects (-92);
+#: each step read serially on its own committed tree, from gate-perf's pin at
+#: c7d7244fb, and the fixed tree 4ff69551e reads what 4003462fe does [measured
+#: 2026-09-24: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=4ff69551e0e226442cf7257b96af858adda957a4].
+BUDGET = 78714
 #: OVERRUN 2026-09-09, 0 to 4070 (+4070): a library's Prolog half compiles
 #: beside itself on its first import and loads from the artifact after
 #: (metta_load_source/2, seam:compiled_source/1): the example imports one, so
@@ -518,7 +531,19 @@ BUDGET = 79197
 #: extensions/python/benchmarks/probes/twin_floor.py
 #: examples/ch18-performance/18-02-memoisation-and-tabling/09-tabling_fib.metta;
 #: commit=0a81c782fd6ba00984c36e58e228f73bca810dee].
-OVERRUN = 5990
+#: OVERRUN 2026-09-24, 5990 to 6034 (+44): the band is the example's cost plus
+#: 10% plus authoring, so a commit moves the twin's excess over it by the
+#: twin's step less 1.1 times the example's; d4a365c16's tries moves the
+#: example -387 and the twin -391, the excess +34.7; d781eab8f's removal-
+#: selection trim moves the example -92 and the twin -92, the excess +9.2.
+#: Measured 78714 against the example's 64303, a band and authoring ceiling of
+#: 72680.3 (1947 to author 1 compiled definition); the floor probe's control
+#: costs 72249 [measured 2026-09-24: twin_coverage.py --measure, one fresh
+#: process per side, on each tree, and the floor probe on the fixed tree;
+#: command=python extensions/python/benchmarks/probes/twin_floor.py
+#: examples/ch18-performance/18-02-memoisation-and-
+#: tabling/09-tabling_fib.metta; commit=4ff69551e0e226442cf7257b96af858adda957a4].
+OVERRUN = 6034
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 :): a Python annotation IS a (:

@@ -439,4 +439,17 @@ def twin(m):
 #: 0f6d29ba6's split from provider-carry's own pairs, aaeea643a's on the ladder
 #: before 10:05; command=python extensions/python/tools/twin_coverage.py
 #: --measure --rounds 3; commit=c7d7244fbe6d32d024ca8c61b336008e98b156ef].
-BUDGET = 25725
+#: RE-PINNED 2026-09-24, 25725 to 25351 (-374), d4a365c16 holds the support
+#: graph's visited set and the reference refresh's space sets in SWI tries
+#: instead of library(nb_set): a membership check is one foreign call where
+#: nb_set probed in Prolog, four inferences a step past a taken slot, from a
+#: slot a library space's path-bearing name decided, and a walk over a node or
+#: two pays a few inferences more for the trie's setup (-98); gate-perf's
+#: d781eab8f carries an exact removal's selected head from the code that
+#: selected it, so a withdrawal copies its equation once: 23 inferences fewer
+#: for each equation removal the twin adopts and 4 for each it selects (-276);
+#: each step read serially on its own committed tree, from gate-perf's pin at
+#: c7d7244fb, and the fixed tree 4ff69551e reads what 4003462fe does [measured
+#: 2026-09-24: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=4ff69551e0e226442cf7257b96af858adda957a4].
+BUDGET = 25351

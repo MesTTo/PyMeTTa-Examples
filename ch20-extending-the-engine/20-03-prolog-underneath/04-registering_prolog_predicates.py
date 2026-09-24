@@ -369,4 +369,12 @@ def twin(m):
 #: allowance) on every other interval [measured 2026-09-24: min-of-3 serial
 #: fresh processes; command=python extensions/python/tools/twin_coverage.py
 #: --repin; commit=WORKTREE].
-BUDGET = 34556
+#: RE-PINNED 2026-09-24, 34556 to 34533 (-23), gate-perf's d781eab8f carries an
+#: exact removal's selected head from the code that selected it, so a
+#: withdrawal copies its equation once: 23 inferences fewer for each equation
+#: removal the twin adopts and 4 for each it selects (-23); each step read
+#: serially on its own committed tree, from gate-perf's pin at c7d7244fb, and
+#: the fixed tree 4ff69551e reads what 4003462fe does [measured 2026-09-24:
+#: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=4ff69551e0e226442cf7257b96af858adda957a4].
+BUDGET = 34533

@@ -353,4 +353,22 @@ def twin(m):
 #: pairs, aaeea643a's on the ladder before 10:05; command=python
 #: extensions/python/tools/twin_coverage.py --measure --rounds 3;
 #: commit=c7d7244fbe6d32d024ca8c61b336008e98b156ef].
-BUDGET = 334362
+#: RE-PINNED 2026-09-24, 334362 to 334238 (-124), d4a365c16 holds the support
+#: graph's visited set and the reference refresh's space sets in SWI tries
+#: instead of library(nb_set): a membership check is one foreign call where
+#: nb_set probed in Prolog, four inferences a step past a taken slot, from a
+#: slot a library space's path-bearing name decided, and a walk over a node or
+#: two pays a few inferences more for the trie's setup (-6); gate-perf's
+#: d781eab8f carries an exact removal's selected head from the code that
+#: selected it, so a withdrawal copies its equation once: 23 inferences fewer
+#: for each equation removal the twin adopts and 4 for each it selects (-184);
+#: the packages job's 90be572a9 and 4003462fe register Prolog through one
+#: engine service: +22 for each library the twin imports (ten new engine
+#: predicates and two user imports in the registration walk at two inferences
+#: each, less the retired loaded_extension_file/2), and 146 inferences for a
+#: Prolog file's origin or 220 for a text's SHA-256 on a twin that registers
+#: Prolog (+66); each step read serially on its own committed tree, from gate-
+#: perf's pin at c7d7244fb, and the fixed tree 4ff69551e reads what 4003462fe
+#: does [measured 2026-09-24: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=4ff69551e0e226442cf7257b96af858adda957a4].
+BUDGET = 334238

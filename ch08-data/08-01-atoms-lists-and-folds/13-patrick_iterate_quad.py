@@ -441,7 +441,15 @@ def twin(m):
 #: on the library twins that withdraw package rows) [measured 2026-09-24: min-
 #: of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
-BUDGET = 11533901
+#: RE-PINNED 2026-09-24, 11533901 to 11533878 (-23), gate-perf's d781eab8f
+#: carries an exact removal's selected head from the code that selected it, so
+#: a withdrawal copies its equation once: 23 inferences fewer for each equation
+#: removal the twin adopts and 4 for each it selects (-23); each step read
+#: serially on its own committed tree, from gate-perf's pin at c7d7244fb, and
+#: the fixed tree 4ff69551e reads what 4003462fe does [measured 2026-09-24:
+#: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=4ff69551e0e226442cf7257b96af858adda957a4].
+BUDGET = 11533878
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 :): a Python annotation IS a (:

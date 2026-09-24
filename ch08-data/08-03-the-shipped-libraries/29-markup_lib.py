@@ -228,4 +228,12 @@ def twin(m):
 #: markup's three, and by a few where it reads the census without deciding
 #: [measured 2026-09-24: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=d832d20e8edfdad28ad52815757ba9e685ad2de3].
-BUDGET = 133844
+#: RE-PINNED 2026-09-24, 133844 to 133775 (-69), gate-perf's d781eab8f carries
+#: an exact removal's selected head from the code that selected it, so a
+#: withdrawal copies its equation once: 23 inferences fewer for each equation
+#: removal the twin adopts and 4 for each it selects (-69); each step read
+#: serially on its own committed tree, from gate-perf's pin at c7d7244fb, and
+#: the fixed tree 4ff69551e reads what 4003462fe does [measured 2026-09-24:
+#: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=4ff69551e0e226442cf7257b96af858adda957a4].
+BUDGET = 133775

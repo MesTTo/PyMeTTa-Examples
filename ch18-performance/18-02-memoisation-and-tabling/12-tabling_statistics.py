@@ -519,7 +519,15 @@ def twin(m):
 #: aaeea643a's on the ladder before 10:05; command=python
 #: extensions/python/tools/twin_coverage.py --measure --rounds 3;
 #: commit=c7d7244fbe6d32d024ca8c61b336008e98b156ef].
-BUDGET = 55260
+#: RE-PINNED 2026-09-24, 55260 to 55168 (-92), gate-perf's d781eab8f carries an
+#: exact removal's selected head from the code that selected it, so a
+#: withdrawal copies its equation once: 23 inferences fewer for each equation
+#: removal the twin adopts and 4 for each it selects (-92); each step read
+#: serially on its own committed tree, from gate-perf's pin at c7d7244fb, and
+#: the fixed tree 4ff69551e reads what 4003462fe does [measured 2026-09-24:
+#: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=4ff69551e0e226442cf7257b96af858adda957a4].
+BUDGET = 55168
 
 #: DIVERGED 2026-09-07, the example holds 1 atom the twin does not (1 =) and
 #: the twin holds 1 atom the example does not (1 =): the twin is an ordinary Python

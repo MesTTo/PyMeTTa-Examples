@@ -427,7 +427,20 @@ def twin(m):
 #: +24 to +192 on the library twins that withdraw package rows) [measured
 #: 2026-09-24: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
-BUDGET = 14456
+#: RE-PINNED 2026-09-24, 14456 to 13976 (-480), d4a365c16 holds the support
+#: graph's visited set and the reference refresh's space sets in SWI tries
+#: instead of library(nb_set): a membership check is one foreign call where
+#: nb_set probed in Prolog, four inferences a step past a taken slot, from a
+#: slot a library space's path-bearing name decided, and a walk over a node or
+#: two pays a few inferences more for the trie's setup (-476); gate-perf's
+#: d781eab8f carries an exact removal's selected head from the code that
+#: selected it, so a withdrawal copies its equation once: 23 inferences fewer
+#: for each equation removal the twin adopts and 4 for each it selects (-4);
+#: each step read serially on its own committed tree, from gate-perf's pin at
+#: c7d7244fb, and the fixed tree 4ff69551e reads what 4003462fe does [measured
+#: 2026-09-24: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin; commit=4ff69551e0e226442cf7257b96af858adda957a4].
+BUDGET = 13976
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 :): a Python annotation IS a (:
