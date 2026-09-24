@@ -528,7 +528,17 @@ def twin(m):
 #: the fixed tree 4ff69551e reads what 4003462fe does [measured 2026-09-24:
 #: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=4ff69551e0e226442cf7257b96af858adda957a4].
-BUDGET = 46537
+#: RE-PINNED 2026-09-25, 46537 to 46546 (+9), the pragma refusal makes
+#: set_metta_pragma/2 call require_metta_pragma_capability/2 before it stores a
+#: setting, one inference for each write of a key other than from-map and load,
+#: and a with-pragma! scope writes each key twice, setting it and restoring it;
+#: a max-time bound other than none is now checked for the deadlines capability
+#: where it is stored, and run_under_pragmas/1 no longer checks it at every run
+#: under the bound; on the same tree, defining the predicate without calling it
+#: moves this twin by nothing [measured 2026-09-25T00:49:34+10:00: min-of-3
+#: serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 46546
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 2 the example does not (2 :): a Python annotation IS a (:

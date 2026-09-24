@@ -513,7 +513,17 @@ def twin(m):
 #: deterministic allowance of 4, not profiled [measured 2026-09-24: min-of-3
 #: serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=622e425d40c126681c04c7f7f81d92618ab83d0d].
-BUDGET = 27897031
+#: RE-PINNED 2026-09-25, 27897031 to 27897039 (+8), the pragma refusal makes
+#: set_metta_pragma/2 call require_metta_pragma_capability/2 before it stores a
+#: setting, one inference for each write of a key other than from-map and load,
+#: and a with-pragma! scope writes each key twice, setting it and restoring it;
+#: a max-time bound other than none is now checked for the deadlines capability
+#: where it is stored, and run_under_pragmas/1 no longer checks it at every run
+#: under the bound; on the same tree, defining the predicate without calling it
+#: moves this twin by nothing [measured 2026-09-25T00:49:42+10:00: min-of-3
+#: serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 27897039
 
 #: DIVERGED 2026-09-07, the example holds 6 atoms the twin does not (6 =) and
 #: the twin holds 12 the example does not (6 :, 6 =): the twin is an ordinary

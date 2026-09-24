@@ -650,7 +650,18 @@ def twin(m):
 #: more, and one dequeue with its two neighbour checks fewer [measured
 #: 2026-09-24: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=3488b97533f948baeb380863c79629a968f08989].
-BUDGET = 31979930
+#: RE-PINNED 2026-09-25, 31979930 to 31979936 (+6), the pragma refusal defines
+#: require_metta_pragma_capability/2 in the engine module, and on the same tree
+#: defining it without calling it moves this twin by the whole of the change's
+#: move, so the cost is one more engine predicate and functor met through the
+#: engine's walks over its predicate and functor tables, among them
+#: filereader:existing_predicate_arities/2, which charges two inferences for
+#: each predicate visible from the loading module at every load of a source
+#: registering more than twelve names (i-arity-walk-all-predicates); the
+#: change's work at a pragma write does not reach this twin [measured
+#: 2026-09-25T00:49:18+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 31979936
 
 #: DIVERGED 2026-09-07, the example holds 2 atoms the twin does not (2 =) and
 #: the twin holds 5 the example does not (3 =, 2 @doc): the twin is an ordinary

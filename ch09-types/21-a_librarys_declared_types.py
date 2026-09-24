@@ -317,4 +317,15 @@ def twin(m):
 #: battery 117's one path, every component at its pin; command=sh
 #: tools/check.sh twins (twin_coverage.py inside tools/bounded.sh);
 #: commit=e4b7448d1f1bd98733f1b04c3906aaa42f35ef1a].
-BUDGET = 143851
+#: RE-PINNED 2026-09-25, 143851 to 143857 (+6), the pragma refusal defines
+#: require_metta_pragma_capability/2 in the engine module, and on the same tree
+#: defining it without calling it moves this twin by the whole of the change's
+#: move, so the cost is one more engine predicate and functor met through the
+#: engine's walks over its predicate and functor tables, among them
+#: filereader:existing_predicate_arities/2, which charges two inferences for
+#: each predicate visible from the loading module at every load of a source
+#: registering more than twelve names (i-arity-walk-all-predicates); the
+#: change's work at a pragma write does not reach this twin [measured
+#: 2026-09-25T00:48:54+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 143857

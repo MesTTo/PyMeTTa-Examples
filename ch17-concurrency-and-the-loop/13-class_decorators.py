@@ -379,9 +379,20 @@ def twin(m):
 #: 20 full-lane observations; command=python
 #: extensions/python/tools/twin_coverage.py --observe --rounds 20;
 #: commit=622e425d40c126681c04c7f7f81d92618ab83d0d].
+#: RE-OBSERVED 2026-09-25 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 9020757..9020760 to 9021612..9021612
+#: over 20 observations: the pragma refusal defines
+#: require_metta_pragma_capability/2 in the engine module, and on the same tree
+#: defining it without calling it moves this twin by the whole of the change's
+#: move, so the cost is one more engine predicate and functor, whose place in
+#: the engine's predicate and functor tables these twins' walks follow; which
+#: walk carries it here is not profiled, and the change's work at a pragma
+#: write does not reach this twin [measured 2026-09-25T00:50:00+10:00: 20 full-
+#: lane observations; command=python extensions/python/tools/twin_coverage.py
+#: --observe --rounds 20].
 BUDGET = {
-    "minimum": 9020757,
-    "maximum": 9020760,
+    "minimum": 9021612,
+    "maximum": 9021612,
     "observations": 20,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
