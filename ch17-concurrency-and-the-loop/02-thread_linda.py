@@ -554,10 +554,25 @@ def twin(m):
 #: twenty rounds of --observe and one run of the lane itself; command=python
 #: extensions/python/tools/twin_coverage.py --observe --rounds 20;
 #: commit=4ff69551e0e226442cf7257b96af858adda957a4].
+#: POOLED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 283695..283705 over 21 to
+#: 283671..283705 over 22: the twins lane alone on 08d103df5 read 283671, 24
+#: under the band's minimum; nothing since the fixed tree 4ff69551e changes
+#: what this twin's window runs, which imports lib_thread alone (no file under
+#: engine/, lib 2c6ea23 rewords comments in lib_tabling/lib_tabling.pl, and the
+#: seat's metta/_binding/wire.pl changes two comment lines), and this twin's
+#: count follows its threads' schedule, the 272258..272380 it was observed at
+#: on 0a81c782f spreading 122; a whole-lane run under this protocol on this
+#: twin's unchanged runtime is an observation, so the envelope is the union of
+#: the extrema and the sum of the counts [measured 2026-09-24: sh
+#: tools/check.sh twins alone in a battery holding 08d103df5's committed tree,
+#: every component at its pin; command=python
+#: extensions/python/tools/twin_coverage.py;
+#: commit=08d103df55483fa88bb9997660a5d020484c6735].
 BUDGET = {
-    "minimum": 283695,
+    "minimum": 283671,
     "maximum": 283705,
-    "observations": 21,
+    "observations": 22,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 
