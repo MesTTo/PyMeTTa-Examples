@@ -560,9 +560,14 @@ def twin(m):
 #: on the fixed tree, the twenty rounds of --observe and one run of the lane
 #: itself; command=python extensions/python/tools/twin_coverage.py --observe
 #: --rounds 20; commit=4ff69551e0e226442cf7257b96af858adda957a4].
-BUDGET = {
-    "minimum": 34926,
-    "maximum": 34926,
-    "observations": 21,
-    "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
-}
+#: RE-PINNED 2026-09-25, envelope 34926..34926 to 34538 (-388), the fixture
+#: now takes a lock its process holds until it exits and makes and clears its
+#: directories with mkdir and rm in child processes, so the count no longer
+#: depends on what an earlier run left under ./repos and a point budget
+#: describes the row [measured 2026-09-25T05:07:33+10:00: min-of-3 serial
+#: fresh processes; command=python extensions/python/tools/twin_coverage.py
+#: --measure --rounds 3]; it read 34538 with the directories absent and
+#: present alike [measured 2026-09-25T05:07:21+10:00: one fresh process each;
+#: command=python extensions/python/tools/twin_coverage.py --measure
+#: --rounds 1].
+BUDGET = 34538
