@@ -378,7 +378,7 @@ def twin(m):
 #: janus.qlf by 574 bytes from a byte-identical janus.pl [measured 2026-09-24:
 #: 20 full-lane observations; command=python
 #: extensions/python/tools/twin_coverage.py --observe --rounds 20;
-#: commit=WORKTREE].
+#: commit=622e425d40c126681c04c7f7f81d92618ab83d0d].
 BUDGET = {
     "minimum": 9020757,
     "maximum": 9020760,

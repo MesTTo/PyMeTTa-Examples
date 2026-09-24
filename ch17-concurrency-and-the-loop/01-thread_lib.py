@@ -763,7 +763,7 @@ BUDGET = {
 #: run outside it is red whatever this says [measured 2026-09-24: the twins
 #: lane once in the real environment on .5 for the top, and for the example
 #: that run and the .2 and .5 runs of the switch's A/B on 3f3d8107a; command=sh
-#: tools/check.sh twins engine-bench; commit=WORKTREE].
+#: tools/check.sh twins engine-bench; commit=622e425d40c126681c04c7f7f81d92618ab83d0d].
 OVERRUN = 619701
 
 #: DIVERGED 2026-09-07, the example holds 1 atom the twin does not (1 =) and

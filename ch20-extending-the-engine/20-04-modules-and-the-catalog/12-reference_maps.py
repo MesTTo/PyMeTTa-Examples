@@ -276,7 +276,7 @@ def twin(m):
 #: envelope, measured .2 against .5 through two environment shims of one shape
 #: on one tree; its channel is not measured [measured 2026-09-24: 20 full-lane
 #: observations; command=python extensions/python/tools/twin_coverage.py
-#: --observe --rounds 20; commit=WORKTREE].
+#: --observe --rounds 20; commit=622e425d40c126681c04c7f7f81d92618ab83d0d].
 BUDGET = {
     "minimum": 119969,
     "maximum": 119969,

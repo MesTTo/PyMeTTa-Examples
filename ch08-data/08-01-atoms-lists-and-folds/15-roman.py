@@ -539,7 +539,7 @@ def twin(m):
 #: twin it is read from the move's shape, a multiple of 8 to within the lane's
 #: deterministic allowance of 4, not profiled [measured 2026-09-24: min-of-3
 #: serial fresh processes; command=python
-#: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
+#: extensions/python/tools/twin_coverage.py --repin; commit=622e425d40c126681c04c7f7f81d92618ab83d0d].
 BUDGET = 344878
 
 #: OVERRUN 2026-09-07, 17700: it names every lib_roman function at every claim
