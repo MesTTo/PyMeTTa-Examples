@@ -290,4 +290,12 @@ def twin(m):
 #: deterministic allowance of 4, not profiled [measured 2026-09-24: min-of-3
 #: serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=622e425d40c126681c04c7f7f81d92618ab83d0d].
-BUDGET = 82987
+#: RE-PINNED 2026-09-25, 82987 to 82832 (-155), the py-* doors change adds
+#: engine predicates, and on one tree those alone move this twin by the whole
+#: -155: a scan over the space's storage clauses stops sooner where the new
+#: predicates change the order of the tables it reads (under SWI's profiler, 79
+#: calls fewer each of spaces:metta_storage_term/4, clause/3, functor/3 and
+#: >=/2), the order dependence a-atom-order-canonical names [measured
+#: 2026-09-25T02:57:39+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 82832

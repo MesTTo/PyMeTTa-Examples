@@ -278,7 +278,17 @@ def twin(m):
 #: battery 117's one path, every component at its pin; command=sh
 #: tools/check.sh twins (twin_coverage.py inside tools/bounded.sh);
 #: commit=e4b7448d1f1bd98733f1b04c3906aaa42f35ef1a].
-BUDGET = 393066
+#: RE-PINNED 2026-09-25, 393066 to 393110 (+44), the py-* doors change makes
+#: more predicates visible from filereader, and
+#: filereader:existing_predicate_arities/2 walks every predicate visible there
+#: at two inferences each whenever a source registering more than twelve names
+#: loads: on one tree the change's new engine predicates alone, defined with
+#: their two boot uses taken out, make eight more visible and move this twin by
+#: 16 for each such load, and the whole change by 20, ten more at its loads
+#: (i-arity-walk-all-predicates) [measured 2026-09-25T02:51:40+10:00: min-of-3
+#: serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 393110
 
 #: OVERRUN 2026-09-12, 1399: the example nests its law claims in one evaluation
 #: each, where Python reads them as separate calls whose intermediate sets cross

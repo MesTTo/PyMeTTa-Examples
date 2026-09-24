@@ -661,7 +661,17 @@ def twin(m):
 #: change's work at a pragma write does not reach this twin [measured
 #: 2026-09-25T00:49:18+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 31979936
+#: RE-PINNED 2026-09-25, 31979936 to 31979996 (+60), the py-* doors change
+#: makes more predicates visible from filereader, and
+#: filereader:existing_predicate_arities/2 walks every predicate visible there
+#: at two inferences each whenever a source registering more than twelve names
+#: loads: on one tree the change's new engine predicates alone, defined with
+#: their two boot uses taken out, make eight more visible and move this twin by
+#: 16 for each such load, and the whole change by 20, ten more at its loads
+#: (i-arity-walk-all-predicates) [measured 2026-09-25T02:55:55+10:00: min-of-3
+#: serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 31979996
 
 #: DIVERGED 2026-09-07, the example holds 2 atoms the twin does not (2 =) and
 #: the twin holds 5 the example does not (3 =, 2 @doc): the twin is an ordinary

@@ -358,4 +358,11 @@ def twin(m):
 #: the fixed tree 4ff69551e reads what 4003462fe does [measured 2026-09-24:
 #: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=4ff69551e0e226442cf7257b96af858adda957a4].
-BUDGET = 92024
+#: RE-PINNED 2026-09-25, 92024 to 92336 (+312), the py-* doors change adds two
+#: forms to lib_builtin_types, py-iter-once's type and the (capability python
+#: (extension python) ...) row, and this twin imports that library: on one tree
+#: lib's half of the change alone moves the twin by the whole 312, and the
+#: change's new engine predicates alone move it by nothing [measured
+#: 2026-09-25T02:57:24+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 92336

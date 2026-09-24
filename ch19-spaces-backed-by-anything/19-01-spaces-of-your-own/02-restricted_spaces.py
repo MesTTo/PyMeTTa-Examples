@@ -545,4 +545,14 @@ def twin(m):  # noqa: ARG001  -- both spaces are created here; the default handl
 #: change's work at a pragma write does not reach this twin [measured
 #: 2026-09-25T00:49:02+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 66202
+#: RE-PINNED 2026-09-25, 66202 to 66433 (+231), the py-* doors change adds
+#: engine predicates, and restricted-space publication exports and imports
+#: every metta_engine predicate: on one tree the change's new engine predicates
+#: alone move this twin by 203, seven more published at 29 inferences each
+#: (publish_restricted_pi/2, export/1, import/1, predicate_property/2 and their
+#: callees), and the whole change by 231, its boot's calls adding four imported
+#: predicates that restricted_core_predicate/1 enumerates and rejects at 7 each
+#: (c-restricted-walk-tax, c-restricted-core-imports) [measured
+#: 2026-09-25T02:57:31+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 66433

@@ -287,9 +287,19 @@ def twin(m):
 #: write does not reach this twin [measured 2026-09-25T00:50:00+10:00: 20 full-
 #: lane observations; command=python extensions/python/tools/twin_coverage.py
 #: --observe --rounds 20].
+#: RE-OBSERVED 2026-09-25 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 2459831..2459831 to 2459007..2459007
+#: over 20 observations: the py-* doors change adds engine predicates, and on
+#: one tree those alone, defined with their two boot uses taken out, move these
+#: twins by nearly all of the change's move (14-reflect_lib +78 of +90,
+#: 02-thread_linda +16 of +20, each class_* twin within 4 of it), through the
+#: engine's walks over its predicate tables, whose order follows the tables'
+#: layout (a-atom-order-canonical) [measured 2026-09-25T02:57:46+10:00: 20
+#: full-lane observations; command=python
+#: extensions/python/tools/twin_coverage.py --observe --rounds 20].
 BUDGET = {
-    "minimum": 2459831,
-    "maximum": 2459831,
+    "minimum": 2459007,
+    "maximum": 2459007,
     "observations": 20,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }

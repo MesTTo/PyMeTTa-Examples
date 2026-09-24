@@ -447,7 +447,18 @@ def twin(m):
 #: deterministic allowance of 4, not profiled [measured 2026-09-24: min-of-3
 #: serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=622e425d40c126681c04c7f7f81d92618ab83d0d].
-BUDGET = 1203683
+#: RE-PINNED 2026-09-25, 1203683 to 1203728 (+45), the py-* doors change makes
+#: more predicates visible from filereader, and
+#: filereader:existing_predicate_arities/2 walks every predicate visible there
+#: at two inferences each whenever a source registering more than twelve names
+#: loads: on one tree the change's new engine predicates alone, defined with
+#: their two boot uses taken out, move this twin by 16 for each such load and
+#: the whole change by 20, each give or take one or two inferences that move
+#: with where the new names land in SWI's tables and that SWI's profiler, which
+#: lists no system predicate, does not place (i-arity-walk-all-predicates)
+#: [measured 2026-09-25T02:56:19+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 1203728
 
 #: DIVERGED 2026-09-12, the example holds 1 atom the twin does not (1 =) and
 #: the twin holds 1 atom the example does not (1 =): the loop's tick helper is

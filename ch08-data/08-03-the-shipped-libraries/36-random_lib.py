@@ -292,4 +292,15 @@ def twin(m):
 #: change's work at a pragma write does not reach this twin [measured
 #: 2026-09-25T00:48:36+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 1229212
+#: RE-PINNED 2026-09-25, 1229212 to 1229272 (+60), the py-* doors change makes
+#: more predicates visible from filereader, and
+#: filereader:existing_predicate_arities/2 walks every predicate visible there
+#: at two inferences each whenever a source registering more than twelve names
+#: loads: on one tree the change's new engine predicates alone, defined with
+#: their two boot uses taken out, move this twin by 16 for each such load and
+#: the whole change by 20, each give or take one or two inferences that move
+#: with where the new names land in SWI's tables and that SWI's profiler, which
+#: lists no system predicate, does not place (i-arity-walk-all-predicates)
+#: [measured 2026-09-25T02:56:52+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 1229272

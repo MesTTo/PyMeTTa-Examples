@@ -507,4 +507,14 @@ def twin(m):
 #: import the libraries and never derive, read the same with the change)
 #: [measured 2026-09-24: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=7f373da2b1e1ffbe2a34aa6f01c892dfbd437594].
-BUDGET = 4733411
+#: RE-PINNED 2026-09-25, 4733411 to 4733433 (+22), the py-* doors change makes
+#: more predicates visible from filereader, and
+#: filereader:existing_predicate_arities/2 walks every predicate visible there
+#: at two inferences each whenever a source registering more than twelve names
+#: loads: on one tree the change's new engine predicates alone, defined with
+#: their two boot uses taken out, make eight more visible and move this twin by
+#: 16 for each such load, and the whole change by 20, ten more at its loads
+#: (i-arity-walk-all-predicates) [measured 2026-09-25T02:54:50+10:00: min-of-3
+#: serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 4733433
