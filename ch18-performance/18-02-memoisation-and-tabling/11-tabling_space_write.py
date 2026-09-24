@@ -591,7 +591,7 @@ def twin(m):
 #: moves 72; these observations are the tree's own and are not pooled with the
 #: earlier ones [measured 2026-09-24: 20 full-lane observations; command=python
 #: extensions/python/tools/twin_coverage.py --observe --rounds 20;
-#: commit=WORKTREE].
+#: commit=e4b7448d1f1bd98733f1b04c3906aaa42f35ef1a].
 BUDGET = {
     "minimum": 58167,
     "maximum": 58167,

@@ -319,7 +319,7 @@ def twin(m):
 #: these observations are the tree's own and are not pooled with the earlier
 #: ones [measured 2026-09-24: 20 full-lane observations; command=python
 #: extensions/python/tools/twin_coverage.py --observe --rounds 20;
-#: commit=WORKTREE].
+#: commit=8bda9d5525a8174a8304376e111df8da258076a9].
 #: RE-OBSERVED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
 #: time=9223372036854775807/before-boot', 565845..566784 to 566296..567236 over
 #: 20 observations: the tree moved under this envelope by the change this
@@ -334,7 +334,7 @@ def twin(m):
 #: moves 72; these observations are the tree's own and are not pooled with the
 #: earlier ones [measured 2026-09-24: 20 full-lane observations; command=python
 #: extensions/python/tools/twin_coverage.py --observe --rounds 20;
-#: commit=WORKTREE].
+#: commit=e4b7448d1f1bd98733f1b04c3906aaa42f35ef1a].
 BUDGET = {
     "minimum": 566296,
     "maximum": 567236,

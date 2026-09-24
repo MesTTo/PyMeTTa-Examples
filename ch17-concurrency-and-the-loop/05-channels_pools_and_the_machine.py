@@ -471,7 +471,7 @@ def twin(m):
 #: observations, which are not pooled with the earlier ones [measured
 #: 2026-09-24: 20 full-lane observations; command=python
 #: extensions/python/tools/twin_coverage.py --observe --rounds 20;
-#: commit=WORKTREE].
+#: commit=8bda9d5525a8174a8304376e111df8da258076a9].
 #: POOLED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
 #: time=9223372036854775807/before-boot', 189746..189788 over 20 to
 #: 189742..190511 over 23: the three whole-lane runs of this runtime the rounds
@@ -483,7 +483,7 @@ def twin(m):
 #: envelope is the union of the extrema and the sum of the counts [measured
 #: 2026-09-24: sh tools/check.sh twins alone, three times in battery 117 on
 #: 8d651070d with this change, every other component at its pin; command=python
-#: extensions/python/tools/twin_coverage.py; commit=WORKTREE].
+#: extensions/python/tools/twin_coverage.py; commit=8bda9d5525a8174a8304376e111df8da258076a9].
 BUDGET = {
     "minimum": 189742,
     "maximum": 190511,

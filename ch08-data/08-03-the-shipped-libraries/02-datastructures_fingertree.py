@@ -486,7 +486,7 @@ def twin(m):
 #: [measured 2026-09-24: the twins lane alone on the base 8d651070d and on the
 #: base with this change, one after the other in battery 117's one path, every
 #: component at its pin; command=sh tools/check.sh twins (twin_coverage.py
-#: inside tools/bounded.sh); commit=WORKTREE].
+#: inside tools/bounded.sh); commit=8bda9d5525a8174a8304376e111df8da258076a9].
 #: RE-PINNED 2026-09-24, 355532 to 355753 (+221), +221 at the change this re-
 #: pin lands with, which publishes a from row by itself when rows are all a
 #: space owes: its 36 predicates visible to filereader's registration walk cost
@@ -496,7 +496,7 @@ def twin(m):
 #: change before this one and with this change too, one after the other in
 #: battery 117's one path, every component at its pin; command=sh
 #: tools/check.sh twins (twin_coverage.py inside tools/bounded.sh);
-#: commit=WORKTREE].
+#: commit=e4b7448d1f1bd98733f1b04c3906aaa42f35ef1a].
 BUDGET = 355753
 
 #: OVERRUN 2026-09-07, 1300: it asks the eleven ft-* functions one at a time

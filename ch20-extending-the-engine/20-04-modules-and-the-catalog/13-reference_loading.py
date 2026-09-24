@@ -272,7 +272,7 @@ def twin(m):
 #: twelve names; these observations are the tree's own and are not pooled with
 #: the earlier ones [measured 2026-09-24: 20 full-lane observations;
 #: command=python extensions/python/tools/twin_coverage.py --observe --rounds
-#: 20; commit=WORKTREE].
+#: 20; commit=8bda9d5525a8174a8304376e111df8da258076a9].
 #: POOLED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
 #: time=9223372036854775807/before-boot', 70310..73915 over 20 to 69630..73915
 #: over 23: the three whole-lane runs of this runtime the rounds did not hold,
@@ -284,7 +284,7 @@ def twin(m):
 #: observation, so the envelope is the union of the extrema and the sum of the
 #: counts [measured 2026-09-24: sh tools/check.sh twins alone, three times in
 #: battery 117 on 8d651070d with this change, every other component at its pin;
-#: command=python extensions/python/tools/twin_coverage.py; commit=WORKTREE].
+#: command=python extensions/python/tools/twin_coverage.py; commit=8bda9d5525a8174a8304376e111df8da258076a9].
 #: RE-OBSERVED 2026-09-24 under 'full-lane/323/workers=32/file-search-cache-
 #: time=9223372036854775807/before-boot', 69630..73915 to 67362..72424 over 20
 #: observations: the tree moved under this envelope by the change this
@@ -301,7 +301,7 @@ def twin(m):
 #: observations are the tree's own and are not pooled with the earlier ones
 #: [measured 2026-09-24: 20 full-lane observations; command=python
 #: extensions/python/tools/twin_coverage.py --observe --rounds 20;
-#: commit=WORKTREE].
+#: commit=e4b7448d1f1bd98733f1b04c3906aaa42f35ef1a].
 BUDGET = {
     "minimum": 67362,
     "maximum": 72424,

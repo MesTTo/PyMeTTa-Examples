@@ -600,7 +600,7 @@ def twin(m):
 #: change before this one and with this change too, one after the other in
 #: battery 117's one path, every component at its pin; command=sh
 #: tools/check.sh twins (twin_coverage.py inside tools/bounded.sh);
-#: commit=WORKTREE].
+#: commit=e4b7448d1f1bd98733f1b04c3906aaa42f35ef1a].
 BUDGET = 198371
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
