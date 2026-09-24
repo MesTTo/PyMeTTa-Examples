@@ -415,5 +415,18 @@ def twin(m):
 #: that took lib_statistics and lib_random to green [measured 2026-09-24: min-
 #: of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=WORKTREE].
-BUDGET = 3809
+#: RE-PINNED 2026-09-25, 3809 to 3799 (-10), the registration refusal kind
+#: makes the (vocabulary refusal-kind ...) catalog row fifteen members long
+#: instead of fourteen, which moves it from storage arity 17 to 18, where the
+#: Python seat's (vocabulary door-answers ...) already sits, so &metta keeps
+#: one storage arity fewer and each open-tail catalog lookup,
+#: metta_catalog_clause/2 visiting every arity, costs five inferences less; and
+#: metta_host_signal_message//2 is one more predicate the engine module
+#: defines, which every walk over the engine's predicates pays: filereader's
+#: existing_predicate_arities/2 two inferences a registration of more than
+#: twelve names, each restricted space's core 29, and 11-reference_rows' walk
+#: 240, each reproduced exactly by one inert predicate added to the engine on
+#: the base [measured 2026-09-25T06:26:19+10:00: min-of-3 serial fresh
+#: processes; command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 3799
 DIVERGENCE = "6646589902963f27182586005921d814f0832612cf7b485e3ca880c5903a8c8b"

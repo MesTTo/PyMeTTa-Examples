@@ -444,7 +444,20 @@ def twin(m):
 #: the fixed tree 4ff69551e reads what 4003462fe does [measured 2026-09-24:
 #: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=4ff69551e0e226442cf7257b96af858adda957a4].
-BUDGET = 48714
+#: RE-PINNED 2026-09-25, 48714 to 48699 (-15), the registration refusal kind
+#: makes the (vocabulary refusal-kind ...) catalog row fifteen members long
+#: instead of fourteen, which moves it from storage arity 17 to 18, where the
+#: Python seat's (vocabulary door-answers ...) already sits, so &metta keeps
+#: one storage arity fewer and each open-tail catalog lookup,
+#: metta_catalog_clause/2 visiting every arity, costs five inferences less; and
+#: metta_host_signal_message//2 is one more predicate the engine module
+#: defines, which every walk over the engine's predicates pays: filereader's
+#: existing_predicate_arities/2 two inferences a registration of more than
+#: twelve names, each restricted space's core 29, and 11-reference_rows' walk
+#: 240, each reproduced exactly by one inert predicate added to the engine on
+#: the base [measured 2026-09-25T06:35:01+10:00: min-of-3 serial fresh
+#: processes; command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 48699
 #: OVERRUN 2026-09-18, 0 to 1705 (+1705): the twin costs 45856 against the
 #: example's 31350 and a ceiling of 44151 with the earlier declaration; a
 #: minimal twin of this example costs 31148, inside the 34485 the band alone

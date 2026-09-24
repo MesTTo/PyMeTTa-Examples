@@ -804,7 +804,20 @@ def twin(m):
 #: the fixed tree 4ff69551e reads what 4003462fe does [measured 2026-09-24:
 #: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=4ff69551e0e226442cf7257b96af858adda957a4].
-BUDGET = 88673
+#: RE-PINNED 2026-09-25, 88673 to 88658 (-15), the registration refusal kind
+#: makes the (vocabulary refusal-kind ...) catalog row fifteen members long
+#: instead of fourteen, which moves it from storage arity 17 to 18, where the
+#: Python seat's (vocabulary door-answers ...) already sits, so &metta keeps
+#: one storage arity fewer and each open-tail catalog lookup,
+#: metta_catalog_clause/2 visiting every arity, costs five inferences less; and
+#: metta_host_signal_message//2 is one more predicate the engine module
+#: defines, which every walk over the engine's predicates pays: filereader's
+#: existing_predicate_arities/2 two inferences a registration of more than
+#: twelve names, each restricted space's core 29, and 11-reference_rows' walk
+#: 240, each reproduced exactly by one inert predicate added to the engine on
+#: the base [measured 2026-09-25T06:35:42+10:00: min-of-3 serial fresh
+#: processes; command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 88658
 
 #: DIVERGED 2026-09-07, the example holds 2 atoms the twin does not (2 =) and
 #: the twin holds 6 the example does not (2 =, 4 @doc): the twin is an ordinary

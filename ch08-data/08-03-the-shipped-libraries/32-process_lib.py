@@ -202,4 +202,17 @@ def twin(m):
 #: battery 117's one path, every component at its pin; command=sh
 #: tools/check.sh twins (twin_coverage.py inside tools/bounded.sh);
 #: commit=e4b7448d1f1bd98733f1b04c3906aaa42f35ef1a].
-BUDGET = 62449
+#: RE-PINNED 2026-09-25, 62449 to 62444 (-5), the registration refusal kind
+#: makes the (vocabulary refusal-kind ...) catalog row fifteen members long
+#: instead of fourteen, which moves it from storage arity 17 to 18, where the
+#: Python seat's (vocabulary door-answers ...) already sits, so &metta keeps
+#: one storage arity fewer and each open-tail catalog lookup,
+#: metta_catalog_clause/2 visiting every arity, costs five inferences less; and
+#: metta_host_signal_message//2 is one more predicate the engine module
+#: defines, which every walk over the engine's predicates pays: filereader's
+#: existing_predicate_arities/2 two inferences a registration of more than
+#: twelve names, each restricted space's core 29, and 11-reference_rows' walk
+#: 240, each reproduced exactly by one inert predicate added to the engine on
+#: the base [measured 2026-09-25T06:29:08+10:00: min-of-3 serial fresh
+#: processes; command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 62444
