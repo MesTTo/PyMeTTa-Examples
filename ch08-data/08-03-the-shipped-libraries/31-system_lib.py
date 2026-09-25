@@ -311,4 +311,18 @@ def twin(m):
 #: 2026-09-25T11:33:06+10:00: one full twins lane before this commit and one
 #: with it, the two read on one battery path at the landing's HEAD;
 #: command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 295183
+#: RE-PINNED 2026-09-25, 295183 to 293608 (-1575), a lane outside a bounded
+#: scope read the pin: its child's tools/bounded.sh rung probed for a scope and
+#: exported the answer, METTA_BOUNDED_SCOPE=no, one more variable for env-all
+#: to walk three times, 1585 inferences, where the children of a lane inside a
+#: scope, the gate's, never probe; bounded.sh now keeps the probe's answer in
+#: the rung that asked, so a lane inside a scope and one outside read the count
+#: this re-pin records alike (tests/checks/check_twin_coverage_selftest.py, the
+#: context plant), measured here inside a scope as the gate runs the lane; the
+#: other +10 is the superproject's 3d5dcb61a, which compiles each nested
+#: governed source in a child of its own, so lib_string's half carries its
+#: non_terminal directive and costs ten inferences more to load, and which left
+#: this row, a finding its reading already stood on, to this re-pin [measured
+#: 2026-09-25T16:08:05+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 293608
