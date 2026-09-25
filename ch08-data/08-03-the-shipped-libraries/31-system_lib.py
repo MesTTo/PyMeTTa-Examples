@@ -371,4 +371,13 @@ def twin(m):
 #: metta_engine reads the same [measured 2026-09-26T03:10:32+10:00: min-of-3
 #: serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 294371
+#: RE-PINNED 2026-09-26, 294371 to 294376 (+5), this twin reads 294375 at the
+#: base and 294376 with commit 1 (+1): commit 1 adds metta_restored_source/5,
+#: metta_import_lands/3 and metta_reference_binds/3 to the spaces module
+#: (engine/spaces/lifecycle.pl), and on a tree that defines them and never
+#: calls them this twin reads 294376 (+1), which only a walk whose order
+#: follows SWI's predicate and atom tables can move; it read 294375 against its
+#: pin 294371 at the base, so +4 of the distance is the trunk's own and is not
+#: attributed here [measured 2026-09-26T08:55:58+10:00: min-of-3 serial fresh
+#: processes; command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 294376

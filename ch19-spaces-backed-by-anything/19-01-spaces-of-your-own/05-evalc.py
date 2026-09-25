@@ -517,7 +517,16 @@ def twin(m):
 #: superproject 3a6b92b40 puts the whole move on those three files [measured
 #: 2026-09-25T20:41:05+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 13649
+#: RE-PINNED 2026-09-26, 13649 to 13661 (+12), this twin reads 13649 at the
+#: base and 13661 with commit 1 (+12): metta_repair_shadow_import/3 now asks,
+#: before acting on a receipt, whether a reference binding owns its name and
+#: where a restore would import from; this twin's run makes 1 repair and 1
+#: restore at the base and 1 repair and 1 restore with commit 1, so its move is
+#: the cost of those two questions: with that use this twin reads 13661 where
+#: the definitions alone read 13649 (+12) [measured 2026-09-26T08:56:12+10:00:
+#: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 13661
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 :): a Python annotation IS a (:
