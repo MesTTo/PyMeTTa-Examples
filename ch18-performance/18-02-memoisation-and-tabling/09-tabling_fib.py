@@ -549,7 +549,17 @@ def twin(m):
 #: messages inside engines, where no clause ran before, and the original's side
 #: does not move [measured 2026-09-25T18:43:58+10:00: min-of-3 serial fresh
 #: processes; command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 78466
+#: RE-PINNED 2026-09-25, 78466 to 78475 (+9), the erase audit routes three
+#: engine releases through host_transactions:try_erase/1, whose ignore/1 frame
+#: costs about 1.5 inferences more per release than the bare erase/1 it
+#: replaces: a forgotten specialization's clauses and an equation's token and
+#: binding rows (engine/filereader.pl), a removed equation's two function-
+#: metadata rows (engine/translator/analysis.pl) and a typing rule's entry
+#: (engine/type_rules.pl); applying the change one engine file at a time at
+#: superproject 3a6b92b40 puts the whole move on those three files [measured
+#: 2026-09-25T20:40:59+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 78475
 #: OVERRUN 2026-09-09, 0 to 4070 (+4070): a library's Prolog half compiles
 #: beside itself on its first import and loads from the artifact after
 #: (metta_load_source/2, seam:compiled_source/1): the example imports one, so

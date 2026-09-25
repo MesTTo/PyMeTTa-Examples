@@ -299,4 +299,14 @@ def twin(m):
 #: only its own space [measured 2026-09-25T16:54:32+10:00: one full twins lane
 #: before this commit and one with it, the two read on one battery path at the
 #: landing's HEAD; command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 35448
+#: RE-PINNED 2026-09-25, 35448 to 35454 (+6), the erase audit's source rollback
+#: retires a failed load's references through retire_source_artifacts/1, one
+#: call per reference after a findall/3 selects those no other load owns, about
+#: two inferences per retired reference more than the two inline loops it
+#: replaces (engine/filereader/source_lifecycle.pl); a program that also
+#: removes equations pays the try_erase/1 routings in engine/filereader.pl and
+#: engine/translator/analysis.pl as well; applying the change one engine file
+#: at a time at superproject 3a6b92b40 puts the whole move on those files
+#: [measured 2026-09-25T20:42:59+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 35454

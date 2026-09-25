@@ -454,4 +454,16 @@ def twin(m):
 #: only its own space [measured 2026-09-25T16:54:32+10:00: one full twins lane
 #: before this commit and one with it, the two read on one battery path at the
 #: landing's HEAD; command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 30782
+#: RE-PINNED 2026-09-25, 30782 to 30791 (+9), the erase audit routes three
+#: engine releases through host_transactions:try_erase/1, whose ignore/1 frame
+#: costs about 1.5 inferences more per release than the bare erase/1 it
+#: replaces: a forgotten specialization's clauses and an equation's token and
+#: binding rows (engine/filereader.pl), a removed equation's two function-
+#: metadata rows (engine/translator/analysis.pl) and a typing rule's entry
+#: (engine/type_rules.pl); applying the change one engine file at a time at
+#: superproject 3a6b92b40 puts the whole move on those three files; the tree
+#: this was measured on already read +4 against the previous pin, trunk's own
+#: offset inside its tolerance, so this change's share is +5 [measured
+#: 2026-09-25T20:43:16+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 30791

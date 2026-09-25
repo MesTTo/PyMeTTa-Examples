@@ -464,7 +464,17 @@ def twin(m):
 #: full twins lane before this commit and one with it, the two read on one
 #: battery path at the landing's HEAD; command=python
 #: extensions/python/tools/twin_coverage.py].
-BUDGET = 551073
+#: RE-PINNED 2026-09-25, 551073 to 551080 (+7), the erase audit routes three
+#: engine releases through host_transactions:try_erase/1, whose ignore/1 frame
+#: costs about 1.5 inferences more per release than the bare erase/1 it
+#: replaces: a forgotten specialization's clauses and an equation's token and
+#: binding rows (engine/filereader.pl), a removed equation's two function-
+#: metadata rows (engine/translator/analysis.pl) and a typing rule's entry
+#: (engine/type_rules.pl); applying the change one engine file at a time at
+#: superproject 3a6b92b40 puts the whole move on those three files [measured
+#: 2026-09-25T20:40:56+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 551080
 
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and

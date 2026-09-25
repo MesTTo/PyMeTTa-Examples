@@ -382,7 +382,17 @@ def twin(m):
 #: original's side does not move [measured 2026-09-25T18:42:59+10:00: min-of-3
 #: serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 2359563
+#: RE-PINNED 2026-09-25, 2359563 to 2359568 (+5), the erase audit routes three
+#: engine releases through host_transactions:try_erase/1, whose ignore/1 frame
+#: costs about 1.5 inferences more per release than the bare erase/1 it
+#: replaces: a forgotten specialization's clauses and an equation's token and
+#: binding rows (engine/filereader.pl), a removed equation's two function-
+#: metadata rows (engine/translator/analysis.pl) and a typing rule's entry
+#: (engine/type_rules.pl); applying the change one engine file at a time at
+#: superproject 3a6b92b40 puts the whole move on those three files [measured
+#: 2026-09-25T20:40:42+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 2359568
 
 #: RETIRED: the former 1826-inference overrun. The 78-claim MeTTa recipe now
 #: costs 40092306 and its twin 40107888, within the ordinary band.
