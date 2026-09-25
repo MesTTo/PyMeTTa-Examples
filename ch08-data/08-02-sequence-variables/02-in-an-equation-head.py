@@ -272,4 +272,10 @@ def twin(m):
 #: more than twelve names [measured 2026-09-25T06:46:01+10:00: min-of-3 serial
 #: fresh processes; command=python extensions/python/tools/twin_coverage.py
 #: --repin].
-BUDGET = 20293
+#: RE-PINNED 2026-09-25, 20293 to 20305 (+12), both specializer doors prepare a
+#: specialization's predicate with spaces:metta_prepare_function_predicate/3
+#: before asserting its clauses [measured 2026-09-25T11:29:10+10:00: one full
+#: twins lane before this commit and one with it, the two read on one battery
+#: path at the landing's HEAD; command=python
+#: extensions/python/tools/twin_coverage.py].
+BUDGET = 20305

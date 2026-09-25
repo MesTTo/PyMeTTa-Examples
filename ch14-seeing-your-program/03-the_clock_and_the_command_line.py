@@ -415,4 +415,10 @@ def twin(m):
 #: 2026-09-25T11:25:25+10:00: one full twins lane before this commit and one
 #: with it, the two read on one battery path at the landing's HEAD;
 #: command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 149094
+#: RE-PINNED 2026-09-25, 149094 to 149096 (+2), both specializer doors prepare
+#: a specialization's predicate with spaces:metta_prepare_function_predicate/3
+#: before asserting its clauses [measured 2026-09-25T11:29:10+10:00: one full
+#: twins lane before this commit and one with it, the two read on one battery
+#: path at the landing's HEAD; command=python
+#: extensions/python/tools/twin_coverage.py].
+BUDGET = 149096

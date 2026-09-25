@@ -474,7 +474,13 @@ def twin(m):
 #: 2026-09-25T11:25:25+10:00: one full twins lane before this commit and one
 #: with it, the two read on one battery path at the landing's HEAD;
 #: command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 37213
+#: RE-PINNED 2026-09-25, 37213 to 37227 (+14), both specializer doors prepare a
+#: specialization's predicate with spaces:metta_prepare_function_predicate/3
+#: before asserting its clauses [measured 2026-09-25T11:29:10+10:00: one full
+#: twins lane before this commit and one with it, the two read on one battery
+#: path at the landing's HEAD; command=python
+#: extensions/python/tools/twin_coverage.py].
+BUDGET = 37227
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 :): a Python annotation IS a (:
