@@ -331,7 +331,14 @@ def twin(m):
 #: more than twelve names [measured 2026-09-25T06:47:32+10:00: min-of-3 serial
 #: fresh processes; command=python extensions/python/tools/twin_coverage.py
 #: --repin].
-BUDGET = 338407
+#: RE-PINNED 2026-09-25, 338407 to 338418 (+11), Runtime.reclaim(), the
+#: reclamation barrier metta_py_reclaim/1, adds five predicates to user, and
+#: existing_predicate_arities/2 walks every user predicate about twice per
+#: large load (i-arity-walk-all-predicates) [measured
+#: 2026-09-25T11:25:25+10:00: one full twins lane before this commit and one
+#: with it, the two read on one battery path at the landing's HEAD;
+#: command=python extensions/python/tools/twin_coverage.py].
+BUDGET = 338418
 
 #: DIVERGED 2026-09-12, the example holds 1 atom the twin does not (1 =) and
 #: the twin holds 1 atom the example does not (1 =): the scope function is four
