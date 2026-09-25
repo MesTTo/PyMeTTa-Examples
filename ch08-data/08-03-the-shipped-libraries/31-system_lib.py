@@ -65,8 +65,10 @@ def twin(m):
 
     # The platform, one key at a time, and every key as data. The host NAME is not a
     # key: gethostname/1 is library(socket)'s, and a whole network library is too
-    # much to link for one string.
-    assert info(S.family) == [G("unix")]
+    # much to link for one string. The family is whichever of the host's platform
+    # flags is set, "emscripten" on a WebAssembly build and "unknown" where none
+    # is, so the claim names the four families a flag can.
+    assert info(S.family).one() in (G("windows"), G("apple"), G("unix"), G("emscripten"))
     assert info(S.dialect) == [G("swi")]
     assert info(S.cores).one() == info(S.cores).one()
     assert len(info(S.version_numbers).one()) == 3
