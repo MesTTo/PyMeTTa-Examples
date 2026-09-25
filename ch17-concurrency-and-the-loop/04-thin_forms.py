@@ -638,7 +638,17 @@ def twin(m):
 #: 39873 min-of-3 against the pin 39871, before this change [measured
 #: 2026-09-25T18:45:58+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 39877
+#: RE-PINNED 2026-09-26, 39877 to 39872 (-5), engine/source_loading.pl hears a
+#: load's printed failures through a user:thread_message_hook/3 clause each
+#: load asserts on the thread or engine running it and erases, where
+#: c83b6bb1e's clause of the global user:message_hook/3 ran for every message:
+#: 5 messages this twin's count reads, printed outside a load, no longer run
+#: the loader's clause (-5); the twin wobbles by one between runs, twelve runs
+#: of the trunk reading 39877 five times and 39878 seven, and twelve with the
+#: change 39872 ten times and 39873 twice [measured 2026-09-26T07:02:29+10:00:
+#: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 39872
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 :): a Python annotation IS a (:

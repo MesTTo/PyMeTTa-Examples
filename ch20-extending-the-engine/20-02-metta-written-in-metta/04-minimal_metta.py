@@ -654,7 +654,16 @@ def twin(m):
 #: 2026-09-25T17:00:15+10:00: one full twins lane before this commit and one
 #: with it, the two read on one battery path at the landing's HEAD;
 #: command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 197449
+#: RE-PINNED 2026-09-26, 197449 to 197455 (+6), engine/source_loading.pl hears
+#: a load's printed failures through a user:thread_message_hook/3 clause each
+#: load asserts on the thread or engine running it and erases, where
+#: c83b6bb1e's clause of the global user:message_hook/3 ran for every message:
+#: 2 loads each call prolog_current_frame/1 once more (+2); before this change
+#: the trunk already read 197453 against the pin 197449, so +4 of the move is
+#: the trunk's own drift and is not attributed here [measured
+#: 2026-09-26T06:57:34+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 197455
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 :): a Python annotation IS a (:

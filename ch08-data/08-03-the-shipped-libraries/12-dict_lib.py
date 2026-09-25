@@ -520,4 +520,16 @@ def twin(m):
 #: a load registers (i-arity-walk-all-predicates) [measured
 #: 2026-09-26T03:08:11+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 243483
+#: RE-PINNED 2026-09-26, 243483 to 243489 (+6), engine/source_loading.pl hears
+#: a load's printed failures through a user:thread_message_hook/3 clause each
+#: load asserts on the thread or engine running it and erases, where
+#: c83b6bb1e's clause of the global user:message_hook/3 ran for every message:
+#: 4 loads each call prolog_current_frame/1 once more (+4); 1 registration walk
+#: over a batch of more than twelve names
+#: (filereader:existing_predicate_arities/2) enumerates one more predicate than
+#: the trunk's (+2), since SWI's autoImport() links prolog_current_frame/1 into
+#: every module on metta_source_loading's import chain, user included, at the
+#: boot's first load, where the trunk links it into user only at its first
+#: library import [measured 2026-09-26T06:54:43+10:00: min-of-3 serial fresh
+#: processes; command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 243489
