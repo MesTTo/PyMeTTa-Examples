@@ -479,7 +479,12 @@ def twin(m):
 #: only its own space [measured 2026-09-25T16:54:32+10:00: one full twins lane
 #: before this commit and one with it, the two read on one battery path at the
 #: landing's HEAD; command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 13846
+#: RE-PINNED 2026-09-25, 13846 to 13880 (+34), lambdas are named by their
+#: content and a copy restores its source's rows as a program [measured
+#: 2026-09-25T17:00:15+10:00: one full twins lane before this commit and one
+#: with it, the two read on one battery path at the landing's HEAD;
+#: command=python extensions/python/tools/twin_coverage.py].
+BUDGET = 13880
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 :): a Python annotation IS a (:

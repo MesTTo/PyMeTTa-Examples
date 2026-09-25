@@ -367,7 +367,12 @@ def twin(m):
 #: full twins lane before this commit and one with it, the two read on one
 #: battery path at the landing's HEAD; command=python
 #: extensions/python/tools/twin_coverage.py].
-BUDGET = 2374959
+#: RE-PINNED 2026-09-25, 2374959 to 2359547 (-15412), lambdas are named by
+#: their content and a copy restores its source's rows as a program [measured
+#: 2026-09-25T17:00:15+10:00: one full twins lane before this commit and one
+#: with it, the two read on one battery path at the landing's HEAD;
+#: command=python extensions/python/tools/twin_coverage.py].
+BUDGET = 2359547
 
 #: RETIRED: the former 1826-inference overrun. The 78-claim MeTTa recipe now
 #: costs 40092306 and its twin 40107888, within the ordinary band.

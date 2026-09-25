@@ -499,4 +499,11 @@ def twin(m):
 #: lane before this commit and one with it, the two read on one battery path at
 #: the landing's HEAD; command=python
 #: extensions/python/tools/twin_coverage.py].
-BUDGET = 327561
+#: RE-PINNED 2026-09-25, 327561 to 327659 (+98), lambdas are named by their
+#: content and a copy restores its source's rows as a program; the lanes' tree
+#: read this twin +6 off its pin before the step, an offset that is not this
+#: step's, so the pin moves by the step's delta alone [measured
+#: 2026-09-25T17:00:15+10:00: one full twins lane before this commit and one
+#: with it, the two read on one battery path at the landing's HEAD;
+#: command=python extensions/python/tools/twin_coverage.py].
+BUDGET = 327659

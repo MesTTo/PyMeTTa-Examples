@@ -521,7 +521,12 @@ def twin(m):
 #: full twins lane before this commit and one with it, the two read on one
 #: battery path at the landing's HEAD; command=python
 #: extensions/python/tools/twin_coverage.py].
-BUDGET = 748579
+#: RE-PINNED 2026-09-25, 748579 to 749044 (+465), lambdas are named by their
+#: content and a copy restores its source's rows as a program [measured
+#: 2026-09-25T17:00:15+10:00: one full twins lane before this commit and one
+#: with it, the two read on one battery path at the landing's HEAD;
+#: command=python extensions/python/tools/twin_coverage.py].
+BUDGET = 749044
 #: OVERRUN 2026-09-09, 0 to 242 (+242): the compiled vocabulary seed, the
 #: membership index, base-module type lookups and the singleton decoder landed
 #: (perf/cross-engine-waivers merged): a Python decode with one named variable

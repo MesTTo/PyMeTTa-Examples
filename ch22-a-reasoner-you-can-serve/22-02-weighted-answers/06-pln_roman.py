@@ -612,7 +612,12 @@ def twin(m):
 #: full twins lane before this commit and one with it, the two read on one
 #: battery path at the landing's HEAD; command=python
 #: extensions/python/tools/twin_coverage.py].
-BUDGET = 2264403
+#: RE-PINNED 2026-09-25, 2264403 to 2264443 (+40), lambdas are named by their
+#: content and a copy restores its source's rows as a program [measured
+#: 2026-09-25T17:00:15+10:00: one full twins lane before this commit and one
+#: with it, the two read on one battery path at the landing's HEAD;
+#: command=python extensions/python/tools/twin_coverage.py].
+BUDGET = 2264443
 
 #: OVERRUN 2026-09-07, 52200: it asserts the four premises the answer came from
 #: beside the truth value, which the example only prints. Measured 2246993

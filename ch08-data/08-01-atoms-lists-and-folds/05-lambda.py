@@ -533,7 +533,12 @@ def twin(m):
 #: only its own space [measured 2026-09-25T16:54:32+10:00: one full twins lane
 #: before this commit and one with it, the two read on one battery path at the
 #: landing's HEAD; command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 25430
+#: RE-PINNED 2026-09-25, 25430 to 26135 (+705), lambdas are named by their
+#: content and a copy restores its source's rows as a program [measured
+#: 2026-09-25T17:00:15+10:00: one full twins lane before this commit and one
+#: with it, the two read on one battery path at the landing's HEAD;
+#: command=python extensions/python/tools/twin_coverage.py].
+BUDGET = 26135
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 4 the example does not (4 =): the twin is an ordinary Python
@@ -553,4 +558,12 @@ BUDGET = 25430
 #: [measured 2026-09-18: the two stored-atom surpluses, one fresh process per
 #: side; command=python extensions/python/tools/twin_coverage.py --repin;
 #: commit=6944d06ce96fdbcd1faefb640f15dbfa0cf286dd].
-DIVERGENCE = "e5b8f1b5bd834af6562f63f813d8ea84294b21c2f2a61a86024c666f6a99dd33"
+#: DIVERGED 2026-09-25, the example holds 0 atoms the twin does not (none) and
+#: the twin holds 7 atoms the example does not (4 =, 3 @python-callable): a
+#: lambda is named by its content, lambda_ and 16 hex digits of its closed
+#: clause's variant_sha1/2, so a stored row naming a lambda names that digest
+#: where it named a process-wide counter, and a row both spaces hold under two
+#: counter names is one row [measured 2026-09-25T17:00:15+10:00: the two
+#: stored-atom surpluses, one fresh process per side; command=python
+#: extensions/python/tools/twin_coverage.py].
+DIVERGENCE = "885a69cb9bb2065a7531609ea2ef56fe85cf7d4eb78444a3ad3bd721c9f8bcd9"
