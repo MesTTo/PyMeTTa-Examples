@@ -614,4 +614,12 @@ def twin(m):  # noqa: ARG001  -- both spaces are created here; the default handl
 #: facts of those arities move it the same [measured 2026-09-26T01:32:47+10:00:
 #: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 67587
+#: RE-PINNED 2026-09-26, 67587 to 67832 (+245), the reference faces of a
+#: strongly connected component of from rows are computed together by label-
+#: setting, which moves this program's face computation by -45 inferences; the
+#: other +290 inferences is the ten more predicates it makes visible from
+#: metta_engine, which a control adding only ten unused predicates to
+#: metta_engine reads the same [measured 2026-09-26T03:10:56+10:00: min-of-3
+#: serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 67832

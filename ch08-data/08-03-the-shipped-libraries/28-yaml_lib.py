@@ -402,7 +402,16 @@ def twin(m):
 #: arities move it the same [measured 2026-09-26T01:30:53+10:00: min-of-3
 #: serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 338566
+#: RE-PINNED 2026-09-26, 338566 to 338586 (+20), the reference faces of a
+#: strongly connected component of from rows are computed together by label-
+#: setting, which makes ten more predicates visible from metta_engine, and a
+#: control adding only ten unused predicates to metta_engine reads the same, so
+#: none of the move is face work; existing_predicate_arities/2 walks every
+#: visible predicate at two inferences for each batch of more than twelve names
+#: a load registers (i-arity-walk-all-predicates) [measured
+#: 2026-09-26T03:08:57+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 338586
 
 #: DIVERGED 2026-09-12, the example holds 1 atom the twin does not (1 =) and
 #: the twin holds 1 atom the example does not (1 =): the scope function is four

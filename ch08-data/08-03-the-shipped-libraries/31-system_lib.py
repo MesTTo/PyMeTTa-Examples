@@ -363,4 +363,12 @@ def twin(m):
 #: arities move it the same [measured 2026-09-26T01:30:59+10:00: min-of-3
 #: serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 294332
+#: RE-PINNED 2026-09-26, 294332 to 294371 (+39), the reference faces of a
+#: strongly connected component of from rows are computed together by label-
+#: setting, which moves this program's face computation by -1 inferences; the
+#: other +40 inferences is the ten more predicates it makes visible from
+#: metta_engine, which a control adding only ten unused predicates to
+#: metta_engine reads the same [measured 2026-09-26T03:10:32+10:00: min-of-3
+#: serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 294371

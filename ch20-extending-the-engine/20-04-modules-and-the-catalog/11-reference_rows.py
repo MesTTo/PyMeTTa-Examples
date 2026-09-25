@@ -366,4 +366,12 @@ def twin(m):
 #: full twins lane before this commit and one with it, the two read on one
 #: battery path at the landing's HEAD; command=python
 #: extensions/python/tools/twin_coverage.py].
-BUDGET = 83613
+#: RE-PINNED 2026-09-26, 83613 to 84055 (+442), the reference faces of a
+#: strongly connected component of from rows are computed together by label-
+#: setting, which moves this program's face computation by +682 inferences; the
+#: other -240 inferences is the ten more predicates it makes visible from
+#: metta_engine, which a control adding only ten unused predicates to
+#: metta_engine reads the same [measured 2026-09-26T03:11:04+10:00: min-of-3
+#: serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 84055

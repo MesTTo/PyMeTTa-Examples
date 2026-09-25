@@ -603,7 +603,16 @@ def twin(m):
 #: arities move it the same [measured 2026-09-26T01:29:56+10:00: min-of-3
 #: serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 355589
+#: RE-PINNED 2026-09-26, 355589 to 355649 (+60), the reference faces of a
+#: strongly connected component of from rows are computed together by label-
+#: setting, which makes ten more predicates visible from metta_engine, and a
+#: control adding only ten unused predicates to metta_engine reads the same, so
+#: none of the move is face work; existing_predicate_arities/2 walks every
+#: visible predicate at two inferences for each batch of more than twelve names
+#: a load registers (i-arity-walk-all-predicates) [measured
+#: 2026-09-26T03:07:47+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 355649
 
 #: OVERRUN 2026-09-07, 1300: it asks the eleven ft-* functions one at a time
 #: through the evaluation door. Measured 236074 against a ceiling of 234799; a
