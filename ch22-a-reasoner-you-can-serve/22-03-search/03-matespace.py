@@ -507,7 +507,13 @@ RUNG = (
 #: full twins lane before this commit and one with it, the two read on one
 #: battery path at the landing's HEAD; command=python
 #: extensions/python/tools/twin_coverage.py].
-BUDGET = 27315036
+#: RE-PINNED 2026-09-26, 27315036 to 27315042 (+6), every tagged-program
+#: question an under= door asks first checks, through seam:foreign_space/1,
+#: that the space is not a foreign one whose provider cannot enumerate, and on
+#: a native space that failed check costs six inferences a question [measured
+#: 2026-09-26T01:40:48+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 27315042
 
 #: OVERRUN 2026-09-07, 1434400: it names `expand` and `expandK` as definitions
 #: and asserts the atom count, where the example writes them as equations.

@@ -165,7 +165,13 @@ def twin(m):
 #: only its own space [measured 2026-09-25T16:54:32+10:00: one full twins lane
 #: before this commit and one with it, the two read on one battery path at the
 #: landing's HEAD; command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 23156
+#: RE-PINNED 2026-09-26, 23156 to 23186 (+30), every tagged-program question an
+#: under= door asks first checks, through seam:foreign_space/1, that the space
+#: is not a foreign one whose provider cannot enumerate, and on a native space
+#: that failed check costs six inferences a question [measured
+#: 2026-09-26T01:41:17+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 23186
 
 #: OVERRUN 2026-09-18, 538: the twin costs 23621 against the example's 18397
 #: and a ceiling of 23083 (the band plus 2846 to author one compiled

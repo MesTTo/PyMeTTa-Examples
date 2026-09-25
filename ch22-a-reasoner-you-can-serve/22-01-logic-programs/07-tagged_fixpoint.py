@@ -142,4 +142,10 @@ def twin(m):
 #: aaeea643a's on the ladder before 10:05; command=python
 #: extensions/python/tools/twin_coverage.py --measure --rounds 3;
 #: commit=c7d7244fbe6d32d024ca8c61b336008e98b156ef].
-BUDGET = 27272
+#: RE-PINNED 2026-09-26, 27272 to 27304 (+32), every tagged-program question an
+#: under= door asks first checks, through seam:foreign_space/1, that the space
+#: is not a foreign one whose provider cannot enumerate, and on a native space
+#: that failed check costs six inferences a question [measured
+#: 2026-09-26T01:41:15+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 27304
