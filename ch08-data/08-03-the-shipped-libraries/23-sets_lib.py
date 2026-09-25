@@ -343,7 +343,13 @@ def twin(m):
 #: original's side does not move [measured 2026-09-25T18:42:08+10:00: min-of-3
 #: serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 358161
+#: RE-PINNED 2026-09-25, 358161 to 358165 (+4), a sweep of a module's generated
+#: predicates retires the records describing each swept predicate, and a
+#: release the rest of the module's [measured 2026-09-25T23:29:52+10:00: one
+#: full twins lane before this commit and one with it, the two read on one
+#: battery path at the landing's HEAD; command=python
+#: extensions/python/tools/twin_coverage.py].
+BUDGET = 358165
 
 #: OVERRUN 2026-09-12, 1399: the example nests its law claims in one evaluation
 #: each, where Python reads them as separate calls whose intermediate sets cross

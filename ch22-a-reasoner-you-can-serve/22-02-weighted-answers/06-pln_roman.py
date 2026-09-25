@@ -627,7 +627,13 @@ def twin(m):
 #: superproject 3a6b92b40 puts the whole move on those three files [measured
 #: 2026-09-25T20:42:56+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 2264464
+#: RE-PINNED 2026-09-25, 2264464 to 2264466 (+2), a sweep of a module's
+#: generated predicates retires the records describing each swept predicate,
+#: and a release the rest of the module's [measured 2026-09-25T23:29:52+10:00:
+#: one full twins lane before this commit and one with it, the two read on one
+#: battery path at the landing's HEAD; command=python
+#: extensions/python/tools/twin_coverage.py].
+BUDGET = 2264466
 
 #: OVERRUN 2026-09-07, 52200: it asserts the four premises the answer came from
 #: beside the truth value, which the example only prints. Measured 2246993

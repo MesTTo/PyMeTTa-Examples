@@ -392,7 +392,13 @@ def twin(m):
 #: superproject 3a6b92b40 puts the whole move on those three files [measured
 #: 2026-09-25T20:40:42+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 2359568
+#: RE-PINNED 2026-09-25, 2359568 to 2359578 (+10), a sweep of a module's
+#: generated predicates retires the records describing each swept predicate,
+#: and a release the rest of the module's [measured 2026-09-25T23:29:52+10:00:
+#: one full twins lane before this commit and one with it, the two read on one
+#: battery path at the landing's HEAD; command=python
+#: extensions/python/tools/twin_coverage.py].
+BUDGET = 2359578
 
 #: RETIRED: the former 1826-inference overrun. The 78-claim MeTTa recipe now
 #: costs 40092306 and its twin 40107888, within the ordinary band.

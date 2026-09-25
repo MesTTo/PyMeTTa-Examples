@@ -387,7 +387,13 @@ def twin(m):
 #: original's side does not move [measured 2026-09-25T18:42:31+10:00: min-of-3
 #: serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 338546
+#: RE-PINNED 2026-09-25, 338546 to 338548 (+2), a sweep of a module's generated
+#: predicates retires the records describing each swept predicate, and a
+#: release the rest of the module's [measured 2026-09-25T23:29:52+10:00: one
+#: full twins lane before this commit and one with it, the two read on one
+#: battery path at the landing's HEAD; command=python
+#: extensions/python/tools/twin_coverage.py].
+BUDGET = 338548
 
 #: DIVERGED 2026-09-12, the example holds 1 atom the twin does not (1 =) and
 #: the twin holds 1 atom the example does not (1 =): the scope function is four
