@@ -627,7 +627,18 @@ def twin(m):
 #: step's delta alone [measured 2026-09-25T11:29:10+10:00: one full twins lane
 #: before this commit and one with it, the two read on one battery path at the
 #: landing's HEAD; command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 39871
+#: RE-PINNED 2026-09-25, 39871 to 39877 (+6), engine/source_loading.pl's load-
+#: error clause moved from the thread_local user:thread_message_hook/3 to the
+#: global user:message_hook/3, so every thread and engine now runs the check
+#: the main thread always ran: one inference per message while no load is open
+#: there (clause(watching, true, _) fails) and two inside one (load_failure/2
+#: rejects the silent kind); the Python seat prints a twin's library-load
+#: messages inside engines, where no clause ran before, and the original's side
+#: does not move; the rest was already in trunk 113c5c928's count at base,
+#: 39873 min-of-3 against the pin 39871, before this change [measured
+#: 2026-09-25T18:45:58+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 39877
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 :): a Python annotation IS a (:

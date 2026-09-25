@@ -526,7 +526,17 @@ def twin(m):
 #: 2026-09-25T17:00:15+10:00: one full twins lane before this commit and one
 #: with it, the two read on one battery path at the landing's HEAD;
 #: command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 749044
+#: RE-PINNED 2026-09-25, 749044 to 749052 (+8), engine/source_loading.pl's
+#: load-error clause moved from the thread_local user:thread_message_hook/3 to
+#: the global user:message_hook/3, so every thread and engine now runs the
+#: check the main thread always ran: one inference per message while no load is
+#: open there (clause(watching, true, _) fails) and two inside one
+#: (load_failure/2 rejects the silent kind); the Python seat prints a twin's
+#: library-load messages inside engines, where no clause ran before, and the
+#: original's side does not move [measured 2026-09-25T18:41:39+10:00: min-of-3
+#: serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 749052
 #: OVERRUN 2026-09-09, 0 to 242 (+242): the compiled vocabulary seed, the
 #: membership index, base-module type lookups and the singleton decoder landed
 #: (perf/cross-engine-waivers merged): a Python decode with one named variable
