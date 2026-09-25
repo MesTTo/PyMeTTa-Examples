@@ -334,4 +334,13 @@ def twin(m):
 #: 2026-09-25T11:33:06+10:00: one full twins lane before this commit and one
 #: with it, the two read on one battery path at the landing's HEAD;
 #: command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 356005
+#: RE-PINNED 2026-09-25, 356005 to 356015 (+10), lib/lib_string/lib_string.qlf
+#: is now compiled by a child of its own whichever half's load reaches it first
+#: (engine/qlf_boot.pl, qlf_compile_argument/0), and that compile keeps the :-
+#: non_terminal directive for word_tokens//1 that a compile inside lib_csv's
+#: child, where the warm-up's glob order put it, left out, since SWI's
+#: non_terminal_decl/2 writes it only for a head no earlier load flagged; the
+#: loader runs the directive, ten inferences, in every process that loads
+#: lib_string [measured 2026-09-25T15:56:50+10:00: min-of-3 serial fresh
+#: processes; command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 356015

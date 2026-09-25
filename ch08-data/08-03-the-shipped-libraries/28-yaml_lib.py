@@ -350,7 +350,23 @@ def twin(m):
 #: 2026-09-25T11:33:06+10:00: one full twins lane before this commit and one
 #: with it, the two read on one battery path at the landing's HEAD;
 #: command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 338424
+#: RE-PINNED 2026-09-25, 338424 to 338433 (+9), lib/lib_string/lib_string.qlf
+#: is now compiled by a child of its own whichever half's load reaches it first
+#: (engine/qlf_boot.pl, qlf_compile_argument/0), and that compile keeps the :-
+#: non_terminal directive for word_tokens//1 that a compile inside lib_csv's
+#: child, where the warm-up's glob order put it, left out, since SWI's
+#: non_terminal_decl/2 writes it only for a head no earlier load flagged; the
+#: loader runs the directive, ten inferences, in every process that loads
+#: lib_string; the move also holds the -1 this twin read against its pin
+#: without the change, inside its allowance, where the reference loader's
+#: change to when a background load is published as finished left it
+#: (superproject 2fea1b292) [measured 2026-09-25T15:19:48+10:00: the twin read
+#: 338424 with engine/metta/reference_loading.pl as e806af707 has it and 338423
+#: as 2fea1b292 has it, min of three serial fresh processes each from a cold
+#: set, one after the other in one battery] [measured
+#: 2026-09-25T15:55:47+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 338433
 
 #: DIVERGED 2026-09-12, the example holds 1 atom the twin does not (1 =) and
 #: the twin holds 1 atom the example does not (1 =): the scope function is four
