@@ -355,7 +355,13 @@ def twin(m):
 #: [measured 2026-09-25T11:29:10+10:00: one full twins lane before this commit
 #: and one with it, the two read on one battery path at the landing's HEAD;
 #: command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 2374433
+#: RE-PINNED 2026-09-25, 2374433 to 2374453 (+20), retiring a library importer
+#: derives the arity row again from any backing head a library home still
+#: registers, journalled to the load that owns it [measured
+#: 2026-09-25T11:33:06+10:00: one full twins lane before this commit and one
+#: with it, the two read on one battery path at the landing's HEAD;
+#: command=python extensions/python/tools/twin_coverage.py].
+BUDGET = 2374453
 
 #: RETIRED: the former 1826-inference overrun. The 78-claim MeTTa recipe now
 #: costs 40092306 and its twin 40107888, within the ordinary band.

@@ -509,7 +509,13 @@ def twin(m):
 #: twins lane before this commit and one with it, the two read on one battery
 #: path at the landing's HEAD; command=python
 #: extensions/python/tools/twin_coverage.py].
-BUDGET = 748276
+#: RE-PINNED 2026-09-25, 748276 to 748280 (+4), retiring a library importer
+#: derives the arity row again from any backing head a library home still
+#: registers, journalled to the load that owns it [measured
+#: 2026-09-25T11:33:06+10:00: one full twins lane before this commit and one
+#: with it, the two read on one battery path at the landing's HEAD;
+#: command=python extensions/python/tools/twin_coverage.py].
+BUDGET = 748280
 #: OVERRUN 2026-09-09, 0 to 242 (+242): the compiled vocabulary seed, the
 #: membership index, base-module type lookups and the singleton decoder landed
 #: (perf/cross-engine-waivers merged): a Python decode with one named variable

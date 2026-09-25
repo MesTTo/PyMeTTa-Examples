@@ -480,7 +480,13 @@ def twin(m):
 #: twins lane before this commit and one with it, the two read on one battery
 #: path at the landing's HEAD; command=python
 #: extensions/python/tools/twin_coverage.py].
-BUDGET = 37227
+#: RE-PINNED 2026-09-25, 37227 to 37231 (+4), retiring a library importer
+#: derives the arity row again from any backing head a library home still
+#: registers, journalled to the load that owns it [measured
+#: 2026-09-25T11:33:06+10:00: one full twins lane before this commit and one
+#: with it, the two read on one battery path at the landing's HEAD;
+#: command=python extensions/python/tools/twin_coverage.py].
+BUDGET = 37231
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 :): a Python annotation IS a (:

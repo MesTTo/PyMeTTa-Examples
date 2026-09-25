@@ -474,4 +474,12 @@ def twin(m):
 #: step's delta alone [measured 2026-09-25T11:29:10+10:00: one full twins lane
 #: before this commit and one with it, the two read on one battery path at the
 #: landing's HEAD; command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 327523
+#: RE-PINNED 2026-09-25, 327523 to 327527 (+4), retiring a library importer
+#: derives the arity row again from any backing head a library home still
+#: registers, journalled to the load that owns it; the lanes' tree read this
+#: twin +6 off its pin before the step, an offset that is not this step's, so
+#: the pin moves by the step's delta alone [measured 2026-09-25T11:33:06+10:00:
+#: one full twins lane before this commit and one with it, the two read on one
+#: battery path at the landing's HEAD; command=python
+#: extensions/python/tools/twin_coverage.py].
+BUDGET = 327527
