@@ -413,7 +413,14 @@ def twin(m):
 #: 240, each reproduced exactly by one inert predicate added to the engine on
 #: the base [measured 2026-09-25T06:27:36+10:00: min-of-3 serial fresh
 #: processes; command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 6983
+#: RE-PINNED 2026-09-25, 6983 to 6984 (+1), every force of a waiting function
+#: names the module it is made from, through fun_home_in/3, and a write forces
+#: only its own space; the lanes' tree read this twin +1 off its pin before the
+#: step, an offset that is not this step's, so the pin moves by the step's
+#: delta alone [measured 2026-09-25T16:54:32+10:00: one full twins lane before
+#: this commit and one with it, the two read on one battery path at the
+#: landing's HEAD; command=python extensions/python/tools/twin_coverage.py].
+BUDGET = 6984
 
 #: DIVERGED 2026-09-07, the example holds 1 atom the twin does not (1 =) and
 #: the twin holds 2 the example does not (1 :, 1 =): the twin is an ordinary

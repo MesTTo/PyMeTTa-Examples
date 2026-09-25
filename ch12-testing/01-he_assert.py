@@ -468,7 +468,12 @@ RUNG = "the assert family is this file's subject, so each claim names one of its
 #: more than twelve names [measured 2026-09-25T06:49:44+10:00: min-of-3 serial
 #: fresh processes; command=python extensions/python/tools/twin_coverage.py
 #: --repin].
-BUDGET = 45817
+#: RE-PINNED 2026-09-25, 45817 to 45818 (+1), every force of a waiting function
+#: names the module it is made from, through fun_home_in/3, and a write forces
+#: only its own space [measured 2026-09-25T16:54:32+10:00: one full twins lane
+#: before this commit and one with it, the two read on one battery path at the
+#: landing's HEAD; command=python extensions/python/tools/twin_coverage.py].
+BUDGET = 45818
 
 #: RE-PINNED 2026-09-08, 17475 to 17843 (+368), The engine and library
 #: predicates now resolve through their owning modules and the explicit engine

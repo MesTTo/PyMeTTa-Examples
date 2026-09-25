@@ -491,4 +491,12 @@ def twin(m):
 #: loader runs the directive, ten inferences, in every process that loads
 #: lib_string [measured 2026-09-25T15:55:20+10:00: min-of-3 serial fresh
 #: processes; command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 327537
+#: RE-PINNED 2026-09-25, 327537 to 327561 (+24), every force of a waiting
+#: function names the module it is made from, through fun_home_in/3, and a
+#: write forces only its own space; the lanes' tree read this twin +6 off its
+#: pin before the step, an offset that is not this step's, so the pin moves by
+#: the step's delta alone [measured 2026-09-25T16:54:32+10:00: one full twins
+#: lane before this commit and one with it, the two read on one battery path at
+#: the landing's HEAD; command=python
+#: extensions/python/tools/twin_coverage.py].
+BUDGET = 327561

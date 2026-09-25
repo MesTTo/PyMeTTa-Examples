@@ -412,7 +412,12 @@ def twin(m):
 #: predicates the door retired, two inferences each a registration of more than
 #: twelve names [measured 2026-09-25T06:42:57+10:00: min-of-3 serial fresh
 #: processes; command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 3359
+#: RE-PINNED 2026-09-25, 3359 to 3360 (+1), every force of a waiting function
+#: names the module it is made from, through fun_home_in/3, and a write forces
+#: only its own space [measured 2026-09-25T16:54:32+10:00: one full twins lane
+#: before this commit and one with it, the two read on one battery path at the
+#: landing's HEAD; command=python extensions/python/tools/twin_coverage.py].
+BUDGET = 3360
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 =): the twin is an ordinary Python
@@ -436,4 +441,19 @@ DIVERGENCE = "5ae6d2b9cf7b119a43b104165c892acbbd121c9e1c6ea2b1e35561a577ea2cfc"
 #: 2026-09-25T07:04:25+10:00: one fresh process per side through the lane's
 #: run_example and run_twin, the floor from a minimal twin built by the probe;
 #: command=python extensions/python/benchmarks/probes/twin_floor.py].
-OVERRUN = 233
+#: OVERRUN 2026-09-25, 233 to 234 (+1): the twin costs 3360 against the
+#: example's 1072 and a ceiling of 3359 with the earlier declaration [measured
+#: 2026-09-25T16:54:32+10:00: one full twins lane, one fresh process per side
+#: through the lane's run_example and run_twin; command=python
+#: extensions/python/tools/twin_coverage.py]; a minimal twin of this example
+#: costs 288, inside the 1179 the band alone allows [measured
+#: 2026-09-25T17:26:54+10:00: the probe's minimal twin in one fresh process;
+#: command=python extensions/python/benchmarks/probes/twin_floor.py], so the
+#: distance is this twin's own program. The twin's seven forces go through the
+#: module-scoped doors, metta_ensure_compiled_from/2 three times and
+#: metta_ensure_compiled/2 once where metta_ensure_compiled/1 served all seven
+#: before, and resolving each home from the module the force is made from costs
+#: one inference more [measured 2026-09-25T17:26:21+10:00: SWI's port-counting
+#: profiler around twin(m) in the twins lane's own process shape, one fresh
+#: process without the change and one with it, 2,884 and 2,885 inferences].
+OVERRUN = 234

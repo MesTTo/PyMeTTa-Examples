@@ -431,7 +431,12 @@ def twin(m):
 #: more than twelve names [measured 2026-09-25T06:56:32+10:00: min-of-3 serial
 #: fresh processes; command=python extensions/python/tools/twin_coverage.py
 #: --repin].
-BUDGET = 33159
+#: RE-PINNED 2026-09-25, 33159 to 33168 (+9), every force of a waiting function
+#: names the module it is made from, through fun_home_in/3, and a write forces
+#: only its own space [measured 2026-09-25T16:54:32+10:00: one full twins lane
+#: before this commit and one with it, the two read on one battery path at the
+#: landing's HEAD; command=python extensions/python/tools/twin_coverage.py].
+BUDGET = 33168
 
 #: OVERRUN 2026-09-07, 800: it reads the cache statistics through the term door
 #: beside every claim. Measured 38155 against a ceiling of 37417; a minimal

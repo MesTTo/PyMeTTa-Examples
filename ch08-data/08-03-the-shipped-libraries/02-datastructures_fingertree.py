@@ -566,7 +566,13 @@ def twin(m):
 #: 2026-09-25T11:33:06+10:00: one full twins lane before this commit and one
 #: with it, the two read on one battery path at the landing's HEAD;
 #: command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 355180
+#: RE-PINNED 2026-09-25, 355180 to 355480 (+300), every force of a waiting
+#: function names the module it is made from, through fun_home_in/3, and a
+#: write forces only its own space [measured 2026-09-25T16:54:32+10:00: one
+#: full twins lane before this commit and one with it, the two read on one
+#: battery path at the landing's HEAD; command=python
+#: extensions/python/tools/twin_coverage.py].
+BUDGET = 355480
 
 #: OVERRUN 2026-09-07, 1300: it asks the eleven ft-* functions one at a time
 #: through the evaluation door. Measured 236074 against a ceiling of 234799; a

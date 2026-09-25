@@ -320,4 +320,10 @@ def twin(m):
 #: its allowance, where the host switch to swipl-patched.6 left it (twins
 #: bdf4c8ed) [measured 2026-09-25T15:56:13+10:00: min-of-3 serial fresh
 #: processes; command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 1392425
+#: RE-PINNED 2026-09-25, 1392425 to 1392670 (+245), every force of a waiting
+#: function names the module it is made from, through fun_home_in/3, and a
+#: write forces only its own space [measured 2026-09-25T16:54:32+10:00: one
+#: full twins lane before this commit and one with it, the two read on one
+#: battery path at the landing's HEAD; command=python
+#: extensions/python/tools/twin_coverage.py].
+BUDGET = 1392670

@@ -366,7 +366,13 @@ def twin(m):
 #: set, one after the other in one battery] [measured
 #: 2026-09-25T15:55:47+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 338433
+#: RE-PINNED 2026-09-25, 338433 to 338471 (+38), every force of a waiting
+#: function names the module it is made from, through fun_home_in/3, and a
+#: write forces only its own space [measured 2026-09-25T16:54:32+10:00: one
+#: full twins lane before this commit and one with it, the two read on one
+#: battery path at the landing's HEAD; command=python
+#: extensions/python/tools/twin_coverage.py].
+BUDGET = 338471
 
 #: DIVERGED 2026-09-12, the example holds 1 atom the twin does not (1 =) and
 #: the twin holds 1 atom the example does not (1 =): the scope function is four

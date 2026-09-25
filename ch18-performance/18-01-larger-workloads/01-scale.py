@@ -450,7 +450,13 @@ def twin(m):
 #: more than twelve names [measured 2026-09-25T06:52:35+10:00: min-of-3 serial
 #: fresh processes; command=python extensions/python/tools/twin_coverage.py
 #: --repin].
-BUDGET = 30218433
+#: RE-PINNED 2026-09-25, 30218433 to 30218434 (+1), every force of a waiting
+#: function names the module it is made from, through fun_home_in/3, and a
+#: write forces only its own space [measured 2026-09-25T16:54:32+10:00: one
+#: full twins lane before this commit and one with it, the two read on one
+#: battery path at the landing's HEAD; command=python
+#: extensions/python/tools/twin_coverage.py].
+BUDGET = 30218434
 
 #: DIVERGED 2026-09-07, the example holds 1000007 atoms and the twin 1000007,
 #: over the 50000 this lane enumerates, so the difference is pinned as the two
