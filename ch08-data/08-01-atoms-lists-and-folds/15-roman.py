@@ -614,7 +614,16 @@ def twin(m):
 #: full twins lane before this commit and one with it, the two read on one
 #: battery path at the landing's HEAD; command=python
 #: extensions/python/tools/twin_coverage.py].
-BUDGET = 344683
+#: RE-PINNED 2026-09-26, 344683 to 344701 (+18), engine/metta/control.pl's
+#: partial/3 to partial/11, the clauses that let a Prolog meta-predicate call a
+#: partial function value, are nine more predicates visible from filereader,
+#: and filereader:existing_predicate_arities/2's batch walk, which a load
+#: registering more than twelve names runs, pays two inferences for each: 18 a
+#: batch, the original and the twin alike, and nine inert facts of those
+#: arities move it the same [measured 2026-09-26T01:29:45+10:00: min-of-3
+#: serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 344701
 
 #: OVERRUN 2026-09-07, 17700: it names every lib_roman function at every claim
 #: and runs the backwards `let` inverses beside them. Measured 320547 against a
