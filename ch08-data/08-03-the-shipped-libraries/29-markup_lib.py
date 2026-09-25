@@ -261,9 +261,9 @@ def twin(m):
 #: more than twelve names [measured 2026-09-25T06:47:35+10:00: min-of-3 serial
 #: fresh processes; command=python extensions/python/tools/twin_coverage.py
 #: --repin].
-#: RE-PINNED 2026-09-25, 131758 to 131728 (-30), the switch of
-#: /home/user/Dev/swipl-patched from .5 to .6: loading library(xpath) costs
-#: 7119 inferences on .6 against 7149 on .5, because .5's
+#: RE-PINNED 2026-09-25, 131758 to 131728 (-30), the switch of the
+#: swipl-patched prefix from .5 to .6: loading library(xpath) costs 7119
+#: inferences on .6 against 7149 on .5, because .5's
 #: library/ext/sgml/xpath.qlf, compiled on 2026-09-17, replays three
 #: non_terminal/1 directives at load, ten inferences each, and .6's replays
 #: none: SWI's non_terminal_decl/2 (boot/expand.pl) writes the directive only
