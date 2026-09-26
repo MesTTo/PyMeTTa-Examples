@@ -429,7 +429,16 @@ def twin(m):
 #: no longer run the loader's clause (-21) [measured 2026-09-26T06:55:53+10:00:
 #: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 2359753
+#: RE-PINNED 2026-09-26, 2359753 to 2359773 (+20), this twin reads 2359753 at
+#: the base and 2359773 with the change (+20): the change adds
+#: metta_reference_enroll/1 and metta_reference_source_bound/5 to the
+#: metta_engine module (engine/metta/reference_refresh.pl and
+#: reference_sources.pl), and on a tree that defines them and never calls them
+#: this twin reads 2359773 (+20), which only a walk over SWI's predicate or
+#: atom tables can move, by visiting more entries or visiting them in another
+#: order [measured 2026-09-26T11:18:52+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 2359773
 
 #: RETIRED: the former 1826-inference overrun. The 78-claim MeTTa recipe now
 #: costs 40092306 and its twin 40107888, within the ordinary band.

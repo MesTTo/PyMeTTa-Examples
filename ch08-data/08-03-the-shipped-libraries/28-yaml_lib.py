@@ -425,7 +425,18 @@ def twin(m):
 #: no longer run the loader's clause (-3) [measured 2026-09-26T06:55:21+10:00:
 #: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 338591
+#: RE-PINNED 2026-09-26, 338591 to 338596 (+5), this twin reads 338592 at the
+#: base and 338596 with the change (+4): the change adds
+#: metta_reference_enroll/1 and metta_reference_source_bound/5 to the
+#: metta_engine module (engine/metta/reference_refresh.pl and
+#: reference_sources.pl), and on a tree that defines them and never calls them
+#: this twin reads 338596 (+4), which only a walk over SWI's predicate or atom
+#: tables can move, by visiting more entries or visiting them in another order;
+#: it read 338592 against its pin 338591 at the base, so +1 of the distance is
+#: the trunk's own and is not attributed here [measured
+#: 2026-09-26T11:18:06+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 338596
 
 #: DIVERGED 2026-09-12, the example holds 1 atom the twin does not (1 =) and
 #: the twin holds 1 atom the example does not (1 =): the scope function is four

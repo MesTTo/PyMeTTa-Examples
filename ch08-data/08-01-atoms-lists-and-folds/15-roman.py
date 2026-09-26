@@ -632,7 +632,18 @@ def twin(m):
 #: a load registers (i-arity-walk-all-predicates) [measured
 #: 2026-09-26T03:07:31+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 344721
+#: RE-PINNED 2026-09-26, 344721 to 344727 (+6), this twin reads 344723 at the
+#: base and 344727 with the change (+4): the change adds
+#: metta_reference_enroll/1 and metta_reference_source_bound/5 to the
+#: metta_engine module (engine/metta/reference_refresh.pl and
+#: reference_sources.pl), and on a tree that defines them and never calls them
+#: this twin reads 344727 (+4), which only a walk over SWI's predicate or atom
+#: tables can move, by visiting more entries or visiting them in another order;
+#: it read 344723 against its pin 344721 at the base, so +2 of the distance is
+#: the trunk's own and is not attributed here [measured
+#: 2026-09-26T11:16:08+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 344727
 
 #: OVERRUN 2026-09-07, 17700: it names every lib_roman function at every claim
 #: and runs the backwards `let` inverses beside them. Measured 320547 against a

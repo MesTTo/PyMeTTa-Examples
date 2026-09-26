@@ -518,4 +518,13 @@ def twin(m):
 #: boot's first load, where the trunk links it into user only at its first
 #: library import [measured 2026-09-26T06:54:51+10:00: min-of-3 serial fresh
 #: processes; command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 333563
+#: RE-PINNED 2026-09-26, 333563 to 333575 (+12), this twin reads 333563 at the
+#: base and 333575 with the change (+12): the change adds
+#: metta_reference_enroll/1 and metta_reference_source_bound/5 to the
+#: metta_engine module (engine/metta/reference_refresh.pl and
+#: reference_sources.pl), and on a tree that defines them and never calls them
+#: this twin reads 333575 (+12), which only a walk over SWI's predicate or atom
+#: tables can move, by visiting more entries or visiting them in another order
+#: [measured 2026-09-26T11:16:54+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 333575

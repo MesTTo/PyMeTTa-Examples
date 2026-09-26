@@ -566,4 +566,15 @@ def twin(m):
 #: a load registers (i-arity-walk-all-predicates) [measured
 #: 2026-09-26T03:08:53+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 4782055
+#: RE-PINNED 2026-09-26, 4782055 to 4782070 (+15), this twin reads 4782058 at
+#: the base and 4782070 with the change (+12): the change adds
+#: metta_reference_enroll/1 and metta_reference_source_bound/5 to the
+#: metta_engine module (engine/metta/reference_refresh.pl and
+#: reference_sources.pl), and on a tree that defines them and never calls them
+#: this twin reads 4782070 (+12), which only a walk over SWI's predicate or
+#: atom tables can move, by visiting more entries or visiting them in another
+#: order; it read 4782058 against its pin 4782055 at the base, so +3 of the
+#: distance is the trunk's own and is not attributed here [measured
+#: 2026-09-26T11:17:58+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 4782070

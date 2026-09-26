@@ -622,4 +622,13 @@ def twin(m):  # noqa: ARG001  -- both spaces are created here; the default handl
 #: metta_engine reads the same [measured 2026-09-26T03:10:56+10:00: min-of-3
 #: serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 67832
+#: RE-PINNED 2026-09-26, 67832 to 67890 (+58), this twin reads 67832 at the
+#: base and 67890 with the change (+58): the change adds
+#: metta_reference_enroll/1 and metta_reference_source_bound/5 to the
+#: metta_engine module (engine/metta/reference_refresh.pl and
+#: reference_sources.pl), and on a tree that defines them and never calls them
+#: this twin reads 67890 (+58), which only a walk over SWI's predicate or atom
+#: tables can move, by visiting more entries or visiting them in another order
+#: [measured 2026-09-26T11:19:33+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 67890

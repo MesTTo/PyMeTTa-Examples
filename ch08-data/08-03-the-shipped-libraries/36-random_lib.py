@@ -402,4 +402,13 @@ def twin(m):
 #: no longer run the loader's clause (-15) [measured 2026-09-26T06:55:43+10:00:
 #: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 1228099
+#: RE-PINNED 2026-09-26, 1228099 to 1228110 (+11), this twin reads 1228099 at
+#: the base and 1228110 with the change (+11): the change adds
+#: metta_reference_enroll/1 and metta_reference_source_bound/5 to the
+#: metta_engine module (engine/metta/reference_refresh.pl and
+#: reference_sources.pl), and on a tree that defines them and never calls them
+#: this twin reads 1228110 (+11), which only a walk over SWI's predicate or
+#: atom tables can move, by visiting more entries or visiting them in another
+#: order [measured 2026-09-26T11:18:44+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 1228110

@@ -382,4 +382,14 @@ def twin(m):
 #: follows SWI's predicate and atom tables can move [measured
 #: 2026-09-26T08:56:20+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 83815
+#: RE-PINNED 2026-09-26, 83815 to 83856 (+41), this twin reads 83815 at the
+#: base and 83856 with the change (+41): metta_reference_queue/1 now adds its
+#: space to the pending set through metta_reference_enroll/1, one call more for
+#: each space it queues, and a source read that meets its space's pending
+#: reader enrolls the space in its own thread's or engine's pending set before
+#: one refresh; this twin's run queues 41 spaces and meets 0 pending source
+#: readers at the base, and 41 and 0 with the change: with that use this twin
+#: reads 83856 where the definitions alone read 83815 (+41) [measured
+#: 2026-09-26T11:19:59+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 83856

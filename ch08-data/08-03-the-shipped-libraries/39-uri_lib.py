@@ -365,4 +365,13 @@ def twin(m):
 #: 6 loads each call prolog_current_frame/1 once more (+6) [measured
 #: 2026-09-26T06:56:01+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 354240
+#: RE-PINNED 2026-09-26, 354240 to 354248 (+8), this twin reads 354240 at the
+#: base and 354248 with the change (+8): the change adds
+#: metta_reference_enroll/1 and metta_reference_source_bound/5 to the
+#: metta_engine module (engine/metta/reference_refresh.pl and
+#: reference_sources.pl), and on a tree that defines them and never calls them
+#: this twin reads 354248 (+8), which only a walk over SWI's predicate or atom
+#: tables can move, by visiting more entries or visiting them in another order
+#: [measured 2026-09-26T11:19:00+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 354248
