@@ -516,4 +516,10 @@ def twin(m):
 #: trunk's own drift and is not attributed here [measured
 #: 2026-09-26T06:57:43+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 31678
+#: RE-PINNED 2026-09-26, 31678 to 31742 (+64), A Prolog function registered
+#: without its arity is claimed from its lowest arity's file through
+#: aggregate_all(min(Arity, File), ...), where the scan took the first arity
+#: the procedure table answered [measured 2026-09-26T13:05:14+10:00: min-of-3
+#: serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 31742

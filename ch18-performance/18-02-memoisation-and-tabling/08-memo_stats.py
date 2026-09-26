@@ -448,7 +448,13 @@ def twin(m):
 #: offset inside its tolerance, so this change's share is +3 [measured
 #: 2026-09-25T20:44:14+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 33175
+#: RE-PINNED 2026-09-26, 33175 to 33330 (+155), A Prolog function registered
+#: without its arity is claimed from its lowest arity's file through
+#: aggregate_all(min(Arity, File), ...), where the scan took the first arity
+#: the procedure table answered [measured 2026-09-26T13:04:41+10:00: min-of-3
+#: serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 33330
 
 #: OVERRUN 2026-09-07, 800: it reads the cache statistics through the term door
 #: beside every claim. Measured 38155 against a ceiling of 37417; a minimal

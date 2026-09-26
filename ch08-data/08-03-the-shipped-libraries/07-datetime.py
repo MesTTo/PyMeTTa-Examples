@@ -417,4 +417,10 @@ def twin(m):
 #: and set the order of the arity/2 facts [measured 2026-09-26T12:29:23+10:00:
 #: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 63662
+#: RE-PINNED 2026-09-26, 63662 to 63723 (+61), A Prolog function registered
+#: without its arity is claimed from its lowest arity's file through
+#: aggregate_all(min(Arity, File), ...), where the scan took the first arity
+#: the procedure table answered [measured 2026-09-26T13:02:31+10:00: min-of-3
+#: serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 63723

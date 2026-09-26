@@ -245,4 +245,10 @@ def twin(m):
 #: messages inside engines, where no clause ran before, and the original's side
 #: does not move [measured 2026-09-25T18:42:44+10:00: min-of-3 serial fresh
 #: processes; command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 60711
+#: RE-PINNED 2026-09-26, 60711 to 60774 (+63), A Prolog function registered
+#: without its arity is claimed from its lowest arity's file through
+#: aggregate_all(min(Arity, File), ...), where the scan took the first arity
+#: the procedure table answered [measured 2026-09-26T13:03:38+10:00: min-of-3
+#: serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 60774

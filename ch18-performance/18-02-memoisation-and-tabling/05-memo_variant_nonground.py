@@ -362,7 +362,13 @@ def twin(m):
 #: offset inside its tolerance, so this change's share is +3 [measured
 #: 2026-09-25T20:43:49+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 29241
+#: RE-PINNED 2026-09-26, 29241 to 29396 (+155), A Prolog function registered
+#: without its arity is claimed from its lowest arity's file through
+#: aggregate_all(min(Arity, File), ...), where the scan took the first arity
+#: the procedure table answered [measured 2026-09-26T13:04:32+10:00: min-of-3
+#: serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 29396
 #: OVERRUN 2026-09-09, 0 to 515 (+515): a library's Prolog half compiles
 #: beside itself on its first import and loads from the artifact after
 #: (metta_load_source/2, seam:compiled_source/1): the example imports one, so
