@@ -275,4 +275,12 @@ def twin(m):
 #: delta alone [measured 2026-09-25T16:54:32+10:00: one full twins lane before
 #: this commit and one with it, the two read on one battery path at the
 #: landing's HEAD; command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 9895
+#: RE-PINNED 2026-09-26, 9895 to 9889 (-6), A Python import saves and restores
+#: the sys.modules entry of each Python source beside the imported file, and it
+#: listed the whole directory and tested every entry's extension to find them,
+#: so the __pycache__ a first import writes cost every later import from that
+#: directory; it now lists only the *.py entries through fnmatch.filter, one
+#: test per Python source [measured 2026-09-26T12:55:14+10:00: min-of-3 serial
+#: fresh processes; command=python extensions/python/tools/twin_coverage.py
+#: --repin].
+BUDGET = 9889
