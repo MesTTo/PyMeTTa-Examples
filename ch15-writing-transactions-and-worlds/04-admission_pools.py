@@ -590,7 +590,15 @@ def twin(m):
 #: 2026-09-26T18:36:57+10:00: one full twins lane before this commit and one
 #: with it, each read in one battery of the landing's HEAD after a QLF purge
 #: and one warm-up; command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 35654
+#: RE-PINNED 2026-09-27, 35654 to 35704 (+50), the host switch to swipl-
+#: patched.7 and the seat changes it needs: +50 the held goals reading Used
+#: through metta_py_work/2, which leaves a held engine's own ticks out and
+#: reads the tick term inside its opening edge, 5 inferences a held reading
+#: [measured 2026-09-27T03:41:21+10:00: one full twins lane of the trunk and
+#: one with this landing, wt-merge battery 1, the trunk on swipl-patched.6 and
+#: every part on .7, each through a same-shape host shim; command=python
+#: extensions/python/tools/twin_coverage.py].
+BUDGET = 35704
 
 #: DIVERGED 2026-09-07, the example holds 2 atoms the twin does not (2 =) and
 #: the twin holds 2 the example does not (2 =): the twin is an ordinary Python

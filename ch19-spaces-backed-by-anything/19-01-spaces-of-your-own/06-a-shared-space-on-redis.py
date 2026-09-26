@@ -225,7 +225,22 @@ def twin(m):
 #: delta alone [measured 2026-09-25T16:54:32+10:00: one full twins lane before
 #: this commit and one with it, the two read on one battery path at the
 #: landing's HEAD; command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 20944
+#: RE-PINNED 2026-09-27, 20944 to 20951 (+7), the host switch to swipl-
+#: patched.7 and the seat changes it needs: +2 the host switch to swipl-
+#: patched.7, which delivers the heartbeat inside loops, so a held engine ticks
+#: and the held goals read its ticks from the raw counter, 9 inferences a tick,
+#: and whose three new system predicates ('$heartbeat'/0, '$file_hash'/2,
+#: '$qlf_source_changed'/2) filereader's walk of every visible predicate
+#: (existing_predicate_arities/2) meets, 2 inferences each; +5 the held goals
+#: reading Used through metta_py_work/2, which leaves a held engine's own ticks
+#: out and reads the tick term inside its opening edge, 5 inferences a held
+#: reading; the trunk's lane read this twin +118 off its pin, an offset that is
+#: not this landing's, so the pin moves by the landing's delta alone [measured
+#: 2026-09-27T03:41:21+10:00: one full twins lane of the trunk and one with
+#: this landing, wt-merge battery 1, the trunk on swipl-patched.6 and every
+#: part on .7, each through a same-shape host shim; command=python
+#: extensions/python/tools/twin_coverage.py].
+BUDGET = 20951
 #: The count VARIES by a few tens, because every read and write crosses a
 #: socket and the subscription thread's own work lands in the same counter.
 #: Three single-round measurements on this branch gave 113484, 113469 and

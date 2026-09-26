@@ -357,4 +357,23 @@ def twin(m):
 #: superproject 3a6b92b40 puts the whole move on those three files [measured
 #: 2026-09-25T20:41:18+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 29302580
+#: RE-PINNED 2026-09-27, 29302580 to 29302590 (+10), the host switch to swipl-
+#: patched.7 and the seat changes it needs: +2628 the host switch to swipl-
+#: patched.7, which delivers the heartbeat inside loops, so a held engine ticks
+#: and the held goals read its ticks from the raw counter, 9 inferences a tick,
+#: and whose three new system predicates ('$heartbeat'/0, '$file_hash'/2,
+#: '$qlf_source_changed'/2) filereader's walk of every visible predicate
+#: (existing_predicate_arities/2) meets, 2 inferences each; +876 the seat's
+#: interrupt poll crossing only on its arming thread, whose hook costs 3
+#: inferences a tick more and whose start goal runs on every new thread and
+#: engine; +876 the poll's tick record updated in place, 3 inferences a tick
+#: more than replacing it; -4370 the held goals reading Used through
+#: metta_py_work/2, which leaves a held engine's own ticks out and reads the
+#: tick term inside its opening edge, 5 inferences a held reading; the trunk's
+#: lane read this twin +3 off its pin, an offset that is not this landing's, so
+#: the pin moves by the landing's delta alone [measured
+#: 2026-09-27T03:41:21+10:00: one full twins lane of the trunk and one with
+#: this landing, wt-merge battery 1, the trunk on swipl-patched.6 and every
+#: part on .7, each through a same-shape host shim; command=python
+#: extensions/python/tools/twin_coverage.py].
+BUDGET = 29302590

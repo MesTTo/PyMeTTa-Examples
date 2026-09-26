@@ -266,4 +266,29 @@ def twin(m):
 #: only its own space [measured 2026-09-25T16:54:32+10:00: one full twins lane
 #: before this commit and one with it, the two read on one battery path at the
 #: landing's HEAD; command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 5953
+#: RE-PINNED 2026-09-27, 5953 to 6077 (+124), the host switch to swipl-
+#: patched.7 and the seat changes it needs: +124 the held goals reading Used
+#: through metta_py_work/2, which leaves a held engine's own ticks out and
+#: reads the tick term inside its opening edge, 5 inferences a held reading
+#: [measured 2026-09-27T03:41:21+10:00: one full twins lane of the trunk and
+#: one with this landing, wt-merge battery 1, the trunk on swipl-patched.6 and
+#: every part on .7, each through a same-shape host shim; command=python
+#: extensions/python/tools/twin_coverage.py].
+BUDGET = 6077
+
+#: OVERRUN 2026-09-27, 0 to 64 (+64): the twin costs 6077 against the example's
+#: 5467 and a ceiling of 6013 with the earlier declaration [measured
+#: 2026-09-27T03:41:21+10:00: one full twins lane, one fresh process per side
+#: through the lane's run_example and run_twin; command=python
+#: extensions/python/tools/twin_coverage.py]; a minimal twin of this example
+#: costs 5667, inside the 6013 the band alone allows [measured
+#: 2026-09-27T03:21:46+10:00: the probe's minimal twin in one fresh process;
+#: command=python extensions/python/benchmarks/probes/twin_floor.py], so the
+#: distance is this twin's own program. The twin reads its answers through the
+#: seat's held doors, and with the held goals reading Used through
+#: metta_py_work/2, whose opening edge reads the tick term inside the window,
+#: it costs 124 more [measured 2026-09-27T03:41:21+10:00: one full twins lane
+#: with that reading and one without it, the second at
+#: 2026-09-27T03:28:15+10:00, wt-merge battery 1 on swipl-patched.7;
+#: command=python extensions/python/tools/twin_coverage.py].
+OVERRUN = 64

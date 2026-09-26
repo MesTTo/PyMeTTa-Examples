@@ -515,4 +515,12 @@ def twin(m):
 #: superproject 3a6b92b40 puts the whole move on those three files [measured
 #: 2026-09-25T20:41:02+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 15058
+#: RE-PINNED 2026-09-27, 15058 to 15073 (+15), the host switch to swipl-
+#: patched.7 and the seat changes it needs: +15 the held goals reading Used
+#: through metta_py_work/2, which leaves a held engine's own ticks out and
+#: reads the tick term inside its opening edge, 5 inferences a held reading
+#: [measured 2026-09-27T03:41:21+10:00: one full twins lane of the trunk and
+#: one with this landing, wt-merge battery 1, the trunk on swipl-patched.6 and
+#: every part on .7, each through a same-shape host shim; command=python
+#: extensions/python/tools/twin_coverage.py].
+BUDGET = 15073

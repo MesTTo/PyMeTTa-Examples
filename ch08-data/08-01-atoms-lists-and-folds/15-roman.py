@@ -676,7 +676,23 @@ def twin(m):
 #: 2026-09-26T18:25:19+10:00: one full twins lane before this commit and one
 #: with it, each read in one battery of the landing's HEAD after a QLF purge
 #: and one warm-up; command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 344984
+#: RE-PINNED 2026-09-27, 344984 to 345101 (+117), the host switch to swipl-
+#: patched.7 and the seat changes it needs: +6 the host switch to swipl-
+#: patched.7, which delivers the heartbeat inside loops, so a held engine ticks
+#: and the held goals read its ticks from the raw counter, 9 inferences a tick,
+#: and whose three new system predicates ('$heartbeat'/0, '$file_hash'/2,
+#: '$qlf_source_changed'/2) filereader's walk of every visible predicate
+#: (existing_predicate_arities/2) meets, 2 inferences each; +6 the seat's
+#: interrupt poll crossing only on its arming thread, whose hook costs 3
+#: inferences a tick more and whose start goal runs on every new thread and
+#: engine; +105 the held goals reading Used through metta_py_work/2, which
+#: leaves a held engine's own ticks out and reads the tick term inside its
+#: opening edge, 5 inferences a held reading [measured
+#: 2026-09-27T03:41:21+10:00: one full twins lane of the trunk and one with
+#: this landing, wt-merge battery 1, the trunk on swipl-patched.6 and every
+#: part on .7, each through a same-shape host shim; command=python
+#: extensions/python/tools/twin_coverage.py].
+BUDGET = 345101
 
 #: OVERRUN 2026-09-07, 17700: it names every lib_roman function at every claim
 #: and runs the backwards `let` inverses beside them. Measured 320547 against a

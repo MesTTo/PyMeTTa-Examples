@@ -362,4 +362,21 @@ def twin(m):
 #: 02-restricted_spaces and 37-statistics_lib by the same +6, +87 and +30
 #: [measured 2026-09-26T14:28:47+10:00: min-of-3 serial fresh processes;
 #: command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 328243
+#: RE-PINNED 2026-09-27, 328243 to 328409 (+166), the host switch to swipl-
+#: patched.7 and the seat changes it needs: +26 the host switch to swipl-
+#: patched.7, which delivers the heartbeat inside loops, so a held engine ticks
+#: and the held goals read its ticks from the raw counter, 9 inferences a tick,
+#: and whose three new system predicates ('$heartbeat'/0, '$file_hash'/2,
+#: '$qlf_source_changed'/2) filereader's walk of every visible predicate
+#: (existing_predicate_arities/2) meets, 2 inferences each; +12 the seat's
+#: interrupt poll crossing only on its arming thread, whose hook costs 3
+#: inferences a tick more and whose start goal runs on every new thread and
+#: engine; +6 the poll's tick record updated in place, 3 inferences a tick more
+#: than replacing it; +122 the held goals reading Used through metta_py_work/2,
+#: which leaves a held engine's own ticks out and reads the tick term inside
+#: its opening edge, 5 inferences a held reading [measured
+#: 2026-09-27T03:41:21+10:00: one full twins lane of the trunk and one with
+#: this landing, wt-merge battery 1, the trunk on swipl-patched.6 and every
+#: part on .7, each through a same-shape host shim; command=python
+#: extensions/python/tools/twin_coverage.py].
+BUDGET = 328409

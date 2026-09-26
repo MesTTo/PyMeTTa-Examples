@@ -291,4 +291,12 @@ RUNG = "the assert family's failure report is this file's subject, so each claim
 #: predicates the door retired, two inferences each a registration of more than
 #: twelve names [measured 2026-09-25T06:49:49+10:00: min-of-3 serial fresh
 #: processes; command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 8210
+#: RE-PINNED 2026-09-27, 8210 to 8230 (+20), the host switch to swipl-patched.7
+#: and the seat changes it needs: +20 the held goals reading Used through
+#: metta_py_work/2, which leaves a held engine's own ticks out and reads the
+#: tick term inside its opening edge, 5 inferences a held reading [measured
+#: 2026-09-27T03:41:21+10:00: one full twins lane of the trunk and one with
+#: this landing, wt-merge battery 1, the trunk on swipl-patched.6 and every
+#: part on .7, each through a same-shape host shim; command=python
+#: extensions/python/tools/twin_coverage.py].
+BUDGET = 8230

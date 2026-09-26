@@ -447,5 +447,13 @@ def twin(m):
 #: only its own space [measured 2026-09-25T16:54:32+10:00: one full twins lane
 #: before this commit and one with it, the two read on one battery path at the
 #: landing's HEAD; command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 4087
+#: RE-PINNED 2026-09-27, 4087 to 4092 (+5), the host switch to swipl-patched.7
+#: and the seat changes it needs: +5 the held goals reading Used through
+#: metta_py_work/2, which leaves a held engine's own ticks out and reads the
+#: tick term inside its opening edge, 5 inferences a held reading [measured
+#: 2026-09-27T03:41:21+10:00: one full twins lane of the trunk and one with
+#: this landing, wt-merge battery 1, the trunk on swipl-patched.6 and every
+#: part on .7, each through a same-shape host shim; command=python
+#: extensions/python/tools/twin_coverage.py].
+BUDGET = 4092
 DIVERGENCE = "6646589902963f27182586005921d814f0832612cf7b485e3ca880c5903a8c8b"

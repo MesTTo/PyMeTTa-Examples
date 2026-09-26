@@ -294,4 +294,14 @@ from metta import Expression  # noqa: E402  -- read after the claims it serves
 #: 2026-09-25T17:00:15+10:00: one full twins lane before this commit and one
 #: with it, the two read on one battery path at the landing's HEAD;
 #: command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 22769
+#: RE-PINNED 2026-09-27, 22769 to 22812 (+43), the host switch to swipl-
+#: patched.7 and the seat changes it needs: +43 the held goals reading Used
+#: through metta_py_work/2, which leaves a held engine's own ticks out and
+#: reads the tick term inside its opening edge, 5 inferences a held reading;
+#: the trunk's lane read this twin +3 off its pin, an offset that is not this
+#: landing's, so the pin moves by the landing's delta alone [measured
+#: 2026-09-27T03:41:21+10:00: one full twins lane of the trunk and one with
+#: this landing, wt-merge battery 1, the trunk on swipl-patched.6 and every
+#: part on .7, each through a same-shape host shim; command=python
+#: extensions/python/tools/twin_coverage.py].
+BUDGET = 22812

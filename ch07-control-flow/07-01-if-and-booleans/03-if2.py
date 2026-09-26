@@ -425,7 +425,15 @@ def twin(m):
 #: 2026-09-26T18:36:57+10:00: one full twins lane before this commit and one
 #: with it, each read in one battery of the landing's HEAD after a QLF purge
 #: and one warm-up; command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 4351
+#: RE-PINNED 2026-09-27, 4351 to 4356 (+5), the host switch to swipl-patched.7
+#: and the seat changes it needs: +5 the held goals reading Used through
+#: metta_py_work/2, which leaves a held engine's own ticks out and reads the
+#: tick term inside its opening edge, 5 inferences a held reading [measured
+#: 2026-09-27T03:41:21+10:00: one full twins lane of the trunk and one with
+#: this landing, wt-merge battery 1, the trunk on swipl-patched.6 and every
+#: part on .7, each through a same-shape host shim; command=python
+#: extensions/python/tools/twin_coverage.py].
+BUDGET = 4356
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 =): the twin is an ordinary Python
@@ -486,4 +494,19 @@ DIVERGENCE = "26c23ce9e6fb37f3687387e2ae0cc6fe594de13826e0d1bfaf351fc743cd0d4d"
 #: 2026-09-26T18:36:57+10:00: one full twins lane before this commit and one
 #: with it, each read in one battery of the landing's HEAD after a QLF purge
 #: and one warm-up; command=python extensions/python/tools/twin_coverage.py].
-OVERRUN = 324
+#: OVERRUN 2026-09-27, 324 to 329 (+5): the twin costs 4356 against the
+#: example's 1891 and a ceiling of 4351 with the earlier declaration [measured
+#: 2026-09-27T03:41:21+10:00: one full twins lane, one fresh process per side
+#: through the lane's run_example and run_twin; command=python
+#: extensions/python/tools/twin_coverage.py]; a minimal twin of this example
+#: costs 1244, inside the 2080 the band alone allows [measured
+#: 2026-09-27T03:21:46+10:00: the probe's minimal twin in one fresh process;
+#: command=python extensions/python/benchmarks/probes/twin_floor.py], so the
+#: distance is this twin's own program. The twin reads its answers through the
+#: seat's held doors, and with the held goals reading Used through
+#: metta_py_work/2, whose opening edge reads the tick term inside the window,
+#: it costs 5 more [measured 2026-09-27T03:41:21+10:00: one full twins lane
+#: with that reading and one without it, the second at
+#: 2026-09-27T03:28:15+10:00, wt-merge battery 1 on swipl-patched.7;
+#: command=python extensions/python/tools/twin_coverage.py].
+OVERRUN = 329

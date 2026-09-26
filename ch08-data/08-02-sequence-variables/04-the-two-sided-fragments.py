@@ -292,7 +292,17 @@ def twin(m):
 #: more than twelve names [measured 2026-09-25T06:46:07+10:00: min-of-3 serial
 #: fresh processes; command=python extensions/python/tools/twin_coverage.py
 #: --repin].
-BUDGET = 10147
+#: RE-PINNED 2026-09-27, 10147 to 10215 (+68), the host switch to swipl-
+#: patched.7 and the seat changes it needs: +68 the held goals reading Used
+#: through metta_py_work/2, which leaves a held engine's own ticks out and
+#: reads the tick term inside its opening edge, 5 inferences a held reading;
+#: the trunk's lane read this twin +4 off its pin, an offset that is not this
+#: landing's, so the pin moves by the landing's delta alone [measured
+#: 2026-09-27T03:41:21+10:00: one full twins lane of the trunk and one with
+#: this landing, wt-merge battery 1, the trunk on swipl-patched.6 and every
+#: part on .7, each through a same-shape host shim; command=python
+#: extensions/python/tools/twin_coverage.py].
+BUDGET = 10215
 
 #: OVERRUN 2026-09-07, 4500: it asks through `solve`, the pattern door, where
 #: the example asks through `unify`, the one MeTTa form whose operands are both

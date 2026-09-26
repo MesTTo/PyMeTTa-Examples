@@ -168,4 +168,14 @@ def twin(m):
 #: per set; serial minimum of three fresh processes through the lane's run_twin
 #: [measured 2026-09-18: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=55d451b670949c2dc9d2ab7bc678f33f21094bd2].
-BUDGET = 711
+#: RE-PINNED 2026-09-27, 711 to 716 (+5), the host switch to swipl-patched.7
+#: and the seat changes it needs: +5 the held goals reading Used through
+#: metta_py_work/2, which leaves a held engine's own ticks out and reads the
+#: tick term inside its opening edge, 5 inferences a held reading; the trunk's
+#: lane read this twin -1 off its pin, an offset that is not this landing's, so
+#: the pin moves by the landing's delta alone [measured
+#: 2026-09-27T03:41:21+10:00: one full twins lane of the trunk and one with
+#: this landing, wt-merge battery 1, the trunk on swipl-patched.6 and every
+#: part on .7, each through a same-shape host shim; command=python
+#: extensions/python/tools/twin_coverage.py].
+BUDGET = 716

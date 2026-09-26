@@ -494,7 +494,20 @@ def twin(m):
 #: arity the procedure table answered [measured 2026-09-26T13:42:09+10:00: min-
 #: of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 63222
+#: RE-PINNED 2026-09-27, 63222 to 63241 (+19), the host switch to swipl-
+#: patched.7 and the seat changes it needs: +4 the host switch to swipl-
+#: patched.7, which delivers the heartbeat inside loops, so a held engine ticks
+#: and the held goals read its ticks from the raw counter, 9 inferences a tick,
+#: and whose three new system predicates ('$heartbeat'/0, '$file_hash'/2,
+#: '$qlf_source_changed'/2) filereader's walk of every visible predicate
+#: (existing_predicate_arities/2) meets, 2 inferences each; +15 the held goals
+#: reading Used through metta_py_work/2, which leaves a held engine's own ticks
+#: out and reads the tick term inside its opening edge, 5 inferences a held
+#: reading [measured 2026-09-27T03:41:21+10:00: one full twins lane of the
+#: trunk and one with this landing, wt-merge battery 1, the trunk on swipl-
+#: patched.6 and every part on .7, each through a same-shape host shim;
+#: command=python extensions/python/tools/twin_coverage.py].
+BUDGET = 63241
 
 #: OVERRUN 2026-09-07, 6400: it declares the cache policy and memoises by name
 #: through the library door, then reads the result twice. Measured 57334

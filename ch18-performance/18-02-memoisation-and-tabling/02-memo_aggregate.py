@@ -495,7 +495,20 @@ def twin(m):
 #: the procedure table answered [measured 2026-09-26T13:04:23+10:00: min-of-3
 #: serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 34529
+#: RE-PINNED 2026-09-27, 34529 to 34579 (+50), the host switch to swipl-
+#: patched.7 and the seat changes it needs: +4 the host switch to swipl-
+#: patched.7, which delivers the heartbeat inside loops, so a held engine ticks
+#: and the held goals read its ticks from the raw counter, 9 inferences a tick,
+#: and whose three new system predicates ('$heartbeat'/0, '$file_hash'/2,
+#: '$qlf_source_changed'/2) filereader's walk of every visible predicate
+#: (existing_predicate_arities/2) meets, 2 inferences each; +46 the held goals
+#: reading Used through metta_py_work/2, which leaves a held engine's own ticks
+#: out and reads the tick term inside its opening edge, 5 inferences a held
+#: reading [measured 2026-09-27T03:41:21+10:00: one full twins lane of the
+#: trunk and one with this landing, wt-merge battery 1, the trunk on swipl-
+#: patched.6 and every part on .7, each through a same-shape host shim;
+#: command=python extensions/python/tools/twin_coverage.py].
+BUDGET = 34579
 #: OVERRUN 2026-09-09, 0 to 1089 (+1089): a library's Prolog half compiles
 #: beside itself on its first import and loads from the artifact after
 #: (metta_load_source/2, seam:compiled_source/1): the example imports one, so
