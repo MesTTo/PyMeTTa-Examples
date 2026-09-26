@@ -649,7 +649,14 @@ def twin(m):
 #: and set the order of the arity/2 facts [measured 2026-09-26T12:29:03+10:00:
 #: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 344732
+#: RE-PINNED 2026-09-26, 344732 to 345156 (+424), Automatic caching asks every
+#: arity of a candidate function whether SWI already tables it through
+#: findall/3 and a non-empty list, one findall/3 more per candidate that
+#: reaches the explicit-tabling ground, where it stopped at the first tabled
+#: arity the procedure table answered [measured 2026-09-26T13:38:16+10:00: min-
+#: of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 345156
 
 #: OVERRUN 2026-09-07, 17700: it names every lib_roman function at every claim
 #: and runs the backwards `let` inverses beside them. Measured 320547 against a

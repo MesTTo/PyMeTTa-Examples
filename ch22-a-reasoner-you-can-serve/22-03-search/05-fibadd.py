@@ -417,7 +417,14 @@ def twin(m):
 #: offset inside its tolerance, so this change's share is +9 [measured
 #: 2026-09-25T20:44:39+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 38701
+#: RE-PINNED 2026-09-26, 38701 to 38709 (+8), Automatic caching asks every
+#: arity of a candidate function whether SWI already tables it through
+#: findall/3 and a non-empty list, one findall/3 more per candidate that
+#: reaches the explicit-tabling ground, where it stopped at the first tabled
+#: arity the procedure table answered [measured 2026-09-26T13:42:12+10:00: min-
+#: of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 38709
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 :): a Python annotation IS a (:

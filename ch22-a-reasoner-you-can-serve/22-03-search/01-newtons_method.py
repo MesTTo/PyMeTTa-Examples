@@ -487,7 +487,14 @@ def twin(m):
 #: the procedure table answered [measured 2026-09-26T13:05:45+10:00: min-of-3
 #: serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 63214
+#: RE-PINNED 2026-09-26, 63214 to 63222 (+8), Automatic caching asks every
+#: arity of a candidate function whether SWI already tables it through
+#: findall/3 and a non-empty list, one findall/3 more per candidate that
+#: reaches the explicit-tabling ground, where it stopped at the first tabled
+#: arity the procedure table answered [measured 2026-09-26T13:42:09+10:00: min-
+#: of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 63222
 
 #: OVERRUN 2026-09-07, 6400: it declares the cache policy and memoises by name
 #: through the library door, then reads the result twice. Measured 57334

@@ -518,7 +518,14 @@ def twin(m):
 #: superproject 3a6b92b40 puts the whole move on those three files [measured
 #: 2026-09-25T20:41:12+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 71704
+#: RE-PINNED 2026-09-26, 71704 to 71744 (+40), Automatic caching asks every
+#: arity of a candidate function whether SWI already tables it through
+#: findall/3 and a non-empty list, one findall/3 more per candidate that
+#: reaches the explicit-tabling ground, where it stopped at the first tabled
+#: arity the procedure table answered [measured 2026-09-26T13:41:40+10:00: min-
+#: of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 71744
 
 #: DIVERGED 2026-09-07, the example holds 1 atom the twin does not (1 =) and
 #: the twin holds 1 atom the example does not (1 =): the twin is an ordinary Python

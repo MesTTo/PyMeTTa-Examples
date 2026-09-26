@@ -571,7 +571,14 @@ def twin(m):
 #: the procedure table answered [measured 2026-09-26T13:04:44+10:00: min-of-3
 #: serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 78542
+#: RE-PINNED 2026-09-26, 78542 to 78568 (+26), Automatic caching asks every
+#: arity of a candidate function whether SWI already tables it through
+#: findall/3 and a non-empty list, one findall/3 more per candidate that
+#: reaches the explicit-tabling ground, where it stopped at the first tabled
+#: arity the procedure table answered [measured 2026-09-26T13:41:37+10:00: min-
+#: of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 78568
 #: OVERRUN 2026-09-09, 0 to 4070 (+4070): a library's Prolog half compiles
 #: beside itself on its first import and loads from the artifact after
 #: (metta_load_source/2, seam:compiled_source/1): the example imports one, so

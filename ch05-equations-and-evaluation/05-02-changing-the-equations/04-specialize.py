@@ -663,7 +663,14 @@ def twin(m):
 #: 2026-09-25T17:00:15+10:00: one full twins lane before this commit and one
 #: with it, the two read on one battery path at the landing's HEAD;
 #: command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 80090
+#: RE-PINNED 2026-09-26, 80090 to 80114 (+24), Automatic caching asks every
+#: arity of a candidate function whether SWI already tables it through
+#: findall/3 and a non-empty list, one findall/3 more per candidate that
+#: reaches the explicit-tabling ground, where it stopped at the first tabled
+#: arity the procedure table answered [measured 2026-09-26T13:38:04+10:00: min-
+#: of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 80114
 
 #: DIVERGED 2026-09-07, the example holds 8 atoms the twin does not (8 =) and
 #: the twin holds 8 the example does not (1 :, 7 =): the twin is an ordinary

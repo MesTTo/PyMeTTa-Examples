@@ -487,7 +487,14 @@ def twin(m):
 #: superproject 3a6b92b40 puts the whole move on those three files [measured
 #: 2026-09-25T20:41:15+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 48694
+#: RE-PINNED 2026-09-26, 48694 to 48726 (+32), Automatic caching asks every
+#: arity of a candidate function whether SWI already tables it through
+#: findall/3 and a non-empty list, one findall/3 more per candidate that
+#: reaches the explicit-tabling ground, where it stopped at the first tabled
+#: arity the procedure table answered [measured 2026-09-26T13:41:43+10:00: min-
+#: of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 48726
 #: OVERRUN 2026-09-18, 0 to 1705 (+1705): the twin costs 45856 against the
 #: example's 31350 and a ceiling of 44151 with the earlier declaration; a
 #: minimal twin of this example costs 31148, inside the 34485 the band alone

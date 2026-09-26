@@ -448,7 +448,14 @@ def twin(m):
 #: full twins lane before this commit and one with it, the two read on one
 #: battery path at the landing's HEAD; command=python
 #: extensions/python/tools/twin_coverage.py].
-BUDGET = 91238188
+#: RE-PINNED 2026-09-26, 91238188 to 91238204 (+16), Automatic caching asks
+#: every arity of a candidate function whether SWI already tables it through
+#: findall/3 and a non-empty list, one findall/3 more per candidate that
+#: reaches the explicit-tabling ground, where it stopped at the first tabled
+#: arity the procedure table answered [measured 2026-09-26T13:38:57+10:00: min-
+#: of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 91238204
 
 #: DIVERGED 2026-09-07, the example holds 1572864 atoms and the twin 1572864,
 #: over the 50000 this lane enumerates, so the difference is pinned as the two
@@ -484,4 +491,11 @@ DIVERGENCE = "0b995b079c8509570d648f5387f6ba4787cc0739d4769a757e2b79974aed0179"
 #: [measured 2026-09-25T07:04:44+10:00: one fresh process per side through the
 #: lane's run_example and run_twin, the floor from a minimal twin built by the
 #: probe; command=python extensions/python/benchmarks/probes/twin_floor.py].
-OVERRUN = 6448939
+#: OVERRUN 2026-09-26, 6448939 to 6448945 (+6): lib_memo's unsafe-reason
+#: ask now collects every tabled arity of a name through findall/3 where it
+#: stopped at the first, which costs this twin 16 inferences and its example
+#: 10, so the twin's own distance past the band grew by 5.5: the twin 91238204
+#: against the example's 77079375 and a ceiling of 91238198.5 with the earlier
+#: declaration [measured 2026-09-26T13:18:57+10:00: the twins lane with that
+#: change placed].
+OVERRUN = 6448945
