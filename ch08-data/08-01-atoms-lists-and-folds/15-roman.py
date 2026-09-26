@@ -668,7 +668,15 @@ def twin(m):
 #: 02-restricted_spaces and 37-statistics_lib by the same +6, +87 and +30
 #: [measured 2026-09-26T14:28:01+10:00: min-of-3 serial fresh processes;
 #: command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 345162
+#: RE-PINNED 2026-09-26, 345162 to 344984 (-178), the specializer substitutes
+#: only ground bindings into a specialization's stored row: it tests each
+#: binding with ground/1, which SWI calls as a builtin where nonvar/1 compiled
+#: inline, and leaves a binding with variables as the row's own parameter
+#: instead of substituting it into the body [measured
+#: 2026-09-26T18:25:19+10:00: one full twins lane before this commit and one
+#: with it, each read in one battery of the landing's HEAD after a QLF purge
+#: and one warm-up; command=python extensions/python/tools/twin_coverage.py].
+BUDGET = 344984
 
 #: OVERRUN 2026-09-07, 17700: it names every lib_roman function at every claim
 #: and runs the backwards `let` inverses beside them. Measured 320547 against a
@@ -757,4 +765,12 @@ OVERRUN = 19948
 #: docstrings that come with it are stored beside them [measured 2026-09-07:
 #: the two stored-atom surpluses, one fresh process per side; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=9010a79b01c9b2a66b96a3952fa378fb3e939dc3].
-DIVERGENCE = "84a06c2dd74dcee6885a630031d4a25b42a5d68fc42ef679dddfb50551eb3348"
+#: DIVERGED 2026-09-26, the example holds 9 atoms the twin does not (9 =) and
+#: the twin holds 9 atoms the example does not (9 =): the specializer
+#: substitutes only ground bindings into a specialization's stored row: it
+#: tests each binding with ground/1, which SWI calls as a builtin where
+#: nonvar/1 compiled inline, and leaves a binding with variables as the row's
+#: own parameter instead of substituting it into the body [measured
+#: 2026-09-26T18:25:19+10:00: the two stored-atom surpluses, one fresh process
+#: per side; command=python extensions/python/tools/twin_coverage.py].
+DIVERGENCE = "13e8722ddd7b8ccd7e27438a3696c1207f5dea83841d581a7054b14afff4b6b3"

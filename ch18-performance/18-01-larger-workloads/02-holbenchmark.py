@@ -575,7 +575,15 @@ def twin(m):
 #: arity the procedure table answered [measured 2026-09-26T13:38:43+10:00: min-
 #: of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 27897015
+#: RE-PINNED 2026-09-26, 27897015 to 27896881 (-134), the specializer
+#: substitutes only ground bindings into a specialization's stored row: it
+#: tests each binding with ground/1, which SWI calls as a builtin where
+#: nonvar/1 compiled inline, and leaves a binding with variables as the row's
+#: own parameter instead of substituting it into the body [measured
+#: 2026-09-26T18:25:19+10:00: one full twins lane before this commit and one
+#: with it, each read in one battery of the landing's HEAD after a QLF purge
+#: and one warm-up; command=python extensions/python/tools/twin_coverage.py].
+BUDGET = 27896881
 
 #: DIVERGED 2026-09-07, the example holds 6 atoms the twin does not (6 =) and
 #: the twin holds 12 the example does not (6 :, 6 =): the twin is an ordinary
@@ -587,4 +595,12 @@ BUDGET = 27897015
 #: [measured 2026-09-07: the two stored-atom surpluses, one fresh process per
 #: side; command=python extensions/python/tools/twin_coverage.py --repin;
 #: commit=9010a79b01c9b2a66b96a3952fa378fb3e939dc3].
-DIVERGENCE = "24c90c96a2bda6bdbf28c255aa4cf95acef8da93c267598be1345bfa4607e150"
+#: DIVERGED 2026-09-26, the example holds 6 atoms the twin does not (6 =) and
+#: the twin holds 12 atoms the example does not (6 :, 6 =): the specializer
+#: substitutes only ground bindings into a specialization's stored row: it
+#: tests each binding with ground/1, which SWI calls as a builtin where
+#: nonvar/1 compiled inline, and leaves a binding with variables as the row's
+#: own parameter instead of substituting it into the body [measured
+#: 2026-09-26T18:25:19+10:00: the two stored-atom surpluses, one fresh process
+#: per side; command=python extensions/python/tools/twin_coverage.py].
+DIVERGENCE = "ff34d24b0c7128ba4699b8f91d8ebf17a95bef12873adf717addc2c7021eeeb6"

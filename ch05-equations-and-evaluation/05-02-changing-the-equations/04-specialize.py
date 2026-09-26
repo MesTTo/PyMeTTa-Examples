@@ -670,7 +670,15 @@ def twin(m):
 #: arity the procedure table answered [measured 2026-09-26T13:38:04+10:00: min-
 #: of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 80114
+#: RE-PINNED 2026-09-26, 80114 to 80002 (-112), the specializer substitutes
+#: only ground bindings into a specialization's stored row: it tests each
+#: binding with ground/1, which SWI calls as a builtin where nonvar/1 compiled
+#: inline, and leaves a binding with variables as the row's own parameter
+#: instead of substituting it into the body [measured
+#: 2026-09-26T18:25:19+10:00: one full twins lane before this commit and one
+#: with it, each read in one battery of the landing's HEAD after a QLF purge
+#: and one warm-up; command=python extensions/python/tools/twin_coverage.py].
+BUDGET = 80002
 
 #: DIVERGED 2026-09-07, the example holds 8 atoms the twin does not (8 =) and
 #: the twin holds 8 the example does not (1 :, 7 =): the twin is an ordinary
@@ -690,4 +698,12 @@ BUDGET = 80114
 #: the twin stores what its own Python spelling stores [measured 2026-09-18:
 #: the two stored-atom surpluses, one fresh process per side; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=6944d06ce96fdbcd1faefb640f15dbfa0cf286dd].
-DIVERGENCE = "18df360f7d566c52722b2407588b12537f3dc74d7f180409428aca1348f91dae"
+#: DIVERGED 2026-09-26, the example holds 11 atoms the twin does not (11 =) and
+#: the twin holds 11 atoms the example does not (1 :, 10 =): the specializer
+#: substitutes only ground bindings into a specialization's stored row: it
+#: tests each binding with ground/1, which SWI calls as a builtin where
+#: nonvar/1 compiled inline, and leaves a binding with variables as the row's
+#: own parameter instead of substituting it into the body [measured
+#: 2026-09-26T18:25:19+10:00: the two stored-atom surpluses, one fresh process
+#: per side; command=python extensions/python/tools/twin_coverage.py].
+DIVERGENCE = "d877dba22fffc1708bb92521c21f1baba22a0428aa1b4461256da7418701c27a"

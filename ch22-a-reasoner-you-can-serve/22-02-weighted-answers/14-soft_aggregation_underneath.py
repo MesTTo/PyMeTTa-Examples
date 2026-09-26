@@ -424,4 +424,12 @@ def twin(m):
 #: arity the procedure table answered [measured 2026-09-26T13:41:59+10:00: min-
 #: of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 138012
+#: RE-PINNED 2026-09-26, 138012 to 138022 (+10), the specializer substitutes
+#: only ground bindings into a specialization's stored row: it tests each
+#: binding with ground/1, which SWI calls as a builtin where nonvar/1 compiled
+#: inline, and leaves a binding with variables as the row's own parameter
+#: instead of substituting it into the body [measured
+#: 2026-09-26T18:25:19+10:00: one full twins lane before this commit and one
+#: with it, each read in one battery of the landing's HEAD after a QLF purge
+#: and one warm-up; command=python extensions/python/tools/twin_coverage.py].
+BUDGET = 138022

@@ -538,7 +538,15 @@ def twin(m):
 #: 2026-09-25T17:00:15+10:00: one full twins lane before this commit and one
 #: with it, the two read on one battery path at the landing's HEAD;
 #: command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 26135
+#: RE-PINNED 2026-09-26, 26135 to 26079 (-56), the specializer substitutes only
+#: ground bindings into a specialization's stored row: it tests each binding
+#: with ground/1, which SWI calls as a builtin where nonvar/1 compiled inline,
+#: and leaves a binding with variables as the row's own parameter instead of
+#: substituting it into the body [measured 2026-09-26T18:25:19+10:00: one full
+#: twins lane before this commit and one with it, each read in one battery of
+#: the landing's HEAD after a QLF purge and one warm-up; command=python
+#: extensions/python/tools/twin_coverage.py].
+BUDGET = 26079
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 4 the example does not (4 =): the twin is an ordinary Python
@@ -566,4 +574,12 @@ BUDGET = 26135
 #: counter names is one row [measured 2026-09-25T17:00:15+10:00: the two
 #: stored-atom surpluses, one fresh process per side; command=python
 #: extensions/python/tools/twin_coverage.py].
-DIVERGENCE = "885a69cb9bb2065a7531609ea2ef56fe85cf7d4eb78444a3ad3bd721c9f8bcd9"
+#: DIVERGED 2026-09-26, the example holds 0 atoms the twin does not (none) and
+#: the twin holds 7 atoms the example does not (4 =, 3 @python-callable): the
+#: specializer substitutes only ground bindings into a specialization's stored
+#: row: it tests each binding with ground/1, which SWI calls as a builtin where
+#: nonvar/1 compiled inline, and leaves a binding with variables as the row's
+#: own parameter instead of substituting it into the body [measured
+#: 2026-09-26T18:25:19+10:00: the two stored-atom surpluses, one fresh process
+#: per side; command=python extensions/python/tools/twin_coverage.py].
+DIVERGENCE = "7c14bf6f036273b5dc2a2ecc3297f0b682378618071f06017fa49555d5cf4e88"

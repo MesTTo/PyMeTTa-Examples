@@ -434,7 +434,15 @@ def twin(m):
 #: 2026-09-25T17:00:15+10:00: one full twins lane before this commit and one
 #: with it, the two read on one battery path at the landing's HEAD;
 #: command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 5999
+#: RE-PINNED 2026-09-26, 5999 to 6005 (+6), the specializer substitutes only
+#: ground bindings into a specialization's stored row: it tests each binding
+#: with ground/1, which SWI calls as a builtin where nonvar/1 compiled inline,
+#: and leaves a binding with variables as the row's own parameter instead of
+#: substituting it into the body [measured 2026-09-26T18:25:19+10:00: one full
+#: twins lane before this commit and one with it, each read in one battery of
+#: the landing's HEAD after a QLF purge and one warm-up; command=python
+#: extensions/python/tools/twin_coverage.py].
+BUDGET = 6005
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 @doc): a Python annotation IS a (:

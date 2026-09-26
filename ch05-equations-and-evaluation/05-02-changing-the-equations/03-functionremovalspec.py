@@ -494,7 +494,15 @@ def twin(m):
 #: superproject 3a6b92b40 puts the whole move on those three files [measured
 #: 2026-09-25T20:40:33+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 13891
+#: RE-PINNED 2026-09-26, 13891 to 13901 (+10), the specializer substitutes only
+#: ground bindings into a specialization's stored row: it tests each binding
+#: with ground/1, which SWI calls as a builtin where nonvar/1 compiled inline,
+#: and leaves a binding with variables as the row's own parameter instead of
+#: substituting it into the body [measured 2026-09-26T18:25:19+10:00: one full
+#: twins lane before this commit and one with it, each read in one battery of
+#: the landing's HEAD after a QLF purge and one warm-up; command=python
+#: extensions/python/tools/twin_coverage.py].
+BUDGET = 13901
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 :): a Python annotation IS a (:

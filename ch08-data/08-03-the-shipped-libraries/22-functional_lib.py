@@ -585,7 +585,15 @@ def twin(m):
 #: 02-restricted_spaces and 37-statistics_lib by the same +6, +87 and +30
 #: [measured 2026-09-26T14:29:03+10:00: min-of-3 serial fresh processes;
 #: command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 1080350
+#: RE-PINNED 2026-09-26, 1080350 to 1080231 (-119), the specializer substitutes
+#: only ground bindings into a specialization's stored row: it tests each
+#: binding with ground/1, which SWI calls as a builtin where nonvar/1 compiled
+#: inline, and leaves a binding with variables as the row's own parameter
+#: instead of substituting it into the body [measured
+#: 2026-09-26T18:25:19+10:00: one full twins lane before this commit and one
+#: with it, each read in one battery of the landing's HEAD after a QLF purge
+#: and one warm-up; command=python extensions/python/tools/twin_coverage.py].
+BUDGET = 1080231
 
 #: DIVERGED 2026-09-12, the example holds 1 atom the twin does not (1 =) and
 #: the twin holds 1 atom the example does not (1 =): the loop's tick helper is

@@ -438,7 +438,15 @@ def twin(m):
 #: 2026-09-25T17:00:15+10:00: one full twins lane before this commit and one
 #: with it, the two read on one battery path at the landing's HEAD;
 #: command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 12276
+#: RE-PINNED 2026-09-26, 12276 to 12180 (-96), the specializer substitutes only
+#: ground bindings into a specialization's stored row: it tests each binding
+#: with ground/1, which SWI calls as a builtin where nonvar/1 compiled inline,
+#: and leaves a binding with variables as the row's own parameter instead of
+#: substituting it into the body [measured 2026-09-26T18:25:19+10:00: one full
+#: twins lane before this commit and one with it, each read in one battery of
+#: the landing's HEAD after a QLF purge and one warm-up; command=python
+#: extensions/python/tools/twin_coverage.py].
+BUDGET = 12180
 
 #: DIVERGED 2026-09-07, the example holds 6 atoms the twin does not (6 =) and
 #: the twin holds 3 the example does not (3 =): the twin is an ordinary Python
@@ -449,4 +457,12 @@ BUDGET = 12276
 #: docstrings that come with it are stored beside them [measured 2026-09-07:
 #: the two stored-atom surpluses, one fresh process per side; command=python
 #: extensions/python/tools/twin_coverage.py --repin; commit=9010a79b01c9b2a66b96a3952fa378fb3e939dc3].
-DIVERGENCE = "aec5a52454730cb5e3b605e23b635424ae8bf56e9bfc1e10c488fb26f8c2b0db"
+#: DIVERGED 2026-09-26, the example holds 6 atoms the twin does not (6 =) and
+#: the twin holds 3 atoms the example does not (3 =): the specializer
+#: substitutes only ground bindings into a specialization's stored row: it
+#: tests each binding with ground/1, which SWI calls as a builtin where
+#: nonvar/1 compiled inline, and leaves a binding with variables as the row's
+#: own parameter instead of substituting it into the body [measured
+#: 2026-09-26T18:25:19+10:00: the two stored-atom surpluses, one fresh process
+#: per side; command=python extensions/python/tools/twin_coverage.py].
+DIVERGENCE = "605cd58aee444dfc02697ea1f4324ed4b0e2ca4865cf3efb86a6950bdc7a4598"
