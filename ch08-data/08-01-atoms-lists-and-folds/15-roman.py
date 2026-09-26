@@ -656,7 +656,19 @@ def twin(m):
 #: arity the procedure table answered [measured 2026-09-26T13:38:16+10:00: min-
 #: of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 345156
+#: RE-PINNED 2026-09-26, 345156 to 345162 (+6), The engine module defines three
+#: predicates more, builtin_seat_prefixes/1, builtin_implementation_gap/2,
+#: validate_builtin_implementation_gaps/2 and builtin_surface_predicate/3 in
+#: and builtin_surface_predicate_name/1 out, and a program pays for each
+#: predicate visible from the engine wherever it walks them:
+#: existing_predicate_arities/2 two inferences a predicate for each load that
+#: registers more than twelve names, and a restricted space twenty-seven a
+#: predicate when it publishes the engine's core; three facts appended to
+#: engine/metta/registration.pl on 07b75d16e move 14-lib_roman_pair_helpers,
+#: 02-restricted_spaces and 37-statistics_lib by the same +6, +87 and +30
+#: [measured 2026-09-26T14:28:01+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 345162
 
 #: OVERRUN 2026-09-07, 17700: it names every lib_roman function at every claim
 #: and runs the backwards `let` inverses beside them. Measured 320547 against a
