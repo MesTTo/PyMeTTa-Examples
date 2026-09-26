@@ -487,4 +487,12 @@ def twin(m):
 #: only its own space [measured 2026-09-25T16:54:32+10:00: one full twins lane
 #: before this commit and one with it, the two read on one battery path at the
 #: landing's HEAD; command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 52374
+#: RE-PINNED 2026-09-26, 52374 to 52484 (+110), Open reads of a native space's
+#: storage take its lengths through metta_arity_ascending/3, which collects and
+#: sorts them when a name is stored at several lengths, where
+#: current_predicate/1 answered them in hash order; the pair read behind
+#: references' internal-name check and removals by token, and the gap query's
+#: read, pay that sort [measured 2026-09-26T12:03:28+10:00: min-of-3 serial
+#: fresh processes; command=python extensions/python/tools/twin_coverage.py
+#: --repin].
+BUDGET = 52484
