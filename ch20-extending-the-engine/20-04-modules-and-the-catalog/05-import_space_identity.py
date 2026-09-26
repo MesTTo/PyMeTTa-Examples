@@ -436,4 +436,10 @@ def twin(m):
 #: own offset inside its tolerance, so this change's share is +40 [measured
 #: 2026-09-25T20:44:47+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 28580
+#: RE-PINNED 2026-09-26, 28580 to 28585 (+5), Registering a source's names
+#: answers each name's Prolog arities in standard order, one msort/2 per
+#: registration that adds names, where they came in the procedure table's order
+#: and set the order of the arity/2 facts [measured 2026-09-26T12:31:28+10:00:
+#: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 28585

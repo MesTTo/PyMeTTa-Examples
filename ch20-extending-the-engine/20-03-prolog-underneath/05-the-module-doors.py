@@ -617,4 +617,10 @@ def twin(m):
 #: read, pay that sort [measured 2026-09-26T12:03:35+10:00: min-of-3 serial
 #: fresh processes; command=python extensions/python/tools/twin_coverage.py
 #: --repin].
-BUDGET = 307683
+#: RE-PINNED 2026-09-26, 307683 to 307696 (+13), Registering a source's names
+#: answers each name's Prolog arities in standard order, one msort/2 per
+#: registration that adds names, where they came in the procedure table's order
+#: and set the order of the arity/2 facts [measured 2026-09-26T12:31:25+10:00:
+#: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 307696

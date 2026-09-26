@@ -554,4 +554,10 @@ def twin(m):
 #: boot's first load, where the trunk links it into user only at its first
 #: library import [measured 2026-09-26T06:55:13+10:00: min-of-3 serial fresh
 #: processes; command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 327751
+#: RE-PINNED 2026-09-26, 327751 to 327765 (+14), Registering a source's names
+#: answers each name's Prolog arities in standard order, one msort/2 per
+#: registration that adds names, where they came in the procedure table's order
+#: and set the order of the arity/2 facts [measured 2026-09-26T12:29:49+10:00:
+#: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 327765

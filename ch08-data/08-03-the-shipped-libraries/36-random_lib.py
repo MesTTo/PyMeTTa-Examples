@@ -411,4 +411,10 @@ def twin(m):
 #: atom tables can move, by visiting more entries or visiting them in another
 #: order [measured 2026-09-26T11:18:44+10:00: min-of-3 serial fresh processes;
 #: command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 1228110
+#: RE-PINNED 2026-09-26, 1228110 to 1228128 (+18), Registering a source's names
+#: answers each name's Prolog arities in standard order, one msort/2 per
+#: registration that adds names, where they came in the procedure table's order
+#: and set the order of the arity/2 facts [measured 2026-09-26T12:30:30+10:00:
+#: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 1228128
