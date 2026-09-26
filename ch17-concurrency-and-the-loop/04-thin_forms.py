@@ -648,7 +648,17 @@ def twin(m):
 #: change 39872 ten times and 39873 twice [measured 2026-09-26T07:02:29+10:00:
 #: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 39872
+#: RE-PINNED 2026-09-26, 39872 to 39894 (+22), the compiler's call-or-data
+#: decisions ask _callable_here where they asked the process-wide is_function:
+#: the catalogue first, and the defining space's own functions only when the
+#: catalogue lacks the name, so a decision the catalogue answers asks a
+#: different question and one it cannot answer asks two; the lanes' tree read
+#: this twin +1 off its pin before the step, an offset that is not this step's,
+#: so the pin moves by the step's delta alone [measured
+#: 2026-09-26T18:36:57+10:00: one full twins lane before this commit and one
+#: with it, each read in one battery of the landing's HEAD after a QLF purge
+#: and one warm-up; command=python extensions/python/tools/twin_coverage.py].
+BUDGET = 39894
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 :): a Python annotation IS a (:

@@ -427,5 +427,13 @@ def twin(m):
 #: only its own space [measured 2026-09-25T16:54:32+10:00: one full twins lane
 #: before this commit and one with it, the two read on one battery path at the
 #: landing's HEAD; command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 7076
+#: RE-PINNED 2026-09-26, 7076 to 7107 (+31), the compiler's call-or-data
+#: decisions ask _callable_here where they asked the process-wide is_function:
+#: the catalogue first, and the defining space's own functions only when the
+#: catalogue lacks the name, so a decision the catalogue answers asks a
+#: different question and one it cannot answer asks two [measured
+#: 2026-09-26T18:36:57+10:00: one full twins lane before this commit and one
+#: with it, each read in one battery of the landing's HEAD after a QLF purge
+#: and one warm-up; command=python extensions/python/tools/twin_coverage.py].
+BUDGET = 7107
 DIVERGENCE = "95f1eecfaa6a397cac4541fe931d7428e9ff88fe14cf43d6da341744b805de57"

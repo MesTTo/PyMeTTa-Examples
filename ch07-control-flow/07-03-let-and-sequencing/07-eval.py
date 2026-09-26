@@ -472,7 +472,15 @@ def twin(m):
 #: superproject 3a6b92b40 puts the whole move on those three files [measured
 #: 2026-09-25T20:40:39+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 17532
+#: RE-PINNED 2026-09-26, 17532 to 17547 (+15), the compiler's call-or-data
+#: decisions ask _callable_here where they asked the process-wide is_function:
+#: the catalogue first, and the defining space's own functions only when the
+#: catalogue lacks the name, so a decision the catalogue answers asks a
+#: different question and one it cannot answer asks two [measured
+#: 2026-09-26T18:36:57+10:00: one full twins lane before this commit and one
+#: with it, each read in one battery of the landing's HEAD after a QLF purge
+#: and one warm-up; command=python extensions/python/tools/twin_coverage.py].
+BUDGET = 17547
 
 #: OVERRUN 2026-09-07, 2700: it reads the definition's body through the query
 #: door and reduces it through the evaluation door, which the example does in

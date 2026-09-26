@@ -513,7 +513,15 @@ RUNG = (
 #: a native space that failed check costs six inferences a question [measured
 #: 2026-09-26T01:40:48+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 27315042
+#: RE-PINNED 2026-09-26, 27315042 to 27315092 (+50), the compiler's call-or-
+#: data decisions ask _callable_here where they asked the process-wide
+#: is_function: the catalogue first, and the defining space's own functions
+#: only when the catalogue lacks the name, so a decision the catalogue answers
+#: asks a different question and one it cannot answer asks two [measured
+#: 2026-09-26T18:36:57+10:00: one full twins lane before this commit and one
+#: with it, each read in one battery of the landing's HEAD after a QLF purge
+#: and one warm-up; command=python extensions/python/tools/twin_coverage.py].
+BUDGET = 27315092
 
 #: OVERRUN 2026-09-07, 1434400: it names `expand` and `expandK` as definitions
 #: and asserts the atom count, where the example writes them as equations.
@@ -533,7 +541,25 @@ BUDGET = 27315042
 #: the lane's run_example and run_twin, the floor from a minimal twin built by
 #: the probe; command=python
 #: extensions/python/benchmarks/probes/twin_floor.py].
-OVERRUN = 4621936
+#: OVERRUN 2026-09-26, 4621936 to 4621960 (+24): the twin costs 27315092
+#: against the example's 20626858 and a ceiling of 27315068.8, which is
+#: 22689543.8 for the example with its 10% band, 3589 to author two compiled
+#: definitions and the 4621936 declared before; a minimal twin of this example
+#: costs 19864945, inside the 22689543.8 the band alone allows, so the distance
+#: is this twin's own program [measured 2026-09-26T19:59:03+10:00: one fresh
+#: process per side through the lane's run_example and run_twin, the floor from
+#: a minimal twin built by the probe; command=python
+#: extensions/python/benchmarks/probes/twin_floor.py]. The compiler's call-or-
+#: data decisions ask _callable_here where they asked the process-wide
+#: is_function: the catalogue first, and the defining space's own functions
+#: only when the catalogue lacks the name, so a decision the catalogue answers
+#: asks a different question and one it cannot answer asks two, which carried
+#: the twin past that ceiling by 23.2, raised here by that excess rounded up,
+#: since the lane compares its ceiling as a float [measured
+#: 2026-09-26T18:36:57+10:00: one full twins lane before this commit and one
+#: with it, each read in one battery of the landing's HEAD after a QLF purge
+#: and one warm-up; command=python extensions/python/tools/twin_coverage.py].
+OVERRUN = 4621960
 
 #: DIVERGED 2026-09-07, the example holds 4 atoms the twin does not (4 =) and
 #: the twin holds 5 the example does not (1 :, 4 =): the twin is an ordinary

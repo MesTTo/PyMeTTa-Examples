@@ -417,7 +417,15 @@ def twin(m):
 #: only its own space [measured 2026-09-25T16:54:32+10:00: one full twins lane
 #: before this commit and one with it, the two read on one battery path at the
 #: landing's HEAD; command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 4336
+#: RE-PINNED 2026-09-26, 4336 to 4351 (+15), the compiler's call-or-data
+#: decisions ask _callable_here where they asked the process-wide is_function:
+#: the catalogue first, and the defining space's own functions only when the
+#: catalogue lacks the name, so a decision the catalogue answers asks a
+#: different question and one it cannot answer asks two [measured
+#: 2026-09-26T18:36:57+10:00: one full twins lane before this commit and one
+#: with it, each read in one battery of the landing's HEAD after a QLF purge
+#: and one warm-up; command=python extensions/python/tools/twin_coverage.py].
+BUDGET = 4351
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 =): the twin is an ordinary Python
@@ -461,4 +469,21 @@ DIVERGENCE = "26c23ce9e6fb37f3687387e2ae0cc6fe594de13826e0d1bfaf351fc743cd0d4d"
 #: side through the lane's run_example and run_twin, the floor from a minimal
 #: twin built by the probe; command=python
 #: extensions/python/benchmarks/probes/twin_floor.py].
-OVERRUN = 309
+#: OVERRUN 2026-09-26, 309 to 324 (+15): the twin costs 4351 against the
+#: example's 1891 and a ceiling of 4336.1, which is 2080.1 for the example with
+#: its 10% band, 1947 to author one compiled definition and the 309 declared
+#: before; a minimal twin of this example costs 1244, inside the 2080.1 the
+#: band alone allows, so the distance is this twin's own program [measured
+#: 2026-09-26T19:59:03+10:00: one fresh process per side through the lane's
+#: run_example and run_twin, the floor from a minimal twin built by the probe;
+#: command=python extensions/python/benchmarks/probes/twin_floor.py]. The
+#: compiler's call-or-data decisions ask _callable_here where they asked the
+#: process-wide is_function: the catalogue first, and the defining space's own
+#: functions only when the catalogue lacks the name, so a decision the
+#: catalogue answers asks a different question and one it cannot answer asks
+#: two, which carried the twin past that ceiling by 14.9, raised here by that
+#: excess rounded up, since the lane compares its ceiling as a float [measured
+#: 2026-09-26T18:36:57+10:00: one full twins lane before this commit and one
+#: with it, each read in one battery of the landing's HEAD after a QLF purge
+#: and one warm-up; command=python extensions/python/tools/twin_coverage.py].
+OVERRUN = 324

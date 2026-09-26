@@ -494,7 +494,15 @@ def twin(m):
 #: arity the procedure table answered [measured 2026-09-26T13:41:43+10:00: min-
 #: of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 48726
+#: RE-PINNED 2026-09-26, 48726 to 48805 (+79), the compiler's call-or-data
+#: decisions ask _callable_here where they asked the process-wide is_function:
+#: the catalogue first, and the defining space's own functions only when the
+#: catalogue lacks the name, so a decision the catalogue answers asks a
+#: different question and one it cannot answer asks two [measured
+#: 2026-09-26T18:36:57+10:00: one full twins lane before this commit and one
+#: with it, each read in one battery of the landing's HEAD after a QLF purge
+#: and one warm-up; command=python extensions/python/tools/twin_coverage.py].
+BUDGET = 48805
 #: OVERRUN 2026-09-18, 0 to 1705 (+1705): the twin costs 45856 against the
 #: example's 31350 and a ceiling of 44151 with the earlier declaration; a
 #: minimal twin of this example costs 31148, inside the 34485 the band alone

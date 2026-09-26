@@ -672,7 +672,15 @@ def twin(m):
 #: 2026-09-25T17:00:15+10:00: one full twins lane before this commit and one
 #: with it, the two read on one battery path at the landing's HEAD;
 #: command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 85518
+#: RE-PINNED 2026-09-26, 85518 to 85871 (+353), the compiler's call-or-data
+#: decisions ask _callable_here where they asked the process-wide is_function:
+#: the catalogue first, and the defining space's own functions only when the
+#: catalogue lacks the name, so a decision the catalogue answers asks a
+#: different question and one it cannot answer asks two [measured
+#: 2026-09-26T18:36:57+10:00: one full twins lane before this commit and one
+#: with it, each read in one battery of the landing's HEAD after a QLF purge
+#: and one warm-up; command=python extensions/python/tools/twin_coverage.py].
+BUDGET = 85871
 
 #: DIVERGED 2026-09-07, the example holds 12 atoms the twin does not (12 =) and
 #: the twin holds 36 the example does not (1 :, 16 =, 19 @doc): the twin is an
