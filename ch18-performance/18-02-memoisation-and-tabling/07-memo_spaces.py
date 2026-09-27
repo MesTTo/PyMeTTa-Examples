@@ -597,7 +597,13 @@ def twin(m):
 #: [measured 2026-09-28T12:34:38+10:00: full twins lanes in wt-merge's battery
 #: 1 on swipl-patched.8 at this boundary, engine/host_notices.pl as amended
 #: against the day before's as first written; command=sh tools/check.sh twins].
-BUDGET = 38650
+#: RE-PINNED 2026-09-28, 38650 to 38656 (+6), +6 at janus-contract A with step
+#: 4's notices reader as amended, which reads the twin -6 before the step and
+#: +0 after it, the calls not traced [measured 2026-09-28T12:37:38+10:00: full
+#: twins lanes in wt-merge's battery 1 on swipl-patched.8 at this boundary,
+#: engine/host_notices.pl as amended against the day before's as first written;
+#: command=sh tools/check.sh twins].
+BUDGET = 38656
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 :): a Python annotation IS a (:

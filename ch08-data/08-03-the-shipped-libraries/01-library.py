@@ -472,7 +472,15 @@ def twin(m):
 #: reader on swipl-patched.7, the series on swipl-patched.8, and the stack
 #: through janus-contract B on swipl-patched.8 twice; command=sh tools/check.sh
 #: twins].
-BUDGET = 34508
+#: RE-PINNED 2026-09-27, 34508 to 34510 (+2), +2 at janus-contract A, whose
+#: seat loader adds metta_extension_require_patches/3 and the format/3 it
+#: imports to the engine module a registration walk enumerates, and reads the
+#: seat's requirement into its own module where host_patch/2 used to stand
+#: there, so a walk over more than twelve names meets one more predicate at 2
+#: inferences [measured 2026-09-27T20:31:29+10:00: full twins lanes on swipl-
+#: patched.8 in wt-merge's battery 1, two of the stack through janus-contract B
+#: and two with janus-contract A; command=sh tools/check.sh twins].
+BUDGET = 34510
 
 #: DIVERGED 2026-09-07, the example holds 2 atoms the twin does not (2 =) and
 #: the twin holds 2 the example does not (2 =): the twin is an ordinary Python

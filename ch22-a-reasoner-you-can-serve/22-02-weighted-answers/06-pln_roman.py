@@ -741,7 +741,15 @@ def twin(m):
 #: reader on swipl-patched.7, the series on swipl-patched.8, and the stack
 #: through janus-contract B on swipl-patched.8 twice; command=sh tools/check.sh
 #: twins].
-BUDGET = 2265201
+#: RE-PINNED 2026-09-27, 2265201 to 2265203 (+2), +2 at janus-contract A, whose
+#: seat loader adds metta_extension_require_patches/3 and the format/3 it
+#: imports to the engine module a registration walk enumerates, and reads the
+#: seat's requirement into its own module where host_patch/2 used to stand
+#: there, so a walk over more than twelve names meets one more predicate at 2
+#: inferences [measured 2026-09-27T20:31:29+10:00: full twins lanes on swipl-
+#: patched.8 in wt-merge's battery 1, two of the stack through janus-contract B
+#: and two with janus-contract A; command=sh tools/check.sh twins].
+BUDGET = 2265203
 
 #: OVERRUN 2026-09-07, 52200: it asserts the four premises the answer came from
 #: beside the truth value, which the example only prints. Measured 2246993

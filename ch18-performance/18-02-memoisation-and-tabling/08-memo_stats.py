@@ -506,7 +506,13 @@ def twin(m):
 #: [measured 2026-09-28T12:34:38+10:00: full twins lanes in wt-merge's battery
 #: 1 on swipl-patched.8 at this boundary, engine/host_notices.pl as amended
 #: against the day before's as first written; command=sh tools/check.sh twins].
-BUDGET = 33336
+#: RE-PINNED 2026-09-28, 33336 to 33342 (+6), +6 at janus-contract A with step
+#: 4's notices reader as amended, which reads the twin -6 before the step and
+#: +0 after it, the calls not traced [measured 2026-09-28T12:37:38+10:00: full
+#: twins lanes in wt-merge's battery 1 on swipl-patched.8 at this boundary,
+#: engine/host_notices.pl as amended against the day before's as first written;
+#: command=sh tools/check.sh twins].
+BUDGET = 33342
 
 #: OVERRUN 2026-09-07, 800: it reads the cache statistics through the term door
 #: beside every claim. Measured 38155 against a ceiling of 37417; a minimal

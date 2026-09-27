@@ -653,4 +653,12 @@ def twin(m):  # noqa: ARG001  -- both spaces are created here; the default handl
 #: with this landing, in a battery of its tree at 775d3cf35, beside one of the
 #: base in a battery of 775d3cf35 from 2026-09-27T18:40:06+10:00, which reads
 #: the old pin; command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 68455
+#: RE-PINNED 2026-09-27, 68455 to 68498 (+43), +43 at janus-contract A, whose
+#: seat loader adds metta_extension_require_patches/3 and the format/3 it
+#: imports to the engine module a registration walk enumerates, and reads the
+#: seat's requirement into its own module where host_patch/2 used to stand
+#: there, so a walk over more than twelve names meets one more predicate at 2
+#: inferences [measured 2026-09-27T20:31:29+10:00: full twins lanes on swipl-
+#: patched.8 in wt-merge's battery 1, two of the stack through janus-contract B
+#: and two with janus-contract A; command=sh tools/check.sh twins].
+BUDGET = 68498
