@@ -486,4 +486,16 @@ def twin(m):
 #: 2026-09-28T12:37:38+10:00: full twins lanes in wt-merge's battery 1 on
 #: swipl-patched.8 at this boundary, engine/host_notices.pl as amended against
 #: the day before's as first written; command=sh tools/check.sh twins].
-BUDGET = 294696
+#: RE-PINNED 2026-09-27, 294696 to 270841 (-23855), -23,854 at walk-tax B,
+#: which registers a batch's Prolog arities by asking each name, so a
+#: registration walk over more than twelve names no longer reads every
+#: predicate visible from the loading module at 2 inferences each [measured
+#: 2026-09-27T20:38:05+10:00: full twins lanes on swipl-patched.8 in wt-merge's
+#: battery 1, two with janus-contract A and two with walk-tax B; command=sh
+#: tools/check.sh twins]. With step 4's notices reader as amended the counts
+#: read -2 before the step and -3 after it, so the step moves the twin -23855
+#: where it moved it -23854 [measured 2026-09-28T12:40:25+10:00: full twins
+#: lanes in wt-merge's battery 1 on swipl-patched.8 at this boundary,
+#: engine/host_notices.pl as amended against the day before's as first written;
+#: command=sh tools/check.sh twins].
+BUDGET = 270841

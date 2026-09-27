@@ -598,7 +598,13 @@ def twin(m):
 #: licence's series and its engine reader on swipl-patched.7, the series on
 #: swipl-patched.8, and the stack through janus-contract B on swipl-patched.8
 #: twice; command=sh tools/check.sh twins].
-BUDGET = 12684
+#: RE-PINNED 2026-09-27, 12684 to 12676 (-8), -8 at walk-tax B, which registers
+#: a batch's Prolog arities by asking each name, so a registration walk over
+#: more than twelve names no longer reads every predicate visible from the
+#: loading module at 2 inferences each [measured 2026-09-27T20:38:05+10:00:
+#: full twins lanes on swipl-patched.8 in wt-merge's battery 1, two with janus-
+#: contract A and two with walk-tax B; command=sh tools/check.sh twins].
+BUDGET = 12676
 
 #: DIVERGED 2026-09-07, the example holds 2 atoms the twin does not (2 @doc)
 #: and the twin holds 3 the example does not (1 :, 2 @doc): a Python annotation

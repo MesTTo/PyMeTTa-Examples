@@ -326,4 +326,11 @@ from metta import Expression  # noqa: E402  -- read after the claims it serves
 #: licence's series and its engine reader on swipl-patched.7, the series on
 #: swipl-patched.8, and the stack through janus-contract B on swipl-patched.8
 #: twice; command=sh tools/check.sh twins].
-BUDGET = 22796
+#: RE-PINNED 2026-09-27, 22796 to 22784 (-12), -12 at walk-tax B, which
+#: registers a batch's Prolog arities by asking each name, so a registration
+#: walk over more than twelve names no longer reads every predicate visible
+#: from the loading module at 2 inferences each [measured
+#: 2026-09-27T20:38:05+10:00: full twins lanes on swipl-patched.8 in wt-merge's
+#: battery 1, two with janus-contract A and two with walk-tax B; command=sh
+#: tools/check.sh twins].
+BUDGET = 22784

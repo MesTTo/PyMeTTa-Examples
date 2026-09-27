@@ -480,7 +480,14 @@ def twin(m):
 #: inferences [measured 2026-09-27T20:31:29+10:00: full twins lanes on swipl-
 #: patched.8 in wt-merge's battery 1, two of the stack through janus-contract B
 #: and two with janus-contract A; command=sh tools/check.sh twins].
-BUDGET = 34510
+#: RE-PINNED 2026-09-27, 34510 to 22686 (-11824), -11,824 at walk-tax B, which
+#: registers a batch's Prolog arities by asking each name, so a registration
+#: walk over more than twelve names no longer reads every predicate visible
+#: from the loading module at 2 inferences each [measured
+#: 2026-09-27T20:38:05+10:00: full twins lanes on swipl-patched.8 in wt-merge's
+#: battery 1, two with janus-contract A and two with walk-tax B; command=sh
+#: tools/check.sh twins].
+BUDGET = 22686
 
 #: DIVERGED 2026-09-07, the example holds 2 atoms the twin does not (2 =) and
 #: the twin holds 2 the example does not (2 =): the twin is an ordinary Python

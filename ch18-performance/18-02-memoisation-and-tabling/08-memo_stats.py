@@ -512,7 +512,14 @@ def twin(m):
 #: twins lanes in wt-merge's battery 1 on swipl-patched.8 at this boundary,
 #: engine/host_notices.pl as amended against the day before's as first written;
 #: command=sh tools/check.sh twins].
-BUDGET = 33342
+#: RE-PINNED 2026-09-27, 33342 to 33330 (-12), -12 at walk-tax B, which
+#: registers a batch's Prolog arities by asking each name, so a registration
+#: walk over more than twelve names no longer reads every predicate visible
+#: from the loading module at 2 inferences each [measured
+#: 2026-09-27T20:38:05+10:00: full twins lanes on swipl-patched.8 in wt-merge's
+#: battery 1, two with janus-contract A and two with walk-tax B; command=sh
+#: tools/check.sh twins].
+BUDGET = 33330
 
 #: OVERRUN 2026-09-07, 800: it reads the cache statistics through the term door
 #: beside every claim. Measured 38155 against a ceiling of 37417; a minimal

@@ -533,7 +533,19 @@ def twin(m):
 #: 2026-09-28T12:37:38+10:00: full twins lanes in wt-merge's battery 1 on
 #: swipl-patched.8 at this boundary, engine/host_notices.pl as amended against
 #: the day before's as first written; command=sh tools/check.sh twins].
-BUDGET = 338822
+#: RE-PINNED 2026-09-27, 338822 to 326962 (-11860), -11,859 at walk-tax B,
+#: which registers a batch's Prolog arities by asking each name, so a
+#: registration walk over more than twelve names no longer reads every
+#: predicate visible from the loading module at 2 inferences each [measured
+#: 2026-09-27T20:38:05+10:00: full twins lanes on swipl-patched.8 in wt-merge's
+#: battery 1, two with janus-contract A and two with walk-tax B; command=sh
+#: tools/check.sh twins]. With step 4's notices reader as amended the counts
+#: read -1 before the step and -2 after it, so the step moves the twin -11860
+#: where it moved it -11859 [measured 2026-09-28T12:40:25+10:00: full twins
+#: lanes in wt-merge's battery 1 on swipl-patched.8 at this boundary,
+#: engine/host_notices.pl as amended against the day before's as first written;
+#: command=sh tools/check.sh twins].
+BUDGET = 326962
 
 #: DIVERGED 2026-09-12, the example holds 1 atom the twin does not (1 =) and
 #: the twin holds 1 atom the example does not (1 =): the scope function is four
