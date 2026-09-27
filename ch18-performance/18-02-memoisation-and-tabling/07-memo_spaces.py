@@ -568,7 +568,23 @@ def twin(m):
 #: beside one of the base in a battery of 775d3cf35 from
 #: 2026-09-27T18:40:06+10:00, which reads the old pin; command=python
 #: extensions/python/tools/twin_coverage.py].
-BUDGET = 38705
+#: RE-PINNED 2026-09-27, 38705 to 38707 (+2), +2 at tsm-licence's engine
+#: reader, which loads engine/host_notices.pl into every process before its
+#: program runs: the program makes the same calls, call for call under SWI's
+#: port profiler, so the move is the process's inventory, the class
+#: engine/bench.pl records [measured 2026-09-27T19:51:52+10:00: full twins
+#: lanes on swipl-patched.7 in wt-merge's battery 1, two of superproject
+#: 12f284623 and one each with tsm-licence's engine reader and with its whole
+#: series; command=sh tools/check.sh twins].
+#: RE-PINNED 2026-09-28, 38707 to 38701 (-6), -6 at tsm-licence's notices
+#: reader as its block lookahead amended it: engine/host_notices.pl, which
+#: every boot loads, opens a component block only where its Component field
+#: directly follows the line of 78 '=', the calls not traced; read on swipl-
+#: patched.8, the count above on .7, which no longer runs [measured
+#: 2026-09-28T12:31:49+10:00: full twins lanes in wt-merge's battery 1 on
+#: swipl-patched.8 at this boundary, engine/host_notices.pl as amended against
+#: the day before's as first written; command=sh tools/check.sh twins].
+BUDGET = 38701
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 :): a Python annotation IS a (:

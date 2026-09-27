@@ -600,7 +600,15 @@ def twin(m):
 #: 2026-09-27T09:56:55+10:00: one full twins lane before this commit and one
 #: with it, each read in one battery of the landing's HEAD after a QLF purge
 #: and one warm-up; command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 78587
+#: RE-PINNED 2026-09-28, 78587 to 78585 (-2), -2 at tsm-licence's notices
+#: reader as its block lookahead amended it: engine/host_notices.pl, which
+#: every boot loads, opens a component block only where its Component field
+#: directly follows the line of 78 '=', the calls not traced; read on swipl-
+#: patched.8, the count above on .7, which no longer runs [measured
+#: 2026-09-28T12:31:49+10:00: full twins lanes in wt-merge's battery 1 on
+#: swipl-patched.8 at this boundary, engine/host_notices.pl as amended against
+#: the day before's as first written; command=sh tools/check.sh twins].
+BUDGET = 78585
 #: OVERRUN 2026-09-09, 0 to 4070 (+4070): a library's Prolog half compiles
 #: beside itself on its first import and loads from the artifact after
 #: (metta_load_source/2, seam:compiled_source/1): the example imports one, so

@@ -474,7 +474,24 @@ def twin(m):
 #: 2026-09-27T09:56:55+10:00: one full twins lane before this commit and one
 #: with it, each read in one battery of the landing's HEAD after a QLF purge
 #: and one warm-up; command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 30966
+#: RE-PINNED 2026-09-27, 30966 to 30964 (-2), +2 at tsm-licence's engine
+#: reader, which loads engine/host_notices.pl into every process before its
+#: program runs: the program makes the same calls, call for call under SWI's
+#: port profiler, so the move is the process's inventory, the class
+#: engine/bench.pl records; the base read 30,962 where the pin stood at 30,966,
+#: a gap of +4 this re-pin takes out [measured 2026-09-27T19:51:52+10:00: full
+#: twins lanes on swipl-patched.7 in wt-merge's battery 1, two of superproject
+#: 12f284623 and one each with tsm-licence's engine reader and with its whole
+#: series; command=sh tools/check.sh twins].
+#: RE-PINNED 2026-09-28, 30964 to 30958 (-6), -6 at tsm-licence's notices
+#: reader as its block lookahead amended it: engine/host_notices.pl, which
+#: every boot loads, opens a component block only where its Component field
+#: directly follows the line of 78 '=', the calls not traced; read on swipl-
+#: patched.8, the count above on .7, which no longer runs [measured
+#: 2026-09-28T12:31:49+10:00: full twins lanes in wt-merge's battery 1 on
+#: swipl-patched.8 at this boundary, engine/host_notices.pl as amended against
+#: the day before's as first written; command=sh tools/check.sh twins].
+BUDGET = 30958
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 :): a Python annotation IS a (:
