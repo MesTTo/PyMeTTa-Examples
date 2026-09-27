@@ -312,10 +312,32 @@ def twin(m):
 #: passes with the refusal applied read 67493..73201 [measured
 #: 2026-09-25T00:50:00+10:00: twenty full-lane observations; command=python
 #: extensions/python/tools/twin_coverage.py --observe --rounds 20].
+#: RE-OBSERVED 2026-09-28 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 67362..73201 to 70397..76925 over 42
+#: observations: the landing of host build .8 moved the tree under this
+#: envelope, which read inside it at the landing's base, 12f284623 on swipl-
+#: patched.7; its count falls in six modes (70,397 to 70,619; 71,617 to 71,748;
+#: 72,623; 73,620 to 73,666; 75,236 to 75,392; 76,925) by a scheduling race in
+#: the twin: its background load runs on a worker thread that its next call
+#: waits for, so the count follows the thread schedule, its readings at the
+#: landing's boundaries jump between modes and no step's move can be told from
+#: that scatter; walk-tax B's one registration batch of at most 12 names here
+#: pays 4 inferences less for the length test the walk's threshold needed; the
+#: envelope pools the 40 rounds with the twins lanes run on this tree under
+#: this protocol, since a whole-lane run under it is an observation, and with
+#: nothing an earlier tree read: the 40 rounds read 70,397..76,925; the twins
+#: lane run before those rounds in the same battery run read 72,623; the twins
+#: lane of the landing's whole gate read 75,392 [measured
+#: 2026-09-28T15:44:21+10:00: 40 full-lane observations; command=python
+#: extensions/python/tools/twin_coverage.py --observe --rounds 40] [measured
+#: 2026-09-28T15:40:33+10:00: the twins lane run before those rounds in the
+#: same battery run; command=sh tools/check.sh twins] [measured
+#: 2026-09-28T14:03:07+10:00: the twins lane of the landing's whole gate;
+#: command=GATE_ONLY=1 sh tools/check.sh].
 BUDGET = {
-    "minimum": 67362,
-    "maximum": 73201,
-    "observations": 40,
+    "minimum": 70397,
+    "maximum": 76925,
+    "observations": 42,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 

@@ -605,10 +605,31 @@ def twin(m):
 #: layout (a-atom-order-canonical) [measured 2026-09-25T02:57:46+10:00: 20
 #: full-lane observations; command=python
 #: extensions/python/tools/twin_coverage.py --observe --rounds 20].
+#: RE-OBSERVED 2026-09-28 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 284016..284039 to 260504..260648 over
+#: 42 observations: the landing of host build .8 moved the tree under this
+#: envelope, which already read 11,559 below it at the landing's base,
+#: 12f284623 on swipl-patched.7, drift from before the landing; the landing's
+#: steps then moved the middle of its readings by -11,909 with walk-tax B,
+#: every other step's move lying within its scatter; walk-tax B's one
+#: registration batch of 13 or more names here no longer walks every predicate
+#: visible from filereader, 2 inferences each and 35 more a batch; its count
+#: varies from run to run, 260,504..260,648 over these 42 readings; the
+#: envelope pools the 40 rounds with the twins lanes run on this tree under
+#: this protocol, since a whole-lane run under it is an observation, and with
+#: nothing an earlier tree read: the 40 rounds read 260,504..260,648; the twins
+#: lane run before those rounds in the same battery run read 260,514; the twins
+#: lane of the landing's whole gate read 260,514 [measured
+#: 2026-09-28T15:44:21+10:00: 40 full-lane observations; command=python
+#: extensions/python/tools/twin_coverage.py --observe --rounds 40] [measured
+#: 2026-09-28T15:40:33+10:00: the twins lane run before those rounds in the
+#: same battery run; command=sh tools/check.sh twins] [measured
+#: 2026-09-28T14:03:07+10:00: the twins lane of the landing's whole gate;
+#: command=GATE_ONLY=1 sh tools/check.sh].
 BUDGET = {
-    "minimum": 284016,
-    "maximum": 284039,
-    "observations": 20,
+    "minimum": 260504,
+    "maximum": 260648,
+    "observations": 42,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 

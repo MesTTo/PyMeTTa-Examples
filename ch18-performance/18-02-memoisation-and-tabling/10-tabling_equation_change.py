@@ -561,9 +561,32 @@ def twin(m):
 #: earlier ones [measured 2026-09-24: 20 full-lane observations; command=python
 #: extensions/python/tools/twin_coverage.py --observe --rounds 20;
 #: commit=e4b7448d1f1bd98733f1b04c3906aaa42f35ef1a].
+#: RE-OBSERVED 2026-09-28 under 'full-lane/323/workers=32/file-search-cache-
+#: time=9223372036854775807/before-boot', 48000..48000 to 48802..48802 over 42
+#: observations: the landing of host build .8 moved the tree under this
+#: envelope, which already read 836 above it at the landing's base, 12f284623
+#: on swipl-patched.7, drift from before the landing; the landing's steps then
+#: moved the middle of its readings by -2 with tsm-licence's notices reader, +2
+#: with the switch to swipl-patched.8, -18 with interrupts B's seat change and
+#: -16 with walk-tax B; walk-tax B's four registration batches of at most 12
+#: names here each pay 4 inferences less for the length test the walk's
+#: threshold needed; tsm-licence's notices reader, engine/host_notices.pl as
+#: its block lookahead amended it, which every boot loads, reads 2 fewer here,
+#: measured by swapping that file alone, the saved calls not traced; the
+#: envelope pools the 40 rounds with the twins lanes run on this tree under
+#: this protocol, since a whole-lane run under it is an observation, and with
+#: nothing an earlier tree read: the 40 rounds read 48,802..48,802; the twins
+#: lane run before those rounds in the same battery run read 48,802; the twins
+#: lane of the landing's whole gate read 48,802 [measured
+#: 2026-09-28T15:44:21+10:00: 40 full-lane observations; command=python
+#: extensions/python/tools/twin_coverage.py --observe --rounds 40] [measured
+#: 2026-09-28T15:40:33+10:00: the twins lane run before those rounds in the
+#: same battery run; command=sh tools/check.sh twins] [measured
+#: 2026-09-28T14:03:07+10:00: the twins lane of the landing's whole gate;
+#: command=GATE_ONLY=1 sh tools/check.sh].
 BUDGET = {
-    "minimum": 48000,
-    "maximum": 48000,
-    "observations": 20,
+    "minimum": 48802,
+    "maximum": 48802,
+    "observations": 42,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
