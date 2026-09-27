@@ -379,4 +379,12 @@ def twin(m):
 #: this landing, wt-merge battery 1, the trunk on swipl-patched.6 and every
 #: part on .7, each through a same-shape host shim; command=python
 #: extensions/python/tools/twin_coverage.py].
-BUDGET = 42796
+#: RE-PINNED 2026-09-27, 42796 to 42807 (+11), the constructive negation's
+#: engine additions, each counted in this twin's own run: 1 == or != on a pair
+#: holding an unbound variable, each now read through the open-mark test (+7);
+#: +4 of clause-indexing layout [measured 2026-09-27T18:31:56+10:00: one full
+#: twins lane with this landing, in a battery of its tree at 775d3cf35, beside
+#: one of the base in a battery of 775d3cf35 from 2026-09-27T18:40:06+10:00,
+#: which reads the old pin; command=python
+#: extensions/python/tools/twin_coverage.py].
+BUDGET = 42807

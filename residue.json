@@ -878,17 +878,6 @@
     },
     {
       "kind": "friction",
-      "example": "examples/ch22-a-reasoner-you-can-serve/22-01-logic-programs/05-scallop_readme.metta",
-      "form": null,
-      "missing": "constructive enumeration over an unbound case generator under negation",
-      "row": "P14.4",
-      "section": "§7 the examples-twin coverage lane",
-      "detail": "`sc-odd?` must stay the example's TWO coexisting equations, a literal head beside a variable one. Folding them into one guarded compiled body compiles and answers `sc-odd?(3)` correctly, and then `(not-provable (sc-odd? $y))` fails with `Type error: `integer' expected, found `Empty'`, the same nested-tower dual that constructive_negation's `band` hits.",
-      "historical_missing": "a `case` whose DUAL survives, where Python's match statement lowers to a nested tower",
-      "ruling": "2026-09-05: L046 fixes nested case negation for ground keys, including False and unmatched arms. An arbitrary unbound case key still reaches metta_generator_forall/5 insufficient instantiation (negated_let_value), also present for the flat engine case. The original sc-odd variable-key enumeration claim is therefore retained, narrowed to this existing engine boundary; ai-tmp/ai-L046-L047.md records it."
-    },
-    {
-      "kind": "friction",
       "example": "examples/ch22-a-reasoner-you-can-serve/22-02-weighted-answers/06-pln_roman.metta",
       "form": null,
       "missing": "a scoped bound for `max-stack-depth` beside limits(timeout=, inferences=, stack=)",
@@ -5492,6 +5481,18 @@
       "section": "§9d the concept map (Python's word where both languages have the concept)",
       "detail": "The twin already shows that a Python class IS a MeTTa type name in an annotation: `class Animal` plus `def speak(a: Animal) -> str` declares `(: speak (-> Animal String))` exactly [measured 2026-08-22]. The obvious next row of the same table does not hold: `class Dog(Animal)` declares no `(:< Dog Animal)`, and a `@metta.record` subclass writes no `:<` atom either (measured: no `:<` atom appears in the space). Subtyping is the one relation where Python's own syntax says the whole thing, so the declaration source is already written in every typed Python program. Until then the edge is `S[\":<\"](sub, super)`, which is the sibling wart the existing entry on this example files.",
       "retired": "2026-09-05: declaring a class into a space writes its subtype edges. `m.define(Animal)` then `m.define(Dog)` for `class Dog(Animal)` stores `(:< Dog Animal)`, `get-type` on a `(: Rex Dog)` widens to `[Dog, Animal]`, and a chain widens transitively; multiple inheritance answers one edge per direct base, and a base declared AFTER its subclass fills the edge in then. Only DECLARED classes count as supertypes, which keeps `object`, `tuple` under a NamedTuple and `Enum` under an enum out of the answer, and only REAL bases do, since a virtual abc registration never reaches __mro__. This twin keeps its atoms: the example's Dog and Animal are bare SYMBOLS with no Python classes behind them, so `S[':<'](sub, super)` is the example's own text rather than a workaround. Declaring a class also gives it its OWN registration now, which it needed: a subclass used to project through its base's entry, restate the base's declaration, and leave no subtype to put below anything."
+    },
+    {
+      "kind": "friction",
+      "example": "examples/ch22-a-reasoner-you-can-serve/22-01-logic-programs/05-scallop_readme.metta",
+      "form": null,
+      "missing": "constructive enumeration over an unbound case generator under negation",
+      "row": "P14.4",
+      "section": "§7 the examples-twin coverage lane",
+      "detail": "`sc-odd?` must stay the example's TWO coexisting equations, a literal head beside a variable one. Folding them into one guarded compiled body compiles and answers `sc-odd?(3)` correctly, and then `(not-provable (sc-odd? $y))` fails with `Type error: `integer' expected, found `Empty'`, the same nested-tower dual that constructive_negation's `band` hits.",
+      "historical_missing": "a `case` whose DUAL survives, where Python's match statement lowers to a nested tower",
+      "ruling": "2026-09-05: L046 fixes nested case negation for ground keys, including False and unmatched arms. An arbitrary unbound case key still reaches metta_generator_forall/5 insufficient instantiation (negated_let_value), also present for the flat engine case. The original sc-odd variable-key enumeration claim is therefore retained, narrowed to this existing engine boundary; ai-tmp/ai-L046-L047.md records it.",
+      "retired": "2026-09-26: an unbound case key under negation is refused by design, not left by a missing surface: a case row that would bind a variable an open negation answers for is a decision a later binding could change, and it raises an instantiation error naming the case (duals_open:a_case_row_that_would_bind_an_answered_variable_refuses). Folding sc-odd? into one guarded body now negates correctly for the twin's keys, which its match binds before the negation runs [measured 2026-09-26T22:17:34+10:00], and the MeTTa fold (if (== $x 1) True ...) answers for an unbound key too, since == on a variable the negation answers for is read both ways (duals_open:an_identity_test_answers_for_every_value_of_its_variable, form (od-odd $x)). The twin keeps the example's two equations because a compiled function's heads are its parameters and the literal head (sc-odd? 1) is not one."
     }
   ]
 }

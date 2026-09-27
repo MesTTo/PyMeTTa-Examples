@@ -329,4 +329,12 @@ def twin(m):
 #: this landing, wt-merge battery 1, the trunk on swipl-patched.6 and every
 #: part on .7, each through a same-shape host shim; command=python
 #: extensions/python/tools/twin_coverage.py].
-BUDGET = 9373
+#: RE-PINNED 2026-09-27, 9373 to 12129 (+2756), the constructive negation's
+#: rework: each of the six negations of a case costs +390, and +585 and +604 at
+#: each function's first; about 60% of a steady one is the translation walking
+#: the negation's own compiled goals for negations nested in them, the rest the
+#: case dual checking each row for a variable the negation answers for
+#: (metta_case_row/3) and the negation's run-time bookkeeping [measured
+#: 2026-09-27T17:11:24+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 12129

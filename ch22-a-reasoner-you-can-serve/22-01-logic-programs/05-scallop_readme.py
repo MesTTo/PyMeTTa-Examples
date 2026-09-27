@@ -20,13 +20,11 @@ rather than assumed:
   intermediate instead, which the lane's contract allows and the checklist
   asks for, and leaves `collapse` itself mentioned, because the dissolution
   table sends it to `list()` and a compiled body has no lowering for that.
-- `sc-odd?` is the one relation that must stay TWO coexisting equations. Its
-  literal head `(sc-odd? 1)` beside the variable head is what `not-provable`
-  builds its dual from; folding them into one guarded body compiles, answers
-  correctly on a direct call, and then fails the negation with
-  ``Type error: `integer' expected, found `Empty'``. So it is a `@m.rules`
-  bundle, and a rules body EXECUTES, which is why its `let` and `match` are
-  built by naming their heads.
+- `sc-odd?` is the example's TWO coexisting equations, a literal head
+  `(sc-odd? 1)` beside a variable one, and a compiled function's heads are its
+  parameters, which a literal is not. So it is a `@m.rules` bundle, and a rules
+  body EXECUTES, which is why its `let` and `match` are built by naming their
+  heads. Folding the two into one guarded body would negate correctly too.
 - `foldall` and `not-provable` are named through `S` rather than `fn`, because
   a compiled body resolves `fn` against the space's catalog and neither head
   is in it (friction, P14.4).
@@ -688,7 +686,17 @@ def twin(m):
 #: one with this landing, wt-merge battery 1, the trunk on swipl-patched.6 and
 #: every part on .7, each through a same-shape host shim; command=python
 #: extensions/python/tools/twin_coverage.py].
-BUDGET = 85896
+#: RE-PINNED 2026-09-27, 85896 to 90043 (+4147), the constructive negation's
+#: rework, +4,117 of it in evens(m), whose negation of sc-odd? runs once for
+#: each of the eleven numbers its generator yields: each run now reads which of
+#: the negation's variables are still open, establishes sc-odd?'s dual where
+#: the negation runs rather than where it is translated, and quantifies the
+#: dual's own generator through every_answer/2, and each translation walks the
+#: negation's own compiled goals for negations nested in them; the other four
+#: sections move +8 to +12 [measured 2026-09-27T17:11:16+10:00: min-of-3 serial
+#: fresh processes; command=python extensions/python/tools/twin_coverage.py
+#: --repin].
+BUDGET = 90043
 
 #: DIVERGED 2026-09-07, the example holds 12 atoms the twin does not (12 =) and
 #: the twin holds 36 the example does not (1 :, 16 =, 19 @doc): the twin is an

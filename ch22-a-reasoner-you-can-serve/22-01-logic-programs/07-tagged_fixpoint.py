@@ -148,4 +148,12 @@ def twin(m):
 #: that failed check costs six inferences a question [measured
 #: 2026-09-26T01:41:15+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 27304
+#: RE-PINNED 2026-09-27, 27304 to 27313 (+9), the constructive negation's
+#: engine additions, each counted in this twin's own run: 1 space module
+#: prepared, each importing and exporting the three names the change emits into
+#: compiled clauses, metta_case_row/3, metta_decided/2 and metta_same_term/3
+#: (+9) [measured 2026-09-27T18:31:56+10:00: one full twins lane with this
+#: landing, in a battery of its tree at 775d3cf35, beside one of the base in a
+#: battery of 775d3cf35 from 2026-09-27T18:40:06+10:00, which reads the old
+#: pin; command=python extensions/python/tools/twin_coverage.py].
+BUDGET = 27313

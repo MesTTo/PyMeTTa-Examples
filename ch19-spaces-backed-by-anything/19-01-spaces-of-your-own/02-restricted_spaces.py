@@ -643,4 +643,14 @@ def twin(m):  # noqa: ARG001  -- both spaces are created here; the default handl
 #: 02-restricted_spaces and 37-statistics_lib by the same +6, +87 and +30
 #: [measured 2026-09-26T14:30:42+10:00: min-of-3 serial fresh processes;
 #: command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 67977
+#: RE-PINNED 2026-09-27, 67977 to 68455 (+478), the constructive negation's
+#: engine additions, each counted in this twin's own run: 2 space modules
+#: prepared, each importing and exporting the three names the change emits into
+#: compiled clauses, metta_case_row/3, metta_decided/2 and metta_same_term/3
+#: (+18); the restricted spaces' publication of the engine's restricted core,
+#: which examines 12 more engine predicates through predicate_property, import
+#: and export (+460) [measured 2026-09-27T18:31:56+10:00: one full twins lane
+#: with this landing, in a battery of its tree at 775d3cf35, beside one of the
+#: base in a battery of 775d3cf35 from 2026-09-27T18:40:06+10:00, which reads
+#: the old pin; command=python extensions/python/tools/twin_coverage.py].
+BUDGET = 68455

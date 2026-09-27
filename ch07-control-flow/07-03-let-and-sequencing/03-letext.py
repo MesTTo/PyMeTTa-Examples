@@ -211,4 +211,11 @@ def twin(m):
 #: only its own space [measured 2026-09-25T16:54:32+10:00: one full twins lane
 #: before this commit and one with it, the two read on one battery path at the
 #: landing's HEAD; command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 1534
+#: RE-PINNED 2026-09-27, 1534 to 1542 (+8), the constructive negation's engine
+#: additions, each counted in this twin's own run: 1 == or != on a pair holding
+#: an unbound variable, each now read through the open-mark test (+7); +1 of
+#: clause-indexing layout [measured 2026-09-27T18:31:56+10:00: one full twins
+#: lane with this landing, in a battery of its tree at 775d3cf35, beside one of
+#: the base in a battery of 775d3cf35 from 2026-09-27T18:40:06+10:00, which
+#: reads the old pin; command=python extensions/python/tools/twin_coverage.py].
+BUDGET = 1542

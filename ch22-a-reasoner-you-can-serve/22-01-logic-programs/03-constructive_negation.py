@@ -4,29 +4,27 @@
 what it can, and over an infinite domain it CONSTRAINS rather than enumerates.
 The file walks that from the two defects it repairs, through `dif` against
 `!=`, quantifying over a generator, negating a space query and a `case`, to
-negating a CLP(FD) bound. Fifty claims, each an `assert`, and the example's own
-eight sections are eight functions here.
+negating a CLP(FD) bound, with a form that has no dual, a question with three
+proofs, a recursion over a cycle and an open question on the way. Fifty-seven
+claims, each an
+`assert`, in ten functions that follow the example's sections in order.
 
 Where a body is MeTTa's `(and ...)`, the equation is a `@m.rules` bundle: a
 rules body EXECUTES, so `&` builds the conjunction term there, rung 3 of the
 descent ladder, where Python's own `and` short-circuits on truthiness and would
 store a different program for the dual to negate. Where a body is an ordinary
-computation the equation is a compiled function, and three of them are:
+computation the equation is a compiled function, and four of them are:
 `any-pass` binds with an assignment, `has-child` matches a NAMED space through
-`match(space, pattern, template)`, and the two `mask-example` heads carry their
+`match(space, pattern, template)`, `band` is a `match` statement, which lowers
+to the example's flat case, and the two `mask-example` heads carry their
 declarations as annotations, `int` for Number and `Atom` for the metatype that
 keeps an argument unreduced.
 
-Two things the surface still makes this file say the long way, both measured:
+One thing the surface still makes this file say the long way, measured:
 
 - `(let True (f $x) (let $x c $x))` is `solve` with a template that binds a
   SECOND variable, and `solve` derives its template from the subject. Those
   fourteen claims keep the term (friction, P14.7).
-- `band`'s `(case $n ((90 True) (40 False)))` must stay a FLAT case. Python's
-  `match` statement lowers to a NESTED tower, which compiles and answers
-  correctly on a direct call and then fails its dual with
-  ``Type error: `integer' expected, found `Empty'`` on any key past the first
-  arm (friction, P14.4).
 
 Comparisons are built by their operator WORDS, `S.ne`, `S.gt` and `S.eq`,
 because Python's four rich comparisons order atoms rather than building terms.
@@ -301,12 +299,14 @@ def over_a_space(m):
 def forms_with_no_answer(m):
     """A case commits to its first matching pattern, and its dual follows it."""
 
-    @m.rules
-    def bands(key):
+    @m.define
+    def band(n):
         """(= (band $n) (case $n ((90 True) (40 False))))."""
-        yield equation(S.band(key)).to(
-            S.case(key, ((90, TRUE), (40, FALSE)))
-        )  # rung: Python's match statement lowers to a NESTED tower whose dual raises past the first arm (P14.4)
+        match n:
+            case 90:
+                return True
+            case 40:
+                return False
 
     # A key that matches no pattern leaves the case with no answer, and no
     # answer is not True.
@@ -326,15 +326,60 @@ def forms_with_no_answer(m):
     assert m.fn.not_provable(fn.superpose((FALSE, FALSE))) == [True]
     assert m.fn.not_provable(fn.superpose(())) == [True]
 
-    # A form whose negation cannot be computed soundly RAISES rather than
-    # answering from an incomplete dual. The comparisons are the exception,
-    # because each one's opposite is another comparison.
+    # A builtin or a special form has no equations to dual, and its call is
+    # still negated when every variable it reads is bound: negation as
+    # failure is sound for a ground goal. (+ 1 2) answers 3, which is not True.
+    # !(test (not-provable (+ 1 2)) True)
+    # !(test (not-provable (once (bird tweety))) False)
     # !(test (not-provable (> 1 2)) True)
     # !(test (not-provable (> 2 1)) False)
     # !(test (not-provable (== 1 1)) False)
+    assert m.fn.not_provable(S.add(1, 2)) == [True]
+    assert m.fn.not_provable(fn.once(S.bird(S.tweety))) == [False]
     assert m.fn.not_provable(S.gt(1, 2)) == [True]
     assert m.fn.not_provable(S.gt(2, 1)) == [False]
     assert m.fn.not_provable(S.eq(1, 1)) == [False]
+
+
+def per_question(m):
+    """A negation answers once per question, and decides a recursion over a cycle."""
+    # mc-tavish has three pensions, three proofs, and one answer to whether he
+    # has none.
+    # !(test (collapse (not-provable (pension mc-tavish $any))) (False))
+    assert m.fn.not_provable(S.pension(S.mc_tavish, V.any)) == [False]
+
+    # !(add-atom &self (link a a)) !(add-atom &self (link a b)) !(add-atom &self (link b c))
+    m += S.link(S.a, S.a)
+    m += S.link(S.a, S.b)
+    m += S.link(S.b, S.c)
+
+    @m.rules
+    def reaching(x, y, z):
+        """Reachability over the links, recursing through the next node."""
+        # (= (reaches $x $y) (match &self (link $x $y) True))
+        yield equation(S.reaches(x, y)).to(
+            S.match(m, S.link(x, y), TRUE)
+        )  # rung: a rules body builds its terms, and match() there would run the query rather than write it
+        # (= (reaches $x $y) (and (match &self (link $x $z) True) (reaches $z $y)))
+        yield equation(S.reaches(x, y)).to(
+            S.match(m, S.link(x, z), TRUE) & S.reaches(z, y)
+        )  # rung: as above
+
+    # Evaluating (reaches a c) goes round the loop from a to a before it ever
+    # tries b and never returns; its negation is decided by the dual.
+    # !(test (not-provable (reaches a c)) False)
+    # !(test (not-provable (reaches c a)) True)
+    assert m.fn.not_provable(S.reaches(S.a, S.c)) == [False]
+    assert m.fn.not_provable(S.reaches(S.c, S.a)) == [True]
+
+    # An open question answers for every value: inside the negation, != on
+    # $x still unbound is read both ways, so each value bound afterwards gets
+    # the negation's own answer there.
+    # !(test (collapse (let $r (not-provable (!= $x 1)) (let $x 1 $r))) (True))
+    # !(test (collapse (let $r (not-provable (!= $x 1)) (let $x 2 $r))) (False))
+    open_differs = fn.not_provable(S.ne(V.x, 1))
+    assert m.eval(S.let(V.r, open_differs, S.let(V.x, 1, V.r))) == [True]  # rung: the same shape (P14.7)
+    assert m.eval(S.let(V.r, open_differs, S.let(V.x, 2, V.r))) == [False]  # rung: the same shape (P14.7)
 
 
 def bounds(m):
@@ -398,6 +443,7 @@ def twin(m):
     quantifying(m)
     over_a_space(m)
     forms_with_no_answer(m)
+    per_question(m)
     bounds(m)
     masking(m)
 
@@ -857,7 +903,21 @@ def twin(m):
 #: this landing, wt-merge battery 1, the trunk on swipl-patched.6 and every
 #: part on .7, each through a same-shape host shim; command=python
 #: extensions/python/tools/twin_coverage.py].
-BUDGET = 89780
+#: RE-PINNED 2026-09-27, 89780 to 131536 (+41756), the constructive negation's
+#: rework and the seven claims the example gained with it: +27,032 is the
+#: rework over the claims this twin already made, read with the tip's own twin
+#: under the patched engine, where the translation now walks each negation's
+#: own compiled goals to resolve the negations nested in them, about 60% of the
+#: +360 to +540 a ground negation costs, and an open negation collects its
+#: dual's regions before its proofs, keeps one answer per binding and marks the
+#: variables it answers for, +900 to +1,130 each; +14,725 is the claims gained,
+#: a builtin and a special form negated by failure, a question with three
+#: proofs answered once, a recursion over a cycle decided by its dual and an
+#: open != answered at each value; the trunk reads this twin 1 below its pin,
+#: so the pin moves by one less than the two [measured
+#: 2026-09-27T17:11:08+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 131536
 
 #: DIVERGED 2026-09-07, the example holds 2 atoms the twin does not (2 =) and
 #: the twin holds 6 the example does not (2 =, 4 @doc): the twin is an ordinary
@@ -869,4 +929,15 @@ BUDGET = 89780
 #: [measured 2026-09-07: the two stored-atom surpluses, one fresh process per
 #: side; command=python extensions/python/tools/twin_coverage.py --repin;
 #: commit=9010a79b01c9b2a66b96a3952fa378fb3e939dc3].
-DIVERGENCE = "69ab450f5ededd54236c5efc101d7a75f49efc725d6cca35894c01e6c9f881ac"
+#: DIVERGED 2026-09-27, the example holds 4 atoms the twin does not (4 =) and
+#: the twin holds 9 atoms the example does not (4 =, 5 @doc): the twin is an
+#: ordinary Python program: a named intermediate is a let* the original does
+#: not have, a space query names the handle it was given, which the engine
+#: writes &pyspace_N where the example writes &kin or &self, and the docstrings
+#: and annotations of its compiled definitions are stored beside them as @doc
+#: rows; band is now a compiled match statement, which lowers to the example's
+#: own flat case and adds only its @doc row, and reaches queries the twin's own
+#: space through its handle [measured 2026-09-27T17:11:08+10:00: the two
+#: stored-atom surpluses, one fresh process per side; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+DIVERGENCE = "15c83d245bf5bb275c1d8726c513a00904b057910209357b68d7c2f8e39c7bd3"

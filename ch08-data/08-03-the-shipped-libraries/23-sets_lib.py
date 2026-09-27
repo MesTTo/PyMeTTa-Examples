@@ -435,7 +435,17 @@ def twin(m):
 #: 2026-09-27T09:56:55+10:00: one full twins lane before this commit and one
 #: with it, each read in one battery of the landing's HEAD after a QLF purge
 #: and one warm-up; command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 358704
+#: RE-PINNED 2026-09-27, 358704 to 358849 (+145), the constructive negation's
+#: engine additions, each counted in this twin's own run: 2 registration walks
+#: over more than twelve names (filereader:existing_predicate_arities/2), each
+#: now reading 31 more predicates at 2 inferences (+124); 11 == or != on
+#: compound terms that differ, each now decided by metta_same_term/3 (+22); -1
+#: of clause-indexing layout [measured 2026-09-27T18:31:56+10:00: one full
+#: twins lane with this landing, in a battery of its tree at 775d3cf35, beside
+#: one of the base in a battery of 775d3cf35 from 2026-09-27T18:40:06+10:00,
+#: which reads the old pin; command=python
+#: extensions/python/tools/twin_coverage.py].
+BUDGET = 358849
 
 #: OVERRUN 2026-09-12, 1399: the example nests its law claims in one evaluation
 #: each, where Python reads them as separate calls whose intermediate sets cross
