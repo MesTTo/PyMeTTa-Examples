@@ -371,4 +371,14 @@ G_TEXT = G("text")
 #: landing, in a battery of its tree at 775d3cf35, beside one of the base in a
 #: battery of 775d3cf35 from 2026-09-27T18:40:06+10:00, which reads the old
 #: pin; command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 17069
+#: RE-PINNED 2026-09-27, 17069 to 17015 (-54), -54 at interrupts B's seat
+#: change, which drops the poll's boot calibration, its tick charges and its
+#: tick record: a held reading through metta_py_work/2 brackets 3 inferences
+#: where it bracketed 6, a registration walk over more than twelve names meets
+#: 6 fewer seat predicates (12 or 14 fewer), and a thread the twin joins
+#: credits it 11 where it credited 16 [measured 2026-09-27T20:07:01+10:00: full
+#: twins lanes in wt-merge's battery 1, tsm-licence's series and its engine
+#: reader on swipl-patched.7, the series on swipl-patched.8, and the stack
+#: through janus-contract B on swipl-patched.8 twice; command=sh tools/check.sh
+#: twins].
+BUDGET = 17015

@@ -459,7 +459,21 @@ def twin(m):
 #: this landing, wt-merge battery 1, the trunk on swipl-patched.6 and every
 #: part on .7, each through a same-shape host shim; command=python
 #: extensions/python/tools/twin_coverage.py].
-BUDGET = 23923
+#: RE-PINNED 2026-09-27, 23923 to 23901 (-22), -1 at the host switch to swipl-
+#: patched.8, whose swi-heartbeat-inferences-charged-to-the-program leaves the
+#: interrupt poll's own inferences out of every count, so a window the seat's
+#: calibrated poll correction read 1 to 3 low on .7 reads exactly; -18 at
+#: interrupts B's seat change, which drops the poll's boot calibration, its
+#: tick charges and its tick record: a held reading through metta_py_work/2
+#: brackets 3 inferences where it bracketed 6, a registration walk over more
+#: than twelve names meets 6 fewer seat predicates (12 or 14 fewer), and a
+#: thread the twin joins credits it 11 where it credited 16; the base read
+#: 23,920 where the pin stood at 23,923, a gap of +3 this re-pin takes out
+#: [measured 2026-09-27T20:07:01+10:00: full twins lanes in wt-merge's battery
+#: 1, tsm-licence's series and its engine reader on swipl-patched.7, the series
+#: on swipl-patched.8, and the stack through janus-contract B on swipl-
+#: patched.8 twice; command=sh tools/check.sh twins].
+BUDGET = 23901
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 2 the example does not (2 :): a Python annotation IS a (:

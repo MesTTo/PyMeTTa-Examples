@@ -917,7 +917,17 @@ def twin(m):
 #: so the pin moves by one less than the two [measured
 #: 2026-09-27T17:11:08+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 131536
+#: RE-PINNED 2026-09-27, 131536 to 131440 (-96), -96 at interrupts B's seat
+#: change, which drops the poll's boot calibration, its tick charges and its
+#: tick record: a held reading through metta_py_work/2 brackets 3 inferences
+#: where it bracketed 6, a registration walk over more than twelve names meets
+#: 6 fewer seat predicates (12 or 14 fewer), and a thread the twin joins
+#: credits it 11 where it credited 16 [measured 2026-09-27T20:07:01+10:00: full
+#: twins lanes in wt-merge's battery 1, tsm-licence's series and its engine
+#: reader on swipl-patched.7, the series on swipl-patched.8, and the stack
+#: through janus-contract B on swipl-patched.8 twice; command=sh tools/check.sh
+#: twins].
+BUDGET = 131440
 
 #: DIVERGED 2026-09-07, the example holds 2 atoms the twin does not (2 =) and
 #: the twin holds 6 the example does not (2 =, 4 @doc): the twin is an ordinary

@@ -178,4 +178,15 @@ def twin(m):
 #: this landing, wt-merge battery 1, the trunk on swipl-patched.6 and every
 #: part on .7, each through a same-shape host shim; command=python
 #: extensions/python/tools/twin_coverage.py].
-BUDGET = 716
+#: RE-PINNED 2026-09-27, 716 to 712 (-4), -3 at interrupts B's seat change,
+#: which drops the poll's boot calibration, its tick charges and its tick
+#: record: a held reading through metta_py_work/2 brackets 3 inferences where
+#: it bracketed 6, a registration walk over more than twelve names meets 6
+#: fewer seat predicates (12 or 14 fewer), and a thread the twin joins credits
+#: it 11 where it credited 16; the base read 715 where the pin stood at 716, a
+#: gap of +1 this re-pin takes out [measured 2026-09-27T20:07:01+10:00: full
+#: twins lanes in wt-merge's battery 1, tsm-licence's series and its engine
+#: reader on swipl-patched.7, the series on swipl-patched.8, and the stack
+#: through janus-contract B on swipl-patched.8 twice; command=sh tools/check.sh
+#: twins].
+BUDGET = 712

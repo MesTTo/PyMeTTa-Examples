@@ -534,7 +534,20 @@ def twin(m):
 #: 2026-09-28T12:31:49+10:00: full twins lanes in wt-merge's battery 1 on
 #: swipl-patched.8 at this boundary, engine/host_notices.pl as amended against
 #: the day before's as first written; command=sh tools/check.sh twins].
-BUDGET = 34573
+#: RE-PINNED 2026-09-27, 34573 to 34549 (-24), -24 at interrupts B's seat
+#: change, which drops the poll's boot calibration, its tick charges and its
+#: tick record: a held reading through metta_py_work/2 brackets 3 inferences
+#: where it bracketed 6, a registration walk over more than twelve names meets
+#: 6 fewer seat predicates (12 or 14 fewer), and a thread the twin joins
+#: credits it 11 where it credited 16 [measured 2026-09-27T20:07:01+10:00: full
+#: twins lanes in wt-merge's battery 1, tsm-licence's series and its engine
+#: reader on swipl-patched.7, the series on swipl-patched.8, and the stack
+#: through janus-contract B on swipl-patched.8 twice; command=sh tools/check.sh
+#: twins]. With step 4's notices reader as amended both counts read -6
+#: [measured 2026-09-28T12:34:38+10:00: full twins lanes in wt-merge's battery
+#: 1 on swipl-patched.8 at this boundary, engine/host_notices.pl as amended
+#: against the day before's as first written; command=sh tools/check.sh twins].
+BUDGET = 34549
 #: OVERRUN 2026-09-09, 0 to 1089 (+1089): a library's Prolog half compiles
 #: beside itself on its first import and loads from the artifact after
 #: (metta_load_source/2, seam:compiled_source/1): the example imports one, so

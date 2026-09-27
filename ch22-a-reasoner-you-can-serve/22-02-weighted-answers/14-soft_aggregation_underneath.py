@@ -462,4 +462,22 @@ def twin(m):
 #: 2026-09-28T12:31:49+10:00: full twins lanes in wt-merge's battery 1 on
 #: swipl-patched.8 at this boundary, engine/host_notices.pl as amended against
 #: the day before's as first written; command=sh tools/check.sh twins].
-BUDGET = 138238
+#: RE-PINNED 2026-09-27, 138238 to 138169 (-69), +2 at the host switch to
+#: swipl-patched.8, whose swi-heartbeat-inferences-charged-to-the-program
+#: leaves the interrupt poll's own inferences out of every count, so a window
+#: the seat's calibrated poll correction read 1 to 3 low on .7 reads exactly;
+#: -69 at interrupts B's seat change, which drops the poll's boot calibration,
+#: its tick charges and its tick record: a held reading through metta_py_work/2
+#: brackets 3 inferences where it bracketed 6, a registration walk over more
+#: than twelve names meets 6 fewer seat predicates (12 or 14 fewer), and a
+#: thread the twin joins credits it 11 where it credited 16; the base read
+#: 138,238 where the pin stood at 138,240, a gap of +2 this re-pin takes out
+#: [measured 2026-09-27T20:07:01+10:00: full twins lanes in wt-merge's battery
+#: 1, tsm-licence's series and its engine reader on swipl-patched.7, the series
+#: on swipl-patched.8, and the stack through janus-contract B on swipl-
+#: patched.8 twice; command=sh tools/check.sh twins]. With step 4's notices
+#: reader as amended both counts read -2 [measured 2026-09-28T12:34:38+10:00:
+#: full twins lanes in wt-merge's battery 1 on swipl-patched.8 at this
+#: boundary, engine/host_notices.pl as amended against the day before's as
+#: first written; command=sh tools/check.sh twins].
+BUDGET = 138169
