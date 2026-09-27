@@ -388,4 +388,15 @@ def twin(m):
 #: this landing, wt-merge battery 1, the trunk on swipl-patched.6 and every
 #: part on .7, each through a same-shape host shim; command=python
 #: extensions/python/tools/twin_coverage.py].
-BUDGET = 17267
+#: RE-PINNED 2026-09-27, 17267 to 17269 (+2), a force of a waiting function
+#: takes the typing policy and the specializer's lock before translation:
+#: spaces:metta_ensure_compiled/2 stabilises the policy and takes the
+#: specializer's mutex around the translation once per force, and the
+#: translation's own per-pair stabilisation re-enters through
+#: with_typing_policy_stable/1's first clause; the lanes' tree read this twin
+#: +3 off its pin before the step, an offset that is not this step's, so the
+#: pin moves by the step's delta alone [measured 2026-09-27T09:56:55+10:00: one
+#: full twins lane before this commit and one with it, each read in one battery
+#: of the landing's HEAD after a QLF purge and one warm-up; command=python
+#: extensions/python/tools/twin_coverage.py].
+BUDGET = 17269
