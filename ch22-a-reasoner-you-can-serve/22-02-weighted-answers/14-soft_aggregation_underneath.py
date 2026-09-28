@@ -4,9 +4,9 @@ The similarity facts are ordinary atoms written into the space, and the
 aggregation is chosen by NAME, so `S.min` and `S.mean` are symbols rather
 than Python callables: the fold dispatches on the name it is handed.
 
-`soft-symbol?` tests the WRITTEN representation rather than the metatype,
-which is why `min` answers True: a metatype test would answer False for every
-name the engine holds a function for.
+`is-symbol`, the scorer's symbol test, reads the WRITTEN representation
+rather than the metatype, which is why `min` answers True: a metatype test
+would answer False for every name the engine holds a function for.
 Open Obligations:
   To Do: None
   Hacks: None
@@ -20,7 +20,7 @@ def twin(m):
     """A symbol test, two aggregations, and the walk under each."""
     m += lib.soft
     m += [S.similar(S.cat, S.feline, 0.8), S.similar(S.fish, S.shark, 0.5)]
-    symbol, fold, walk = m.fn["soft-symbol?"], m.fn["soft-fold"], m.fn["soft-walk"]
+    symbol, fold, walk = m.fn.is_symbol, m.fn["soft-fold"], m.fn["soft-walk"]
 
     assert symbol(S.cat) == [True]
     assert symbol(S.min) == [True]
