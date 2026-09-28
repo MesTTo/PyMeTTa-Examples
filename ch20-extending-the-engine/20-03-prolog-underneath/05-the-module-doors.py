@@ -726,4 +726,12 @@ def twin(m):
 #: battery 1 on swipl-patched.8 at this boundary, engine/host_notices.pl as
 #: amended against the day before's as first written; command=sh tools/check.sh
 #: twins].
-BUDGET = 296061
+#: RE-PINNED 2026-09-28, 296061 to 296060 (-1), -1 at the QLF stamp commit,
+#: whose engine/qlf_boot.pl stamps a tree's .qlf set with the SWI build that
+#: compiled it: a change to a file every boot loads that moves this twin with
+#: the process's inventory, the calls not traced [measured
+#: 2026-09-28T12:43:10+10:00: full twins lanes in wt-merge's battery 1 on
+#: swipl-patched.8 at walk-tax B's tree and at the landing's tip, whose files a
+#: twin loads differ only in engine/qlf_boot.pl; command=sh tools/check.sh
+#: twins].
+BUDGET = 296060
