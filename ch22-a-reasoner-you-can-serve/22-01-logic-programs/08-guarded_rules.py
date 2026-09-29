@@ -24,12 +24,15 @@ def twin(m):
         assert [row.value for row in rows] == [S.trusted(S.a)]
         assert abs(rows[0].annotation - 0.6) < 1e-9
 
-    # A Python guard registers under its own name, like a callable tag.
+    # A Python guard registers as an operation the space owns, like a callable
+    # tag: named for the space and for its own name, with the order the space
+    # made it in, so two spaces' guards and two lambdas never share one.
     def strong(score):
         return score > 0.5
 
     guarded = m.add_tagged_rule(1, S.vouched(V.x), S.score(V.x), where=strong)
-    assert guarded.children[4] == S.where(S.rule_strong)
+    where, guard = guarded.children[4].children
+    assert where == S.where and guard.name in metta.registered()
     assert [row.value for row in m.match(S.vouched(V.x), under=metta.prob)] == [S.vouched(S.a)]
 
     # The derived route shows the guard that held; the tabled route asks the
@@ -220,7 +223,17 @@ def twin(m):
 #: a module's compiled predicate, inside the allowance [measured
 #: 2026-09-30T04:49:31+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 23289
+#: RE-PINNED 2026-09-30, 23289 to 23337 (+48), the seat's owned-operations
+#: change makes a tagged rule's Python guard an operation its declaring space
+#: owns, registered under the space's name, the guard's own name and the order
+#: the space made it in, pyspace_1.rule-strong-1 here where it was rule-strong,
+#: with its effect class, and released when the space drops; that registration
+#: is 48 inferences dearer, all of it that commit's: before it the twin reads
+#: 23289 with the old claim and with the new one, which reads the stored name
+#: and asks metta.registered() for it, and at it and at the series' tip 23337
+#: [measured 2026-09-30T10:32:31+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 23337
 
 #: OVERRUN 2026-09-18, 538: the twin costs 23621 against the example's 18397
 #: and a ceiling of 23083 (the band plus 2846 to author one compiled
@@ -268,4 +281,12 @@ OVERRUN = 3515
 #: 2026-09-18: the two stored-atom surpluses, one fresh process per side;
 #: command=python extensions/python/tools/twin_coverage.py --repin;
 #: commit=bf5f100591493a91324b1d7552b5ad2731601691].
-DIVERGENCE = "bdb3f2dcbafa7ac4abb5860bb62b1676e66d0d354482f067629aa25cf4cf836e"
+#: DIVERGED 2026-09-30, the example holds 0 atoms the twin does not (none) and
+#: the twin holds 4 atoms the example does not (1 :, 2 annotation, 1 rule): The
+#: four atoms the twin's Python guard adds to its space, the operation's type
+#: declaration, its two annotations and the rule naming it, carry the guard's
+#: new name, pyspace_1.rule-strong-1 where they carried rule-strong, which the
+#: MeTTa example's guard, a MeTTa equation, does not add [measured
+#: 2026-09-30T10:32:31+10:00: the two stored-atom surpluses, one fresh process
+#: per side; command=python extensions/python/tools/twin_coverage.py --repin].
+DIVERGENCE = "55f5caaeb9349906db73b010a76f972bbc75af67a25837ecb54d6b2c23d9c6e7"
