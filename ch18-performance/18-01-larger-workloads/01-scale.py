@@ -8,15 +8,13 @@ five and reports the counts, which is the claim.
 The driver is an ordinary Python function under the decorator: it calls its six
 siblings by name through the mention door and builds the report it answers.
 
-Two families stay at the container door, each for a blocker rather than a
-preference.
+The five queries are compiled bodies too: `list(match(...))` stores the
+`(collapse (match ...))` the example writes and answers every solution in one
+collection, as `fn.collapse` does
+[tested 2026-09-29T17:02:08+10:00: test_fn_special_forms_compile_in_a_body_and_keep_every_answer].
 
-The five queries are `(collapse (match ...))`, and a compiled body has no
-spelling for `collapse` at all: `list(...)` and `fn.collapse` are both refused,
-and a comprehension over a match lowers to `map-atom`, a different operation,
-`(map-atom (match ...) (|-> ($x) $x))`, answering once per solution where
-collapse answers once [measured 2026-08-24; commit=8a8b75a1f4052c00c70c29e25e95e4d5a1812cd5]. PERFECT:
-`list(space[pattern])` inside a body. Residue P14.4.
+One family stays at the container door, for a blocker rather than a
+preference.
 
 `addK` compiles and then cannot run. A compiled `if` wraps its condition in
 `py-truthy` and `==` lowers to `py-eq`, so every level of this million-deep
@@ -29,7 +27,7 @@ no pragma to copy. PERFECT: a compiled `if` that leaves an engine-Bool
 condition alone, or a stack-depth mode block. Residue P14.4 and P14.14.
 """
 
-from metta import S, V, equation, fn, if_
+from metta import S, V, equation, fn, if_, match
 
 #: What a million atoms answer to the five shapes, in the driver's own order.
 REPORT = S["all:"](1_000_000, S["first:"], 1, S["second:"], 100_000,
@@ -47,11 +45,25 @@ def twin(m):
 
     # Five shapes over one store: nothing bound, first bound, second bound,
     # both bound, and the relation itself a variable.
-    m += equation(S.q_all()).to(S.collapse(S.match(m, S.r(V.x, V.y), S.r(V.x, V.y))))  # rung: a compiled body has no spelling for collapse
-    m += equation(S.q_first(V.a)).to(S.collapse(S.match(m, S.r(V.a, V.y), S.r(V.a, V.y))))  # rung: as above
-    m += equation(S.q_second(V.b)).to(S.collapse(S.match(m, S.r(V.x, V.b), S.r(V.x, V.b))))  # rung: as above
-    m += equation(S.q_both(V.a, V.b)).to(S.collapse(S.match(m, S.r(V.a, V.b), S.r(V.a, V.b))))  # rung: as above
-    m += equation(S.q_rel(V.r)).to(S.collapse(S.match(m, (V.r, 643, 3), (V.r, 643, 3))))  # rung: as above
+    @m.define
+    def q_all():
+        return list(match(S.r(V.x, V.y), S.r(V.x, V.y)))
+
+    @m.define
+    def q_first(a):
+        return list(match(S.r(a, V.y), S.r(a, V.y)))
+
+    @m.define
+    def q_second(b):
+        return list(match(S.r(V.x, b), S.r(V.x, b)))
+
+    @m.define
+    def q_both(a, b):
+        return list(match(S.r(a, b), S.r(a, b)))
+
+    @m.define
+    def q_rel(r):
+        return list(match((r, 643, 3), (r, 643, 3)))
 
     @m.define
     def indexing_demo(k):
