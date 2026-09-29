@@ -461,7 +461,18 @@ def twin(m):
 #: its pin 3572 before this change, -1 landed main's own reading against that
 #: pin [measured 2026-09-30T04:14:07+10:00: min-of-3 serial fresh processes;
 #: command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 3567
+#: RE-PINNED 2026-09-30, 3567 to 3613 (+46), the twins lane reads this twin at
+#: 3569 before this change and at 3613 with it (+44): the catalog_key_taken
+#: refusal kind adds a catalog row and a vocabulary member, and a keyed catalog
+#: head's write is admitted against the rows already holding its key as it
+#: lands (engine/spaces/catalog.pl, metta_catalog_exclusive/3 under
+#: metta_catalog_serialised/1), so a process pays for the new kind's row and
+#: member and for keyed admission of the catalog rows it writes; it read 3569
+#: against its pin 3567 before this change, +2 from an earlier commit of this
+#: landing, the takeover read through a module's compiled predicate, inside the
+#: allowance [measured 2026-09-30T04:43:54+10:00: min-of-3 serial fresh
+#: processes; command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 3613
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 @doc): a Python annotation IS a (:

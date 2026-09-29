@@ -702,7 +702,17 @@ def twin(m):
 #: a module's compiled predicate, inside the allowance [measured
 #: 2026-09-30T04:35:02+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 78869
+#: RE-PINNED 2026-09-30, 78869 to 79039 (+170), the twins lane reads this twin
+#: at 78869 before this change and at 79039 with it (+170): the
+#: catalog_key_taken refusal kind adds a catalog row and a vocabulary member,
+#: and a keyed catalog head's write is admitted against the rows already
+#: holding its key as it lands (engine/spaces/catalog.pl,
+#: metta_catalog_exclusive/3 under metta_catalog_serialised/1), so a process
+#: pays for the new kind's row and member and for keyed admission of the
+#: catalog rows it writes [measured 2026-09-30T04:48:16+10:00: min-of-3 serial
+#: fresh processes; command=python extensions/python/tools/twin_coverage.py
+#: --repin].
+BUDGET = 79039
 #: OVERRUN 2026-09-09, 0 to 4070 (+4070): a library's Prolog half compiles
 #: beside itself on its first import and loads from the artifact after
 #: (metta_load_source/2, seam:compiled_source/1): the example imports one, so

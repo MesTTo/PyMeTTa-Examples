@@ -404,4 +404,13 @@ def twin(m):  # noqa: ARG001  -- the declarations live in the reflection space; 
 #: 240, each reproduced exactly by one inert predicate added to the engine on
 #: the base [measured 2026-09-25T06:30:15+10:00: min-of-3 serial fresh
 #: processes; command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 1443
+#: RE-PINNED 2026-09-30, 1443 to 1448 (+5), the twins lane reads this twin at
+#: 1443 before this change and at 1448 with it (+5): the catalog_key_taken
+#: refusal kind adds a catalog row and a vocabulary member, and a keyed catalog
+#: head's write is admitted against the rows already holding its key as it
+#: lands (engine/spaces/catalog.pl, metta_catalog_exclusive/3 under
+#: metta_catalog_serialised/1), so a process pays for the new kind's row and
+#: member and for keyed admission of the catalog rows it writes [measured
+#: 2026-09-30T04:47:53+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 1448

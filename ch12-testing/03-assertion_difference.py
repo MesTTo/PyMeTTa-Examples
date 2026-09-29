@@ -325,4 +325,13 @@ RUNG = "the assert family's failure report is this file's subject, so each claim
 #: declare costs one indexed miss and no ownership probe [measured
 #: 2026-09-30T04:18:38+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 8178
+#: RE-PINNED 2026-09-30, 8178 to 8192 (+14), the twins lane reads this twin at
+#: 8178 before this change and at 8192 with it (+14): the catalog_key_taken
+#: refusal kind adds a catalog row and a vocabulary member, and a keyed catalog
+#: head's write is admitted against the rows already holding its key as it
+#: lands (engine/spaces/catalog.pl, metta_catalog_exclusive/3 under
+#: metta_catalog_serialised/1), so a process pays for the new kind's row and
+#: member and for keyed admission of the catalog rows it writes [measured
+#: 2026-09-30T04:47:42+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 8192

@@ -733,7 +733,17 @@ def twin(m):
 #: read through a module's compiled predicate, inside the allowance [measured
 #: 2026-09-30T04:34:04+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 731658
+#: RE-PINNED 2026-09-30, 731658 to 731695 (+37), the twins lane reads this twin
+#: at 731658 before this change and at 731695 with it (+37): the
+#: catalog_key_taken refusal kind adds a catalog row and a vocabulary member,
+#: and a keyed catalog head's write is admitted against the rows already
+#: holding its key as it lands (engine/spaces/catalog.pl,
+#: metta_catalog_exclusive/3 under metta_catalog_serialised/1), so a process
+#: pays for the new kind's row and member and for keyed admission of the
+#: catalog rows it writes [measured 2026-09-30T04:46:22+10:00: min-of-3 serial
+#: fresh processes; command=python extensions/python/tools/twin_coverage.py
+#: --repin].
+BUDGET = 731695
 #: OVERRUN 2026-09-09, 0 to 242 (+242): the compiled vocabulary seed, the
 #: membership index, base-module type lookups and the singleton decoder landed
 #: (perf/cross-engine-waivers merged): a Python decode with one named variable

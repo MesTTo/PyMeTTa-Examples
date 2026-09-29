@@ -604,7 +604,17 @@ def twin(m):
 #: such lookup of a module's own name [measured 2026-09-30T04:28:24+10:00: min-
 #: of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 23496
+#: RE-PINNED 2026-09-30, 23496 to 23733 (+237), the twins lane reads this twin
+#: at 23496 before this change and at 23733 with it (+237): the
+#: catalog_key_taken refusal kind adds a catalog row and a vocabulary member,
+#: and a keyed catalog head's write is admitted against the rows already
+#: holding its key as it lands (engine/spaces/catalog.pl,
+#: metta_catalog_exclusive/3 under metta_catalog_serialised/1), so a process
+#: pays for the new kind's row and member and for keyed admission of the
+#: catalog rows it writes [measured 2026-09-30T04:45:08+10:00: min-of-3 serial
+#: fresh processes; command=python extensions/python/tools/twin_coverage.py
+#: --repin].
+BUDGET = 23733
 
 #: DIVERGED 2026-09-07, the example holds 2 atoms the twin does not (2 =) and
 #: the twin holds 9 the example does not (6 =, 3 ran): the twin keeps the

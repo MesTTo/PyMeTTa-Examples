@@ -1237,7 +1237,25 @@ def twin(m):
 #: earlier steps' moves inside its tolerance) and is not attributed here
 #: [measured 2026-09-29T06:41:26+10:00: min-of-3 serial fresh processes;
 #: command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 2887
+#: RE-PINNED 2026-09-30, 2887 to 2925 (+38), the twins lane reads this twin at
+#: 2881 before this change and at 2925 with it (+44): the catalog_key_taken
+#: refusal kind adds a catalog row and a vocabulary member, and a keyed catalog
+#: head's write is admitted against the rows already holding its key as it
+#: lands (engine/spaces/catalog.pl, metta_catalog_exclusive/3 under
+#: metta_catalog_serialised/1), so a process pays for the new kind's row and
+#: member and for keyed admission of the catalog rows it writes; of this twin's
+#: +44, +27 is keyed admission of the catalog rows the seat writes, since the
+#: twin reads 2898 at this commit with metta_catalog_keyed_row/1 failing for
+#: every row [measured 2026-09-30T03:00:39+10:00: min-of-3 serial fresh
+#: processes on the landed pins, against 2925 with admission on from 02:59:43],
+#: and +17 is the rest of the commit, the new refusal kind's catalog row and
+#: vocabulary member; it read 2881 against its pin 2887 before this change, +12
+#: landed main's own reading against that pin, -18 from an earlier commit of
+#: this landing, the prelude lookup that asks ownership only of a declaration
+#: it found, inside the allowance [measured 2026-09-30T04:44:17+10:00: min-of-3
+#: serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 2925
 #: BANDED 2026-09-06 rather than re-pinned an eighteenth time. Seventeen of
 #: the eighty-three re-pins above were written on 2026-09-05 and 2026-09-06
 #: alone, and every control taken with them left the MeTTa side of the same

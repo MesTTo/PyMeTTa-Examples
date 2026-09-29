@@ -792,7 +792,17 @@ def twin(m):
 #: another live requester still asks for [measured 2026-09-30T04:33:46+10:00:
 #: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 329142
+#: RE-PINNED 2026-09-30, 329142 to 329207 (+65), the twins lane reads this twin
+#: at 329142 before this change and at 329207 with it (+65): the
+#: catalog_key_taken refusal kind adds a catalog row and a vocabulary member,
+#: and a keyed catalog head's write is admitted against the rows already
+#: holding its key as it lands (engine/spaces/catalog.pl,
+#: metta_catalog_exclusive/3 under metta_catalog_serialised/1), so a process
+#: pays for the new kind's row and member and for keyed admission of the
+#: catalog rows it writes [measured 2026-09-30T04:45:59+10:00: min-of-3 serial
+#: fresh processes; command=python extensions/python/tools/twin_coverage.py
+#: --repin].
+BUDGET = 329207
 
 #: OVERRUN 2026-09-07, 17700: it names every lib_roman function at every claim
 #: and runs the backwards `let` inverses beside them. Measured 320547 against a

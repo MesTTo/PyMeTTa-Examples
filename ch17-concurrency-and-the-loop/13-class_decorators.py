@@ -622,10 +622,46 @@ def twin(m):
 #: side, as command=python extensions/python/tools/twin_coverage.py --measure
 #: --rounds 3 examples/ch17-concurrency-and-the-loop/13-class_decorators.metta
 #: reads it].
+#: SHIFTED 2026-09-30 by +717, 6321540..6321545 to 6322257..6322262 over 21
+#: under
+#: 'full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot':
+#: The catalog_key_taken refusal kind adds a catalog row and a vocabulary
+#: member, and a keyed catalog head's write is admitted against the rows
+#: already holding its key as it lands (engine/spaces/catalog.pl,
+#: metta_catalog_exclusive/3 under metta_catalog_serialised/1), so a process
+#: pays for the new kind's row and member and for keyed admission of the
+#: catalog rows it writes. The observations record the full lane's spread
+#: around the count, and this change moves the count, so both bounds move by
+#: the serial delta, the twin's minimum of three serial runs with the change,
+#: 6322257, less its minimum of three before it, 6321540, until the next
+#: full-lane observation reads them again [measured 2026-09-30T03:59:03+10:00:
+#: the minimum of three fresh-process runs on each side, as command=python
+#: extensions/python/tools/twin_coverage.py --measure --rounds 3
+#: examples/ch17-concurrency-and-the-loop/13-class_decorators.metta reads it].
+#: RE-OBSERVED 2026-09-30 under
+#: 'full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot',
+#: 6322257..6322262 to 6322257..6322262 over 22 observations: the nine commits
+#: from the clause-index lookahead at its maximum to keyed catalog admission
+#: moved the runtime under this envelope, the prelude lookup that asks
+#: ownership only of a declaration it found shifted -13985, the takeover read
+#: through a module's compiled predicate shifted +2166, the record of every
+#: import request shifted +3187, keyed catalog admission shifted +717; the
+#: envelope pools the 20 rounds with the twins lanes run at this commit's state
+#: under this protocol, since a whole-lane run under it is an observation, and
+#: with nothing an earlier runtime read: the 20 rounds read 6322257..6322262;
+#: the twins lane at this commit's code in the chain's readings read 6322262;
+#: the twins lane of the whole gate on this commit's code at b4e5ef7b9 read
+#: 6322257 [measured 2026-09-30T05:52:47+10:00: 20 full-lane observations at
+#: this commit's state; command=python extensions/python/tools/twin_coverage.py
+#: --observe --rounds 20] [measured 2026-09-30T03:56:43+10:00: the twins lane
+#: at this commit's code in the chain's readings; command=python
+#: extensions/python/tools/twin_coverage.py] [measured
+#: 2026-09-30T04:57:16+10:00: the twins lane of the whole gate on this commit's
+#: code at b4e5ef7b9; command=python extensions/python/tools/twin_coverage.py].
 BUDGET = {
-    "minimum": 6321540,
-    "maximum": 6321545,
-    "observations": 21,
+    "minimum": 6322257,
+    "maximum": 6322262,
+    "observations": 22,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 OVERRUN = 13729952

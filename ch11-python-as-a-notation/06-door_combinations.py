@@ -574,7 +574,17 @@ def twin(m):
 #: such lookup of a module's own name [measured 2026-09-30T04:29:28+10:00: min-
 #: of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 47926
+#: RE-PINNED 2026-09-30, 47926 to 48236 (+310), the twins lane reads this twin
+#: at 47926 before this change and at 48236 with it (+310): the
+#: catalog_key_taken refusal kind adds a catalog row and a vocabulary member,
+#: and a keyed catalog head's write is admitted against the rows already
+#: holding its key as it lands (engine/spaces/catalog.pl,
+#: metta_catalog_exclusive/3 under metta_catalog_serialised/1), so a process
+#: pays for the new kind's row and member and for keyed admission of the
+#: catalog rows it writes [measured 2026-09-30T04:47:35+10:00: min-of-3 serial
+#: fresh processes; command=python extensions/python/tools/twin_coverage.py
+#: --repin].
+BUDGET = 48236
 
 #: OVERRUN 2026-09-07, 27600: it proves seventeen claims where the example
 #: states four: the example's own comment leaves the HOST half of the nesting

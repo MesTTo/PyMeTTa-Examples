@@ -593,7 +593,17 @@ def twin(m):
 #: declare costs one indexed miss and no ownership probe [measured
 #: 2026-09-30T04:17:47+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 14926
+#: RE-PINNED 2026-09-30, 14926 to 14970 (+44), the twins lane reads this twin
+#: at 14926 before this change and at 14970 with it (+44): the
+#: catalog_key_taken refusal kind adds a catalog row and a vocabulary member,
+#: and a keyed catalog head's write is admitted against the rows already
+#: holding its key as it lands (engine/spaces/catalog.pl,
+#: metta_catalog_exclusive/3 under metta_catalog_serialised/1), so a process
+#: pays for the new kind's row and member and for keyed admission of the
+#: catalog rows it writes [measured 2026-09-30T04:47:31+10:00: min-of-3 serial
+#: fresh processes; command=python extensions/python/tools/twin_coverage.py
+#: --repin].
+BUDGET = 14970
 
 #: DIVERGED 2026-09-07, the example holds 1 atom the twin does not (1 =) and
 #: the twin holds 2 the example does not (1 =, 1 @doc): the twin is an ordinary

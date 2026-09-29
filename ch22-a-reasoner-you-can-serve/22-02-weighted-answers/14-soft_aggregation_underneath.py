@@ -565,4 +565,14 @@ def twin(m):
 #: soft-symbol?, no longer loads, its scorer asking is-symbol instead [measured
 #: 2026-09-30T04:43:10+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 130222
+#: RE-PINNED 2026-09-30, 130222 to 130242 (+20), the twins lane reads this twin
+#: at 130222 before this change and at 130242 with it (+20): the
+#: catalog_key_taken refusal kind adds a catalog row and a vocabulary member,
+#: and a keyed catalog head's write is admitted against the rows already
+#: holding its key as it lands (engine/spaces/catalog.pl,
+#: metta_catalog_exclusive/3 under metta_catalog_serialised/1), so a process
+#: pays for the new kind's row and member and for keyed admission of the
+#: catalog rows it writes [measured 2026-09-30T04:49:41+10:00: min-of-3 serial
+#: fresh processes; command=python extensions/python/tools/twin_coverage.py
+#: --repin].
+BUDGET = 130242

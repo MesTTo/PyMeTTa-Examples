@@ -663,7 +663,21 @@ def twin(m):
 #: another live requester still asks for [measured 2026-09-30T04:34:12+10:00:
 #: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 330460
+#: RE-PINNED 2026-09-30, 330460 to 330522 (+62), the twins lane reads this twin
+#: at 330460 before this change and at 330522 with it (+62): the
+#: catalog_key_taken refusal kind adds a catalog row and a vocabulary member,
+#: and a keyed catalog head's write is admitted against the rows already
+#: holding its key as it lands (engine/spaces/catalog.pl,
+#: metta_catalog_exclusive/3 under metta_catalog_serialised/1), so a process
+#: pays for the new kind's row and member and for keyed admission of the
+#: catalog rows it writes; it read 330460 against its pin 330457 before this
+#: change, +3 from an earlier commit of this landing, the formal doc family's
+#: record reading, inside the allowance, -3 from an earlier commit of this
+#: landing, the formula count's variable claim, inside the allowance, +3 from
+#: an earlier commit of this landing, is-symbol, inside the allowance [measured
+#: 2026-09-30T04:46:53+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 330522
 
 #: DIVERGED 2026-09-12, the example holds 1 atom the twin does not (1 =) and
 #: the twin holds 1 atom the example does not (1 =): the scope function is four

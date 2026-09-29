@@ -529,7 +529,23 @@ def twin(m):
 #: earlier commit of this landing, the smoothed formula model count, inside the
 #: allowance [measured 2026-09-30T04:26:21+10:00: min-of-3 serial fresh
 #: processes; command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 23984
+#: RE-PINNED 2026-09-30, 23984 to 24072 (+88), the twins lane reads this twin
+#: at 23983 before this change and at 24072 with it (+89): the
+#: catalog_key_taken refusal kind adds a catalog row and a vocabulary member,
+#: and a keyed catalog head's write is admitted against the rows already
+#: holding its key as it lands (engine/spaces/catalog.pl,
+#: metta_catalog_exclusive/3 under metta_catalog_serialised/1), so a process
+#: pays for the new kind's row and member and for keyed admission of the
+#: catalog rows it writes; it read 23983 against its pin 23985 before this
+#: change, -2 from an earlier commit of this landing, the takeover read through
+#: a module's compiled predicate, inside the allowance, +2 from an earlier
+#: commit of this landing, the record of every import request, inside the
+#: allowance, -1 from an earlier commit of this landing, the formal doc
+#: family's record reading, inside the allowance, -1 from an earlier commit of
+#: this landing, the formula count's variable claim, inside the allowance
+#: [measured 2026-09-30T04:48:00+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 24072
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 2 the example does not (2 :): a Python annotation IS a (:

@@ -779,9 +779,29 @@ def twin(m):
 #: side, as command=python extensions/python/tools/twin_coverage.py --measure
 #: --rounds 3 examples/ch08-data/08-03-the-shipped-libraries/12-dict_lib.metta
 #: reads it].
+#: RE-OBSERVED 2026-09-30 under
+#: 'full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot',
+#: 233583..233596 to 233593..233606 over 22 observations: the nine commits from
+#: the clause-index lookahead at its maximum to keyed catalog admission moved
+#: the runtime under this envelope, the prelude lookup that asks ownership only
+#: of a declaration it found shifted -796, the record of every import request
+#: shifted +515, keyed catalog admission +19 by the lane's own readings,
+#: unshifted; the envelope pools the 20 rounds with the twins lanes run at this
+#: commit's state under this protocol, since a whole-lane run under it is an
+#: observation, and with nothing an earlier runtime read: the 20 rounds read
+#: 233593..233606; the twins lane at this commit's code in the chain's readings
+#: read 233593; the twins lane of the whole gate on this commit's code at
+#: b4e5ef7b9 read 233593 [measured 2026-09-30T05:52:47+10:00: 20 full-lane
+#: observations at this commit's state; command=python
+#: extensions/python/tools/twin_coverage.py --observe --rounds 20] [measured
+#: 2026-09-30T03:56:43+10:00: the twins lane at this commit's code in the
+#: chain's readings; command=python extensions/python/tools/twin_coverage.py]
+#: [measured 2026-09-30T04:57:16+10:00: the twins lane of the whole gate on
+#: this commit's code at b4e5ef7b9; command=python
+#: extensions/python/tools/twin_coverage.py].
 BUDGET = {
-    "minimum": 233583,
-    "maximum": 233596,
-    "observations": 21,
+    "minimum": 233593,
+    "maximum": 233606,
+    "observations": 22,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }

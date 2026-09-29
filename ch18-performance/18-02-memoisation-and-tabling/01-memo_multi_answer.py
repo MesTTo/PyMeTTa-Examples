@@ -603,4 +603,15 @@ def twin(m):
 #: requester still asks for [measured 2026-09-30T04:34:50+10:00: min-of-3
 #: serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 31268
+#: RE-PINNED 2026-09-30, 31268 to 31335 (+67), the twins lane reads this twin
+#: at 31270 before this change and at 31335 with it (+65): the
+#: catalog_key_taken refusal kind adds a catalog row and a vocabulary member,
+#: and a keyed catalog head's write is admitted against the rows already
+#: holding its key as it lands (engine/spaces/catalog.pl,
+#: metta_catalog_exclusive/3 under metta_catalog_serialised/1), so a process
+#: pays for the new kind's row and member and for keyed admission of the
+#: catalog rows it writes; it read 31270 against its pin 31268 before this
+#: change, +2 from an earlier commit of this landing, is-symbol, inside the
+#: allowance [measured 2026-09-30T04:48:05+10:00: min-of-3 serial fresh
+#: processes; command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 31335

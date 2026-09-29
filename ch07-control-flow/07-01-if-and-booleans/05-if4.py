@@ -467,7 +467,18 @@ def twin(m):
 #: its pin 4996 before this change, -2 landed main's own reading against that
 #: pin [measured 2026-09-30T04:15:12+10:00: min-of-3 serial fresh processes;
 #: command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 4977
+#: RE-PINNED 2026-09-30, 4977 to 5023 (+46), the twins lane reads this twin at
+#: 4979 before this change and at 5023 with it (+44): the catalog_key_taken
+#: refusal kind adds a catalog row and a vocabulary member, and a keyed catalog
+#: head's write is admitted against the rows already holding its key as it
+#: lands (engine/spaces/catalog.pl, metta_catalog_exclusive/3 under
+#: metta_catalog_serialised/1), so a process pays for the new kind's row and
+#: member and for keyed admission of the catalog rows it writes; it read 4979
+#: against its pin 4977 before this change, +2 from an earlier commit of this
+#: landing, the takeover read through a module's compiled predicate, inside the
+#: allowance [measured 2026-09-30T04:44:54+10:00: min-of-3 serial fresh
+#: processes; command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 5023
 #: OVERRUN 2026-09-18, 0 to 124 (+124): the twin costs 4709 against the
 #: example's 1581 and a ceiling of 4585 with the earlier declaration; a minimal
 #: twin of this example costs 1143, inside the 1739 the band alone allows, so
@@ -555,7 +566,18 @@ BUDGET = 4977
 #: files there the repairs its registrations owe, and drains them once when it
 #: finishes, so a caller compiled before the name became a function is
 #: repaired.
-OVERRUN = 1229
+#: OVERRUN 2026-09-30, 1229 to 1245 (+16): the twin costs 5023 against the
+#: example's 1665 and a ceiling of 5007.5 with the earlier declaration
+#: [measured 2026-09-30T03:56:43+10:00: the twins lane at this commit in the
+#: chain's readings, one full lane in one battery; command=python
+#: extensions/python/tools/twin_coverage.py]; with keyed catalog admission, the
+#: catalog_key_taken refusal kind adds a catalog row and a vocabulary member,
+#: and a keyed catalog head's write is admitted against the rows already
+#: holding its key as it lands (engine/spaces/catalog.pl,
+#: metta_catalog_exclusive/3 under metta_catalog_serialised/1), so a process
+#: pays for the new kind's row and member and for keyed admission of the
+#: catalog rows it writes.
+OVERRUN = 1245
 
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and

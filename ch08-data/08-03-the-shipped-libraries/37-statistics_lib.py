@@ -653,7 +653,21 @@ def twin(m):
 #: another live requester still asks for [measured 2026-09-30T04:34:38+10:00:
 #: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 2277388
+#: RE-PINNED 2026-09-30, 2277388 to 2277455 (+67), the twins lane reads this
+#: twin at 2277390 before this change and at 2277455 with it (+65): the
+#: catalog_key_taken refusal kind adds a catalog row and a vocabulary member,
+#: and a keyed catalog head's write is admitted against the rows already
+#: holding its key as it lands (engine/spaces/catalog.pl,
+#: metta_catalog_exclusive/3 under metta_catalog_serialised/1), so a process
+#: pays for the new kind's row and member and for keyed admission of the
+#: catalog rows it writes; it read 2277390 against its pin 2277388 before this
+#: change, +2 from an earlier commit of this landing, the formal doc family's
+#: record reading, inside the allowance, -2 from an earlier commit of this
+#: landing, the formula count's variable claim, inside the allowance, +2 from
+#: an earlier commit of this landing, is-symbol, inside the allowance [measured
+#: 2026-09-30T04:46:58+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 2277455
 
 #: RETIRED: the former 1826-inference overrun. The 78-claim MeTTa recipe now
 #: costs 40092306 and its twin 40107888, within the ordinary band.

@@ -481,5 +481,19 @@ def twin(m):
 #: twin reads 4170 where the definitions alone read 4156 (+14) [measured
 #: 2026-09-29T20:20:37+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 4170
+#: RE-PINNED 2026-09-30, 4170 to 4212 (+42), the twins lane reads this twin at
+#: 4168 before this change and at 4212 with it (+44): the catalog_key_taken
+#: refusal kind adds a catalog row and a vocabulary member, and a keyed catalog
+#: head's write is admitted against the rows already holding its key as it
+#: lands (engine/spaces/catalog.pl, metta_catalog_exclusive/3 under
+#: metta_catalog_serialised/1), so a process pays for the new kind's row and
+#: member and for keyed admission of the catalog rows it writes; it read 4168
+#: against its pin 4170 before this change, -1 landed main's own reading
+#: against that pin, -3 from an earlier commit of this landing, the prelude
+#: lookup that asks ownership only of a declaration it found, inside the
+#: allowance, +2 from an earlier commit of this landing, the takeover read
+#: through a module's compiled predicate, inside the allowance [measured
+#: 2026-09-30T04:44:41+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 4212
 DIVERGENCE = "6646589902963f27182586005921d814f0832612cf7b485e3ca880c5903a8c8b"

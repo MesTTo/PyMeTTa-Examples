@@ -553,7 +553,17 @@ def twin(m):
 #: read through a module's compiled predicate, inside the allowance [measured
 #: 2026-09-30T04:34:14+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 333565
+#: RE-PINNED 2026-09-30, 333565 to 333594 (+29), the twins lane reads this twin
+#: at 333565 before this change and at 333594 with it (+29): the
+#: catalog_key_taken refusal kind adds a catalog row and a vocabulary member,
+#: and a keyed catalog head's write is admitted against the rows already
+#: holding its key as it lands (engine/spaces/catalog.pl,
+#: metta_catalog_exclusive/3 under metta_catalog_serialised/1), so a process
+#: pays for the new kind's row and member and for keyed admission of the
+#: catalog rows it writes [measured 2026-09-30T04:46:35+10:00: min-of-3 serial
+#: fresh processes; command=python extensions/python/tools/twin_coverage.py
+#: --repin].
+BUDGET = 333594
 
 #: OVERRUN 2026-09-12, 1399: the example nests its law claims in one evaluation
 #: each, where Python reads them as separate calls whose intermediate sets cross
