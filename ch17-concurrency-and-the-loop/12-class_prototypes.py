@@ -429,9 +429,24 @@ def twin(m):
 #: commit; command=python extensions/python/tools/twin_coverage.py] [measured
 #: 2026-09-29T10:13:18+10:00: the twins lane of the third pins re-read at md's
 #: commit; command=python extensions/python/tools/twin_coverage.py].
+#: SHIFTED 2026-09-29 by +52, 3337680..3337680 to 3337732..3337732 over 23
+#: under
+#: 'full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot':
+#: Item 3's lib_thread loads for 52 more inferences at a first import in a
+#: process (a fresh import of lib.thread reads 103,109 at item 1 and 103,161 at
+#: item 3), and this twin reads +52, once that; it calls neither
+#: thread_cancel/2 nor future_join_/2 at either commit. The observations record
+#: the full lane's spread around the count, and this change moves the count, so
+#: both bounds move by the serial delta, the twin's minimum of three serial
+#: runs with the change, 3337732, less its minimum of three before it, 3337680,
+#: until the next full-lane observation reads them again [measured
+#: 2026-09-29T18:31:29+10:00: the minimum of three fresh-process runs on each
+#: side, as command=python extensions/python/tools/twin_coverage.py --measure
+#: --rounds 3 examples/ch17-concurrency-and-the-loop/12-class_prototypes.metta
+#: reads it].
 BUDGET = {
-    "minimum": 3337680,
-    "maximum": 3337680,
+    "minimum": 3337732,
+    "maximum": 3337732,
     "observations": 23,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
