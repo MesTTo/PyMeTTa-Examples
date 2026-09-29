@@ -691,4 +691,17 @@ def twin(m):  # noqa: ARG001  -- both spaces are created here; the default handl
 #: twin reads 68810 where the definitions alone read 68781 (+29) [measured
 #: 2026-09-29T06:51:44+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 68810
+#: RE-PINNED 2026-09-29, 68810 to 68911 (+101), this twin reads 68810 before
+#: the change and 68911 with the change (+101): the fb step adds
+#: metta_reference_name_entries/5, metta_reference_names_alone/3,
+#: metta_reference_owed_ledger/5 and metta_reference_owed_name/2 to the
+#: metta_engine module, and on a tree that defines them and never calls them
+#: this twin reads 68940 (+130), which only a walk over SWI's predicate or atom
+#: tables can move, by visiting more entries or visiting them in another order;
+#: a change of a space's own head owes its name, a drain publishes a space
+#: owing only rows and names by those names' entries, and a definition's
+#: completion walks only the space's importers: with that use this twin reads
+#: 68911 where the definitions alone read 68940 (-29) [measured
+#: 2026-09-29T06:53:44+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 68911

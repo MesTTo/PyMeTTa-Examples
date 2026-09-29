@@ -463,4 +463,12 @@ def twin(m):
 #: read 88609 (-2756) [measured 2026-09-29T06:51:52+10:00: min-of-3 serial
 #: fresh processes; command=python extensions/python/tools/twin_coverage.py
 #: --repin].
-BUDGET = 85853
+#: RE-PINNED 2026-09-29, 85853 to 83441 (-2412), this twin reads 85853 before
+#: the change and 83441 with the change (-2412): a change of a space's own head
+#: owes its name, a drain publishes a space owing only rows and names by those
+#: names' entries, and a definition's completion walks only the space's
+#: importers: with that use this twin reads 83441 where the definitions alone
+#: read 85853 (-2412) [measured 2026-09-29T06:53:44+10:00: min-of-3 serial
+#: fresh processes; command=python extensions/python/tools/twin_coverage.py
+#: --repin].
+BUDGET = 83441

@@ -340,9 +340,25 @@ def twin(m):
 #: extensions/python/tools/twin_coverage.py --measure --rounds 3
 #: examples/ch20-extending-the-engine/20-04-modules-and-the-catalog/12-reference_maps.metta
 #: reads it].
+#: SHIFTED 2026-09-28 by -878, 111844..111844 to 110966..110966 over 42 under
+#: 'full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot':
+#: the publication of own heads by name: 14 of the run's 26 publications ask
+#: whether the names the space owes stand alone in its face
+#: (metta_reference_names_alone/3, each check testing every entry of the face
+#: against the owed names) and go by those names, and the space owes 29 times
+#: where it owed 35 (metta_reference_owe/2), a changed own head owed by its
+#: name once. The observations record the full lane's spread around the count,
+#: and this change moves the count, so both bounds move by the serial delta,
+#: the twin's minimum of three serial runs with the change, 110966, less its
+#: minimum of three before it, 111844, until the next full-lane observation
+#: reads them again [measured 2026-09-28T22:41:51+10:00: the minimum of three
+#: fresh-process runs on each side, as command=python
+#: extensions/python/tools/twin_coverage.py --measure --rounds 3
+#: examples/ch20-extending-the-engine/20-04-modules-and-the-catalog/12-reference_maps.metta
+#: reads it].
 BUDGET = {
-    "minimum": 111844,
-    "maximum": 111844,
+    "minimum": 110966,
+    "maximum": 110966,
     "observations": 42,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
