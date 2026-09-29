@@ -466,4 +466,11 @@ def twin(m):
 #: requester still asks for [measured 2026-09-30T04:34:37+10:00: min-of-3
 #: serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 91454
+#: RE-PINNED 2026-09-30, 91454 to 91718 (+264), the twins lane reads this twin
+#: at 91454 before this change and at 91718 with it (+264): is-symbol is
+#: published as an engine builtin with its type row beside is-var, is-ground,
+#: is-expr and is-space, and lib_soft's Prolog half, which only defined soft-
+#: symbol?, no longer loads, its scorer asking is-symbol instead [measured
+#: 2026-09-30T04:43:10+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 91718

@@ -763,4 +763,11 @@ def twin(m):  # noqa: ARG001  -- both spaces are created here; the default handl
 #: so a program that reads a document pays for that read and that walk
 #: [measured 2026-09-30T04:36:57+10:00: min-of-3 serial fresh processes;
 #: command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 69435
+#: RE-PINNED 2026-09-30, 69435 to 69481 (+46), the twins lane reads this twin
+#: at 69435 before this change and at 69481 with it (+46): is-symbol is
+#: published as an engine builtin with its type row beside is-var, is-ground,
+#: is-expr and is-space, and lib_soft's Prolog half, which only defined soft-
+#: symbol?, no longer loads, its scorer asking is-symbol instead [measured
+#: 2026-09-30T04:43:10+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 69481

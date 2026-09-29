@@ -657,9 +657,22 @@ def twin(m):
 #: side, as command=python extensions/python/tools/twin_coverage.py --measure
 #: --rounds 3 examples/ch17-concurrency-and-the-loop/08-class_grains.metta
 #: reads it].
+#: SHIFTED 2026-09-30 by +3, 3495502..3495502 to 3495505..3495505 over 21 under
+#: 'full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot':
+#: Is-symbol is published as an engine builtin with its type row beside is-var,
+#: is-ground, is-expr and is-space, and lib_soft's Prolog half, which only
+#: defined soft-symbol?, no longer loads, its scorer asking is-symbol instead.
+#: The observations record the full lane's spread around the count, and this
+#: change moves the count, so both bounds move by the serial delta, the twin's
+#: minimum of three serial runs with the change, 3495505, less its minimum of
+#: three before it, 3495502, until the next full-lane observation reads them
+#: again [measured 2026-09-30T03:53:55+10:00: the minimum of three
+#: fresh-process runs on each side, as command=python
+#: extensions/python/tools/twin_coverage.py --measure --rounds 3
+#: examples/ch17-concurrency-and-the-loop/08-class_grains.metta reads it].
 BUDGET = {
-    "minimum": 3495502,
-    "maximum": 3495502,
+    "minimum": 3495505,
+    "maximum": 3495505,
     "observations": 21,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
