@@ -718,4 +718,13 @@ def twin(m):  # noqa: ARG001  -- both spaces are created here; the default handl
 #: repaired: with that use this twin reads 68997 where the definitions alone
 #: read 68983 (+14) [measured 2026-09-29T20:25:30+10:00: min-of-3 serial fresh
 #: processes; command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 68997
+#: RE-PINNED 2026-09-30, 68997 to 69140 (+143), this twin reads 68995 before
+#: the change and 69140 with the change (+145): the formula model count smooths
+#: over the variables each diagram path skips (engine/metta/algebra_formula.pl,
+#: metta_formula_model_count/3): a count walks the formula once for its
+#: support, builds the level map and threads a count, lift and factor memo,
+#: where it weighed each diagram node alone; it read 68995 against its pin
+#: 68997 before this change, -2 landed main's own reading against that pin
+#: [measured 2026-09-30T04:12:56+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 69140

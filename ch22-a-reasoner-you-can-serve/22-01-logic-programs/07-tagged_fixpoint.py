@@ -166,4 +166,12 @@ def twin(m):
 #: reader on swipl-patched.7, the series on swipl-patched.8, and the stack
 #: through janus-contract B on swipl-patched.8 twice; command=sh tools/check.sh
 #: twins].
-BUDGET = 27253
+#: RE-PINNED 2026-09-30, 27253 to 27871 (+618), this twin reads 27253 before
+#: the change and 27871 with the change (+618): the formula model count smooths
+#: over the variables each diagram path skips (engine/metta/algebra_formula.pl,
+#: metta_formula_model_count/3): a count walks the formula once for its
+#: support, builds the level map and threads a count, lift and factor memo,
+#: where it weighed each diagram node alone [measured
+#: 2026-09-30T04:12:56+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 27871
