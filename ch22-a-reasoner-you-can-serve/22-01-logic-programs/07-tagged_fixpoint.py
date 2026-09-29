@@ -174,4 +174,11 @@ def twin(m):
 #: where it weighed each diagram node alone [measured
 #: 2026-09-30T04:12:56+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 27871
+#: RE-PINNED 2026-09-30, 27871 to 27931 (+60), the twins lane reads this twin
+#: at 27871 before this change and at 27931 with it (+60): a formula answer's
+#: model count reads each variable through the target carrier's variable claim
+#: (engine/metta/algebra_formula.pl, metta_formula_levels/6 through
+#: metta_algebra_variable/4), one claim lookup for each leaf a count reads
+#: [measured 2026-09-30T04:37:24+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 27931
