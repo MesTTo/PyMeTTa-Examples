@@ -373,4 +373,12 @@ RUNG = "a `let*` whose bindings arrive as a VALUE has no assignment spelling"
 #: 9372 where the definitions alone read 9255 (+117) [measured
 #: 2026-09-29T06:42:18+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 9372
+#: RE-PINNED 2026-09-29, 9372 to 9399 (+27), this twin reads 9372 before the
+#: change and 9399 with the change (+27): every operation that registers a name
+#: outside a load opens a registration unit, files there the repairs its
+#: registrations owe, and drains them once when it finishes, so a caller
+#: compiled before the name became a function is repaired: with that use this
+#: twin reads 9399 where the definitions alone read 9372 (+27) [measured
+#: 2026-09-29T20:21:19+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 9399

@@ -451,7 +451,15 @@ def twin(m):
 #: earlier steps' moves inside its tolerance) and is not attributed here
 #: [measured 2026-09-29T06:42:01+10:00: min-of-3 serial fresh processes;
 #: command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 4420
+#: RE-PINNED 2026-09-29, 4420 to 4434 (+14), this twin reads 4420 before the
+#: change and 4434 with the change (+14): every operation that registers a name
+#: outside a load opens a registration unit, files there the repairs its
+#: registrations owe, and drains them once when it finishes, so a caller
+#: compiled before the name became a function is repaired: with that use this
+#: twin reads 4434 where the definitions alone read 4420 (+14) [measured
+#: 2026-09-29T20:20:50+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 4434
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 =): the twin is an ordinary Python
@@ -542,4 +550,13 @@ DIVERGENCE = "26c23ce9e6fb37f3687387e2ae0cc6fe594de13826e0d1bfaf351fc743cd0d4d"
 #: extensions/python/tools/twin_coverage.py]; the directed shadow repair: each
 #: definition marks its name as changed and a sweep repairs only the receipts
 #: naming a marked name, where it re-checked every receipt the process held.
-OVERRUN = 405
+#: OVERRUN 2026-09-29, 405 to 411 (+6): the twin costs 4434 against the
+#: example's 1888 and a ceiling of 4428.8 with the earlier declaration
+#: [measured 2026-09-29T18:49:11+10:00: the twins lane at the item2 stage of
+#: the chain readings, one full lane in one battery; command=python
+#: extensions/python/tools/twin_coverage.py]; the registration units: every
+#: operation that registers a name outside a load opens a registration unit,
+#: files there the repairs its registrations owe, and drains them once when it
+#: finishes, so a caller compiled before the name became a function is
+#: repaired.
+OVERRUN = 411

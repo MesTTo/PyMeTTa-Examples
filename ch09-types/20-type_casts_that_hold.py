@@ -390,4 +390,12 @@ G_TEXT = G("text")
 #: the earlier steps' moves inside its tolerance) and is not attributed here
 #: [measured 2026-09-29T06:44:03+10:00: min-of-3 serial fresh processes;
 #: command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 17082
+#: RE-PINNED 2026-09-29, 17082 to 17096 (+14), this twin reads 17082 before the
+#: change and 17096 with the change (+14): every operation that registers a
+#: name outside a load opens a registration unit, files there the repairs its
+#: registrations owe, and drains them once when it finishes, so a caller
+#: compiled before the name became a function is repaired: with that use this
+#: twin reads 17096 where the definitions alone read 17082 (+14) [measured
+#: 2026-09-29T20:24:01+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 17096

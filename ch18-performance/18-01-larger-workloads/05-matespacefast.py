@@ -478,7 +478,15 @@ def twin(m):
 #: twin reads 91238319 where the definitions alone read 91238202 (+117)
 #: [measured 2026-09-29T06:44:37+10:00: min-of-3 serial fresh processes;
 #: command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 91238319
+#: RE-PINNED 2026-09-29, 91238319 to 91238346 (+27), this twin reads 91238319
+#: before the change and 91238346 with the change (+27): every operation that
+#: registers a name outside a load opens a registration unit, files there the
+#: repairs its registrations owe, and drains them once when it finishes, so a
+#: caller compiled before the name became a function is repaired: with that use
+#: this twin reads 91238346 where the definitions alone read 91238319 (+27)
+#: [measured 2026-09-29T20:24:43+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 91238346
 
 #: DIVERGED 2026-09-07, the example holds 1572864 atoms and the twin 1572864,
 #: over the 50000 this lane enumerates, so the difference is pinned as the two
@@ -528,4 +536,13 @@ DIVERGENCE = "0b995b079c8509570d648f5387f6ba4787cc0739d4769a757e2b79974aed0179"
 #: extensions/python/tools/twin_coverage.py]; the directed shadow repair: each
 #: definition marks its name as changed and a sweep repairs only the receipts
 #: naming a marked name, where it re-checked every receipt the process held.
-OVERRUN = 6449014
+#: OVERRUN 2026-09-29, 6449014 to 6449021 (+7): the twin costs 91238346 against
+#: the example's 77079435 and a ceiling of 91238339.5 with the earlier
+#: declaration [measured 2026-09-29T18:49:11+10:00: the twins lane at the item2
+#: stage of the chain readings, one full lane in one battery; command=python
+#: extensions/python/tools/twin_coverage.py]; the registration units: every
+#: operation that registers a name outside a load opens a registration unit,
+#: files there the repairs its registrations owe, and drains them once when it
+#: finishes, so a caller compiled before the name became a function is
+#: repaired.
+OVERRUN = 6449021

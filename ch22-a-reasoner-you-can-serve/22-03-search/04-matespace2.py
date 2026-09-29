@@ -550,7 +550,15 @@ RUNG = (
 #: twin reads 43543406 where the definitions alone read 43543127 (+279)
 #: [measured 2026-09-29T06:46:33+10:00: min-of-3 serial fresh processes;
 #: command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 43543406
+#: RE-PINNED 2026-09-29, 43543406 to 43543472 (+66), this twin reads 43543406
+#: before the change and 43543472 with the change (+66): every operation that
+#: registers a name outside a load opens a registration unit, files there the
+#: repairs its registrations owe, and drains them once when it finishes, so a
+#: caller compiled before the name became a function is repaired: with that use
+#: this twin reads 43543472 where the definitions alone read 43543406 (+66)
+#: [measured 2026-09-29T20:28:23+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 43543472
 
 #: OVERRUN 2026-09-07, 6197400: it names `expand`, `mate` and `rewriteK` as
 #: definitions and asserts the atom count, where the example writes them as
@@ -576,7 +584,16 @@ BUDGET = 43543406
 #: extensions/python/tools/twin_coverage.py]; the directed shadow repair: each
 #: definition marks its name as changed and a sweep repairs only the receipts
 #: naming a marked name, where it re-checked every receipt the process held.
-OVERRUN = 10085029
+#: OVERRUN 2026-09-29, 10085029 to 10085059 (+30): the twin costs 43543472
+#: against the example's 30413477 and a ceiling of 43543442.7 with the earlier
+#: declaration [measured 2026-09-29T18:49:11+10:00: the twins lane at the item2
+#: stage of the chain readings, one full lane in one battery; command=python
+#: extensions/python/tools/twin_coverage.py]; the registration units: every
+#: operation that registers a name outside a load opens a registration unit,
+#: files there the repairs its registrations owe, and drains them once when it
+#: finishes, so a caller compiled before the name became a function is
+#: repaired.
+OVERRUN = 10085059
 
 #: DIVERGED 2026-09-07, the example holds 4 atoms the twin does not (4 =) and
 #: the twin holds 5 the example does not (1 :, 4 =): the twin is an ordinary

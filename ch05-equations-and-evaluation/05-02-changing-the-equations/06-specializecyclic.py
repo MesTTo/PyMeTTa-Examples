@@ -365,7 +365,15 @@ def twin(m):
 #: 26119 where the definitions alone read 25894 (+225) [measured
 #: 2026-09-29T06:41:44+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 26119
+#: RE-PINNED 2026-09-29, 26119 to 26189 (+70), this twin reads 26119 before the
+#: change and 26189 with the change (+70): every operation that registers a
+#: name outside a load opens a registration unit, files there the repairs its
+#: registrations owe, and drains them once when it finishes, so a caller
+#: compiled before the name became a function is repaired: with that use this
+#: twin reads 26189 where the definitions alone read 26119 (+70) [measured
+#: 2026-09-29T20:20:24+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 26189
 
 #: OVERRUN 2026-09-07, 2400: the mutually recursive pair takes the `@m.rules`
 #: door, which stages two equations where the example writes two. Measured

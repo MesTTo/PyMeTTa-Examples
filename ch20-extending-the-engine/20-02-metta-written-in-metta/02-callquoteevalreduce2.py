@@ -535,7 +535,15 @@ def twin(m):
 #: 49170 where the definitions alone read 48837 (+333) [measured
 #: 2026-09-29T06:45:29+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 49170
+#: RE-PINNED 2026-09-29, 49170 to 49249 (+79), this twin reads 49170 before the
+#: change and 49249 with the change (+79): every operation that registers a
+#: name outside a load opens a registration unit, files there the repairs its
+#: registrations owe, and drains them once when it finishes, so a caller
+#: compiled before the name became a function is repaired: with that use this
+#: twin reads 49249 where the definitions alone read 49170 (+79) [measured
+#: 2026-09-29T20:26:15+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 49249
 #: OVERRUN 2026-09-18, 0 to 1705 (+1705): the twin costs 45856 against the
 #: example's 31350 and a ceiling of 44151 with the earlier declaration; a
 #: minimal twin of this example costs 31148, inside the 34485 the band alone

@@ -709,9 +709,22 @@ def twin(m):
 #: mean inside the window] [measured 2026-09-29T11:03:30+10:00: the inference
 #: counter and the held engines' credits read at every line of the twin in 40
 #: fresh processes at md].
+#: SHIFTED 2026-09-29 by +861, 233132..233145 to 233993..234006 over 23 under
+#: 'full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot':
+#: Item 2 opens a registration unit around every operation this twin's run
+#: makes that registers a name outside a load, or joins the one standing: 12
+#: inferences to open one, 6 inside another operation's and 7 inside a load, so
+#: it reads +861. The observations record the full lane's spread around the
+#: count, and this change moves the count, so both bounds move by the serial
+#: delta, the twin's minimum of three serial runs with the change, 233993, less
+#: its minimum of three before it, 233132, until the next full-lane observation
+#: reads them again [measured 2026-09-29T18:52:32+10:00: the minimum of three
+#: fresh-process runs on each side, as command=python
+#: extensions/python/tools/twin_coverage.py --measure --rounds 3
+#: examples/ch08-data/08-03-the-shipped-libraries/12-dict_lib.metta reads it].
 BUDGET = {
-    "minimum": 233132,
-    "maximum": 233145,
+    "minimum": 233993,
+    "maximum": 234006,
     "observations": 23,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }

@@ -759,7 +759,18 @@ def twin(m):
 #: 2026-09-29T11:28:36+10:00: docs/journal/2026-09-09-the-splice-in-an-arrow.md
 #: line 221, empirical bounds do not receive the deterministic four-inference
 #: tolerance].
-BUDGET = 40068
+#: RE-PINNED 2026-09-29, 40068 to 40118 (+50), this twin reads 40070 before the
+#: change and 40116 with the change (+46): every operation that registers a
+#: name outside a load opens a registration unit, files there the repairs its
+#: registrations owe, and drains them once when it finishes, so a caller
+#: compiled before the name became a function is repaired: with that use this
+#: twin reads 40116 where the definitions alone read 40070 (+46); it read 40070
+#: against its pin 40068 before this step, a distance of +2 that is not this
+#: step's (+3 the trunk's own and -1 the earlier steps' moves inside its
+#: tolerance) and is not attributed here [measured 2026-09-29T20:24:33+10:00:
+#: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 40118
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 :): a Python annotation IS a (:

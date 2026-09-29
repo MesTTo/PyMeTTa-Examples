@@ -691,9 +691,23 @@ def twin(m):
 #: commit; command=python extensions/python/tools/twin_coverage.py] [measured
 #: 2026-09-29T10:13:18+10:00: the twins lane of the third pins re-read at md's
 #: commit; command=python extensions/python/tools/twin_coverage.py].
+#: SHIFTED 2026-09-29 by +252, 58115..58115 to 58367..58367 over 23 under
+#: 'full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot':
+#: Item 2 opens a registration unit around every operation this twin's run
+#: makes that registers a name outside a load, or joins the one standing: 12
+#: inferences to open one, 6 inside another operation's and 7 inside a load, so
+#: it reads +252. The observations record the full lane's spread around the
+#: count, and this change moves the count, so both bounds move by the serial
+#: delta, the twin's minimum of three serial runs with the change, 58367, less
+#: its minimum of three before it, 58115, until the next full-lane observation
+#: reads them again [measured 2026-09-29T18:52:32+10:00: the minimum of three
+#: fresh-process runs on each side, as command=python
+#: extensions/python/tools/twin_coverage.py --measure --rounds 3
+#: examples/ch18-performance/18-02-memoisation-and-tabling/11-tabling_space_write.metta
+#: reads it].
 BUDGET = {
-    "minimum": 58115,
-    "maximum": 58115,
+    "minimum": 58367,
+    "maximum": 58367,
     "observations": 23,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }

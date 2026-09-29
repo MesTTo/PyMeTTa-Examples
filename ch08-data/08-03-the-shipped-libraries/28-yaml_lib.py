@@ -606,7 +606,22 @@ def twin(m):
 #: an earlier step of this landing re-pinned it) and is not attributed here
 #: [measured 2026-09-29T06:56:35+10:00: min-of-3 serial fresh processes;
 #: command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 328758
+#: RE-PINNED 2026-09-29, 328758 to 330411 (+1653), this twin reads 328758
+#: before the change and 330414 with the change (+1656): the change adds
+#: install_engine_prelude_registers/0, metta_reference_registered_prolog/4,
+#: run_registration_repairs/1, specialize_call_registered/7 and
+#: with_registration_unit/1 to the metta_engine module and add_program_batch/4
+#: to the spaces module, and on a tree that defines them and never calls them
+#: this twin reads 328755 (-3), which only a walk over SWI's predicate or atom
+#: tables can move, by visiting more entries or visiting them in another order;
+#: every operation that registers a name outside a load opens a registration
+#: unit, files there the repairs its registrations owe, and drains them once
+#: when it finishes, so a caller compiled before the name became a function is
+#: repaired: with that use this twin reads 330414 where the definitions alone
+#: read 328755 (+1659); its two base readings differ by 3, which the move
+#: exceeds [measured 2026-09-29T20:23:10+10:00: min-of-3 serial fresh
+#: processes; command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 330411
 
 #: DIVERGED 2026-09-12, the example holds 1 atom the twin does not (1 =) and
 #: the twin holds 1 atom the example does not (1 =): the scope function is four

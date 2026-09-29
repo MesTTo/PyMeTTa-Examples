@@ -553,7 +553,15 @@ def twin(m):
 #: 37160 where the definitions alone read 36417 (+743) [measured
 #: 2026-09-29T06:42:36+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 37160
+#: RE-PINNED 2026-09-29, 37160 to 37347 (+187), this twin reads 37160 before
+#: the change and 37347 with the change (+187): every operation that registers
+#: a name outside a load opens a registration unit, files there the repairs its
+#: registrations owe, and drains them once when it finishes, so a caller
+#: compiled before the name became a function is repaired: with that use this
+#: twin reads 37347 where the definitions alone read 37160 (+187) [measured
+#: 2026-09-29T20:21:53+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 37347
 
 #: DIVERGED 2026-09-07, the example holds 6 atoms the twin does not (6 =) and
 #: the twin holds 10 the example does not (3 :, 7 =): the twin is an ordinary

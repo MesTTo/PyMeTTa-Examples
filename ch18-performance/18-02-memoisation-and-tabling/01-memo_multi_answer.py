@@ -560,4 +560,20 @@ def twin(m):
 #: 31028 where the definitions alone read 30962 (+66) [measured
 #: 2026-09-29T06:44:42+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 31028
+#: RE-PINNED 2026-09-29, 31028 to 31238 (+210), this twin reads 31031 before
+#: the change and 31238 with the change (+207): the change adds
+#: install_engine_prelude_registers/0, metta_reference_registered_prolog/4,
+#: run_registration_repairs/1, specialize_call_registered/7 and
+#: with_registration_unit/1 to the metta_engine module and add_program_batch/4
+#: to the spaces module, and on a tree that defines them and never calls them
+#: this twin reads 31029 (-2), which only a walk over SWI's predicate or atom
+#: tables can move, by visiting more entries or visiting them in another order;
+#: every operation that registers a name outside a load opens a registration
+#: unit, files there the repairs its registrations owe, and drains them once
+#: when it finishes, so a caller compiled before the name became a function is
+#: repaired: with that use this twin reads 31238 where the definitions alone
+#: read 31029 (+209); it read 31031 against its pin 31028 before this step, a
+#: distance of +3 that is not this step's (+3 the trunk's own) and is not
+#: attributed here [measured 2026-09-29T20:24:47+10:00: min-of-3 serial fresh
+#: processes; command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 31238

@@ -590,7 +590,23 @@ def twin(m):
 #: 38501 where the definitions alone read 38389 (+112) [measured
 #: 2026-09-29T06:44:43+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 38501
+#: RE-PINNED 2026-09-29, 38501 to 38723 (+222), this twin reads 38504 before
+#: the change and 38723 with the change (+219): the change adds
+#: install_engine_prelude_registers/0, metta_reference_registered_prolog/4,
+#: run_registration_repairs/1, specialize_call_registered/7 and
+#: with_registration_unit/1 to the metta_engine module and add_program_batch/4
+#: to the spaces module, and on a tree that defines them and never calls them
+#: this twin reads 38502 (-2), which only a walk over SWI's predicate or atom
+#: tables can move, by visiting more entries or visiting them in another order;
+#: every operation that registers a name outside a load opens a registration
+#: unit, files there the repairs its registrations owe, and drains them once
+#: when it finishes, so a caller compiled before the name became a function is
+#: repaired: with that use this twin reads 38723 where the definitions alone
+#: read 38502 (+221); it read 38504 against its pin 38501 before this step, a
+#: distance of +3 that is not this step's (+3 the trunk's own) and is not
+#: attributed here [measured 2026-09-29T20:24:57+10:00: min-of-3 serial fresh
+#: processes; command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 38723
 
 #: OVERRUN 2026-09-07, 600: it stacks the two arities as two decorated clauses
 #: of one MeTTa name, where the example writes two equations. Measured 42187

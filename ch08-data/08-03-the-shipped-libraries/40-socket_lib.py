@@ -497,4 +497,12 @@ def twin(m):
 #: where the definitions alone read 308687 (+505) [measured
 #: 2026-09-29T06:56:45+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 309192
+#: RE-PINNED 2026-09-29, 309192 to 310555 (+1363), this twin reads 309192
+#: before the change and 310555 with the change (+1363): every operation that
+#: registers a name outside a load opens a registration unit, files there the
+#: repairs its registrations owe, and drains them once when it finishes, so a
+#: caller compiled before the name became a function is repaired: with that use
+#: this twin reads 310555 where the definitions alone read 309192 (+1363)
+#: [measured 2026-09-29T20:23:34+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 310555

@@ -449,7 +449,15 @@ def twin(m):
 #: earlier steps' moves inside its tolerance) and is not attributed here
 #: [measured 2026-09-29T06:42:02+10:00: min-of-3 serial fresh processes;
 #: command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 4982
+#: RE-PINNED 2026-09-29, 4982 to 4996 (+14), this twin reads 4982 before the
+#: change and 4996 with the change (+14): every operation that registers a name
+#: outside a load opens a registration unit, files there the repairs its
+#: registrations owe, and drains them once when it finishes, so a caller
+#: compiled before the name became a function is repaired: with that use this
+#: twin reads 4996 where the definitions alone read 4982 (+14) [measured
+#: 2026-09-29T20:20:50+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 4996
 #: OVERRUN 2026-09-18, 0 to 124 (+124): the twin costs 4709 against the
 #: example's 1581 and a ceiling of 4585 with the earlier declaration; a minimal
 #: twin of this example costs 1143, inside the 1739 the band alone allows, so
@@ -528,7 +536,16 @@ BUDGET = 4982
 #: extensions/python/tools/twin_coverage.py]; the directed shadow repair: each
 #: definition marks its name as changed and a sweep repairs only the receipts
 #: naming a marked name, where it re-checked every receipt the process held.
-OVERRUN = 1224
+#: OVERRUN 2026-09-29, 1224 to 1229 (+5): the twin costs 4996 against the
+#: example's 1655 and a ceiling of 4991.5 with the earlier declaration
+#: [measured 2026-09-29T18:49:11+10:00: the twins lane at the item2 stage of
+#: the chain readings, one full lane in one battery; command=python
+#: extensions/python/tools/twin_coverage.py]; the registration units: every
+#: operation that registers a name outside a load opens a registration unit,
+#: files there the repairs its registrations owe, and drains them once when it
+#: finishes, so a caller compiled before the name became a function is
+#: repaired.
+OVERRUN = 1229
 
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and

@@ -456,9 +456,23 @@ def twin(m):
 #: side, as command=python extensions/python/tools/twin_coverage.py --measure
 #: --rounds 3 examples/ch17-concurrency-and-the-loop/10-class_entities.metta
 #: reads it].
+#: SHIFTED 2026-09-29 by +4624, 1689000..1689000 to 1693624..1693624 over 23
+#: under
+#: 'full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot':
+#: Item 2 opens a registration unit around every operation this twin's run
+#: makes that registers a name outside a load, or joins the one standing: 12
+#: inferences to open one, 6 inside another operation's and 7 inside a load, so
+#: it reads +4624. The observations record the full lane's spread around the
+#: count, and this change moves the count, so both bounds move by the serial
+#: delta, the twin's minimum of three serial runs with the change, 1693624,
+#: less its minimum of three before it, 1689000, until the next full-lane
+#: observation reads them again [measured 2026-09-29T18:52:32+10:00: the
+#: minimum of three fresh-process runs on each side, as command=python
+#: extensions/python/tools/twin_coverage.py --measure --rounds 3
+#: examples/ch17-concurrency-and-the-loop/10-class_entities.metta reads it].
 BUDGET = {
-    "minimum": 1689000,
-    "maximum": 1689000,
+    "minimum": 1693624,
+    "maximum": 1693624,
     "observations": 23,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }

@@ -342,4 +342,12 @@ from metta import Expression  # noqa: E402  -- read after the claims it serves
 #: the earlier steps' moves inside its tolerance) and is not attributed here
 #: [measured 2026-09-29T06:41:17+10:00: min-of-3 serial fresh processes;
 #: command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 22879
+#: RE-PINNED 2026-09-29, 22879 to 22974 (+95), this twin reads 22879 before the
+#: change and 22974 with the change (+95): every operation that registers a
+#: name outside a load opens a registration unit, files there the repairs its
+#: registrations owe, and drains them once when it finishes, so a caller
+#: compiled before the name became a function is repaired: with that use this
+#: twin reads 22974 where the definitions alone read 22879 (+95) [measured
+#: 2026-09-29T20:19:44+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 22974

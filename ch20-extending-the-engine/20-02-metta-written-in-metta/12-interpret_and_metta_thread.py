@@ -408,4 +408,14 @@ V_X = V.x
 #: 31006 where the definitions alone read 30729 (+277) [measured
 #: 2026-09-29T06:45:41+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 31006
+#: RE-PINNED 2026-09-29, 31006 to 31074 (+68), this twin reads 31008 before the
+#: change and 31074 with the change (+66): every operation that registers a
+#: name outside a load opens a registration unit, files there the repairs its
+#: registrations owe, and drains them once when it finishes, so a caller
+#: compiled before the name became a function is repaired: with that use this
+#: twin reads 31074 where the definitions alone read 31008 (+66); it read 31008
+#: against its pin 31006 before this step, a distance of +2 that is not this
+#: step's (+2 the trunk's own) and is not attributed here [measured
+#: 2026-09-29T20:26:34+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 31074

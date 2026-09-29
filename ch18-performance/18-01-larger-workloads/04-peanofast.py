@@ -498,7 +498,15 @@ def twin(m):
 #: 91619 where the definitions alone read 91502 (+117) [measured
 #: 2026-09-29T06:44:35+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 91619
+#: RE-PINNED 2026-09-29, 91619 to 91646 (+27), this twin reads 91619 before the
+#: change and 91646 with the change (+27): every operation that registers a
+#: name outside a load opens a registration unit, files there the repairs its
+#: registrations owe, and drains them once when it finishes, so a caller
+#: compiled before the name became a function is repaired: with that use this
+#: twin reads 91646 where the definitions alone read 91619 (+27) [measured
+#: 2026-09-29T20:24:43+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 91646
 
 #: OVERRUN 2026-09-07, 17800: it asserts the atom count the example only
 #: writes, so the space is read once more than the example reads it. Measured

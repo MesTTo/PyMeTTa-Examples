@@ -442,7 +442,23 @@ def twin(m):
 #: the earlier steps' moves inside its tolerance) and is not attributed here
 #: [measured 2026-09-29T06:44:51+10:00: min-of-3 serial fresh processes;
 #: command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 29462
+#: RE-PINNED 2026-09-29, 29462 to 29671 (+209), this twin reads 29465 before
+#: the change and 29671 with the change (+206): the change adds
+#: install_engine_prelude_registers/0, metta_reference_registered_prolog/4,
+#: run_registration_repairs/1, specialize_call_registered/7 and
+#: with_registration_unit/1 to the metta_engine module and add_program_batch/4
+#: to the spaces module, and on a tree that defines them and never calls them
+#: this twin reads 29463 (-2), which only a walk over SWI's predicate or atom
+#: tables can move, by visiting more entries or visiting them in another order;
+#: every operation that registers a name outside a load opens a registration
+#: unit, files there the repairs its registrations owe, and drains them once
+#: when it finishes, so a caller compiled before the name became a function is
+#: repaired: with that use this twin reads 29671 where the definitions alone
+#: read 29463 (+208); it read 29465 against its pin 29462 before this step, a
+#: distance of +3 that is not this step's (+3 the trunk's own) and is not
+#: attributed here [measured 2026-09-29T20:25:02+10:00: min-of-3 serial fresh
+#: processes; command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 29671
 #: OVERRUN 2026-09-09, 0 to 515 (+515): a library's Prolog half compiles
 #: beside itself on its first import and loads from the artifact after
 #: (metta_load_source/2, seam:compiled_source/1): the example imports one, so

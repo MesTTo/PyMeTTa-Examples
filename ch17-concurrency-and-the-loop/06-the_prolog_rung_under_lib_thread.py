@@ -570,9 +570,25 @@ def twin(m):
 #: commit; command=python extensions/python/tools/twin_coverage.py] [measured
 #: 2026-09-29T10:13:18+10:00: the twins lane of the third pins re-read at md's
 #: commit; command=python extensions/python/tools/twin_coverage.py].
+#: SHIFTED 2026-09-29 by +621, 202844..202975 to 203465..203596 over 23 under
+#: 'full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot':
+#: Item 2 opens a registration unit around every operation this twin's run
+#: makes that registers a name outside a load, or joins the one standing: 12
+#: inferences to open one, 6 inside another operation's and 7 inside a load, so
+#: it reads +621. The definitions alone, with_registration_unit/1 and the five
+#: predicates beside it defined and never called, move it +75, and their use
+#: +546. The observations record the full lane's spread around the count, and
+#: this change moves the count, so both bounds move by the serial delta, the
+#: twin's minimum of three serial runs with the change, 203467, less its
+#: minimum of three before it, 202846, until the next full-lane observation
+#: reads them again [measured 2026-09-29T18:52:32+10:00: the minimum of three
+#: fresh-process runs on each side, as command=python
+#: extensions/python/tools/twin_coverage.py --measure --rounds 3
+#: examples/ch17-concurrency-and-the-loop/06-the_prolog_rung_under_lib_thread.metta
+#: reads it].
 BUDGET = {
-    "minimum": 202844,
-    "maximum": 202975,
+    "minimum": 203465,
+    "maximum": 203596,
     "observations": 23,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }

@@ -704,4 +704,18 @@ def twin(m):  # noqa: ARG001  -- both spaces are created here; the default handl
 #: 68911 where the definitions alone read 68940 (-29) [measured
 #: 2026-09-29T06:53:44+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 68911
+#: RE-PINNED 2026-09-29, 68911 to 68997 (+86), this twin reads 68911 before the
+#: change and 68997 with the change (+86): the change adds
+#: install_engine_prelude_registers/0, metta_reference_registered_prolog/4,
+#: run_registration_repairs/1, specialize_call_registered/7 and
+#: with_registration_unit/1 to the metta_engine module and add_program_batch/4
+#: to the spaces module, and on a tree that defines them and never calls them
+#: this twin reads 68983 (+72), which only a walk over SWI's predicate or atom
+#: tables can move, by visiting more entries or visiting them in another order;
+#: every operation that registers a name outside a load opens a registration
+#: unit, files there the repairs its registrations owe, and drains them once
+#: when it finishes, so a caller compiled before the name became a function is
+#: repaired: with that use this twin reads 68997 where the definitions alone
+#: read 68983 (+14) [measured 2026-09-29T20:25:30+10:00: min-of-3 serial fresh
+#: processes; command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 68997
