@@ -336,9 +336,24 @@ def twin(m):
 #: side, as command=python extensions/python/tools/twin_coverage.py --measure
 #: --rounds 3 examples/ch17-concurrency-and-the-loop/09-class_values.metta
 #: reads it].
+#: SHIFTED 2026-09-28 by +3138, 2401728..2401728 to 2404866..2404866 over 42
+#: under
+#: 'full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot':
+#: the directed shadow repair: the run marks 267 changed names for the next
+#: sweep (spaces:metta_shadow_name_changed/2), and 147 of those marks, made
+#: inside a transaction, are made again once it returns
+#: (metta_shadow_after_transaction/1). The observations record the full lane's
+#: spread around the count, and this change moves the count, so both bounds
+#: move by the serial delta, the twin's minimum of three serial runs with the
+#: change, 2404866, less its minimum of three before it, 2401728, until the
+#: next full-lane observation reads them again [measured
+#: 2026-09-28T22:32:34+10:00: the minimum of three fresh-process runs on each
+#: side, as command=python extensions/python/tools/twin_coverage.py --measure
+#: --rounds 3 examples/ch17-concurrency-and-the-loop/09-class_values.metta
+#: reads it].
 BUDGET = {
-    "minimum": 2401728,
-    "maximum": 2401728,
+    "minimum": 2404866,
+    "maximum": 2404866,
     "observations": 42,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }

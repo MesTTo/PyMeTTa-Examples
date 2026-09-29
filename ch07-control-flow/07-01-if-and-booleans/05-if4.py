@@ -440,7 +440,16 @@ def twin(m):
 #: lanes in wt-merge's battery 1, tsm-licence's series and its engine reader on
 #: swipl-patched.7, the series on swipl-patched.8, and the stack through janus-
 #: contract B on swipl-patched.8 twice; command=sh tools/check.sh twins].
-BUDGET = 4915
+#: RE-PINNED 2026-09-29, 4915 to 4982 (+67), this twin reads 4919 before the
+#: change and 4982 with the change (+63): each definition marks its name as
+#: changed and a sweep repairs only the receipts naming a marked name, where it
+#: re-checked every receipt the process held: with that use this twin reads
+#: 4982 where the definitions alone read 4919 (+63); it read 4919 against its
+#: pin 4915 before this step, a distance of +4 that is not this step's (+4 the
+#: earlier steps' moves inside its tolerance) and is not attributed here
+#: [measured 2026-09-29T06:42:02+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 4982
 #: OVERRUN 2026-09-18, 0 to 124 (+124): the twin costs 4709 against the
 #: example's 1581 and a ceiling of 4585 with the earlier declaration; a minimal
 #: twin of this example costs 1143, inside the 1739 the band alone allows, so
@@ -512,7 +521,14 @@ BUDGET = 4915
 #: definition through the define doors asks whether its module holds a shadow-
 #: import receipt for the name, holds it in flight until the write is visible
 #: when it does, and a sweep leaves a receipt another live thread holds.
-OVERRUN = 1149
+#: OVERRUN 2026-09-29, 1149 to 1224 (+75): the twin costs 4982 against the
+#: example's 1647 and a ceiling of 4907.7 with the earlier declaration
+#: [measured 2026-09-29T01:27:56+10:00: the twins lane at the c3 stage of the
+#: chain readings, one full lane in one battery; command=python
+#: extensions/python/tools/twin_coverage.py]; the directed shadow repair: each
+#: definition marks its name as changed and a sweep repairs only the receipts
+#: naming a marked name, where it re-checked every receipt the process held.
+OVERRUN = 1224
 
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and

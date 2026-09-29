@@ -528,7 +528,14 @@ def twin(m):
 #: 48837 where the definitions alone read 48813 (+24) [measured
 #: 2026-09-29T06:38:10+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 48837
+#: RE-PINNED 2026-09-29, 48837 to 49170 (+333), this twin reads 48837 before
+#: the change and 49170 with the change (+333): each definition marks its name
+#: as changed and a sweep repairs only the receipts naming a marked name, where
+#: it re-checked every receipt the process held: with that use this twin reads
+#: 49170 where the definitions alone read 48837 (+333) [measured
+#: 2026-09-29T06:45:29+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 49170
 #: OVERRUN 2026-09-18, 0 to 1705 (+1705): the twin costs 45856 against the
 #: example's 31350 and a ceiling of 44151 with the earlier declaration; a
 #: minimal twin of this example costs 31148, inside the 34485 the band alone

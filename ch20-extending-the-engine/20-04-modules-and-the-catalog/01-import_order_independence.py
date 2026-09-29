@@ -303,4 +303,13 @@ def twin(m):
 #: module at 2 inferences each [measured 2026-09-27T20:38:05+10:00: full twins
 #: lanes on swipl-patched.8 in wt-merge's battery 1, two with janus-contract A
 #: and two with walk-tax B; command=sh tools/check.sh twins].
-BUDGET = 7743
+#: RE-PINNED 2026-09-29, 7743 to 7831 (+88), this twin reads 7747 before the
+#: change and 7831 with the change (+84): each definition marks its name as
+#: changed and a sweep repairs only the receipts naming a marked name, where it
+#: re-checked every receipt the process held: with that use this twin reads
+#: 7831 where the definitions alone read 7747 (+84); it read 7747 against its
+#: pin 7743 before this step, a distance of +4 that is not this step's (+4 the
+#: earlier steps' moves inside its tolerance) and is not attributed here
+#: [measured 2026-09-29T06:45:49+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 7831

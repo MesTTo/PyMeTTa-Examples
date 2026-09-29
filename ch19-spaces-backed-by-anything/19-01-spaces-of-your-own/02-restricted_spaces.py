@@ -661,4 +661,20 @@ def twin(m):  # noqa: ARG001  -- both spaces are created here; the default handl
 #: inferences [measured 2026-09-27T20:31:29+10:00: full twins lanes on swipl-
 #: patched.8 in wt-merge's battery 1, two of the stack through janus-contract B
 #: and two with janus-contract A; command=sh tools/check.sh twins].
-BUDGET = 68498
+#: RE-PINNED 2026-09-29, 68498 to 68579 (+81), this twin reads 68502 before the
+#: change and 68579 with the change (+77): the c3 step adds
+#: '$metta_shadow_name_changed'/2, metta_module_below/2,
+#: metta_prepare_local_predicate/3, metta_repair_marked_shadow_imports/0,
+#: metta_restore_import/4, metta_shadow_name_changed/2 and
+#: metta_shadow_names_below/1 to the spaces module, and on a tree that defines
+#: them and never calls them this twin reads 68516 (+14), which only a walk
+#: over SWI's predicate or atom tables can move, by visiting more entries or
+#: visiting them in another order; each definition marks its name as changed
+#: and a sweep repairs only the receipts naming a marked name, where it re-
+#: checked every receipt the process held: with that use this twin reads 68579
+#: where the definitions alone read 68516 (+63); it read 68502 against its pin
+#: 68498 before this step, a distance of +4 that is not this step's (+4 the
+#: earlier steps' moves inside its tolerance) and is not attributed here
+#: [measured 2026-09-29T06:45:05+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 68579

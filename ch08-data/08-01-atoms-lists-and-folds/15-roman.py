@@ -742,7 +742,14 @@ def twin(m):
 #: reads 333568 where the definitions alone read 333427 (+141) [measured
 #: 2026-09-29T06:36:14+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 333568
+#: RE-PINNED 2026-09-29, 333568 to 334889 (+1321), this twin reads 333568
+#: before the change and 334889 with the change (+1321): each definition marks
+#: its name as changed and a sweep repairs only the receipts naming a marked
+#: name, where it re-checked every receipt the process held: with that use this
+#: twin reads 334889 where the definitions alone read 333568 (+1321) [measured
+#: 2026-09-29T06:42:46+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 334889
 
 #: OVERRUN 2026-09-07, 17700: it names every lib_roman function at every claim
 #: and runs the backwards `let` inverses beside them. Measured 320547 against a

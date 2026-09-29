@@ -445,7 +445,16 @@ def twin(m):
 #: lanes in wt-merge's battery 1, tsm-licence's series and its engine reader on
 #: swipl-patched.7, the series on swipl-patched.8, and the stack through janus-
 #: contract B on swipl-patched.8 twice; command=sh tools/check.sh twins].
-BUDGET = 3080
+#: RE-PINNED 2026-09-29, 3080 to 3147 (+67), this twin reads 3084 before the
+#: change and 3147 with the change (+63): each definition marks its name as
+#: changed and a sweep repairs only the receipts naming a marked name, where it
+#: re-checked every receipt the process held: with that use this twin reads
+#: 3147 where the definitions alone read 3084 (+63); it read 3084 against its
+#: pin 3080 before this step, a distance of +4 that is not this step's (+4 the
+#: earlier steps' moves inside its tolerance) and is not attributed here
+#: [measured 2026-09-29T06:43:52+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 3147
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 @doc): a Python annotation IS a (:

@@ -443,4 +443,11 @@ def twin(m):
 #: 5705 where the definitions alone read 5693 (+12) [measured
 #: 2026-09-29T06:35:35+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 5705
+#: RE-PINNED 2026-09-29, 5705 to 5876 (+171), this twin reads 5705 before the
+#: change and 5876 with the change (+171): each definition marks its name as
+#: changed and a sweep repairs only the receipts naming a marked name, where it
+#: re-checked every receipt the process held: with that use this twin reads
+#: 5876 where the definitions alone read 5705 (+171) [measured
+#: 2026-09-29T06:42:10+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 5876

@@ -366,4 +366,11 @@ RUNG = "a `let*` whose bindings arrive as a VALUE has no assignment spelling"
 #: 9255 where the definitions alone read 9247 (+8) [measured
 #: 2026-09-29T06:35:45+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 9255
+#: RE-PINNED 2026-09-29, 9255 to 9372 (+117), this twin reads 9255 before the
+#: change and 9372 with the change (+117): each definition marks its name as
+#: changed and a sweep repairs only the receipts naming a marked name, where it
+#: re-checked every receipt the process held: with that use this twin reads
+#: 9372 where the definitions alone read 9255 (+117) [measured
+#: 2026-09-29T06:42:18+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 9372

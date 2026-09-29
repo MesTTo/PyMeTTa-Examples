@@ -333,4 +333,13 @@ from metta import Expression  # noqa: E402  -- read after the claims it serves
 #: 2026-09-27T20:38:05+10:00: full twins lanes on swipl-patched.8 in wt-merge's
 #: battery 1, two with janus-contract A and two with walk-tax B; command=sh
 #: tools/check.sh twins].
-BUDGET = 22784
+#: RE-PINNED 2026-09-29, 22784 to 22879 (+95), this twin reads 22788 before the
+#: change and 22879 with the change (+91): each definition marks its name as
+#: changed and a sweep repairs only the receipts naming a marked name, where it
+#: re-checked every receipt the process held: with that use this twin reads
+#: 22879 where the definitions alone read 22788 (+91); it read 22788 against
+#: its pin 22784 before this step, a distance of +4 that is not this step's (+4
+#: the earlier steps' moves inside its tolerance) and is not attributed here
+#: [measured 2026-09-29T06:41:17+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 22879

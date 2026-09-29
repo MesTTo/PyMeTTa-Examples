@@ -576,7 +576,14 @@ def twin(m):
 #: the definitions alone read 34541 (+14) [measured 2026-09-29T06:37:29+10:00:
 #: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 34555
+#: RE-PINNED 2026-09-29, 34555 to 34623 (+68), this twin reads 34555 before the
+#: change and 34623 with the change (+68): each definition marks its name as
+#: changed and a sweep repairs only the receipts naming a marked name, where it
+#: re-checked every receipt the process held: with that use this twin reads
+#: 34623 where the definitions alone read 34555 (+68) [measured
+#: 2026-09-29T06:44:43+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 34623
 #: OVERRUN 2026-09-09, 0 to 1089 (+1089): a library's Prolog half compiles
 #: beside itself on its first import and loads from the artifact after
 #: (metta_load_source/2, seam:compiled_source/1): the example imports one, so

@@ -529,7 +529,14 @@ RUNG = (
 #: this twin reads 27315112 where the definitions alone read 27315092 (+20)
 #: [measured 2026-09-29T06:39:02+10:00: min-of-3 serial fresh processes;
 #: command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 27315112
+#: RE-PINNED 2026-09-29, 27315112 to 27315391 (+279), this twin reads 27315112
+#: before the change and 27315391 with the change (+279): each definition marks
+#: its name as changed and a sweep repairs only the receipts naming a marked
+#: name, where it re-checked every receipt the process held: with that use this
+#: twin reads 27315391 where the definitions alone read 27315112 (+279)
+#: [measured 2026-09-29T06:46:30+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 27315391
 
 #: OVERRUN 2026-09-07, 1434400: it names `expand` and `expandK` as definitions
 #: and asserts the atom count, where the example writes them as equations.
@@ -575,7 +582,14 @@ BUDGET = 27315112
 #: definition through the define doors asks whether its module holds a shadow-
 #: import receipt for the name, holds it in flight until the write is visible
 #: when it does, and a sweep leaves a receipt another live thread holds.
-OVERRUN = 4621961
+#: OVERRUN 2026-09-29, 4621961 to 4622056 (+95): the twin costs 27315391
+#: against the example's 20627042 and a ceiling of 27315296.2 with the earlier
+#: declaration [measured 2026-09-29T01:27:56+10:00: the twins lane at the c3
+#: stage of the chain readings, one full lane in one battery; command=python
+#: extensions/python/tools/twin_coverage.py]; the directed shadow repair: each
+#: definition marks its name as changed and a sweep repairs only the receipts
+#: naming a marked name, where it re-checked every receipt the process held.
+OVERRUN = 4622056
 
 #: DIVERGED 2026-09-07, the example holds 4 atoms the twin does not (4 =) and
 #: the twin holds 5 the example does not (1 :, 4 =): the twin is an ordinary

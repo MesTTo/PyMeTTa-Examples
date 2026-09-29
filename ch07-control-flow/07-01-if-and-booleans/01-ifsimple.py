@@ -434,7 +434,16 @@ def twin(m):
 #: lanes in wt-merge's battery 1, tsm-licence's series and its engine reader on
 #: swipl-patched.7, the series on swipl-patched.8, and the stack through janus-
 #: contract B on swipl-patched.8 twice; command=sh tools/check.sh twins].
-BUDGET = 3362
+#: RE-PINNED 2026-09-29, 3362 to 3429 (+67), this twin reads 3366 before the
+#: change and 3429 with the change (+63): each definition marks its name as
+#: changed and a sweep repairs only the receipts naming a marked name, where it
+#: re-checked every receipt the process held: with that use this twin reads
+#: 3429 where the definitions alone read 3366 (+63); it read 3366 against its
+#: pin 3362 before this step, a distance of +4 that is not this step's (+4 the
+#: earlier steps' moves inside its tolerance) and is not attributed here
+#: [measured 2026-09-29T06:42:01+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 3429
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 =): the twin is an ordinary Python
@@ -496,4 +505,11 @@ DIVERGENCE = "5ae6d2b9cf7b119a43b104165c892acbbd121c9e1c6ea2b1e35561a577ea2cfc"
 #: definition through the define doors asks whether its module holds a shadow-
 #: import receipt for the name, holds it in flight until the write is visible
 #: when it does, and a sweep leaves a receipt another live thread holds.
-OVERRUN = 240
+#: OVERRUN 2026-09-29, 240 to 315 (+75): the twin costs 3429 against the
+#: example's 1061 and a ceiling of 3354.1 with the earlier declaration
+#: [measured 2026-09-29T01:27:56+10:00: the twins lane at the c3 stage of the
+#: chain readings, one full lane in one battery; command=python
+#: extensions/python/tools/twin_coverage.py]; the directed shadow repair: each
+#: definition marks its name as changed and a sweep repairs only the receipts
+#: naming a marked name, where it re-checked every receipt the process held.
+OVERRUN = 315

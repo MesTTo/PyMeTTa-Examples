@@ -482,4 +482,13 @@ def twin(m):
 #: battery 1 on swipl-patched.8 at this boundary, engine/host_notices.pl as
 #: amended against the day before's as first written; command=sh tools/check.sh
 #: twins].
-BUDGET = 63812
+#: RE-PINNED 2026-09-29, 63812 to 64068 (+256), this twin reads 63816 before
+#: the change and 64068 with the change (+252): each definition marks its name
+#: as changed and a sweep repairs only the receipts naming a marked name, where
+#: it re-checked every receipt the process held: with that use this twin reads
+#: 64068 where the definitions alone read 63816 (+252); it read 63816 against
+#: its pin 63812 before this step, a distance of +4 that is not this step's (+4
+#: the earlier steps' moves inside its tolerance) and is not attributed here
+#: [measured 2026-09-29T06:43:02+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 64068

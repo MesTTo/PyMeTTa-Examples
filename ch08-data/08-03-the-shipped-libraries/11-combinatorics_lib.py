@@ -681,7 +681,14 @@ def twin(m):
 #: reads 738192 where the definitions alone read 738152 (+40) [measured
 #: 2026-09-29T06:36:24+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 738192
+#: RE-PINNED 2026-09-29, 738192 to 739092 (+900), this twin reads 738192 before
+#: the change and 739092 with the change (+900): each definition marks its name
+#: as changed and a sweep repairs only the receipts naming a marked name, where
+#: it re-checked every receipt the process held: with that use this twin reads
+#: 739092 where the definitions alone read 738192 (+900) [measured
+#: 2026-09-29T06:43:05+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 739092
 #: OVERRUN 2026-09-09, 0 to 242 (+242): the compiled vocabulary seed, the
 #: membership index, base-module type lookups and the singleton decoder landed
 #: (perf/cross-engine-waivers merged): a Python decode with one named variable

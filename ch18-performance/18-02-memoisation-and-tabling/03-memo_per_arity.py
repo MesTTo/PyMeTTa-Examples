@@ -583,7 +583,14 @@ def twin(m):
 #: the definitions alone read 38379 (+10) [measured 2026-09-29T06:37:30+10:00:
 #: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 38389
+#: RE-PINNED 2026-09-29, 38389 to 38501 (+112), this twin reads 38389 before
+#: the change and 38501 with the change (+112): each definition marks its name
+#: as changed and a sweep repairs only the receipts naming a marked name, where
+#: it re-checked every receipt the process held: with that use this twin reads
+#: 38501 where the definitions alone read 38389 (+112) [measured
+#: 2026-09-29T06:44:43+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 38501
 
 #: OVERRUN 2026-09-07, 600: it stacks the two arities as two decorated clauses
 #: of one MeTTa name, where the example writes two equations. Measured 42187

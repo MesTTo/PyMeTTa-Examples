@@ -306,7 +306,16 @@ def twin(m):
 #: inferences [measured 2026-09-27T20:31:29+10:00: full twins lanes on swipl-
 #: patched.8 in wt-merge's battery 1, two of the stack through janus-contract B
 #: and two with janus-contract A; command=sh tools/check.sh twins].
-BUDGET = 68549
+#: RE-PINNED 2026-09-29, 68549 to 68616 (+67), this twin reads 68553 before the
+#: change and 68616 with the change (+63): each definition marks its name as
+#: changed and a sweep repairs only the receipts naming a marked name, where it
+#: re-checked every receipt the process held: with that use this twin reads
+#: 68616 where the definitions alone read 68553 (+63); it read 68553 against
+#: its pin 68549 before this step, a distance of +4 that is not this step's (+4
+#: the earlier steps' moves inside its tolerance) and is not attributed here
+#: [measured 2026-09-29T06:44:39+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 68616
 
 #: DIVERGED 2026-09-07, the example holds 1 atom the twin does not (1 =) and
 #: the twin holds 1 atom the example does not (1 =): the twin is an ordinary Python

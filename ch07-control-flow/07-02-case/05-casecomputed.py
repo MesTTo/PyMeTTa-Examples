@@ -360,7 +360,14 @@ RUNG = "a `case` whose branches arrive as a VALUE has no Python spelling: match'
 #: 10229 where the definitions alone read 10213 (+16) [measured
 #: 2026-09-29T06:35:35+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 10229
+#: RE-PINNED 2026-09-29, 10229 to 10454 (+225), this twin reads 10229 before
+#: the change and 10454 with the change (+225): each definition marks its name
+#: as changed and a sweep repairs only the receipts naming a marked name, where
+#: it re-checked every receipt the process held: with that use this twin reads
+#: 10454 where the definitions alone read 10229 (+225) [measured
+#: 2026-09-29T06:42:10+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 10454
 
 #: DIVERGED 2026-09-07, the example holds 1 atom the twin does not (1 =) and
 #: the twin holds 1 atom the example does not (1 =): the twin is an ordinary Python

@@ -181,7 +181,16 @@ def twin(m):
 #: reader on swipl-patched.7, the series on swipl-patched.8, and the stack
 #: through janus-contract B on swipl-patched.8 twice; command=sh tools/check.sh
 #: twins].
-BUDGET = 23168
+#: RE-PINNED 2026-09-29, 23168 to 23241 (+73), this twin reads 23172 before the
+#: change and 23241 with the change (+69): each definition marks its name as
+#: changed and a sweep repairs only the receipts naming a marked name, where it
+#: re-checked every receipt the process held: with that use this twin reads
+#: 23241 where the definitions alone read 23172 (+69); it read 23172 against
+#: its pin 23168 before this step, a distance of +4 that is not this step's (+4
+#: the earlier steps' moves inside its tolerance) and is not attributed here
+#: [measured 2026-09-29T06:46:07+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 23241
 
 #: OVERRUN 2026-09-18, 538: the twin costs 23621 against the example's 18397
 #: and a ceiling of 23083 (the band plus 2846 to author one compiled

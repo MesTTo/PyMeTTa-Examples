@@ -433,7 +433,16 @@ def twin(m):
 #: 2026-09-27T20:38:05+10:00: full twins lanes on swipl-patched.8 in wt-merge's
 #: battery 1, two with janus-contract A and two with walk-tax B; command=sh
 #: tools/check.sh twins].
-BUDGET = 29394
+#: RE-PINNED 2026-09-29, 29394 to 29462 (+68), this twin reads 29398 before the
+#: change and 29462 with the change (+64): each definition marks its name as
+#: changed and a sweep repairs only the receipts naming a marked name, where it
+#: re-checked every receipt the process held: with that use this twin reads
+#: 29462 where the definitions alone read 29398 (+64); it read 29398 against
+#: its pin 29394 before this step, a distance of +4 that is not this step's (+4
+#: the earlier steps' moves inside its tolerance) and is not attributed here
+#: [measured 2026-09-29T06:44:51+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 29462
 #: OVERRUN 2026-09-09, 0 to 515 (+515): a library's Prolog half compiles
 #: beside itself on its first import and loads from the artifact after
 #: (metta_load_source/2, seam:compiled_source/1): the example imports one, so

@@ -471,7 +471,14 @@ def twin(m):
 #: reads 91238202 where the definitions alone read 91238194 (+8) [measured
 #: 2026-09-29T06:37:28+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 91238202
+#: RE-PINNED 2026-09-29, 91238202 to 91238319 (+117), this twin reads 91238202
+#: before the change and 91238319 with the change (+117): each definition marks
+#: its name as changed and a sweep repairs only the receipts naming a marked
+#: name, where it re-checked every receipt the process held: with that use this
+#: twin reads 91238319 where the definitions alone read 91238202 (+117)
+#: [measured 2026-09-29T06:44:37+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 91238319
 
 #: DIVERGED 2026-09-07, the example holds 1572864 atoms and the twin 1572864,
 #: over the 50000 this lane enumerates, so the difference is pinned as the two
@@ -514,4 +521,11 @@ DIVERGENCE = "0b995b079c8509570d648f5387f6ba4787cc0739d4769a757e2b79974aed0179"
 #: against the example's 77079375 and a ceiling of 91238198.5 with the earlier
 #: declaration [measured 2026-09-26T13:18:57+10:00: the twins lane with that
 #: change placed].
-OVERRUN = 6448945
+#: OVERRUN 2026-09-29, 6448945 to 6449014 (+69): the twin costs 91238319
+#: against the example's 77079417 and a ceiling of 91238250.7 with the earlier
+#: declaration [measured 2026-09-29T01:27:56+10:00: the twins lane at the c3
+#: stage of the chain readings, one full lane in one battery; command=python
+#: extensions/python/tools/twin_coverage.py]; the directed shadow repair: each
+#: definition marks its name as changed and a sweep repairs only the receipts
+#: naming a marked name, where it re-checked every receipt the process held.
+OVERRUN = 6449014

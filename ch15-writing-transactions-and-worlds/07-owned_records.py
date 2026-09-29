@@ -96,4 +96,11 @@ def twin(m):
 #: only its own space [measured 2026-09-25T16:54:32+10:00: one full twins lane
 #: before this commit and one with it, the two read on one battery path at the
 #: landing's HEAD; command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 6346
+#: RE-PINNED 2026-09-29, 6346 to 6324 (-22), this twin reads 6346 before the
+#: change and 6324 with the change (-22): each definition marks its name as
+#: changed and a sweep repairs only the receipts naming a marked name, where it
+#: re-checked every receipt the process held: with that use this twin reads
+#: 6324 where the definitions alone read 6346 (-22) [measured
+#: 2026-09-29T06:44:30+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 6324

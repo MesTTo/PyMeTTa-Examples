@@ -521,7 +521,14 @@ RUNG = "the `let`s here bind the variables whose identity is under test, which a
 #: 10755 where the definitions alone read 10747 (+8) [measured
 #: 2026-09-29T06:35:45+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 10755
+#: RE-PINNED 2026-09-29, 10755 to 10892 (+137), this twin reads 10755 before
+#: the change and 10892 with the change (+137): each definition marks its name
+#: as changed and a sweep repairs only the receipts naming a marked name, where
+#: it re-checked every receipt the process held: with that use this twin reads
+#: 10892 where the definitions alone read 10755 (+137) [measured
+#: 2026-09-29T06:42:19+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 10892
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 =): the twin is an ordinary Python

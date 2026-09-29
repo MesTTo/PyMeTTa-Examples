@@ -532,7 +532,14 @@ def twin(m):
 #: 47394 where the definitions alone read 47354 (+40) [measured
 #: 2026-09-29T06:37:10+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 47394
+#: RE-PINNED 2026-09-29, 47394 to 47961 (+567), this twin reads 47394 before
+#: the change and 47961 with the change (+567): each definition marks its name
+#: as changed and a sweep repairs only the receipts naming a marked name, where
+#: it re-checked every receipt the process held: with that use this twin reads
+#: 47961 where the definitions alone read 47394 (+567) [measured
+#: 2026-09-29T06:44:14+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 47961
 
 #: OVERRUN 2026-09-07, 27600: it proves seventeen claims where the example
 #: states four: the example's own comment leaves the HOST half of the nesting

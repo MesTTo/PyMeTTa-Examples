@@ -704,7 +704,21 @@ def twin(m):
 #: the definitions alone read 39898 (+19) [measured 2026-09-29T06:37:20+10:00:
 #: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 39917
+#: RE-PINNED 2026-09-29, 39917 to 40061 (+144), this twin reads 39917 before
+#: the change and 40060 with the change (+143): the c3 step adds
+#: '$metta_shadow_name_changed'/2, metta_module_below/2,
+#: metta_prepare_local_predicate/3, metta_repair_marked_shadow_imports/0,
+#: metta_restore_import/4, metta_shadow_name_changed/2 and
+#: metta_shadow_names_below/1 to the spaces module, and on a tree that defines
+#: them and never calls them this twin reads 39918 (+1), which only a walk over
+#: SWI's predicate or atom tables can move, by visiting more entries or
+#: visiting them in another order; each definition marks its name as changed
+#: and a sweep repairs only the receipts naming a marked name, where it re-
+#: checked every receipt the process held: with that use this twin reads 40060
+#: where the definitions alone read 39918 (+142) [measured
+#: 2026-09-29T06:44:32+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 40061
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 :): a Python annotation IS a (:

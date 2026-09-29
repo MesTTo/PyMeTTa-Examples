@@ -401,4 +401,11 @@ V_X = V.x
 #: 30729 where the definitions alone read 30709 (+20) [measured
 #: 2026-09-29T06:38:26+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 30729
+#: RE-PINNED 2026-09-29, 30729 to 31006 (+277), this twin reads 30729 before
+#: the change and 31006 with the change (+277): each definition marks its name
+#: as changed and a sweep repairs only the receipts naming a marked name, where
+#: it re-checked every receipt the process held: with that use this twin reads
+#: 31006 where the definitions alone read 30729 (+277) [measured
+#: 2026-09-29T06:45:41+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 31006

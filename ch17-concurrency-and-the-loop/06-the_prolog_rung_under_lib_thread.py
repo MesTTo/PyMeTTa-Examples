@@ -523,9 +523,23 @@ def twin(m):
 #: run before those rounds in the same battery run; command=sh tools/check.sh
 #: twins] [measured 2026-09-28T14:03:07+10:00: the twins lane of the landing's
 #: whole gate; command=GATE_ONLY=1 sh tools/check.sh].
+#: SHIFTED 2026-09-28 by +705, 201817..201938 to 202522..202643 over 42 under
+#: 'full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot':
+#: the directed shadow repair: the run marks 55 changed names for the next
+#: sweep (spaces:metta_shadow_name_changed/2), and 7 of those marks, made
+#: inside a transaction, are made again once it returns
+#: (metta_shadow_after_transaction/1). The observations record the full lane's
+#: spread around the count, and this change moves the count, so both bounds
+#: move by the serial delta, the twin's minimum of three serial runs with the
+#: change, 202570, less its minimum of three before it, 201865, until the next
+#: full-lane observation reads them again [measured 2026-09-28T22:32:34+10:00:
+#: the minimum of three fresh-process runs on each side, as command=python
+#: extensions/python/tools/twin_coverage.py --measure --rounds 3
+#: examples/ch17-concurrency-and-the-loop/06-the_prolog_rung_under_lib_thread.metta
+#: reads it].
 BUDGET = {
-    "minimum": 201817,
-    "maximum": 201938,
+    "minimum": 202522,
+    "maximum": 202643,
     "observations": 42,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }

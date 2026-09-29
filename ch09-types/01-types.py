@@ -497,7 +497,14 @@ def twin(m):
 #: 16308 where the definitions alone read 16300 (+8) [measured
 #: 2026-09-29T06:36:52+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 16308
+#: RE-PINNED 2026-09-29, 16308 to 16425 (+117), this twin reads 16308 before
+#: the change and 16425 with the change (+117): each definition marks its name
+#: as changed and a sweep repairs only the receipts naming a marked name, where
+#: it re-checked every receipt the process held: with that use this twin reads
+#: 16425 where the definitions alone read 16308 (+117) [measured
+#: 2026-09-29T06:43:46+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 16425
 
 #: DIVERGED 2026-09-07, the example holds 2 atoms the twin does not (2 =) and
 #: the twin holds 4 the example does not (2 =, 2 @doc): the twin is an ordinary
