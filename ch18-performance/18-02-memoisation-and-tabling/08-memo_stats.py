@@ -544,7 +544,17 @@ def twin(m):
 #: distance of +3 that is not this step's (+3 the trunk's own) and is not
 #: attributed here [measured 2026-09-29T20:25:17+10:00: min-of-3 serial fresh
 #: processes; command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 33607
+#: RE-PINNED 2026-09-30, 33607 to 33504 (-103), this twin reads 33605 before
+#: the change and 33504 with the change (-101): a named space's prelude-tier
+#: type readers look the prelude's row up before asking whether it governs
+#: there, and builtin_result_type/3 asks whether a program took a builtin over
+#: only for a builtin whose result is evaluated (engine/metta/types.pl,
+#: engine/translator/lowering.pl), so a lookup of a name the prelude does not
+#: declare costs one indexed miss and no ownership probe; it read 33605 against
+#: its pin 33607 before this change, -2 landed main's own reading against that
+#: pin [measured 2026-09-30T04:19:02+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 33504
 
 #: OVERRUN 2026-09-07, 800: it reads the cache statistics through the term door
 #: beside every claim. Measured 38155 against a ceiling of 37417; a minimal

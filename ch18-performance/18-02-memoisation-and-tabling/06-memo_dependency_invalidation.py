@@ -542,7 +542,17 @@ def twin(m):
 #: distance of +3 that is not this step's (+3 the trunk's own) and is not
 #: attributed here [measured 2026-09-29T20:25:04+10:00: min-of-3 serial fresh
 #: processes; command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 31220
+#: RE-PINNED 2026-09-30, 31220 to 31117 (-103), this twin reads 31218 before
+#: the change and 31117 with the change (-101): a named space's prelude-tier
+#: type readers look the prelude's row up before asking whether it governs
+#: there, and builtin_result_type/3 asks whether a program took a builtin over
+#: only for a builtin whose result is evaluated (engine/metta/types.pl,
+#: engine/translator/lowering.pl), so a lookup of a name the prelude does not
+#: declare costs one indexed miss and no ownership probe; it read 31218 against
+#: its pin 31220 before this change, -2 landed main's own reading against that
+#: pin [measured 2026-09-30T04:20:22+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 31117
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 :): a Python annotation IS a (:

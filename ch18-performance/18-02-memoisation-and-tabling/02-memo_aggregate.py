@@ -599,7 +599,17 @@ def twin(m):
 #: distance of +3 that is not this step's (+3 the trunk's own) and is not
 #: attributed here [measured 2026-09-29T20:24:48+10:00: min-of-3 serial fresh
 #: processes; command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 34840
+#: RE-PINNED 2026-09-30, 34840 to 34700 (-140), this twin reads 34842 before
+#: the change and 34700 with the change (-142): a named space's prelude-tier
+#: type readers look the prelude's row up before asking whether it governs
+#: there, and builtin_result_type/3 asks whether a program took a builtin over
+#: only for a builtin whose result is evaluated (engine/metta/types.pl,
+#: engine/translator/lowering.pl), so a lookup of a name the prelude does not
+#: declare costs one indexed miss and no ownership probe; it read 34842 against
+#: its pin 34840 before this change, +2 landed main's own reading against that
+#: pin [measured 2026-09-30T04:18:46+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 34700
 #: OVERRUN 2026-09-09, 0 to 1089 (+1089): a library's Prolog half compiles
 #: beside itself on its first import and loads from the artifact after
 #: (metta_load_source/2, seam:compiled_source/1): the example imports one, so

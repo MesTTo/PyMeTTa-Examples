@@ -495,7 +495,16 @@ def twin(m):
 #: definitions alone read 91238346 (+7) [measured 2026-09-29T20:36:46+10:00:
 #: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 91238353
+#: RE-PINNED 2026-09-30, 91238353 to 90451892 (-786461), this twin reads
+#: 91238353 before the change and 90451892 with the change (-786461): a named
+#: space's prelude-tier type readers look the prelude's row up before asking
+#: whether it governs there, and builtin_result_type/3 asks whether a program
+#: took a builtin over only for a builtin whose result is evaluated
+#: (engine/metta/types.pl, engine/translator/lowering.pl), so a lookup of a
+#: name the prelude does not declare costs one indexed miss and no ownership
+#: probe [measured 2026-09-30T04:18:50+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 90451892
 
 #: DIVERGED 2026-09-07, the example holds 1572864 atoms and the twin 1572864,
 #: over the 50000 this lane enumerates, so the difference is pinned as the two
@@ -554,4 +563,15 @@ DIVERGENCE = "0b995b079c8509570d648f5387f6ba4787cc0739d4769a757e2b79974aed0179"
 #: files there the repairs its registrations owe, and drains them once when it
 #: finishes, so a caller compiled before the name became a function is
 #: repaired.
-OVERRUN = 6449021
+#: OVERRUN 2026-09-30, 6449021 to 6527674 (+78653): the twin costs 90451892
+#: against the example's 76292974 and a ceiling of 90373239.4 with the earlier
+#: declaration [measured 2026-09-30T03:26:33+10:00: the twins lane at this
+#: commit in the chain's readings, one full lane in one battery; command=python
+#: extensions/python/tools/twin_coverage.py]; with the prelude lookup that asks
+#: ownership only of a declaration it found, a named space's prelude-tier type
+#: readers look the prelude's row up before asking whether it governs there,
+#: and builtin_result_type/3 asks whether a program took a builtin over only
+#: for a builtin whose result is evaluated (engine/metta/types.pl,
+#: engine/translator/lowering.pl), so a lookup of a name the prelude does not
+#: declare costs one indexed miss and no ownership probe.
+OVERRUN = 6527674

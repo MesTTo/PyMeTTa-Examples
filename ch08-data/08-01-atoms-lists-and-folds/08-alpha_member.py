@@ -334,7 +334,16 @@ def twin(m):
 #: reader on swipl-patched.7, the series on swipl-patched.8, and the stack
 #: through janus-contract B on swipl-patched.8 twice; command=sh tools/check.sh
 #: twins].
-BUDGET = 24333
+#: RE-PINNED 2026-09-30, 24333 to 24099 (-234), this twin reads 24333 before
+#: the change and 24099 with the change (-234): a named space's prelude-tier
+#: type readers look the prelude's row up before asking whether it governs
+#: there, and builtin_result_type/3 asks whether a program took a builtin over
+#: only for a builtin whose result is evaluated (engine/metta/types.pl,
+#: engine/translator/lowering.pl), so a lookup of a name the prelude does not
+#: declare costs one indexed miss and no ownership probe [measured
+#: 2026-09-30T04:16:17+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 24099
 
 #: OVERRUN 2026-09-07, 3600: it puts Python's own `in` beside `is-alpha-member`
 #: at every claim, which is the difference the file is about. Measured 23710

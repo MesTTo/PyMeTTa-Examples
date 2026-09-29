@@ -472,9 +472,25 @@ def twin(m):
 #: extensions/python/tools/twin_coverage.py --observe --rounds 20] [measured
 #: 2026-09-29T19:41:51+10:00: the chain readings' twins lane at this state;
 #: command=python extensions/python/tools/twin_coverage.py].
+#: SHIFTED 2026-09-30 by -1766, 1418814..1418817 to 1417048..1417051 over 21
+#: under
+#: 'full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot':
+#: A named space's prelude-tier type readers look the prelude's row up before
+#: asking whether it governs there, and builtin_result_type/3 asks whether a
+#: program took a builtin over only for a builtin whose result is evaluated
+#: (engine/metta/types.pl, engine/translator/lowering.pl), so a lookup of a
+#: name the prelude does not declare costs one indexed miss and no ownership
+#: probe. The observations record the full lane's spread around the count, and
+#: this change moves the count, so both bounds move by the serial delta, the
+#: twin's minimum of three serial runs with the change, 1417048, less its
+#: minimum of three before it, 1418814, until the next full-lane observation
+#: reads them again [measured 2026-09-30T03:28:43+10:00: the minimum of three
+#: fresh-process runs on each side, as command=python
+#: extensions/python/tools/twin_coverage.py --measure --rounds 3
+#: examples/ch17-concurrency-and-the-loop/09-class_values.metta reads it].
 BUDGET = {
-    "minimum": 1418814,
-    "maximum": 1418817,
+    "minimum": 1417048,
+    "maximum": 1417051,
     "observations": 21,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }

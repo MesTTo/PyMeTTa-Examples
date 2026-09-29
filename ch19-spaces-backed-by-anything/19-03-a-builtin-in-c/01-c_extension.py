@@ -672,4 +672,13 @@ def twin(m):
 #: alone read 231447 (-16) [measured 2026-09-29T20:37:06+10:00: min-of-3 serial
 #: fresh processes; command=python extensions/python/tools/twin_coverage.py
 #: --repin].
-BUDGET = 231431
+#: RE-PINNED 2026-09-30, 231431 to 231287 (-144), this twin reads 231431 before
+#: the change and 231287 with the change (-144): a named space's prelude-tier
+#: type readers look the prelude's row up before asking whether it governs
+#: there, and builtin_result_type/3 asks whether a program took a builtin over
+#: only for a builtin whose result is evaluated (engine/metta/types.pl,
+#: engine/translator/lowering.pl), so a lookup of a name the prelude does not
+#: declare costs one indexed miss and no ownership probe [measured
+#: 2026-09-30T04:19:11+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 231287

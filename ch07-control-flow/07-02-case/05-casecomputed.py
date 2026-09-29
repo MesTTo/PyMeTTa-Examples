@@ -375,7 +375,17 @@ RUNG = "a `case` whose branches arrive as a VALUE has no Python spelling: match'
 #: twin reads 10507 where the definitions alone read 10454 (+53) [measured
 #: 2026-09-29T20:21:05+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 10507
+#: RE-PINNED 2026-09-30, 10507 to 10482 (-25), this twin reads 10510 before the
+#: change and 10482 with the change (-28): a named space's prelude-tier type
+#: readers look the prelude's row up before asking whether it governs there,
+#: and builtin_result_type/3 asks whether a program took a builtin over only
+#: for a builtin whose result is evaluated (engine/metta/types.pl,
+#: engine/translator/lowering.pl), so a lookup of a name the prelude does not
+#: declare costs one indexed miss and no ownership probe; it read 10510 against
+#: its pin 10507 before this change, +3 landed main's own reading against that
+#: pin [measured 2026-09-30T04:15:23+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 10482
 
 #: DIVERGED 2026-09-07, the example holds 1 atom the twin does not (1 =) and
 #: the twin holds 1 atom the example does not (1 =): the twin is an ordinary Python

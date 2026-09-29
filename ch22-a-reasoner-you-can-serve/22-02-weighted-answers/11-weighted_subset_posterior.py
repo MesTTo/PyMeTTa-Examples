@@ -519,4 +519,15 @@ def twin(m):
 #: which the move exceeds [measured 2026-09-29T20:38:52+10:00: min-of-3 serial
 #: fresh processes; command=python extensions/python/tools/twin_coverage.py
 #: --repin].
-BUDGET = 1806850
+#: RE-PINNED 2026-09-30, 1806850 to 1786686 (-20164), the twins lane reads this
+#: twin at 1806852 before this change and at 1786686 with it (-20166): a named
+#: space's prelude-tier type readers look the prelude's row up before asking
+#: whether it governs there, and builtin_result_type/3 asks whether a program
+#: took a builtin over only for a builtin whose result is evaluated
+#: (engine/metta/types.pl, engine/translator/lowering.pl), so a lookup of a
+#: name the prelude does not declare costs one indexed miss and no ownership
+#: probe; it read 1806852 against its pin 1806850 before this change, +2 from
+#: an earlier commit of this landing, the smoothed formula model count, inside
+#: the allowance [measured 2026-09-30T04:26:44+10:00: min-of-3 serial fresh
+#: processes; command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 1786686
