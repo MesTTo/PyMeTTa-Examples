@@ -531,7 +531,16 @@ RUNG = "the assert family is this file's subject, so each claim names one of its
 #: twin reads 46924 where the definitions alone read 46832 (+92) [measured
 #: 2026-09-29T20:24:18+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 46924
+#: RE-PINNED 2026-09-29, 46924 to 46943 (+19), this twin reads 46924 before the
+#: change and 46943 with the change (+19): a call site forces the function it
+#: names before deciding the call's shape, so a call of a waiting function
+#: builds the application protocol an eager load builds, and the protocol's
+#: marker test around a value the translation already holds is decided at
+#: compile time: with that use this twin reads 46943 where the definitions
+#: alone read 46924 (+19) [measured 2026-09-29T20:36:15+10:00: min-of-3 serial
+#: fresh processes; command=python extensions/python/tools/twin_coverage.py
+#: --repin].
+BUDGET = 46943
 
 #: RE-PINNED 2026-09-08, 17475 to 17843 (+368), The engine and library
 #: predicates now resolve through their owning modules and the explicit engine

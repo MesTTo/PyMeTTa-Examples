@@ -350,4 +350,13 @@ from metta import Expression  # noqa: E402  -- read after the claims it serves
 #: twin reads 22974 where the definitions alone read 22879 (+95) [measured
 #: 2026-09-29T20:19:44+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 22974
+#: RE-PINNED 2026-09-29, 22974 to 22948 (-26), this twin reads 22974 before the
+#: change and 22948 with the change (-26): a call site forces the function it
+#: names before deciding the call's shape, so a call of a waiting function
+#: builds the application protocol an eager load builds, and the protocol's
+#: marker test around a value the translation already holds is decided at
+#: compile time: with that use this twin reads 22948 where the definitions
+#: alone read 22974 (-26) [measured 2026-09-29T20:33:24+10:00: min-of-3 serial
+#: fresh processes; command=python extensions/python/tools/twin_coverage.py
+#: --repin].
+BUDGET = 22948

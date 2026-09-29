@@ -779,21 +779,13 @@ def twin(m):
 #: this twin reads 2254970 where the definitions alone read 2254797 (+173)
 #: [measured 2026-09-29T20:27:36+10:00: min-of-3 serial fresh processes;
 #: command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 2254970
-
-#: OVERRUN 2026-09-07, 52200: it asserts the four premises the answer came from
-#: beside the truth value, which the example only prints. Measured 2246993
-#: against a ceiling of 2194862; a MINIMAL twin of this example -- its own
-#: forms stored and asked through the structured door, nothing else -- costs
-#: 2245397 against the ceiling's 2194862, so no twin of it fits the band at all
-#: [measured 2026-09-07: one fresh process per side; command=python
-#: extensions/python/benchmarks/probes/twin_floor.py; commit=9010a79b01c9b2a66b96a3952fa378fb3e939dc3].
-#: OVERRUN 2026-09-10, 52200 to 53271: The existing program is priced after
-#: the reference census, ordered catalog reads and source-scoped translation
-#: work. It costs 2256403 against the unchanged band and authoring ceiling of
-#: 2203132.5. The literal structured control costs 2254725; it measures that
-#: encoding only. [measured 2026-09-10: one fresh process per side;
-#: command=python extensions/python/benchmarks/probes/twin_floor.py
-#: examples/ch22-a-reasoner-you-can-serve/22-02-weighted-answers/06-pln_roman.metta;
-#: commit=90ba93eb8f6e98ebfefc55416859bf13de6a8427].
-OVERRUN = 53271
+#: RE-PINNED 2026-09-29, 2254970 to 2273527 (+18557), this twin reads 2254970
+#: before the change and 2273527 with the change (+18557): a call site forces
+#: the function it names before deciding the call's shape, so a call of a
+#: waiting function builds the application protocol an eager load builds, and
+#: the protocol's marker test around a value the translation already holds is
+#: decided at compile time: with that use this twin reads 2273527 where the
+#: definitions alone read 2254970 (+18557) [measured 2026-09-29T20:38:48+10:00:
+#: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 2273527

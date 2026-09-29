@@ -305,4 +305,12 @@ def twin(m):
 #: lanes in wt-merge's battery 1, tsm-licence's series and its engine reader on
 #: swipl-patched.7, the series on swipl-patched.8, and the stack through janus-
 #: contract B on swipl-patched.8 twice; command=sh tools/check.sh twins].
-BUDGET = 5194
+#: RE-PINNED 2026-09-29, 5194 to 5188 (-6), this twin reads 5194 before the
+#: change and 5188 with the change (-6): a call site forces the function it
+#: names before deciding the call's shape, so a call of a waiting function
+#: builds the application protocol an eager load builds, and the protocol's
+#: marker test around a value the translation already holds is decided at
+#: compile time: with that use this twin reads 5188 where the definitions alone
+#: read 5194 (-6) [measured 2026-09-29T20:36:29+10:00: min-of-3 serial fresh
+#: processes; command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 5188

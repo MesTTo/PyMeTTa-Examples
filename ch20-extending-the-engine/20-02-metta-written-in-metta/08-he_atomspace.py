@@ -433,4 +433,13 @@ RUNG = "the imported add-reduct equation and its stored body are the subject"
 #: twin reads 37093 where the definitions alone read 36986 (+107) [measured
 #: 2026-09-29T20:26:31+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 37093
+#: RE-PINNED 2026-09-29, 37093 to 37127 (+34), this twin reads 37093 before the
+#: change and 37127 with the change (+34): a call site forces the function it
+#: names before deciding the call's shape, so a call of a waiting function
+#: builds the application protocol an eager load builds, and the protocol's
+#: marker test around a value the translation already holds is decided at
+#: compile time: with that use this twin reads 37127 where the definitions
+#: alone read 37093 (+34) [measured 2026-09-29T20:37:50+10:00: min-of-3 serial
+#: fresh processes; command=python extensions/python/tools/twin_coverage.py
+#: --repin].
+BUDGET = 37127

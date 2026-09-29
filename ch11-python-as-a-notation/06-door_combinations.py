@@ -547,7 +547,16 @@ def twin(m):
 #: twin reads 48138 where the definitions alone read 47961 (+177) [measured
 #: 2026-09-29T20:24:16+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 48138
+#: RE-PINNED 2026-09-29, 48138 to 48123 (-15), this twin reads 48138 before the
+#: change and 48123 with the change (-15): a call site forces the function it
+#: names before deciding the call's shape, so a call of a waiting function
+#: builds the application protocol an eager load builds, and the protocol's
+#: marker test around a value the translation already holds is decided at
+#: compile time: with that use this twin reads 48123 where the definitions
+#: alone read 48138 (-15) [measured 2026-09-29T20:36:14+10:00: min-of-3 serial
+#: fresh processes; command=python extensions/python/tools/twin_coverage.py
+#: --repin].
+BUDGET = 48123
 
 #: OVERRUN 2026-09-07, 27600: it proves seventeen claims where the example
 #: states four: the example's own comment leaves the HOST half of the nesting

@@ -616,7 +616,18 @@ def twin(m):
 #: this twin reads 2304389 where the definitions alone read 2303469 (+920)
 #: [measured 2026-09-29T20:23:25+10:00: min-of-3 serial fresh processes;
 #: command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 2304389
+#: RE-PINNED 2026-09-29, 2304389 to 2302875 (-1514), this twin reads 2304391
+#: before the change and 2302875 with the change (-1516): a call site forces
+#: the function it names before deciding the call's shape, so a call of a
+#: waiting function builds the application protocol an eager load builds, and
+#: the protocol's marker test around a value the translation already holds is
+#: decided at compile time: with that use this twin reads 2302875 where the
+#: definitions alone read 2304391 (-1516); it read 2304391 against its pin
+#: 2304389 before this step, a distance of +2 that is not this step's (the
+#: moves since an earlier step of this landing re-pinned it) and is not
+#: attributed here [measured 2026-09-29T20:35:27+10:00: min-of-3 serial fresh
+#: processes; command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 2302875
 
 #: RETIRED: the former 1826-inference overrun. The 78-claim MeTTa recipe now
 #: costs 40092306 and its twin 40107888, within the ordinary band.

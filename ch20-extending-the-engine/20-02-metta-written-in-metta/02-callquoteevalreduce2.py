@@ -543,7 +543,16 @@ def twin(m):
 #: twin reads 49249 where the definitions alone read 49170 (+79) [measured
 #: 2026-09-29T20:26:15+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 49249
+#: RE-PINNED 2026-09-29, 49249 to 49242 (-7), this twin reads 49249 before the
+#: change and 49242 with the change (-7): a call site forces the function it
+#: names before deciding the call's shape, so a call of a waiting function
+#: builds the application protocol an eager load builds, and the protocol's
+#: marker test around a value the translation already holds is decided at
+#: compile time: with that use this twin reads 49242 where the definitions
+#: alone read 49249 (-7) [measured 2026-09-29T20:37:43+10:00: min-of-3 serial
+#: fresh processes; command=python extensions/python/tools/twin_coverage.py
+#: --repin].
+BUDGET = 49242
 #: OVERRUN 2026-09-18, 0 to 1705 (+1705): the twin costs 45856 against the
 #: example's 31350 and a ceiling of 44151 with the earlier declaration; a
 #: minimal twin of this example costs 31148, inside the 34485 the band alone
@@ -577,7 +586,16 @@ BUDGET = 49249
 #: extensions/python/benchmarks/probes/twin_floor.py examples/ch20-extending-
 #: the-engine/20-02-metta-written-in-metta/02-callquoteevalreduce2.metta;
 #: commit=4ff69551e0e226442cf7257b96af858adda957a4].
-OVERRUN = 1572
+#: OVERRUN 2026-09-29, 1572 to 1599 (+27): the twin costs 49242 against the
+#: example's 34079 and a ceiling of 49215.9 with the earlier declaration
+#: [measured 2026-09-29T19:41:51+10:00: the twins lane at the item4 stage of
+#: the chain readings, one full lane in one battery; command=python
+#: extensions/python/tools/twin_coverage.py]; the call site's first force: a
+#: call site forces the function it names before deciding the call's shape, so
+#: a call of a waiting function builds the application protocol an eager load
+#: builds, and the protocol's marker test around a value the translation
+#: already holds is decided at compile time.
+OVERRUN = 1599
 
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and

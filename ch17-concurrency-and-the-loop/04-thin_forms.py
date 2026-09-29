@@ -770,7 +770,22 @@ def twin(m):
 #: tolerance) and is not attributed here [measured 2026-09-29T20:24:33+10:00:
 #: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 40118
+#: RE-PINNED 2026-09-29, 40118 to 40086 (-32), this twin reads 40116 before the
+#: change and 40086 with the change (-30): the change adds
+#: application_protocol_body/4 to the translator module, and on a tree that
+#: defines them and never calls them this twin reads 40119 (+3), which only a
+#: walk over SWI's predicate or atom tables can move, by visiting more entries
+#: or visiting them in another order; a call site forces the function it names
+#: before deciding the call's shape, so a call of a waiting function builds the
+#: application protocol an eager load builds, and the protocol's marker test
+#: around a value the translation already holds is decided at compile time:
+#: with that use this twin reads 40086 where the definitions alone read 40119
+#: (-33); it read 40116 against its pin 40118 before this step, a distance of
+#: -2 that is not this step's (the moves since an earlier step of this landing
+#: re-pinned it) and is not attributed here [measured
+#: 2026-09-29T20:36:32+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 40086
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 :): a Python annotation IS a (:

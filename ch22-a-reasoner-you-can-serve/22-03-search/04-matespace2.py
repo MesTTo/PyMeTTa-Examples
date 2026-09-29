@@ -558,7 +558,16 @@ RUNG = (
 #: this twin reads 43543472 where the definitions alone read 43543406 (+66)
 #: [measured 2026-09-29T20:28:23+10:00: min-of-3 serial fresh processes;
 #: command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 43543472
+#: RE-PINNED 2026-09-29, 43543472 to 43543478 (+6), this twin reads 43543472
+#: before the change and 43543478 with the change (+6): a call site forces the
+#: function it names before deciding the call's shape, so a call of a waiting
+#: function builds the application protocol an eager load builds, and the
+#: protocol's marker test around a value the translation already holds is
+#: decided at compile time: with that use this twin reads 43543478 where the
+#: definitions alone read 43543472 (+6) [measured 2026-09-29T20:39:26+10:00:
+#: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 43543478
 
 #: OVERRUN 2026-09-07, 6197400: it names `expand`, `mate` and `rewriteK` as
 #: definitions and asserts the atom count, where the example writes them as

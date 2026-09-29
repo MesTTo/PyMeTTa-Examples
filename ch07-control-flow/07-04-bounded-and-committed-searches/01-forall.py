@@ -559,7 +559,16 @@ def twin(m):
 #: twin reads 19355 where the definitions alone read 19252 (+103) [measured
 #: 2026-09-29T20:21:20+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 19355
+#: RE-PINNED 2026-09-29, 19355 to 19335 (-20), this twin reads 19355 before the
+#: change and 19335 with the change (-20): a call site forces the function it
+#: names before deciding the call's shape, so a call of a waiting function
+#: builds the application protocol an eager load builds, and the protocol's
+#: marker test around a value the translation already holds is decided at
+#: compile time: with that use this twin reads 19335 where the definitions
+#: alone read 19355 (-20) [measured 2026-09-29T20:33:54+10:00: min-of-3 serial
+#: fresh processes; command=python extensions/python/tools/twin_coverage.py
+#: --repin].
+BUDGET = 19335
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 :): a Python annotation IS a (:

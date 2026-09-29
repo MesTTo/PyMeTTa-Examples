@@ -757,7 +757,16 @@ def twin(m):
 #: twin reads 335314 where the definitions alone read 334889 (+425) [measured
 #: 2026-09-29T20:22:13+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 335314
+#: RE-PINNED 2026-09-29, 335314 to 329803 (-5511), this twin reads 335314
+#: before the change and 329803 with the change (-5511): a call site forces the
+#: function it names before deciding the call's shape, so a call of a waiting
+#: function builds the application protocol an eager load builds, and the
+#: protocol's marker test around a value the translation already holds is
+#: decided at compile time: with that use this twin reads 329803 where the
+#: definitions alone read 335314 (-5511) [measured 2026-09-29T20:34:12+10:00:
+#: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 329803
 
 #: OVERRUN 2026-09-07, 17700: it names every lib_roman function at every claim
 #: and runs the backwards `let` inverses beside them. Measured 320547 against a

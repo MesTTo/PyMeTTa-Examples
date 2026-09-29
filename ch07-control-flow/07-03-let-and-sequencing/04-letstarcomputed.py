@@ -381,4 +381,12 @@ RUNG = "a `let*` whose bindings arrive as a VALUE has no assignment spelling"
 #: twin reads 9399 where the definitions alone read 9372 (+27) [measured
 #: 2026-09-29T20:21:19+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 9399
+#: RE-PINNED 2026-09-29, 9399 to 9389 (-10), this twin reads 9399 before the
+#: change and 9389 with the change (-10): a call site forces the function it
+#: names before deciding the call's shape, so a call of a waiting function
+#: builds the application protocol an eager load builds, and the protocol's
+#: marker test around a value the translation already holds is decided at
+#: compile time: with that use this twin reads 9389 where the definitions alone
+#: read 9399 (-10) [measured 2026-09-29T20:33:40+10:00: min-of-3 serial fresh
+#: processes; command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 9389

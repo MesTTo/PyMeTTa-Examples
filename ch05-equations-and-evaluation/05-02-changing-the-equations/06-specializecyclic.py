@@ -373,7 +373,16 @@ def twin(m):
 #: twin reads 26189 where the definitions alone read 26119 (+70) [measured
 #: 2026-09-29T20:20:24+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 26189
+#: RE-PINNED 2026-09-29, 26189 to 26248 (+59), this twin reads 26189 before the
+#: change and 26248 with the change (+59): a call site forces the function it
+#: names before deciding the call's shape, so a call of a waiting function
+#: builds the application protocol an eager load builds, and the protocol's
+#: marker test around a value the translation already holds is decided at
+#: compile time: with that use this twin reads 26248 where the definitions
+#: alone read 26189 (+59) [measured 2026-09-29T20:33:40+10:00: min-of-3 serial
+#: fresh processes; command=python extensions/python/tools/twin_coverage.py
+#: --repin].
+BUDGET = 26248
 
 #: OVERRUN 2026-09-07, 2400: the mutually recursive pair takes the `@m.rules`
 #: door, which stages two equations where the example writes two. Measured

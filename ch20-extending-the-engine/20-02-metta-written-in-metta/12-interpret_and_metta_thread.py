@@ -418,4 +418,13 @@ V_X = V.x
 #: step's (+2 the trunk's own) and is not attributed here [measured
 #: 2026-09-29T20:26:34+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 31074
+#: RE-PINNED 2026-09-29, 31074 to 31033 (-41), this twin reads 31074 before the
+#: change and 31033 with the change (-41): a call site forces the function it
+#: names before deciding the call's shape, so a call of a waiting function
+#: builds the application protocol an eager load builds, and the protocol's
+#: marker test around a value the translation already holds is decided at
+#: compile time: with that use this twin reads 31033 where the definitions
+#: alone read 31074 (-41) [measured 2026-09-29T20:38:01+10:00: min-of-3 serial
+#: fresh processes; command=python extensions/python/tools/twin_coverage.py
+#: --repin].
+BUDGET = 31033

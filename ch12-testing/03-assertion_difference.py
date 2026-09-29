@@ -308,4 +308,12 @@ RUNG = "the assert family's failure report is this file's subject, so each claim
 #: lanes in wt-merge's battery 1, tsm-licence's series and its engine reader on
 #: swipl-patched.7, the series on swipl-patched.8, and the stack through janus-
 #: contract B on swipl-patched.8 twice; command=sh tools/check.sh twins].
-BUDGET = 8218
+#: RE-PINNED 2026-09-29, 8218 to 8206 (-12), this twin reads 8218 before the
+#: change and 8206 with the change (-12): a call site forces the function it
+#: names before deciding the call's shape, so a call of a waiting function
+#: builds the application protocol an eager load builds, and the protocol's
+#: marker test around a value the translation already holds is decided at
+#: compile time: with that use this twin reads 8206 where the definitions alone
+#: read 8218 (-12) [measured 2026-09-29T20:36:28+10:00: min-of-3 serial fresh
+#: processes; command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 8206

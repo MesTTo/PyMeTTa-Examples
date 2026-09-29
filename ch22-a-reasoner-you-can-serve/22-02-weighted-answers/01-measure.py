@@ -660,10 +660,24 @@ def twin(m):
 #: extensions/python/tools/twin_coverage.py --measure --rounds 3
 #: examples/ch22-a-reasoner-you-can-serve/22-02-weighted-answers/01-measure.metta
 #: reads it].
+#: RE-OBSERVED 2026-09-29 under
+#: 'full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot',
+#: 137373..137472 to 137308..137407 over 21 observations: the five commits from
+#: overapplication decided from the arity registry to the call site's first
+#: force moved the runtime under this envelope, the registration units shifted
+#: +274; the envelope pools the 20 rounds with the twins lane run at this
+#: commit's state under this protocol, since a whole-lane run under it is an
+#: observation, and with nothing an earlier runtime read: the 20 rounds read
+#: 137308..137407; the chain readings' twins lane at this state read 137341
+#: [measured 2026-09-29T20:49:51+10:00: 20 full-lane observations at this
+#: commit's state; command=python extensions/python/tools/twin_coverage.py
+#: --observe --rounds 20] [measured 2026-09-29T19:41:51+10:00: the chain
+#: readings' twins lane at this state; command=python
+#: extensions/python/tools/twin_coverage.py].
 BUDGET = {
-    "minimum": 137373,
-    "maximum": 137472,
-    "observations": 23,
+    "minimum": 137308,
+    "maximum": 137407,
+    "observations": 21,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 

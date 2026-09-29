@@ -400,9 +400,23 @@ def twin(m):
 #: fresh-process runs on each side, as command=python
 #: extensions/python/tools/twin_coverage.py --measure --rounds 3
 #: examples/ch08-data/08-03-the-shipped-libraries/38-http_lib.metta reads it].
+#: RE-OBSERVED 2026-09-29 under
+#: 'full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot',
+#: 546073..547010 to 545944..546878 over 21 observations: the five commits from
+#: overapplication decided from the arity registry to the call site's first
+#: force moved the runtime under this envelope, the registration units shifted
+#: +1682; the envelope pools the 20 rounds with the twins lane run at this
+#: commit's state under this protocol, since a whole-lane run under it is an
+#: observation, and with nothing an earlier runtime read: the 20 rounds read
+#: 545944..546878; the chain readings' twins lane at this state read 546878
+#: [measured 2026-09-29T20:49:51+10:00: 20 full-lane observations at this
+#: commit's state; command=python extensions/python/tools/twin_coverage.py
+#: --observe --rounds 20] [measured 2026-09-29T19:41:51+10:00: the chain
+#: readings' twins lane at this state; command=python
+#: extensions/python/tools/twin_coverage.py].
 BUDGET = {
-    "minimum": 546073,
-    "maximum": 547010,
-    "observations": 23,
+    "minimum": 545944,
+    "maximum": 546878,
+    "observations": 21,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }

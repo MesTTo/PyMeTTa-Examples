@@ -529,4 +529,13 @@ DIVERGENCE = "5ae6d2b9cf7b119a43b104165c892acbbd121c9e1c6ea2b1e35561a577ea2cfc"
 #: files there the repairs its registrations owe, and drains them once when it
 #: finishes, so a caller compiled before the name became a function is
 #: repaired.
-OVERRUN = 321
+#: OVERRUN 2026-09-29, 321 to 325 (+4): the twin costs 3447 against the
+#: example's 1069 and a ceiling of 3443.9 with the earlier declaration
+#: [measured 2026-09-29T19:41:51+10:00: the twins lane at the item4 stage of
+#: the chain readings, one full lane in one battery; command=python
+#: extensions/python/tools/twin_coverage.py]; the call site's first force: a
+#: call site forces the function it names before deciding the call's shape, so
+#: a call of a waiting function builds the application protocol an eager load
+#: builds, and the protocol's marker test around a value the translation
+#: already holds is decided at compile time.
+OVERRUN = 325

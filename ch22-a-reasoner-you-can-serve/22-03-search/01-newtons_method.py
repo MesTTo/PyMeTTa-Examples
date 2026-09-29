@@ -584,7 +584,22 @@ def twin(m):
 #: distance of +3 that is not this step's (+3 the trunk's own) and is not
 #: attributed here [measured 2026-09-29T20:28:04+10:00: min-of-3 serial fresh
 #: processes; command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 63497
+#: RE-PINNED 2026-09-29, 63497 to 63488 (-9), this twin reads 63499 before the
+#: change and 63488 with the change (-11): the change adds
+#: application_protocol_body/4 to the translator module, and on a tree that
+#: defines them and never calls them this twin reads 63495 (-4), which only a
+#: walk over SWI's predicate or atom tables can move, by visiting more entries
+#: or visiting them in another order; a call site forces the function it names
+#: before deciding the call's shape, so a call of a waiting function builds the
+#: application protocol an eager load builds, and the protocol's marker test
+#: around a value the translation already holds is decided at compile time:
+#: with that use this twin reads 63488 where the definitions alone read 63495
+#: (-7); it read 63499 against its pin 63497 before this step, a distance of +2
+#: that is not this step's (the moves since an earlier step of this landing re-
+#: pinned it) and is not attributed here [measured 2026-09-29T20:39:16+10:00:
+#: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 63488
 
 #: OVERRUN 2026-09-07, 6400: it declares the cache policy and memoises by name
 #: through the library door, then reads the result twice. Measured 57334

@@ -586,10 +586,40 @@ def twin(m):
 #: extensions/python/tools/twin_coverage.py --measure --rounds 3
 #: examples/ch17-concurrency-and-the-loop/06-the_prolog_rung_under_lib_thread.metta
 #: reads it].
+#: SHIFTED 2026-09-29 by -153, 203465..203596 to 203312..203443 over 23 under
+#: 'full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot':
+#: Item 4's call site forces the function it names once, where the typed call
+#: and the call it built each forced it again, and the application protocol's
+#: marker test around a value the translation already holds is decided at
+#: compile time; its definitions alone move it 0, so it reads -153. The
+#: observations record the full lane's spread around the count, and this change
+#: moves the count, so both bounds move by the serial delta, the twin's minimum
+#: of three serial runs with the change, 203323, less its minimum of three
+#: before it, 203476, until the next full-lane observation reads them again
+#: [measured 2026-09-29T19:46:37+10:00: the minimum of three fresh-process runs
+#: on each side, as command=python extensions/python/tools/twin_coverage.py
+#: --measure --rounds 3
+#: examples/ch17-concurrency-and-the-loop/06-the_prolog_rung_under_lib_thread.metta
+#: reads it].
+#: RE-OBSERVED 2026-09-29 under
+#: 'full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot',
+#: 203312..203443 to 203318..203393 over 21 observations: the five commits from
+#: overapplication decided from the arity registry to the call site's first
+#: force moved the runtime under this envelope, the registration units shifted
+#: +621, the waiting home's repair +35 by the lane's own readings, unshifted,
+#: the call site's first force shifted -153; the envelope pools the 20 rounds
+#: with the twins lane run at this commit's state under this protocol, since a
+#: whole-lane run under it is an observation, and with nothing an earlier
+#: runtime read: the 20 rounds read 203318..203393; the chain readings' twins
+#: lane at this state read 203357 [measured 2026-09-29T20:49:51+10:00: 20
+#: full-lane observations at this commit's state; command=python
+#: extensions/python/tools/twin_coverage.py --observe --rounds 20] [measured
+#: 2026-09-29T19:41:51+10:00: the chain readings' twins lane at this state;
+#: command=python extensions/python/tools/twin_coverage.py].
 BUDGET = {
-    "minimum": 203465,
-    "maximum": 203596,
-    "observations": 23,
+    "minimum": 203318,
+    "maximum": 203393,
+    "observations": 21,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 #: The count VARIES, because this twin starts threads, pools and timers and

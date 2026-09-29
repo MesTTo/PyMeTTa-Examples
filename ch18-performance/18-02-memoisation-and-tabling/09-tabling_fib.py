@@ -674,7 +674,16 @@ def twin(m):
 #: twin reads 79069 where the definitions alone read 78843 (+226) [measured
 #: 2026-09-29T20:25:17+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 79069
+#: RE-PINNED 2026-09-29, 79069 to 79038 (-31), this twin reads 79069 before the
+#: change and 79038 with the change (-31): a call site forces the function it
+#: names before deciding the call's shape, so a call of a waiting function
+#: builds the application protocol an eager load builds, and the protocol's
+#: marker test around a value the translation already holds is decided at
+#: compile time: with that use this twin reads 79038 where the definitions
+#: alone read 79069 (-31) [measured 2026-09-29T20:36:47+10:00: min-of-3 serial
+#: fresh processes; command=python extensions/python/tools/twin_coverage.py
+#: --repin].
+BUDGET = 79038
 #: OVERRUN 2026-09-09, 0 to 4070 (+4070): a library's Prolog half compiles
 #: beside itself on its first import and loads from the artifact after
 #: (metta_load_source/2, seam:compiled_source/1): the example imports one, so

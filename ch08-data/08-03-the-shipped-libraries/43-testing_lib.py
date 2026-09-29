@@ -481,4 +481,13 @@ def twin(m):
 #: twin reads 377356 where the definitions alone read 377076 (+280) [measured
 #: 2026-09-29T20:23:35+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 377356
+#: RE-PINNED 2026-09-29, 377356 to 377197 (-159), this twin reads 377356 before
+#: the change and 377197 with the change (-159): a call site forces the
+#: function it names before deciding the call's shape, so a call of a waiting
+#: function builds the application protocol an eager load builds, and the
+#: protocol's marker test around a value the translation already holds is
+#: decided at compile time: with that use this twin reads 377197 where the
+#: definitions alone read 377356 (-159) [measured 2026-09-29T20:35:31+10:00:
+#: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 377197

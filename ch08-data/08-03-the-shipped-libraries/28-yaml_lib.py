@@ -621,7 +621,23 @@ def twin(m):
 #: read 328755 (+1659); its two base readings differ by 3, which the move
 #: exceeds [measured 2026-09-29T20:23:10+10:00: min-of-3 serial fresh
 #: processes; command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 330411
+#: RE-PINNED 2026-09-29, 330411 to 330285 (-126), this twin reads 330414 before
+#: the change and 330288 with the change (-126): the change adds
+#: application_protocol_body/4 to the translator module, and on a tree that
+#: defines them and never calls them this twin reads 330411 (-3), which only a
+#: walk over SWI's predicate or atom tables can move, by visiting more entries
+#: or visiting them in another order; a call site forces the function it names
+#: before deciding the call's shape, so a call of a waiting function builds the
+#: application protocol an eager load builds, and the protocol's marker test
+#: around a value the translation already holds is decided at compile time:
+#: with that use this twin reads 330288 where the definitions alone read 330411
+#: (-123); its two base readings differ by 3, which the move exceeds; it read
+#: 330414 against its pin 330411 before this step, a distance of +3 that is not
+#: this step's (the moves since an earlier step of this landing re-pinned it)
+#: and is not attributed here [measured 2026-09-29T20:35:11+10:00: min-of-3
+#: serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 330285
 
 #: DIVERGED 2026-09-12, the example holds 1 atom the twin does not (1 =) and
 #: the twin holds 1 atom the example does not (1 =): the scope function is four
