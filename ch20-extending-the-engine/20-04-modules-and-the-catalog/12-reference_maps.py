@@ -464,9 +464,24 @@ def twin(m):
 #: --rounds 3
 #: examples/ch20-extending-the-engine/20-04-modules-and-the-catalog/12-reference_maps.metta
 #: reads it].
+#: SHIFTED 2026-09-30 by +18, 111114..111114 to 111132..111132 over 21 under
+#: 'full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot':
+#: Every import request that succeeds, a load or a receipt still current, now
+#: records who asked for the source (engine/metta/interop.pl,
+#: record_import_request/2 writing import_request/3), so unimport! of a package
+#: can leave a file another live requester still asks for. The observations
+#: record the full lane's spread around the count, and this change moves the
+#: count, so both bounds move by the serial delta, the twin's minimum of three
+#: serial runs with the change, 111132, less its minimum of three before it,
+#: 111114, until the next full-lane observation reads them again [measured
+#: 2026-09-30T03:39:02+10:00: the minimum of three fresh-process runs on each
+#: side, as command=python extensions/python/tools/twin_coverage.py --measure
+#: --rounds 3
+#: examples/ch20-extending-the-engine/20-04-modules-and-the-catalog/12-reference_maps.metta
+#: reads it].
 BUDGET = {
-    "minimum": 111114,
-    "maximum": 111114,
+    "minimum": 111132,
+    "maximum": 111132,
     "observations": 21,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }

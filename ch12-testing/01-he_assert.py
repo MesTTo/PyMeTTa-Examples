@@ -558,7 +558,15 @@ RUNG = "the assert family is this file's subject, so each claim names one of its
 #: such lookup of a module's own name [measured 2026-09-30T04:29:18+10:00: min-
 #: of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 46857
+#: RE-PINNED 2026-09-30, 46857 to 46895 (+38), the twins lane reads this twin
+#: at 46857 before this change and at 46895 with it (+38): every import request
+#: that succeeds, a load or a receipt still current, now records who asked for
+#: the source (engine/metta/interop.pl, record_import_request/2 writing
+#: import_request/3), so unimport! of a package can leave a file another live
+#: requester still asks for [measured 2026-09-30T04:34:56+10:00: min-of-3
+#: serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 46895
 
 #: RE-PINNED 2026-09-08, 17475 to 17843 (+368), The engine and library
 #: predicates now resolve through their owning modules and the explicit engine

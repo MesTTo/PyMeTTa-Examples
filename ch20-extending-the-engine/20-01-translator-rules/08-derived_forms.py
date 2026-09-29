@@ -563,7 +563,17 @@ def twin(m):
 #: its pin 13542 before this change, -2 landed main's own reading against that
 #: pin [measured 2026-09-30T04:19:41+10:00: min-of-3 serial fresh processes;
 #: command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 13511
+#: RE-PINNED 2026-09-30, 13511 to 13552 (+41), the twins lane reads this twin
+#: at 13514 before this change and at 13552 with it (+38): every import request
+#: that succeeds, a load or a receipt still current, now records who asked for
+#: the source (engine/metta/interop.pl, record_import_request/2 writing
+#: import_request/3), so unimport! of a package can leave a file another live
+#: requester still asks for; it read 13514 against its pin 13511 before this
+#: change, +3 from an earlier commit of this landing, the takeover read through
+#: a module's compiled predicate, inside the allowance [measured
+#: 2026-09-30T04:35:27+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 13552
 
 #: DIVERGED 2026-09-07, the example holds 1 atom the twin does not (1 =) and
 #: the twin holds 1 atom the example does not (1 =): the twin is an ordinary Python

@@ -651,4 +651,14 @@ def twin(m):
 #: name the prelude does not declare costs one indexed miss and no ownership
 #: probe [measured 2026-09-30T04:16:41+10:00: min-of-3 serial fresh processes;
 #: command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 247054
+#: RE-PINNED 2026-09-30, 247054 to 247311 (+257), the twins lane reads this
+#: twin at 247058 before this change and at 247311 with it (+253): every import
+#: request that succeeds, a load or a receipt still current, now records who
+#: asked for the source (engine/metta/interop.pl, record_import_request/2
+#: writing import_request/3), so unimport! of a package can leave a file
+#: another live requester still asks for; it read 247058 against its pin 247054
+#: before this change, +4 from an earlier commit of this landing, the takeover
+#: read through a module's compiled predicate, inside the allowance [measured
+#: 2026-09-30T04:34:04+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 247311

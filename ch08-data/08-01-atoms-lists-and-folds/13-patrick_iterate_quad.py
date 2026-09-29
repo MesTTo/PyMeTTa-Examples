@@ -612,7 +612,15 @@ def twin(m):
 #: such lookup of a module's own name [measured 2026-09-30T04:28:51+10:00: min-
 #: of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 11533901
+#: RE-PINNED 2026-09-30, 11533901 to 11533939 (+38), the twins lane reads this
+#: twin at 11533901 before this change and at 11533939 with it (+38): every
+#: import request that succeeds, a load or a receipt still current, now records
+#: who asked for the source (engine/metta/interop.pl, record_import_request/2
+#: writing import_request/3), so unimport! of a package can leave a file
+#: another live requester still asks for [measured 2026-09-30T04:33:46+10:00:
+#: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 11533939
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 :): a Python annotation IS a (:

@@ -731,4 +731,12 @@ def twin(m):
 #: such lookup of a module's own name [measured 2026-09-30T04:30:10+10:00: min-
 #: of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 34935
+#: RE-PINNED 2026-09-30, 34935 to 34991 (+56), the twins lane reads this twin
+#: at 34935 before this change and at 34991 with it (+56): every import request
+#: that succeeds, a load or a receipt still current, now records who asked for
+#: the source (engine/metta/interop.pl, record_import_request/2 writing
+#: import_request/3), so unimport! of a package can leave a file another live
+#: requester still asks for [measured 2026-09-30T04:35:51+10:00: min-of-3
+#: serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 34991
