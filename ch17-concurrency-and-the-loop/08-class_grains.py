@@ -469,9 +469,24 @@ def twin(m):
 #: side, as command=python extensions/python/tools/twin_coverage.py --measure
 #: --rounds 3 examples/ch17-concurrency-and-the-loop/08-class_grains.metta
 #: reads it].
+#: SHIFTED 2026-09-28 by -1276602, 4890445..4890445 to 3613843..3613843 over 42
+#: under
+#: 'full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot':
+#: the standing source reader: a definition that cannot move the space's source
+#: map leaves its reader published (334 checks through
+#: metta_reference_reader_stands/2 here), so the run publishes its space's face
+#: 60 times where it published 141. The observations record the full lane's
+#: spread around the count, and this change moves the count, so both bounds
+#: move by the serial delta, the twin's minimum of three serial runs with the
+#: change, 3613843, less its minimum of three before it, 4890445, until the
+#: next full-lane observation reads them again [measured
+#: 2026-09-28T22:36:50+10:00: the minimum of three fresh-process runs on each
+#: side, as command=python extensions/python/tools/twin_coverage.py --measure
+#: --rounds 3 examples/ch17-concurrency-and-the-loop/08-class_grains.metta
+#: reads it].
 BUDGET = {
-    "minimum": 4890445,
-    "maximum": 4890445,
+    "minimum": 3613843,
+    "maximum": 3613843,
     "observations": 42,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }

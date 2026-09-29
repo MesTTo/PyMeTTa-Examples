@@ -666,7 +666,14 @@ def twin(m):
 #: 54934 where the definitions alone read 54659 (+275) [measured
 #: 2026-09-29T06:45:00+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 54934
+#: RE-PINNED 2026-09-29, 54934 to 54944 (+10), this twin reads 54934 before the
+#: change and 54944 with the change (+10): a definition that cannot move its
+#: space's source map leaves the space's source reader published, so a load
+#: beside a from row publishes the face once per runnable instead of once per
+#: definition: with that use this twin reads 54944 where the definitions alone
+#: read 54934 (+10) [measured 2026-09-29T06:51:43+10:00: min-of-3 serial fresh
+#: processes; command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 54944
 
 #: DIVERGED 2026-09-07, the example holds 1 atom the twin does not (1 =) and
 #: the twin holds 1 atom the example does not (1 =): the twin is an ordinary Python

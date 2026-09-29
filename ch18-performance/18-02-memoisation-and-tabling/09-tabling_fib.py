@@ -652,7 +652,14 @@ def twin(m):
 #: 78798 where the definitions alone read 78573 (+225) [measured
 #: 2026-09-29T06:44:59+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 78798
+#: RE-PINNED 2026-09-29, 78798 to 78808 (+10), this twin reads 78798 before the
+#: change and 78808 with the change (+10): a definition that cannot move its
+#: space's source map leaves the space's source reader published, so a load
+#: beside a from row publishes the face once per runnable instead of once per
+#: definition: with that use this twin reads 78808 where the definitions alone
+#: read 78798 (+10) [measured 2026-09-29T06:51:37+10:00: min-of-3 serial fresh
+#: processes; command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 78808
 #: OVERRUN 2026-09-09, 0 to 4070 (+4070): a library's Prolog half compiles
 #: beside itself on its first import and loads from the artifact after
 #: (metta_load_source/2, seam:compiled_source/1): the example imports one, so

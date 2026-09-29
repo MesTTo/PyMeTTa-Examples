@@ -503,4 +503,11 @@ def twin(m):
 #: 395049 where the definitions alone read 394187 (+862) [measured
 #: 2026-09-29T06:43:34+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 395049
+#: RE-PINNED 2026-09-29, 395049 to 395089 (+40), this twin reads 395049 before
+#: the change and 395089 with the change (+40): a definition that cannot move
+#: its space's source map leaves the space's source reader published, so a load
+#: beside a from row publishes the face once per runnable instead of once per
+#: definition: with that use this twin reads 395089 where the definitions alone
+#: read 395049 (+40) [measured 2026-09-29T06:51:25+10:00: min-of-3 serial fresh
+#: processes; command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 395089

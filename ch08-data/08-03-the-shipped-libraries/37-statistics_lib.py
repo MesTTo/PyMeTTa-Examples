@@ -576,7 +576,24 @@ def twin(m):
 #: twin reads 2303321 where the definitions alone read 2301475 (+1846)
 #: [measured 2026-09-29T06:43:40+10:00: min-of-3 serial fresh processes;
 #: command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 2303319
+#: RE-PINNED 2026-09-29, 2303319 to 2303359 (+40), this twin reads 2303321
+#: before the change and 2303359 with the change (+38): the fr step adds
+#: metta_reference_definition_changed/2, metta_reference_equation_head/2,
+#: metta_reference_fed_by_none/2, metta_reference_interface_head/2,
+#: metta_reference_reader_stands/2 and metta_reference_with_readers_standing/2
+#: to the metta_engine module, and on a tree that defines them and never calls
+#: them this twin reads 2303319 (-2), which only a walk over SWI's predicate or
+#: atom tables can move, by visiting more entries or visiting them in another
+#: order; a definition that cannot move its space's source map leaves the
+#: space's source reader published, so a load beside a from row publishes the
+#: face once per runnable instead of once per definition: with that use this
+#: twin reads 2303359 where the definitions alone read 2303319 (+40); it read
+#: 2303321 against its pin 2303319 before this step, a distance of +2 that is
+#: not this step's (the moves since an earlier step of this landing re-pinned
+#: it) and is not attributed here [measured 2026-09-29T06:51:33+10:00: min-of-3
+#: serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 2303359
 
 #: RETIRED: the former 1826-inference overrun. The 78-claim MeTTa recipe now
 #: costs 40092306 and its twin 40107888, within the ordinary band.

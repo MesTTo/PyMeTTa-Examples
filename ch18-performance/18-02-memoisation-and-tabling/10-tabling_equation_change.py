@@ -614,9 +614,23 @@ def twin(m):
 #: extensions/python/tools/twin_coverage.py --measure --rounds 3
 #: examples/ch18-performance/18-02-memoisation-and-tabling/10-tabling_equation_change.metta
 #: reads it].
+#: SHIFTED 2026-09-28 by +10, 49064..49064 to 49074..49074 over 42 under
+#: 'full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot':
+#: the standing source reader: each of the 5 times the program owes its space a
+#: publication it now asks first whether the space's readers stand
+#: (metta_reference_with_readers_standing/2), +10. The observations record the
+#: full lane's spread around the count, and this change moves the count, so
+#: both bounds move by the serial delta, the twin's minimum of three serial
+#: runs with the change, 49074, less its minimum of three before it, 49064,
+#: until the next full-lane observation reads them again [measured
+#: 2026-09-28T22:36:50+10:00: the minimum of three fresh-process runs on each
+#: side, as command=python extensions/python/tools/twin_coverage.py --measure
+#: --rounds 3
+#: examples/ch18-performance/18-02-memoisation-and-tabling/10-tabling_equation_change.metta
+#: reads it].
 BUDGET = {
-    "minimum": 49064,
-    "maximum": 49064,
+    "minimum": 49074,
+    "maximum": 49074,
     "observations": 42,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }

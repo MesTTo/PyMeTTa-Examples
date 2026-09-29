@@ -677,4 +677,18 @@ def twin(m):  # noqa: ARG001  -- both spaces are created here; the default handl
 #: earlier steps' moves inside its tolerance) and is not attributed here
 #: [measured 2026-09-29T06:45:05+10:00: min-of-3 serial fresh processes;
 #: command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 68579
+#: RE-PINNED 2026-09-29, 68579 to 68810 (+231), this twin reads 68579 before
+#: the change and 68810 with the change (+231): the fr step adds
+#: metta_reference_definition_changed/2, metta_reference_equation_head/2,
+#: metta_reference_fed_by_none/2, metta_reference_interface_head/2,
+#: metta_reference_reader_stands/2 and metta_reference_with_readers_standing/2
+#: to the metta_engine module, and on a tree that defines them and never calls
+#: them this twin reads 68781 (+202), which only a walk over SWI's predicate or
+#: atom tables can move, by visiting more entries or visiting them in another
+#: order; a definition that cannot move its space's source map leaves the
+#: space's source reader published, so a load beside a from row publishes the
+#: face once per runnable instead of once per definition: with that use this
+#: twin reads 68810 where the definitions alone read 68781 (+29) [measured
+#: 2026-09-29T06:51:44+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 68810
