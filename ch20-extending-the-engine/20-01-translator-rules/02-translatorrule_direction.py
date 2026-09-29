@@ -443,4 +443,12 @@ def twin(m):
 #: twin reads 12728 where the definitions alone read 12686 (+42) [measured
 #: 2026-09-29T20:25:47+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 12728
+#: RE-PINNED 2026-09-29, 12728 to 12768 (+40), this twin reads 12728 before the
+#: change and 12768 with the change (+40): a restore of an inherited name whose
+#: nearest home on the module's chain holds waiting equations imports from that
+#: home and records a receipt later sweeps revisit, where SWI's walk passed the
+#: waiting home by: with that use this twin reads 12768 where the definitions
+#: alone read 12728 (+40) [measured 2026-09-29T20:31:13+10:00: min-of-3 serial
+#: fresh processes; command=python extensions/python/tools/twin_coverage.py
+#: --repin].
+BUDGET = 12768

@@ -507,7 +507,15 @@ def twin(m):
 #: twin reads 6915 where the definitions alone read 6888 (+27) [measured
 #: 2026-09-29T20:19:44+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 6915
+#: RE-PINNED 2026-09-29, 6915 to 6955 (+40), this twin reads 6915 before the
+#: change and 6955 with the change (+40): a restore of an inherited name whose
+#: nearest home on the module's chain holds waiting equations imports from that
+#: home and records a receipt later sweeps revisit, where SWI's walk passed the
+#: waiting home by: with that use this twin reads 6955 where the definitions
+#: alone read 6915 (+40) [measured 2026-09-29T20:31:13+10:00: min-of-3 serial
+#: fresh processes; command=python extensions/python/tools/twin_coverage.py
+#: --repin].
+BUDGET = 6955
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 2 the example does not (2 :): a Python annotation IS a (:
