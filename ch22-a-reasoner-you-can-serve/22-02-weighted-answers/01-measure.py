@@ -625,10 +625,29 @@ def twin(m):
 #: extensions/python/tools/twin_coverage.py --measure --rounds 3
 #: examples/ch22-a-reasoner-you-can-serve/22-02-weighted-answers/01-measure.metta
 #: reads it].
+#: RE-OBSERVED 2026-09-29 under
+#: 'full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot',
+#: 137090..137156 to 137099..137198 over 23 observations: the six (the
+#: lost-define doors to the module-directed marks) moved the runtime under this
+#: envelope, c3 shifted +977; the envelope pools the 20 rounds with the twins
+#: lanes run at md's state under this protocol, since a whole-lane run under it
+#: is an observation, and with nothing an earlier runtime read: the 20 rounds
+#: read 137099..137198; the twins lane at the md stage of the chain readings
+#: read 137165; the twins lane of the first pins re-read at md's commit read
+#: 137132; the twins lane of the third pins re-read at md's commit read 137132
+#: [measured 2026-09-29T05:56:03+10:00: 20 full-lane observations at md's
+#: state; command=python extensions/python/tools/twin_coverage.py --observe
+#: --rounds 20] [measured 2026-09-29T02:33:35+10:00: the twins lane at the md
+#: stage of the chain readings; command=python
+#: extensions/python/tools/twin_coverage.py] [measured
+#: 2026-09-29T05:36:41+10:00: the twins lane of the first pins re-read at md's
+#: commit; command=python extensions/python/tools/twin_coverage.py] [measured
+#: 2026-09-29T10:13:18+10:00: the twins lane of the third pins re-read at md's
+#: commit; command=python extensions/python/tools/twin_coverage.py].
 BUDGET = {
-    "minimum": 137090,
-    "maximum": 137156,
-    "observations": 42,
+    "minimum": 137099,
+    "maximum": 137198,
+    "observations": 23,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 

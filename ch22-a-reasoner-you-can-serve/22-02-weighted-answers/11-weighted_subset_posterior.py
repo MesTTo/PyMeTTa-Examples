@@ -485,4 +485,19 @@ def twin(m):
 #: twin reads 1807775 where the definitions alone read 1807737 (+38) [measured
 #: 2026-09-29T06:51:53+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 1807775
+#: RE-PINNED 2026-09-29, 1807775 to 1807885 (+110), this twin reads 1807777
+#: before the change and 1807887 with the change (+110): the md step adds
+#: '$metta_shadow_name_changed'/3, metta_exec_module_link/2,
+#: metta_forget_exec_module_tier/1, metta_shadow_name_changed/3 and
+#: metta_shadow_receipt_reached/4 to the spaces module, and on a tree that
+#: defines them and never calls them this twin reads 1807775 (-2), which only a
+#: walk over SWI's predicate or atom tables can move, by visiting more entries
+#: or visiting them in another order; a mark names the module its definition
+#: changed in, and a sweep repairs only the receipts held by that module and
+#: its declared descendants: with that use this twin reads 1807887 where the
+#: definitions alone read 1807775 (+112); it read 1807777 against its pin
+#: 1807775 before this step, a distance of +2 that is not this step's (the
+#: moves since an earlier step of this landing re-pinned it) and is not
+#: attributed here [measured 2026-09-29T06:57:37+10:00: min-of-3 serial fresh
+#: processes; command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 1807885

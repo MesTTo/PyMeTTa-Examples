@@ -591,7 +591,22 @@ def twin(m):
 #: read 328024 (+206) [measured 2026-09-29T06:51:16+10:00: min-of-3 serial
 #: fresh processes; command=python extensions/python/tools/twin_coverage.py
 #: --repin].
-BUDGET = 328230
+#: RE-PINNED 2026-09-29, 328230 to 328758 (+528), this twin reads 328233 before
+#: the change and 328755 with the change (+522): the md step adds
+#: '$metta_shadow_name_changed'/3, metta_exec_module_link/2,
+#: metta_forget_exec_module_tier/1, metta_shadow_name_changed/3 and
+#: metta_shadow_receipt_reached/4 to the spaces module, and on a tree that
+#: defines them and never calls them this twin reads 328230 (-3), which only a
+#: walk over SWI's predicate or atom tables can move, by visiting more entries
+#: or visiting them in another order; a mark names the module its definition
+#: changed in, and a sweep repairs only the receipts held by that module and
+#: its declared descendants: with that use this twin reads 328755 where the
+#: definitions alone read 328230 (+525); it read 328233 against its pin 328230
+#: before this step, a distance of +3 that is not this step's (the moves since
+#: an earlier step of this landing re-pinned it) and is not attributed here
+#: [measured 2026-09-29T06:56:35+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 328758
 
 #: DIVERGED 2026-09-12, the example holds 1 atom the twin does not (1 =) and
 #: the twin holds 1 atom the example does not (1 =): the scope function is four

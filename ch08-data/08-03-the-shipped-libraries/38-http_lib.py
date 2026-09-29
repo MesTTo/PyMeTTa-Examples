@@ -368,9 +368,28 @@ def twin(m):
 #: the minimum of three fresh-process runs on each side, as command=python
 #: extensions/python/tools/twin_coverage.py --measure --rounds 3
 #: examples/ch08-data/08-03-the-shipped-libraries/38-http_lib.metta reads it].
+#: RE-OBSERVED 2026-09-29 under
+#: 'full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot',
+#: 543614..544552 to 544391..545328 over 23 observations: the six (the
+#: lost-define doors to the module-directed marks) moved the runtime under this
+#: envelope, c3 shifted +1078; the envelope pools the 20 rounds with the twins
+#: lanes run at md's state under this protocol, since a whole-lane run under it
+#: is an observation, and with nothing an earlier runtime read: the 20 rounds
+#: read 544391..545328; the twins lane at the md stage of the chain readings
+#: read 544391; the twins lane of the first pins re-read at md's commit read
+#: 544391; the twins lane of the third pins re-read at md's commit read 544391
+#: [measured 2026-09-29T05:56:03+10:00: 20 full-lane observations at md's
+#: state; command=python extensions/python/tools/twin_coverage.py --observe
+#: --rounds 20] [measured 2026-09-29T02:33:35+10:00: the twins lane at the md
+#: stage of the chain readings; command=python
+#: extensions/python/tools/twin_coverage.py] [measured
+#: 2026-09-29T05:36:41+10:00: the twins lane of the first pins re-read at md's
+#: commit; command=python extensions/python/tools/twin_coverage.py] [measured
+#: 2026-09-29T10:13:18+10:00: the twins lane of the third pins re-read at md's
+#: commit; command=python extensions/python/tools/twin_coverage.py].
 BUDGET = {
-    "minimum": 543614,
-    "maximum": 544552,
-    "observations": 42,
+    "minimum": 544391,
+    "maximum": 545328,
+    "observations": 23,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }

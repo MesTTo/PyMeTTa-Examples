@@ -516,7 +516,14 @@ RUNG = "the assert family is this file's subject, so each claim names one of its
 #: 46747 where the definitions alone read 45882 (+865) [measured
 #: 2026-09-29T06:44:17+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 46747
+#: RE-PINNED 2026-09-29, 46747 to 46832 (+85), this twin reads 46747 before the
+#: change and 46832 with the change (+85): a mark names the module its
+#: definition changed in, and a sweep repairs only the receipts held by that
+#: module and its declared descendants: with that use this twin reads 46832
+#: where the definitions alone read 46747 (+85) [measured
+#: 2026-09-29T06:56:55+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 46832
 
 #: RE-PINNED 2026-09-08, 17475 to 17843 (+368), The engine and library
 #: predicates now resolve through their owning modules and the explicit engine

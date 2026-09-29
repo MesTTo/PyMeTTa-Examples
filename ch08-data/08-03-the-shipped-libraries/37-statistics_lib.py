@@ -593,7 +593,22 @@ def twin(m):
 #: it) and is not attributed here [measured 2026-09-29T06:51:33+10:00: min-of-3
 #: serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 2303359
+#: RE-PINNED 2026-09-29, 2303359 to 2303469 (+110), this twin reads 2303361
+#: before the change and 2303471 with the change (+110): the md step adds
+#: '$metta_shadow_name_changed'/3, metta_exec_module_link/2,
+#: metta_forget_exec_module_tier/1, metta_shadow_name_changed/3 and
+#: metta_shadow_receipt_reached/4 to the spaces module, and on a tree that
+#: defines them and never calls them this twin reads 2303359 (-2), which only a
+#: walk over SWI's predicate or atom tables can move, by visiting more entries
+#: or visiting them in another order; a mark names the module its definition
+#: changed in, and a sweep repairs only the receipts held by that module and
+#: its declared descendants: with that use this twin reads 2303471 where the
+#: definitions alone read 2303359 (+112); it read 2303361 against its pin
+#: 2303359 before this step, a distance of +2 that is not this step's (the
+#: moves since an earlier step of this landing re-pinned it) and is not
+#: attributed here [measured 2026-09-29T06:56:45+10:00: min-of-3 serial fresh
+#: processes; command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 2303469
 
 #: RETIRED: the former 1826-inference overrun. The 78-claim MeTTa recipe now
 #: costs 40092306 and its twin 40107888, within the ordinary band.

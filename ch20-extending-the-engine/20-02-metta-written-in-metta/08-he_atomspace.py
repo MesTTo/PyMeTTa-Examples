@@ -418,4 +418,11 @@ RUNG = "the imported add-reduct equation and its stored body are the subject"
 #: 36901 where the definitions alone read 35980 (+921) [measured
 #: 2026-09-29T06:45:37+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 36901
+#: RE-PINNED 2026-09-29, 36901 to 36986 (+85), this twin reads 36901 before the
+#: change and 36986 with the change (+85): a mark names the module its
+#: definition changed in, and a sweep repairs only the receipts held by that
+#: module and its declared descendants: with that use this twin reads 36986
+#: where the definitions alone read 36901 (+85) [measured
+#: 2026-09-29T06:57:16+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 36986

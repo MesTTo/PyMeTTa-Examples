@@ -718,7 +718,48 @@ def twin(m):
 #: where the definitions alone read 39918 (+142) [measured
 #: 2026-09-29T06:44:32+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 40061
+#: RE-PINNED 2026-09-29, 40061 to 40070 (+9), this twin reads 40060 before the
+#: change and 40070 with the change (+10): a mark names the module its
+#: definition changed in, and a sweep repairs only the receipts held by that
+#: module and its declared descendants: with that use this twin reads 40070
+#: where the definitions alone read 40060 (+10); it read 40060 against its pin
+#: 40061 before this step, a distance of -1 that is not this step's (the moves
+#: since an earlier step of this landing re-pinned it) and is not attributed
+#: here [measured 2026-09-29T06:56:56+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+#: RE-PINNED 2026-09-29, 40070 to 40068 (-2), a re-centring and not a move: the
+#: pin above was one reading of a count that spreads: it follows which branch
+#: of its concurrent_and/3 race answers when, two or three port tables in both
+#: arms at every state of the landing: the base reads 39,897 to 39,898 on two
+#: port tables with the gc thread and 39,895 to 39,898 on three without it, and
+#: md 40,068 to 40,071 with the gc thread and 40,067 to 40,071 without it, on
+#: three port tables each, so the gc thread is not what moves it; md's 20
+#: --observe rounds pooled with the twins lanes run at md's state read 40065 to
+#: 40071 over 23 observations, so the pin takes the middle of that range rather
+#: than one reading of it, and its band of 4 covers every one, the twin staying
+#: a point pin inside its allowance with the allowance unwidened: the 20 rounds
+#: read 40065..40071; the twins lane at the md stage of the chain readings read
+#: 40070; the twins lane of the first pins re-read at md's commit read 40071;
+#: the twins lane of the third pins re-read at md's commit read 40070 [measured
+#: 2026-09-29T05:56:03+10:00: 20 full-lane observations at md's state;
+#: command=python extensions/python/tools/twin_coverage.py --observe --rounds
+#: 20] [measured 2026-09-29T02:33:35+10:00: the twins lane at the md stage of
+#: the chain readings; command=python extensions/python/tools/twin_coverage.py]
+#: [measured 2026-09-29T05:36:41+10:00: the twins lane of the first pins
+#: re-read at md's commit; command=python
+#: extensions/python/tools/twin_coverage.py] [measured
+#: 2026-09-29T10:13:18+10:00: the twins lane of the third pins re-read at md's
+#: commit; command=python extensions/python/tools/twin_coverage.py] [measured
+#: 2026-09-29T10:38:50+10:00: 40 fresh processes per arm at each state of the
+#: landing rehearsed over its base in one battery, the twins lane's own child
+#: program with and without set_prolog_flag(gc_thread, false) before boot]
+#: [source 2026-09-29T11:28:25+10:00:
+#: docs/journal/2026-09-09-runtime-units-compile-beside-their-source.md line
+#: 129, 04-thin_forms' spreads read inside the point allowance] [source
+#: 2026-09-29T11:28:36+10:00: docs/journal/2026-09-09-the-splice-in-an-arrow.md
+#: line 221, empirical bounds do not receive the deterministic four-inference
+#: tolerance].
+BUDGET = 40068
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 :): a Python annotation IS a (:

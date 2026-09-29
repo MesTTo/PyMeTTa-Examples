@@ -668,4 +668,50 @@ def twin(m):
 #: definition: with that use this twin reads 232907 where the definitions alone
 #: read 232821 (+86) [measured 2026-09-29T06:51:06+10:00: min-of-3 serial fresh
 #: processes; command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 232907
+#: RE-PINNED 2026-09-29, 232907 to 233145 (+238), this twin reads 232907 before
+#: the change and 233132 with the change (+225): a mark names the module its
+#: definition changed in, and a sweep repairs only the receipts held by that
+#: module and its declared descendants: with that use this twin reads 233132
+#: where the definitions alone read 232907 (+225) [measured
+#: 2026-09-29T06:56:14+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+#: ENVELOPED 2026-09-29 under
+#: 'full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot',
+#: the point pin 233145 to 233132..233145 over 23 observations: from md on, a
+#: clause collection landing inside this twin's window adds one to three
+#: inferences to each of ten of its fn calls' held cursor engines, 13 in all,
+#: and md's per-module marks moved the natural collection into the window: at
+#: md 35 of 40 fresh processes read 233,132 and 5 read 233,145, and 40 of 40
+#: read 233,132 with the gc thread off before boot, where the base, wc, ld, c3,
+#: fr and fb each read one count in both arms; the lookups did this before md
+#: too, since clause collection forced at random points inside the window reads
+#: the same +13 at the base (17 of 40) and at fb (19 of 40) as at md (13 of
+#: 40), so a point pin with the +-4 tolerance is a false claim here. Bounds are
+#: the exact extrema of md's 20 --observe rounds pooled with the twins lanes
+#: run at md's state under this protocol, since a whole-lane run under it is an
+#: observation: the 20 rounds read 233132..233145; the twins lane at the md
+#: stage of the chain readings read 233132; the twins lane of the first pins
+#: re-read at md's commit read 233145; the twins lane of the third pins re-read
+#: at md's commit read 233132 [measured 2026-09-29T05:56:03+10:00: 20 full-lane
+#: observations at md's state; command=python
+#: extensions/python/tools/twin_coverage.py --observe --rounds 20] [measured
+#: 2026-09-29T02:33:35+10:00: the twins lane at the md stage of the chain
+#: readings; command=python extensions/python/tools/twin_coverage.py] [measured
+#: 2026-09-29T05:36:41+10:00: the twins lane of the first pins re-read at md's
+#: commit; command=python extensions/python/tools/twin_coverage.py] [measured
+#: 2026-09-29T10:13:18+10:00: the twins lane of the third pins re-read at md's
+#: commit; command=python extensions/python/tools/twin_coverage.py] [measured
+#: 2026-09-29T10:38:50+10:00: 40 fresh processes per arm at each state of the
+#: landing rehearsed over its base in one battery, the twins lane's own child
+#: program with and without set_prolog_flag(gc_thread, false) before boot]
+#: [measured 2026-09-29T11:09:53+10:00: 40 fresh processes each at the base, fb
+#: and md with garbage_collect_clauses forced at exponential intervals of 2 ms
+#: mean inside the window] [measured 2026-09-29T11:03:30+10:00: the inference
+#: counter and the held engines' credits read at every line of the twin in 40
+#: fresh processes at md].
+BUDGET = {
+    "minimum": 233132,
+    "maximum": 233145,
+    "observations": 23,
+    "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
+}

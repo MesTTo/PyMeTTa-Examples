@@ -334,10 +334,34 @@ def twin(m):
 #: same battery run; command=sh tools/check.sh twins] [measured
 #: 2026-09-28T14:03:07+10:00: the twins lane of the landing's whole gate;
 #: command=GATE_ONLY=1 sh tools/check.sh].
+#: RE-OBSERVED 2026-09-29 under
+#: 'full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot',
+#: 70397..76925 to 64680..69575 over 23 observations: the six (the lost-define
+#: doors to the module-directed marks) moved the runtime under this envelope,
+#: fr -5159 by the lane's own readings, unshifted; with fr, reference_loading's
+#: modes fall by about 5.7k: its dominant reading moves from 70,397 at the base
+#: to 64,681 (13 of md's 20 rounds), md's 23 observations spanning
+#: 64,680..69,575; the -5,159 the lane read at fr is that fall, a saving fr's
+#: publication of the face once per runnable makes, which the serial tables did
+#: not shift; the envelope pools the 20 rounds with the twins lanes run at md's
+#: state under this protocol, since a whole-lane run under it is an
+#: observation, and with nothing an earlier runtime read: the 20 rounds read
+#: 64680..69575; the twins lane at the md stage of the chain readings read
+#: 64681; the twins lane of the first pins re-read at md's commit read 66077;
+#: the twins lane of the third pins re-read at md's commit read 69562 [measured
+#: 2026-09-29T05:56:03+10:00: 20 full-lane observations at md's state;
+#: command=python extensions/python/tools/twin_coverage.py --observe --rounds
+#: 20] [measured 2026-09-29T02:33:35+10:00: the twins lane at the md stage of
+#: the chain readings; command=python extensions/python/tools/twin_coverage.py]
+#: [measured 2026-09-29T05:36:41+10:00: the twins lane of the first pins
+#: re-read at md's commit; command=python
+#: extensions/python/tools/twin_coverage.py] [measured
+#: 2026-09-29T10:13:18+10:00: the twins lane of the third pins re-read at md's
+#: commit; command=python extensions/python/tools/twin_coverage.py].
 BUDGET = {
-    "minimum": 70397,
-    "maximum": 76925,
-    "observations": 42,
+    "minimum": 64680,
+    "maximum": 69575,
+    "observations": 23,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 

@@ -824,4 +824,13 @@ def twin(m):
 #: 316058 where the definitions alone read 315319 (+739) [measured
 #: 2026-09-29T06:46:07+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 316058
+#: RE-PINNED 2026-09-29, 316058 to 316075 (+17), this twin reads 316060 before
+#: the change and 316075 with the change (+15): a mark names the module its
+#: definition changed in, and a sweep repairs only the receipts held by that
+#: module and its declared descendants: with that use this twin reads 316075
+#: where the definitions alone read 316060 (+15); it read 316060 against its
+#: pin 316058 before this step, a distance of +2 that is not this step's (the
+#: moves since an earlier step of this landing re-pinned it) and is not
+#: attributed here [measured 2026-09-29T06:57:36+10:00: min-of-3 serial fresh
+#: processes; command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 316075

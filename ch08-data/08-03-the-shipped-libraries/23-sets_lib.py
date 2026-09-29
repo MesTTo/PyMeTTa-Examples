@@ -508,7 +508,16 @@ def twin(m):
 #: 335460 where the definitions alone read 334867 (+593) [measured
 #: 2026-09-29T06:43:21+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 335460
+#: RE-PINNED 2026-09-29, 335460 to 335477 (+17), this twin reads 335462 before
+#: the change and 335477 with the change (+15): a mark names the module its
+#: definition changed in, and a sweep repairs only the receipts held by that
+#: module and its declared descendants: with that use this twin reads 335477
+#: where the definitions alone read 335462 (+15); it read 335462 against its
+#: pin 335460 before this step, a distance of +2 that is not this step's (the
+#: moves since an earlier step of this landing re-pinned it) and is not
+#: attributed here [measured 2026-09-29T06:56:25+10:00: min-of-3 serial fresh
+#: processes; command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 335477
 
 #: OVERRUN 2026-09-12, 1399: the example nests its law claims in one evaluation
 #: each, where Python reads them as separate calls whose intermediate sets cross
