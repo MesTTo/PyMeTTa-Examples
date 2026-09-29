@@ -745,7 +745,16 @@ def twin(m):
 #: declare costs one indexed miss and no ownership probe [measured
 #: 2026-09-30T04:14:50+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 80859
+#: RE-PINNED 2026-09-30, 80859 to 80931 (+72), the twins lane reads this twin
+#: at 80859 before this change and at 80931 with it (+72): a module takes a
+#: name over only when the name's equations compile to a predicate of that name
+#: (engine/metta/registration.pl, fun_overrides_in/2), so each reader that
+#: asked fun_in/2 whether a module took a name over now also asks
+#: compiled_function_name/2 when the module registers the name, one call per
+#: such lookup of a module's own name [measured 2026-09-30T04:28:15+10:00: min-
+#: of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 80931
 
 #: DIVERGED 2026-09-07, the example holds 8 atoms the twin does not (8 =) and
 #: the twin holds 8 the example does not (1 :, 7 =): the twin is an ordinary

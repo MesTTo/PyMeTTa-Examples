@@ -719,9 +719,25 @@ def twin(m):
 #: extensions/python/tools/twin_coverage.py --measure --rounds 3
 #: examples/ch18-performance/18-02-memoisation-and-tabling/10-tabling_equation_change.metta
 #: reads it].
+#: SHIFTED 2026-09-30 by +10, 49107..49107 to 49117..49117 over 21 under
+#: 'full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot':
+#: A module takes a name over only when the name's equations compile to a
+#: predicate of that name (engine/metta/registration.pl, fun_overrides_in/2),
+#: so each reader that asked fun_in/2 whether a module took a name over now
+#: also asks compiled_function_name/2 when the module registers the name, one
+#: call per such lookup of a module's own name. The observations record the
+#: full lane's spread around the count, and this change moves the count, so
+#: both bounds move by the serial delta, the twin's minimum of three serial
+#: runs with the change, 49117, less its minimum of three before it, 49107,
+#: until the next full-lane observation reads them again [measured
+#: 2026-09-30T03:33:56+10:00: the minimum of three fresh-process runs on each
+#: side, as command=python extensions/python/tools/twin_coverage.py --measure
+#: --rounds 3
+#: examples/ch18-performance/18-02-memoisation-and-tabling/10-tabling_equation_change.metta
+#: reads it].
 BUDGET = {
-    "minimum": 49107,
-    "maximum": 49107,
+    "minimum": 49117,
+    "maximum": 49117,
     "observations": 21,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }

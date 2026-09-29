@@ -636,7 +636,16 @@ def twin(m):
 #: name the prelude does not declare costs one indexed miss and no ownership
 #: probe [measured 2026-09-30T04:26:12+10:00: min-of-3 serial fresh processes;
 #: command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 2276647
+#: RE-PINNED 2026-09-30, 2276647 to 2276665 (+18), the twins lane reads this
+#: twin at 2276649 before this change and at 2276665 with it (+16): a module
+#: takes a name over only when the name's equations compile to a predicate of
+#: that name (engine/metta/registration.pl, fun_overrides_in/2), so each reader
+#: that asked fun_in/2 whether a module took a name over now also asks
+#: compiled_function_name/2 when the module registers the name, one call per
+#: such lookup of a module's own name [measured 2026-09-30T04:29:17+10:00: min-
+#: of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 2276665
 
 #: RETIRED: the former 1826-inference overrun. The 78-claim MeTTa recipe now
 #: costs 40092306 and its twin 40107888, within the ordinary band.

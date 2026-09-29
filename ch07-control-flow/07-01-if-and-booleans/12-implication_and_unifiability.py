@@ -357,4 +357,13 @@ def twin(m):
 #: its pin 16625 before this change, -2 landed main's own reading against that
 #: pin [measured 2026-09-30T04:15:22+10:00: min-of-3 serial fresh processes;
 #: command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 16575
+#: RE-PINNED 2026-09-30, 16575 to 16593 (+18), the twins lane reads this twin
+#: at 16575 before this change and at 16593 with it (+18): a module takes a
+#: name over only when the name's equations compile to a predicate of that name
+#: (engine/metta/registration.pl, fun_overrides_in/2), so each reader that
+#: asked fun_in/2 whether a module took a name over now also asks
+#: compiled_function_name/2 when the module registers the name, one call per
+#: such lookup of a module's own name [measured 2026-09-30T04:28:24+10:00: min-
+#: of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 16593

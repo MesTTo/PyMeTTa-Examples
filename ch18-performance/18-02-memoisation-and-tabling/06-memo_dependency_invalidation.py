@@ -552,7 +552,16 @@ def twin(m):
 #: its pin 31220 before this change, -2 landed main's own reading against that
 #: pin [measured 2026-09-30T04:20:22+10:00: min-of-3 serial fresh processes;
 #: command=python extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 31117
+#: RE-PINNED 2026-09-30, 31117 to 31125 (+8), the twins lane reads this twin at
+#: 31117 before this change and at 31125 with it (+8): a module takes a name
+#: over only when the name's equations compile to a predicate of that name
+#: (engine/metta/registration.pl, fun_overrides_in/2), so each reader that
+#: asked fun_in/2 whether a module took a name over now also asks
+#: compiled_function_name/2 when the module registers the name, one call per
+#: such lookup of a module's own name [measured 2026-09-30T04:30:02+10:00: min-
+#: of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 31125
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 :): a Python annotation IS a (:

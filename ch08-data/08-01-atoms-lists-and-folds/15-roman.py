@@ -775,7 +775,16 @@ def twin(m):
 #: declare costs one indexed miss and no ownership probe [measured
 #: 2026-09-30T04:16:18+10:00: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 328846
+#: RE-PINNED 2026-09-30, 328846 to 329104 (+258), the twins lane reads this
+#: twin at 328846 before this change and at 329104 with it (+258): a module
+#: takes a name over only when the name's equations compile to a predicate of
+#: that name (engine/metta/registration.pl, fun_overrides_in/2), so each reader
+#: that asked fun_in/2 whether a module took a name over now also asks
+#: compiled_function_name/2 when the module registers the name, one call per
+#: such lookup of a module's own name [measured 2026-09-30T04:28:52+10:00: min-
+#: of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 329104
 
 #: OVERRUN 2026-09-07, 17700: it names every lib_roman function at every claim
 #: and runs the backwards `let` inverses beside them. Measured 320547 against a
