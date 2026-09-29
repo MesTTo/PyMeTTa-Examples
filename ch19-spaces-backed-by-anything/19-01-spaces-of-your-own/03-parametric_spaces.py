@@ -431,4 +431,12 @@ def twin(m):
 #: in a battery of its tree at 775d3cf35, beside one of the base in a battery
 #: of 775d3cf35 from 2026-09-27T18:40:06+10:00, which reads the old pin;
 #: command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 5907
+#: RE-PINNED 2026-09-29, 5907 to 5915 (+8), this twin reads 5907 before the
+#: change and 5915 with the change (+8): each definition through the define
+#: doors asks whether its module holds a shadow-import receipt for the name,
+#: holds it in flight until the write is visible when it does, and a sweep
+#: leaves a receipt another live thread holds: with that use this twin reads
+#: 5915 where the definitions alone read 5907 (+8) [measured
+#: 2026-09-29T06:37:50+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 5915

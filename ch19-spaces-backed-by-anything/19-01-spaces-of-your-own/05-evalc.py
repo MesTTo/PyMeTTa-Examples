@@ -560,7 +560,15 @@ def twin(m):
 #: inferences [measured 2026-09-27T20:31:29+10:00: full twins lanes on swipl-
 #: patched.8 in wt-merge's battery 1, two of the stack through janus-contract B
 #: and two with janus-contract A; command=sh tools/check.sh twins].
-BUDGET = 13681
+#: RE-PINNED 2026-09-29, 13681 to 13693 (+12), this twin reads 13681 before the
+#: change and 13693 with the change (+12): each definition through the define
+#: doors asks whether its module holds a shadow-import receipt for the name,
+#: holds it in flight until the write is visible when it does, and a sweep
+#: leaves a receipt another live thread holds: with that use this twin reads
+#: 13693 where the definitions alone read 13681 (+12) [measured
+#: 2026-09-29T06:37:50+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 13693
 
 #: DIVERGED 2026-09-07, the example holds 0 atoms the twin does not (none) and
 #: the twin holds 1 atom the example does not (1 :): a Python annotation IS a (:

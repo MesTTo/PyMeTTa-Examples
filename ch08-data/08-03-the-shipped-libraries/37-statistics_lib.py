@@ -561,7 +561,15 @@ def twin(m):
 #: battery 1 on swipl-patched.8 at this boundary, engine/host_notices.pl as
 #: amended against the day before's as first written; command=sh tools/check.sh
 #: twins].
-BUDGET = 2301380
+#: RE-PINNED 2026-09-29, 2301380 to 2301475 (+95), this twin reads 2301380
+#: before the change and 2301475 with the change (+95): each definition through
+#: the define doors asks whether its module holds a shadow-import receipt for
+#: the name, holds it in flight until the write is visible when it does, and a
+#: sweep leaves a receipt another live thread holds: with that use this twin
+#: reads 2301475 where the definitions alone read 2301380 (+95) [measured
+#: 2026-09-29T06:36:51+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 2301475
 
 #: RETIRED: the former 1826-inference overrun. The 78-claim MeTTa recipe now
 #: costs 40092306 and its twin 40107888, within the ordinary band.

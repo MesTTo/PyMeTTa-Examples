@@ -637,7 +637,15 @@ def twin(m):
 #: battery 1 on swipl-patched.8 at this boundary, engine/host_notices.pl as
 #: amended against the day before's as first written; command=sh tools/check.sh
 #: twins].
-BUDGET = 78563
+#: RE-PINNED 2026-09-29, 78563 to 78573 (+10), this twin reads 78563 before the
+#: change and 78573 with the change (+10): each definition through the define
+#: doors asks whether its module holds a shadow-import receipt for the name,
+#: holds it in flight until the write is visible when it does, and a sweep
+#: leaves a receipt another live thread holds: with that use this twin reads
+#: 78573 where the definitions alone read 78563 (+10) [measured
+#: 2026-09-29T06:37:39+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 78573
 #: OVERRUN 2026-09-09, 0 to 4070 (+4070): a library's Prolog half compiles
 #: beside itself on its first import and loads from the artifact after
 #: (metta_load_source/2, seam:compiled_source/1): the example imports one, so

@@ -524,7 +524,15 @@ def twin(m):
 #: lanes in wt-merge's battery 1, tsm-licence's series and its engine reader on
 #: swipl-patched.7, the series on swipl-patched.8, and the stack through janus-
 #: contract B on swipl-patched.8 twice; command=sh tools/check.sh twins].
-BUDGET = 47354
+#: RE-PINNED 2026-09-29, 47354 to 47394 (+40), this twin reads 47354 before the
+#: change and 47394 with the change (+40): each definition through the define
+#: doors asks whether its module holds a shadow-import receipt for the name,
+#: holds it in flight until the write is visible when it does, and a sweep
+#: leaves a receipt another live thread holds: with that use this twin reads
+#: 47394 where the definitions alone read 47354 (+40) [measured
+#: 2026-09-29T06:37:10+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 47394
 
 #: OVERRUN 2026-09-07, 27600: it proves seventeen claims where the example
 #: states four: the example's own comment leaves the HOST half of the nesting

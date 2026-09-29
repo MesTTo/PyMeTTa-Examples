@@ -568,4 +568,20 @@ def twin(m):
 #: 2026-09-27T20:38:05+10:00: full twins lanes on swipl-patched.8 in wt-merge's
 #: battery 1, two with janus-contract A and two with walk-tax B; command=sh
 #: tools/check.sh twins].
-BUDGET = 36204
+#: RE-PINNED 2026-09-29, 36204 to 36212 (+8), this twin reads 36204 before the
+#: change and 36212 with the change (+8): the ld step adds
+#: '$metta_shadow_in_flight'/4, metta_define_function/4, metta_define_local/3,
+#: metta_prepare_function_predicate/4, metta_prepare_local_predicate/5,
+#: metta_shadow_after_transaction/1, metta_shadow_at_exit/0,
+#: metta_shadow_held_elsewhere/3, metta_shadow_hold/3, metta_shadow_let_go/3
+#: and metta_shadow_owed/1 to the spaces module, and on a tree that defines
+#: them and never calls them this twin reads 36202 (-2), which only a walk over
+#: SWI's predicate or atom tables can move, by visiting more entries or
+#: visiting them in another order; each definition through the define doors
+#: asks whether its module holds a shadow-import receipt for the name, holds it
+#: in flight until the write is visible when it does, and a sweep leaves a
+#: receipt another live thread holds: with that use this twin reads 36212 where
+#: the definitions alone read 36202 (+10) [measured 2026-09-29T06:37:37+10:00:
+#: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 36212

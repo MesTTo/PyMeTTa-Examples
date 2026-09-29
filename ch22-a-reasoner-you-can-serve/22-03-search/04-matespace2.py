@@ -535,7 +535,15 @@ RUNG = (
 #: 2026-09-26T18:36:57+10:00: one full twins lane before this commit and one
 #: with it, each read in one battery of the landing's HEAD after a QLF purge
 #: and one warm-up; command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 43543107
+#: RE-PINNED 2026-09-29, 43543107 to 43543127 (+20), this twin reads 43543107
+#: before the change and 43543127 with the change (+20): each definition
+#: through the define doors asks whether its module holds a shadow-import
+#: receipt for the name, holds it in flight until the write is visible when it
+#: does, and a sweep leaves a receipt another live thread holds: with that use
+#: this twin reads 43543127 where the definitions alone read 43543107 (+20)
+#: [measured 2026-09-29T06:39:03+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 43543127
 
 #: OVERRUN 2026-09-07, 6197400: it names `expand`, `mate` and `rewriteK` as
 #: definitions and asserts the atom count, where the example writes them as

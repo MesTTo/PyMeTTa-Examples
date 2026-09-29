@@ -518,4 +518,12 @@ DIVERGENCE = "26c23ce9e6fb37f3687387e2ae0cc6fe594de13826e0d1bfaf351fc743cd0d4d"
 #: with that reading and one without it, the second at
 #: 2026-09-27T03:28:15+10:00, wt-merge battery 1 on swipl-patched.7;
 #: command=python extensions/python/tools/twin_coverage.py].
-OVERRUN = 329
+#: OVERRUN 2026-09-29, 329 to 330 (+1): the twin costs 4357 against the
+#: example's 1891 and a ceiling of 4356.1 with the earlier declaration
+#: [measured 2026-09-29T01:07:31+10:00: the twins lane at the ld stage of the
+#: chain readings, one full lane in one battery; command=python
+#: extensions/python/tools/twin_coverage.py]; the lost-define doors: each
+#: definition through the define doors asks whether its module holds a shadow-
+#: import receipt for the name, holds it in flight until the write is visible
+#: when it does, and a sweep leaves a receipt another live thread holds.
+OVERRUN = 330

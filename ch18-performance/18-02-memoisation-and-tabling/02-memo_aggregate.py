@@ -560,7 +560,23 @@ def twin(m):
 #: 2026-09-27T20:38:05+10:00: full twins lanes on swipl-patched.8 in wt-merge's
 #: battery 1, two with janus-contract A and two with walk-tax B; command=sh
 #: tools/check.sh twins].
-BUDGET = 34543
+#: RE-PINNED 2026-09-29, 34543 to 34555 (+12), this twin reads 34543 before the
+#: change and 34555 with the change (+12): the ld step adds
+#: '$metta_shadow_in_flight'/4, metta_define_function/4, metta_define_local/3,
+#: metta_prepare_function_predicate/4, metta_prepare_local_predicate/5,
+#: metta_shadow_after_transaction/1, metta_shadow_at_exit/0,
+#: metta_shadow_held_elsewhere/3, metta_shadow_hold/3, metta_shadow_let_go/3
+#: and metta_shadow_owed/1 to the spaces module, and on a tree that defines
+#: them and never calls them this twin reads 34541 (-2), which only a walk over
+#: SWI's predicate or atom tables can move, by visiting more entries or
+#: visiting them in another order; each definition through the define doors
+#: asks whether its module holds a shadow-import receipt for the name, holds it
+#: in flight until the write is visible when it does, and a sweep leaves a
+#: receipt another live thread holds: with that use this twin reads 34555 where
+#: the definitions alone read 34541 (+14) [measured 2026-09-29T06:37:29+10:00:
+#: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 34555
 #: OVERRUN 2026-09-09, 0 to 1089 (+1089): a library's Prolog half compiles
 #: beside itself on its first import and loads from the artifact after
 #: (metta_load_source/2, seam:compiled_source/1): the example imports one, so

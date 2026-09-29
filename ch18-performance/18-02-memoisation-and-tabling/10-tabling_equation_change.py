@@ -584,9 +584,25 @@ def twin(m):
 #: same battery run; command=sh tools/check.sh twins] [measured
 #: 2026-09-28T14:03:07+10:00: the twins lane of the landing's whole gate;
 #: command=GATE_ONLY=1 sh tools/check.sh].
+#: SHIFTED 2026-09-28 by +14, 48802..48802 to 48816..48816 over 42 under
+#: 'full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot':
+#: the lost-define doors: each definition the program makes prepares through
+#: them, 7 times through metta_prepare_function_predicate/4 and 5 through
+#: metta_prepare_local_predicate/5 here, and each preparation now asks whether
+#: the module holds a shadow-import receipt for the name; no receipt names
+#: these heads, so none is held in flight. The observations record the full
+#: lane's spread around the count, and this change moves the count, so both
+#: bounds move by the serial delta, the twin's minimum of three serial runs
+#: with the change, 48816, less its minimum of three before it, 48802, until
+#: the next full-lane observation reads them again [measured
+#: 2026-09-28T22:27:17+10:00: the minimum of three fresh-process runs on each
+#: side, as command=python extensions/python/tools/twin_coverage.py --measure
+#: --rounds 3
+#: examples/ch18-performance/18-02-memoisation-and-tabling/10-tabling_equation_change.metta
+#: reads it].
 BUDGET = {
-    "minimum": 48802,
-    "maximum": 48802,
+    "minimum": 48816,
+    "maximum": 48816,
     "observations": 42,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }

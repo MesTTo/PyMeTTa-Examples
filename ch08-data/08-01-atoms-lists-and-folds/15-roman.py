@@ -734,7 +734,15 @@ def twin(m):
 #: 2026-09-27T20:38:05+10:00: full twins lanes on swipl-patched.8 in wt-merge's
 #: battery 1, two with janus-contract A and two with walk-tax B; command=sh
 #: tools/check.sh twins].
-BUDGET = 333427
+#: RE-PINNED 2026-09-29, 333427 to 333568 (+141), this twin reads 333427 before
+#: the change and 333568 with the change (+141): each definition through the
+#: define doors asks whether its module holds a shadow-import receipt for the
+#: name, holds it in flight until the write is visible when it does, and a
+#: sweep leaves a receipt another live thread holds: with that use this twin
+#: reads 333568 where the definitions alone read 333427 (+141) [measured
+#: 2026-09-29T06:36:14+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 333568
 
 #: OVERRUN 2026-09-07, 17700: it names every lib_roman function at every claim
 #: and runs the backwards `let` inverses beside them. Measured 320547 against a

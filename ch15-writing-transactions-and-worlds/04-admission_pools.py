@@ -608,7 +608,15 @@ def twin(m):
 #: reader on swipl-patched.7, the series on swipl-patched.8, and the stack
 #: through janus-contract B on swipl-patched.8 twice; command=sh tools/check.sh
 #: twins].
-BUDGET = 35674
+#: RE-PINNED 2026-09-29, 35674 to 35694 (+20), this twin reads 35674 before the
+#: change and 35694 with the change (+20): each definition through the define
+#: doors asks whether its module holds a shadow-import receipt for the name,
+#: holds it in flight until the write is visible when it does, and a sweep
+#: leaves a receipt another live thread holds: with that use this twin reads
+#: 35694 where the definitions alone read 35674 (+20) [measured
+#: 2026-09-29T06:37:19+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 35694
 
 #: DIVERGED 2026-09-07, the example holds 2 atoms the twin does not (2 =) and
 #: the twin holds 2 the example does not (2 =): the twin is an ordinary Python

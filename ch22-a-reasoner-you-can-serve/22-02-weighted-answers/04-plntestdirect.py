@@ -559,7 +559,15 @@ def twin(m):
 #: 2026-09-26T18:36:57+10:00: one full twins lane before this commit and one
 #: with it, each read in one battery of the landing's HEAD after a QLF purge
 #: and one warm-up; command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 42122
+#: RE-PINNED 2026-09-29, 42122 to 42166 (+44), this twin reads 42122 before the
+#: change and 42166 with the change (+44): each definition through the define
+#: doors asks whether its module holds a shadow-import receipt for the name,
+#: holds it in flight until the write is visible when it does, and a sweep
+#: leaves a receipt another live thread holds: with that use this twin reads
+#: 42166 where the definitions alone read 42122 (+44) [measured
+#: 2026-09-29T06:38:45+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 42166
 
 #: DIVERGED 2026-09-07, the example holds 2 atoms the twin does not (2 =) and
 #: the twin holds 8 the example does not (1 :, 2 =, 5 @doc): the twin is an

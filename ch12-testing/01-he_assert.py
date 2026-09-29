@@ -501,7 +501,15 @@ RUNG = "the assert family is this file's subject, so each claim names one of its
 #: 2026-09-27T20:38:05+10:00: full twins lanes on swipl-patched.8 in wt-merge's
 #: battery 1, two with janus-contract A and two with walk-tax B; command=sh
 #: tools/check.sh twins].
-BUDGET = 45840
+#: RE-PINNED 2026-09-29, 45840 to 45882 (+42), this twin reads 45840 before the
+#: change and 45882 with the change (+42): each definition through the define
+#: doors asks whether its module holds a shadow-import receipt for the name,
+#: holds it in flight until the write is visible when it does, and a sweep
+#: leaves a receipt another live thread holds: with that use this twin reads
+#: 45882 where the definitions alone read 45840 (+42) [measured
+#: 2026-09-29T06:37:10+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 45882
 
 #: RE-PINNED 2026-09-08, 17475 to 17843 (+368), The engine and library
 #: predicates now resolve through their owning modules and the explicit engine

@@ -520,7 +520,15 @@ def twin(m):
 #: reader on swipl-patched.7, the series on swipl-patched.8, and the stack
 #: through janus-contract B on swipl-patched.8 twice; command=sh tools/check.sh
 #: twins].
-BUDGET = 48813
+#: RE-PINNED 2026-09-29, 48813 to 48837 (+24), this twin reads 48813 before the
+#: change and 48837 with the change (+24): each definition through the define
+#: doors asks whether its module holds a shadow-import receipt for the name,
+#: holds it in flight until the write is visible when it does, and a sweep
+#: leaves a receipt another live thread holds: with that use this twin reads
+#: 48837 where the definitions alone read 48813 (+24) [measured
+#: 2026-09-29T06:38:10+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 48837
 #: OVERRUN 2026-09-18, 0 to 1705 (+1705): the twin costs 45856 against the
 #: example's 31350 and a ceiling of 44151 with the earlier declaration; a
 #: minimal twin of this example costs 31148, inside the 34485 the band alone

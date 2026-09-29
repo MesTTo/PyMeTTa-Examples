@@ -491,4 +491,12 @@ def twin(m):
 #: battery 1 on swipl-patched.8 at this boundary, engine/host_notices.pl as
 #: amended against the day before's as first written; command=sh tools/check.sh
 #: twins].
-BUDGET = 138153
+#: RE-PINNED 2026-09-29, 138153 to 138173 (+20), this twin reads 138153 before
+#: the change and 138173 with the change (+20): each definition through the
+#: define doors asks whether its module holds a shadow-import receipt for the
+#: name, holds it in flight until the write is visible when it does, and a
+#: sweep leaves a receipt another live thread holds: with that use this twin
+#: reads 138173 where the definitions alone read 138153 (+20) [measured
+#: 2026-09-29T06:38:54+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 138173

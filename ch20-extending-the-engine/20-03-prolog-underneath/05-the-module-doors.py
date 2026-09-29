@@ -734,4 +734,12 @@ def twin(m):
 #: swipl-patched.8 at walk-tax B's tree and at the landing's tip, whose files a
 #: twin loads differ only in engine/qlf_boot.pl; command=sh tools/check.sh
 #: twins].
-BUDGET = 296060
+#: RE-PINNED 2026-09-29, 296060 to 296074 (+14), this twin reads 296060 before
+#: the change and 296074 with the change (+14): each definition through the
+#: define doors asks whether its module holds a shadow-import receipt for the
+#: name, holds it in flight until the write is visible when it does, and a
+#: sweep leaves a receipt another live thread holds: with that use this twin
+#: reads 296074 where the definitions alone read 296060 (+14) [measured
+#: 2026-09-29T06:38:28+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 296074

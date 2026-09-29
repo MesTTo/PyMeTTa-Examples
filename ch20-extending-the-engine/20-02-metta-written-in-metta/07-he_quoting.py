@@ -372,4 +372,12 @@ def twin(m):
 #: 2026-09-27T20:38:05+10:00: full twins lanes on swipl-patched.8 in wt-merge's
 #: battery 1, two with janus-contract A and two with walk-tax B; command=sh
 #: tools/check.sh twins].
-BUDGET = 34105
+#: RE-PINNED 2026-09-29, 34105 to 34143 (+38), this twin reads 34105 before the
+#: change and 34143 with the change (+38): each definition through the define
+#: doors asks whether its module holds a shadow-import receipt for the name,
+#: holds it in flight until the write is visible when it does, and a sweep
+#: leaves a receipt another live thread holds: with that use this twin reads
+#: 34143 where the definitions alone read 34105 (+38) [measured
+#: 2026-09-29T06:38:18+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 34143

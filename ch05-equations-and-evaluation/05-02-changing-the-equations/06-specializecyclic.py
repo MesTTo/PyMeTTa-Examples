@@ -350,7 +350,15 @@ def twin(m):
 #: twins lane before this commit and one with it, each read in one battery of
 #: the landing's HEAD after a QLF purge and one warm-up; command=python
 #: extensions/python/tools/twin_coverage.py].
-BUDGET = 25865
+#: RE-PINNED 2026-09-29, 25865 to 25894 (+29), this twin reads 25865 before the
+#: change and 25894 with the change (+29): each definition through the define
+#: doors asks whether its module holds a shadow-import receipt for the name,
+#: holds it in flight until the write is visible when it does, and a sweep
+#: leaves a receipt another live thread holds: with that use this twin reads
+#: 25894 where the definitions alone read 25865 (+29) [measured
+#: 2026-09-29T06:35:26+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 25894
 
 #: OVERRUN 2026-09-07, 2400: the mutually recursive pair takes the `@m.rules`
 #: door, which stages two equations where the example writes two. Measured

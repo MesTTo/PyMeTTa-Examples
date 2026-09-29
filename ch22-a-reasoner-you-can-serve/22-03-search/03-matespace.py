@@ -521,7 +521,15 @@ RUNG = (
 #: 2026-09-26T18:36:57+10:00: one full twins lane before this commit and one
 #: with it, each read in one battery of the landing's HEAD after a QLF purge
 #: and one warm-up; command=python extensions/python/tools/twin_coverage.py].
-BUDGET = 27315092
+#: RE-PINNED 2026-09-29, 27315092 to 27315112 (+20), this twin reads 27315092
+#: before the change and 27315112 with the change (+20): each definition
+#: through the define doors asks whether its module holds a shadow-import
+#: receipt for the name, holds it in flight until the write is visible when it
+#: does, and a sweep leaves a receipt another live thread holds: with that use
+#: this twin reads 27315112 where the definitions alone read 27315092 (+20)
+#: [measured 2026-09-29T06:39:02+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 27315112
 
 #: OVERRUN 2026-09-07, 1434400: it names `expand` and `expandK` as definitions
 #: and asserts the atom count, where the example writes them as equations.
@@ -559,7 +567,15 @@ BUDGET = 27315092
 #: 2026-09-26T18:36:57+10:00: one full twins lane before this commit and one
 #: with it, each read in one battery of the landing's HEAD after a QLF purge
 #: and one warm-up; command=python extensions/python/tools/twin_coverage.py].
-OVERRUN = 4621960
+#: OVERRUN 2026-09-29, 4621960 to 4621961 (+1): the twin costs 27315112 against
+#: the example's 20626875 and a ceiling of 27315111.5 with the earlier
+#: declaration [measured 2026-09-29T01:07:31+10:00: the twins lane at the ld
+#: stage of the chain readings, one full lane in one battery; command=python
+#: extensions/python/tools/twin_coverage.py]; the lost-define doors: each
+#: definition through the define doors asks whether its module holds a shadow-
+#: import receipt for the name, holds it in flight until the write is visible
+#: when it does, and a sweep leaves a receipt another live thread holds.
+OVERRUN = 4621961
 
 #: DIVERGED 2026-09-07, the example holds 4 atoms the twin does not (4 =) and
 #: the twin holds 5 the example does not (1 :, 4 =): the twin is an ordinary

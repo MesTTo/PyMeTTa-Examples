@@ -403,4 +403,12 @@ RUNG = "the imported add-reduct equation and its stored body are the subject"
 #: 2026-09-27T20:38:05+10:00: full twins lanes on swipl-patched.8 in wt-merge's
 #: battery 1, two with janus-contract A and two with walk-tax B; command=sh
 #: tools/check.sh twins].
-BUDGET = 35934
+#: RE-PINNED 2026-09-29, 35934 to 35980 (+46), this twin reads 35934 before the
+#: change and 35980 with the change (+46): each definition through the define
+#: doors asks whether its module holds a shadow-import receipt for the name,
+#: holds it in flight until the write is visible when it does, and a sweep
+#: leaves a receipt another live thread holds: with that use this twin reads
+#: 35980 where the definitions alone read 35934 (+46) [measured
+#: 2026-09-29T06:38:19+10:00: min-of-3 serial fresh processes; command=python
+#: extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 35980
