@@ -571,4 +571,14 @@ def twin(m):
 #: such lookup of a module's own name [measured 2026-09-30T04:29:02+10:00: min-
 #: of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 51117
+#: RE-PINNED 2026-09-30, 51117 to 51391 (+274), the twins lane reads this twin
+#: at 51117 before this change and at 51391 with it (+274): the formal doc
+#: family reads a stored document as a record by its fields' heads
+#: (engine/metta/runtime.pl): formal_doc_atom/3 reads every document through
+#: get-atoms with the partial pattern ['@doc', Name|_], which the store answers
+#: through its head index at every held length, and doc_fields/3 takes the
+#: description and the parameter and return rows by their heads in any order,
+#: so a program that reads a document pays for that read and that walk
+#: [measured 2026-09-30T04:36:57+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 51391

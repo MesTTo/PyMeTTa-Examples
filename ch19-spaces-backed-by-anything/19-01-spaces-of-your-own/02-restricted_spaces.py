@@ -753,4 +753,14 @@ def twin(m):  # noqa: ARG001  -- both spaces are created here; the default handl
 #: another live requester still asks for [measured 2026-09-30T04:35:18+10:00:
 #: min-of-3 serial fresh processes; command=python
 #: extensions/python/tools/twin_coverage.py --repin].
-BUDGET = 69261
+#: RE-PINNED 2026-09-30, 69261 to 69435 (+174), the twins lane reads this twin
+#: at 69261 before this change and at 69435 with it (+174): the formal doc
+#: family reads a stored document as a record by its fields' heads
+#: (engine/metta/runtime.pl): formal_doc_atom/3 reads every document through
+#: get-atoms with the partial pattern ['@doc', Name|_], which the store answers
+#: through its head index at every held length, and doc_fields/3 takes the
+#: description and the parameter and return rows by their heads in any order,
+#: so a program that reads a document pays for that read and that walk
+#: [measured 2026-09-30T04:36:57+10:00: min-of-3 serial fresh processes;
+#: command=python extensions/python/tools/twin_coverage.py --repin].
+BUDGET = 69435
