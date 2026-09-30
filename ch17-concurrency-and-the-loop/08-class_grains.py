@@ -707,9 +707,25 @@ def twin(m):
 #: [measured 2026-09-30T04:57:16+10:00: the twins lane of the whole gate on
 #: this commit's code at b4e5ef7b9; command=python
 #: extensions/python/tools/twin_coverage.py].
+#: SHIFTED 2026-09-30 by +3, 3498324..3498324 to 3498327..3498327 over 22 under
+#: 'full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot':
+#: The seat's metta.errors becomes a public package again, with its own row in
+#: metta._layers.BUILDS_ON, and metta.doors._catalog.atoms writes one (layer
+#: <package> <order>) atom for each package of metta._layers.ORDERS into the
+#: door catalog every process builds, so each process now holds (layer errors
+#: 3) too; at that commit, reverting only the row restores the count this twin
+#: read before it, and removing only metta/errors.py does not. The observations
+#: record the full lane's spread around the count, and this change moves the
+#: count, so both bounds move by the serial delta, the twin's minimum of three
+#: serial runs with the change, 3498327, less its minimum of three before it,
+#: 3498324, until the next full-lane observation reads them again [measured
+#: 2026-09-30T10:28:13+10:00: the minimum of three fresh-process runs on each
+#: side, as command=python extensions/python/tools/twin_coverage.py --measure
+#: --rounds 3 examples/ch17-concurrency-and-the-loop/08-class_grains.metta
+#: reads it].
 BUDGET = {
-    "minimum": 3498324,
-    "maximum": 3498324,
+    "minimum": 3498327,
+    "maximum": 3498327,
     "observations": 22,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
