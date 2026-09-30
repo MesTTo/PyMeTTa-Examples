@@ -709,10 +709,32 @@ def twin(m):
 #: extensions/python/tools/twin_coverage.py] [measured
 #: 2026-09-30T04:57:16+10:00: the twins lane of the whole gate on this commit's
 #: code at b4e5ef7b9; command=python extensions/python/tools/twin_coverage.py].
+#: POOLED 2026-09-30 under
+#: 'full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot',
+#: 185583..185587 to 185583..185591 over 43 observations: the twins lane of
+#: the finaliser-release series' gate read 185591, a reading the gate takes
+#: under its own load and so an observation of this protocol, which the
+#: envelope keeps rather than drops. The series does not move the count: the
+#: minimum of three fresh-process runs reads 185583 at its base and with it,
+#: and ten full-lane rounds at each read 185583..185587 at the base and 185587
+#: in every round with it, so the reading widens the envelope and shifts
+#: nothing. The envelope pools the 22 observations above, the twenty rounds and
+#: the gate's reading [measured 2026-09-30T09:24:00+10:00: the twins lane of
+#: the series' gate; command=python extensions/python/tools/twin_coverage.py]
+#: [measured
+#: 2026-09-30T09:28:30+10:00: the minimum of three fresh-process runs on each
+#: side; command=python extensions/python/tools/twin_coverage.py --measure
+#: --rounds 3
+#: examples/ch17-concurrency-and-the-loop/05-channels_pools_and_the_machine.metta]
+#: [measured 2026-09-30T09:29:52+10:00: ten full-lane observations with the
+#: series; command=python extensions/python/tools/twin_coverage.py --observe
+#: --rounds 10] [measured 2026-09-30T09:51:46+10:00: ten full-lane
+#: observations at its base; command=python
+#: extensions/python/tools/twin_coverage.py --observe --rounds 10].
 BUDGET = {
     "minimum": 185583,
-    "maximum": 185587,
-    "observations": 22,
+    "maximum": 185591,
+    "observations": 43,
     "protocol": "full-lane/323/workers=32/file-search-cache-time=9223372036854775807/before-boot"
 }
 #: The count VARIES, because this twin starts threads and timers and the
